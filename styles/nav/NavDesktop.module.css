@@ -1,0 +1,51 @@
+.navDesktop_container{
+    background-color: var(--global-primary-color_opacity);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.navDesktop_logo_container{
+    width: 8%;
+}
+
+.navDesktop_logo_container img{
+    width: 100%;
+}
+
+.navDesktop_nav{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navDesktop_nav ul{
+    position: relative;
+    display: flex;
+}
+
+.navDesktop_nav_li{
+    position: relative;
+    margin: 0 20px;
+    font-size: 1.2em;
+    color: var(--global-text_color);
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.navDesktop_nav_marker{
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background-color: var(--global-tertiary-color);
+    bottom: -5px;
+    transition: 0.5s;
+    border-radius: 4px;
+}

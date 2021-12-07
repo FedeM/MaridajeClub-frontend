@@ -1,5 +1,4 @@
 import styles from '../../../styles/nav/NavMobile.module.css'
-import Image from 'next/image'
 import {
     Link as LinkScroll
 } from 'react-scroll'

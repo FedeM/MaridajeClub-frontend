@@ -9,7 +9,7 @@ export default function Home() {
       title="Home"
       description="Descripción"
     >
-      ss
+      
     </Layout>
   )
 }

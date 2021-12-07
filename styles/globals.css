@@ -2,8 +2,9 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
+  font-family: 'Outfit', sans-serif;
   /* background-color: var(--global-primary-color); */
   background-color: #555;
   color: var(--global-text_color);
@@ -23,6 +24,7 @@ a {
 :root{
   /* Variables generales */
   --global-primary-color: var(--dark-primary-color);
+  --global-primary-color_opacity: var(--dark-primary-color_opacity);
   --global-secondary-color: var(--dark-secondary-color);
   --global-tertiary-color: var(--dark-tertiary-color);
   --global-inverse-color: var(--dark-primary-text_color);
@@ -46,10 +48,18 @@ a {
   --ligth-primary-text_color: #000;
 
   --dark-primary-color:#1a1a1a;
+  --dark-primary-color_opacity:#1a1a1ac4;
   --dark-secondary-color:#FF2A3F;
   --dark-tertiary-color:#F2D43D;
   --dark-primary-text_color: #fff;
 
   /* Variables de animation.css */
   /* --animate-duration: 500ms; */
+}
+
+.non_select {
+  -moz-user-select: none; 
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
 }
