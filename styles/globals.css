@@ -4,6 +4,9 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /* background-color: var(--global-primary-color); */
+  background-color: #555;
+  color: var(--global-text_color);
 }
 
 a {
@@ -13,4 +16,40 @@ a {
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  /* Variables generales */
+  --global-primary-color: var(--dark-primary-color);
+  --global-secondary-color: var(--dark-secondary-color);
+  --global-tertiary-color: var(--dark-tertiary-color);
+  --global-inverse-color: var(--dark-primary-text_color);
+  --global-text_color: var(--dark-primary-text_color);
+
+  /* Colores */
+  --global-ligth-gray: #F7F7FF;
+  --global-gray:#D9D9D9;
+  --global-gray2:#8C8C8C;
+  --global-gray3:#595959;
+  --global-gray4:#363636;
+
+  --global-error:#BF1F1F;
+  --global-warning:#F2E205;
+  --global-succesfully:#1ab106;
+
+  /* Variables de tema */
+  --ligth-primary-color:#fcfcfc;
+  --ligth-secondary-color:#FF2A3F;
+  --ligth-tertiary-color:#F2D43D;
+  --ligth-primary-text_color: #000;
+
+  --dark-primary-color:#1a1a1a;
+  --dark-secondary-color:#FF2A3F;
+  --dark-tertiary-color:#F2D43D;
+  --dark-primary-text_color: #fff;
+
+  /* Variables de animation.css */
+  /* --animate-duration: 500ms; */
 }
