@@ -5,9 +5,8 @@
     align-items: center;
     padding: 10px 15px;
     overflow: hidden;
-    position: fixed;
+    position: relative;
     width: 100%;
-    top: 0;
 }
 
 .navDesktop_logo_container{

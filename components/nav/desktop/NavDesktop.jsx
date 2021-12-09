@@ -39,3 +39,14 @@ const NavDesktop = () => {
 };
 
 export default NavDesktop;
+
+// const [menuHeight, setMenuHeight] = useState(0)
+
+    
+//     useEffect(()=>{
+//         const menu_container = document.getElementById('menu-container');
+//         setMenuHeight(menu_container.clientHeight)
+//         menuHeightNavToHome(menuHeight)
+
+//         //eslint-disable-next-line react-hooks/exhaustive-deps
+//     }, [menuHeight])
