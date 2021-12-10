@@ -8,7 +8,7 @@ const Nav = () => {
 
     useEffect(()=>{
         setMounted(true)
-    },[])
+    },[mounted])
 
     return mounted && (
         <>

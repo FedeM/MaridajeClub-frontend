@@ -11,10 +11,6 @@
     font-weight: 300;
 }
 
-.live_slider_container{
-    /* background-color: red; */
-}
-
 .live_category{
     display: flex;
     padding: 15px;
@@ -27,4 +23,10 @@
 
 .live_category_activate{
     color: var(--global-secondary-color);
+}
+
+@media screen and(min-width:800px){
+    .live_category{
+        justify-content: space-between;
+    }
 }

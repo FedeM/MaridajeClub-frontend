@@ -1,4 +1,5 @@
 import styles from '../../styles/home/Live.module.css'
+import ScrollDown from '../assets/scrollDown/ScrollDown';
 import Slider from './Slider';
 
 
@@ -27,6 +28,7 @@ const Live = ({data, id}) => {
                     lives={data}
                 />
             </div>
+            <ScrollDown/>
         </section>
     );
 };

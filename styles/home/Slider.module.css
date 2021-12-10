@@ -22,6 +22,8 @@
   -webkit-align-items: center;
 
   height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .swiper_slide_img {

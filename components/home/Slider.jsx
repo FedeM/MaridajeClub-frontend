@@ -10,6 +10,7 @@ import SwiperCore, {Pagination} from 'swiper';
 // install Swiper modules
 SwiperCore.use([Pagination]);
 import Image from 'next/image'
+import {isMobile} from 'react-device-detect';
 
 
 
@@ -19,7 +20,7 @@ const Slider = ({lives}) => {
     return (
         <>
         <Swiper 
-            slidesPerView={1.2} 
+            slidesPerView={isMobile ? (1.2):(3.5)} 
             spaceBetween={30} 
             pagination={{
                 "clickable": true
@@ -29,6 +30,7 @@ const Slider = ({lives}) => {
             lives.map((e,i)=>(
                 <SwiperSlide key={i} className={`${styles.swiper_slide}`}>
                     <Image 
+                        priority
                         src={`${e.cover}`}
                         layout="fill"
                         className={styles.swiper_slide_img}

@@ -4,23 +4,13 @@ import { useEffect, useState } from "react";
 import style from '../../styles/Layout.module.css'
 
 const Layout = ({children, home, title, description, setNavHeigth}) => {
-    const [menuHeight, setMenuHeight] = useState({
-        menu: "",
-        heigth: 0
-    })
-
-
+    const [header, setHeader] = useState('')
     
     useEffect(()=>{
-        if (menuHeight.menu === ''|| typeof menuHeight.heigth === 'undefined'|| menuHeight.heigth <= 70) {
-            setMenuHeight({
-                menu: document.getElementById('header'),
-                heigth: menuHeight.menu.clientHeight
-            })
-        }
-        setNavHeigth(menuHeight.heigth)
-    }, [menuHeight])
-
+        setHeader(document.getElementById('header').clientHeight)
+        setNavHeigth(header)
+    })
+    
     return (
         <>
             <Head>
@@ -34,7 +24,7 @@ const Layout = ({children, home, title, description, setNavHeigth}) => {
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
                 
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600;700;800;900&display=swap" />
             </Head>
             <header id="header" className={style.header}>
