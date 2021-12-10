@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/bundle";
 import "swiper/css/pagination"
-import styles from '../../styles/home/Slider.module.css'
+import styles from '../../styles/events/Slider.module.css'
 // import Swiper core and required modules
 import SwiperCore, {Pagination} from 'swiper';
 // install Swiper modules
@@ -20,7 +20,7 @@ const Slider = ({lives}) => {
     return (
         <>
         <Swiper 
-            slidesPerView={isMobile ? (1.2):(3.5)} 
+            slidesPerView={isMobile ? (1.2):(3.1)} 
             spaceBetween={30} 
             pagination={{
                 "clickable": true

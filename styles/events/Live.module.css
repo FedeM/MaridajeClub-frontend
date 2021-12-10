@@ -25,8 +25,16 @@
     color: var(--global-secondary-color);
 }
 
-@media screen and(min-width:800px){
+@media (min-width:800px){
     .live_category{
-        justify-content: space-between;
+        justify-content: center;
+    }
+
+    .live_category p{
+        margin: 0 50px;
+    }
+
+    .live_slider_container{
+        margin-left: 5rem;
     }
 }

@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import Live from '../components/home/Live'
+import Live from '../components/events/Live'
 import Layout from '../components/layout/Layout'
 
 
-export default function Home({data}) {
+export default function Index({data}) {
 
   const [navHeigth, setNavHeigth] = useState()
 
@@ -16,7 +16,7 @@ export default function Home({data}) {
       <article style={{marginTop:`${navHeigth}px`}}>
         <Live
           data={data}
-          id="home"
+          id="events"
         />
       </article>
     </Layout>
