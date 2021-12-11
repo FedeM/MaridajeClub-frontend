@@ -2,8 +2,6 @@ html,
 body {
   padding: 0;
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
   font-family: 'Outfit', sans-serif;
   background-color: var(--global-primary-color);
   color: var(--global-text_color);
@@ -37,7 +35,7 @@ a {
   --global-gray4:#363636;
 
   --global-error:#BF1F1F;
-  --global-warning:#F2E205;
+  --global-warning:#ffee00;
   --global-succesfully:#1ab106;
 
   /* Variables de tema */
