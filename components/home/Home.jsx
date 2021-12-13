@@ -23,19 +23,23 @@ const Home = ({id}) => {
                         <h3>Live Streaming & eCommerce</h3>
                         <p>Viví la única experiencia <span> Live Streaming Shopping</span> de bebidas, conoce a sus creadores y encontrá precios únicos</p>
                     </div>
-                    <LinkScroll className={styles.home_btn} to="events" spy={true}>Empezar</LinkScroll>
+                    <div>
+                        <LinkScroll className={styles.home_btn} to="events" spy={true}>Eventos</LinkScroll>
+                        <LinkScroll className={styles.home_btn} to="events" spy={true}>Comprar</LinkScroll>
+                    </div>
                 </div>
                 <div className={styles.home_img_container}>
                     <Image
                         className={styles.home_img_container_img}
-                        src="/assets/img/home/wine.png"
+                        src="/assets/img/home/alcohol.png"
                         layout="fill"
+                        priority
                     />
                 </div>
                 <div className={styles.home_svg_background}>
                     <img
                         className={styles.home_svg_background_svg}
-                        src={isDesktop ?("/assets/svg/home/background1.svg"):("/assets/svg/home/background.svg")}
+                        src={isDesktop ?("/assets/svg/home/background2.svg"):("/assets/svg/home/background.svg")}
                         layout="fill"
                     />
                 </div>

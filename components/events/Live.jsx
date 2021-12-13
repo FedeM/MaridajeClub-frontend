@@ -16,6 +16,7 @@ const Live = ({data, id}) => {
     return (
         <section className={styles.live_section} id={id}>
             <div className={styles.live_title}>
+                <i className="fas fa-circle"></i>
                 <h3>Transmisiones</h3>
             </div>
             <div className={`${styles.live_category}`} id="live_category">

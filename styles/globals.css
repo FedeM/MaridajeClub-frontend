@@ -5,6 +5,7 @@ body {
   font-family: 'Outfit', sans-serif;
   background-color: var(--global-primary-color);
   color: var(--global-text_color);
+  scroll-behavior: smooth;
 }
 
 a {

@@ -1,0 +1,68 @@
+.wineries_section{
+    position: relative;
+    width: 100%;
+}
+
+.wineries_slider{
+    background-color: var(--global-primary-color);
+    width: 100%;
+    height: 20vh;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--global-gray3);
+    border-left: 0;
+    border-right: 0;
+}
+
+.wineries_slider_track{
+    display: flex;
+    width: calc(150px * 10);
+    height: 100%;
+    animation: scroll 30s infinite linear;
+}
+
+.winaries_slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 30px;
+}
+
+.winaries_slide img{
+    width: 150px;
+    height: 80px;
+    object-fit: contain;
+}
+
+@keyframes scroll {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(calc(-200px * 5));
+    }
+}
+
+@media (max-width: 800px) {
+    @keyframes scroll {
+        0%{
+            transform: translateX(50%);
+        }
+        100%{
+            transform: translateX(calc(-200px * 5));
+        }
+    }
+    
+}
+@media (max-width: 700px) {
+    @keyframes scroll {
+        0%{
+            transform: translateX(25%);
+        }
+        100%{
+            transform: translateX(calc(-200px * 5));
+        }
+    }
+    
+}
+

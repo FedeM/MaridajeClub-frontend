@@ -5,6 +5,7 @@ import NavMobile from "./mobile/NavMobile";
 
 const Nav = () => {
     const [mounted, setMounted] = useState(false)
+    const logo= '/logo/logo_blanco.png'
 
     useEffect(()=>{
         setMounted(true)
@@ -13,10 +14,10 @@ const Nav = () => {
     return mounted && (
         <>
             <BrowserView>
-                <NavDesktop/>
+                <NavDesktop logo={logo}/>
             </BrowserView>
             <MobileView>
-                <NavMobile/>
+                <NavMobile logo={logo}/>
             </MobileView>
         </>
     )

@@ -24,10 +24,18 @@
   height: 400px;
   border-radius: 10px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .swiper_slide_img {
   display: block;
   object-fit: cover;
+  width: 100%;
   filter: brightness(.7);
+  transition: .5s;
+}
+
+.swiper_slide:hover .swiper_slide_img{
+  filter: brightness(.9);
+  transition: .5s;
 }

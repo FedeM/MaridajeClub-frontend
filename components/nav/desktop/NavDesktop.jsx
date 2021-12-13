@@ -4,7 +4,7 @@ import {
 } from 'react-scroll'
 
 
-const NavDesktop = () => {
+const NavDesktop = ({logo}) => {
 
     
     const selectMenuItem = (e) =>{
@@ -20,7 +20,7 @@ const NavDesktop = () => {
         <div className={styles.navDesktop_container}>
             <div className={styles.navDesktop_logo_container}>
                 <img
-                    src="/logo/logo_blanco.png"
+                    src={logo}
                     className={styles.navDesktop_logo}
                     alt={"logo de maridaje club"}
                 />
@@ -29,7 +29,7 @@ const NavDesktop = () => {
                 <ul>
                     <div className={styles.navDesktop_nav_marker} id="marker"></div>
                     <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} to="home"  spy={true} onClick={(e)=> selectMenuItem(e.target)}>Inicio</LinkScroll>
-                    <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} to="home"  spy={true} onClick={(e)=> selectMenuItem(e.target)}>Eventos</LinkScroll>
+                    <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} to="events"  spy={true} onClick={(e)=> selectMenuItem(e.target)}>Eventos</LinkScroll>
                     <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} to="home"  spy={true} onClick={(e)=> selectMenuItem(e.target)}>Nosotros</LinkScroll>
                     <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} to="home"  spy={true} onClick={(e)=> selectMenuItem(e.target)}>Ingresar</LinkScroll>
                 </ul>

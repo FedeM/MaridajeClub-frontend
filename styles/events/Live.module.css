@@ -3,10 +3,19 @@
 }
 
 .live_title{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.live_title i{
+    color: var(--global-secondary-color);
+    font-size: .5rem;
+    margin-right: 8px;
 }
 
 .live_title h3{
+    text-align: center;
     font-size: 2rem;
     font-weight: 300;
 }

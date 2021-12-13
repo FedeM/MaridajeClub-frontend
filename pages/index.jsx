@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Live from '../components/events/Live'
 import Home from '../components/home/Home'
 import Layout from '../components/layout/Layout'
+import Wineries from '../components/wineries/Wineries'
 
 
 export default function Index({data}) {
@@ -17,6 +18,9 @@ export default function Index({data}) {
       <article style={{marginTop:`${navHeigth}px`}}>
         <Home
           id="home"
+        />
+        <Wineries
+          
         />
         <Live
           data={data}

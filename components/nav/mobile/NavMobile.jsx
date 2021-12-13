@@ -4,7 +4,7 @@ import {
 } from 'react-scroll'
 import { useState } from 'react';
 
-const NavMobile = () => {
+const NavMobile = ({logo}) => {
     const [openMenu, setOpenMenu] = useState(false);
 
     const displayMenu = ()=>{
@@ -31,7 +31,7 @@ const NavMobile = () => {
             <div className={styles.navMobile_bar}>
                 <div className={styles.navMobile_logo_container}>
                     <img
-                        src="/logo/logo_blanco.png"
+                        src={logo}
                         className={styles.navMobile_logo}
                         alt={"logo de maridaje club"}
                     />
@@ -45,10 +45,10 @@ const NavMobile = () => {
                 (
                 <nav className={ `${styles.navMobile_nav} animate__animated animate__slideInDown animate__faster`} id="navMobile_nav">
                     <ul>
-                        <LinkScroll className={`${styles.navMobile_nav_li} ${styles.activeMobileLink}`} activeClass="activeMobileLink"  to="home"  spy={true}>Inicio</LinkScroll>
-                        <LinkScroll className={`${styles.navMobile_nav_li}`} activeClass="activeMobileLink"  to="home"  spy={true}>Eventos</LinkScroll>
-                        <LinkScroll className={`${styles.navMobile_nav_li}`} activeClass="activeMobileLink"  to="home"  spy={true}>Nosotros</LinkScroll>
-                        <LinkScroll className={`${styles.navMobile_nav_li}`} activeClass="activeMobileLink"  to="home"  spy={true}>Ingresar</LinkScroll>
+                        <LinkScroll className={`${styles.navMobile_nav_li} ${styles.activeMobileLink}`} activeClass="activeMobileLink"  to="home"  spy={true} onClick={()=> displayMenu()}>Inicio</LinkScroll>
+                        <LinkScroll className={`${styles.navMobile_nav_li}`} activeClass="activeMobileLink"  to="events"  spy={true} onClick={()=> displayMenu()}>Eventos</LinkScroll>
+                        <LinkScroll className={`${styles.navMobile_nav_li}`} activeClass="activeMobileLink"  to="home"  spy={true} onClick={()=> displayMenu()}>Nosotros</LinkScroll>
+                        <LinkScroll className={`${styles.navMobile_nav_li}`} activeClass="activeMobileLink"  to="home"  spy={true} onClick={()=> displayMenu()}>Ingresar</LinkScroll>
                     </ul>
                 </nav>
                 ):("")

@@ -29,10 +29,8 @@ const Slider = ({lives}) => {
         {
             lives.map((e,i)=>(
                 <SwiperSlide key={i} className={`${styles.swiper_slide}`}>
-                    <Image 
-                        priority
+                    <img 
                         src={`${e.cover}`}
-                        layout="fill"
                         className={styles.swiper_slide_img}
                     />
                 </SwiperSlide>
