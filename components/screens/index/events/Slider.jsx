@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/bundle";
 import "swiper/css/pagination"
-import styles from '../../styles/events/Slider.module.css'
+import styles from '../../../../styles/screens/index/events/Slider.module.css'
 // import Swiper core and required modules
 import SwiperCore, {Pagination} from 'swiper';
 // install Swiper modules

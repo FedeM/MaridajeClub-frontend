@@ -36,6 +36,14 @@
 }
 
 @media (min-width:800px){
+    .live_title i{
+        font-size: .75rem;
+    }
+    
+    .live_title h3{
+        font-size: 3rem;
+    }
+
     .live_category{
         justify-content: center;
     }

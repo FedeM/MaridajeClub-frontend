@@ -1,4 +1,4 @@
-import styles from '../../../styles/nav/NavMobile.module.css'
+import styles from '../../../../styles/layout/nav/NavMobile.module.css'
 import {
     Link as LinkScroll
 } from 'react-scroll'
@@ -47,7 +47,7 @@ const NavMobile = ({logo}) => {
                     <ul>
                         <LinkScroll className={`${styles.navMobile_nav_li} ${styles.activeMobileLink}`} activeClass="activeMobileLink"  to="home"  spy={true} onClick={()=> displayMenu()}>Inicio</LinkScroll>
                         <LinkScroll className={`${styles.navMobile_nav_li}`} activeClass="activeMobileLink"  to="events"  spy={true} onClick={()=> displayMenu()}>Eventos</LinkScroll>
-                        <LinkScroll className={`${styles.navMobile_nav_li}`} activeClass="activeMobileLink"  to="home"  spy={true} onClick={()=> displayMenu()}>Nosotros</LinkScroll>
+                        <LinkScroll className={`${styles.navMobile_nav_li}`} activeClass="activeMobileLink"  to="commerce"  spy={true} onClick={()=> displayMenu()}>Nosotros</LinkScroll>
                         <LinkScroll className={`${styles.navMobile_nav_li}`} activeClass="activeMobileLink"  to="home"  spy={true} onClick={()=> displayMenu()}>Ingresar</LinkScroll>
                     </ul>
                 </nav>

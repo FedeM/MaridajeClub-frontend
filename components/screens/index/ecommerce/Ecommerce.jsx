@@ -1,6 +1,6 @@
-import styles from '../../styles/ecommerce/Ecommerce.module.css'
+import styles from '../../../../styles/screens/index/ecommerce/Ecommerce.module.css'
 import Link from 'next/link'
-import CategoryProduct from '../categoryProduct/CategoryProduct';
+import CategoryProduct from '../../ecommerce/categoryProduct/CategoryProduct';
 
 
 const Ecommerce = ({id}) => {
@@ -17,7 +17,7 @@ const Ecommerce = ({id}) => {
                 </Link>
             </div>
             <CategoryProduct
-            
+                title="Más vendidos"
             />
         </section>
     );

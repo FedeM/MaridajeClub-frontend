@@ -1,4 +1,4 @@
-import styles from '../../../styles/nav/NavDesktop.module.css'
+import styles from '../../../../styles/layout/nav/NavDesktop.module.css'
 import {
     Link as LinkScroll
 } from 'react-scroll'
@@ -30,7 +30,7 @@ const NavDesktop = ({logo}) => {
                     <div className={styles.navDesktop_nav_marker} id="marker"></div>
                     <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} to="home"  spy={true} onClick={(e)=> selectMenuItem(e.target)}>Inicio</LinkScroll>
                     <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} to="events"  spy={true} onClick={(e)=> selectMenuItem(e.target)}>Eventos</LinkScroll>
-                    <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} to="home"  spy={true} onClick={(e)=> selectMenuItem(e.target)}>Nosotros</LinkScroll>
+                    <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} to="commerce"  spy={true} onClick={(e)=> selectMenuItem(e.target)}>Nosotros</LinkScroll>
                     <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} to="home"  spy={true} onClick={(e)=> selectMenuItem(e.target)}>Ingresar</LinkScroll>
                 </ul>
             </nav>
@@ -39,14 +39,3 @@ const NavDesktop = ({logo}) => {
 };
 
 export default NavDesktop;
-
-// const [menuHeight, setMenuHeight] = useState(0)
-
-    
-//     useEffect(()=>{
-//         const menu_container = document.getElementById('menu-container');
-//         setMenuHeight(menu_container.clientHeight)
-//         menuHeightNavToHome(menuHeight)
-
-//         //eslint-disable-next-line react-hooks/exhaustive-deps
-//     }, [menuHeight])

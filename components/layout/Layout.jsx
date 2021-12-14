@@ -1,7 +1,7 @@
-import Nav from "../nav/Nav";
+import Nav from "./nav/Nav";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import style from '../../styles/Layout.module.css'
+import style from '../../styles/layout/Layout.module.css'
 
 const Layout = ({children, home, title, description, setNavHeigth}) => {
     const [header, setHeader] = useState('')
@@ -33,7 +33,16 @@ const Layout = ({children, home, title, description, setNavHeigth}) => {
 
             <main>{children}</main>
 
-            <footer>
+            <footer className={style.footer}>
+                <div className={style.links}>
+                    <a href="">Terminos y condiciones</a>
+                    <a href="">Ayuda</a>
+                    <a href="">Defensa del consumidor</a>
+                    <a href="">Contáctanos</a>
+                </div>
+                <div className={style.copyright}>
+                    <p>Copyright 2021 © Maridaje Club</p>
+                </div>
             </footer>
         </>
     );

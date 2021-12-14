@@ -1,0 +1,25 @@
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+
+.footer{
+    border-top: 1px solid var(--global-gray3);
+    padding: 15px 30px;
+    font-size: 13px;
+}
+
+.links a{
+    color: var(--global-primary-text_color);
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.copyright{
+    margin-top: 10px;
+    font-weight: 200;
+}

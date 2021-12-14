@@ -1,4 +1,4 @@
-import styles from '../../styles/wineries/Wineries.module.css'
+import styles from '../../../../styles/screens/index/wineries/Wineries.module.css'
 
 const Wineries = () => {
     return (

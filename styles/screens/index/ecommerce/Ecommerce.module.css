@@ -1,5 +1,4 @@
 .ecommerce_section{
-    height: 100vh;
     padding: 55px 15px;
     position: relative;
 }
@@ -34,3 +33,22 @@
 
 
 /* ............................... */
+
+@media (min-width: 800px) {
+    .ecommerce_title i{
+        font-size: 2.25rem;
+    }
+
+    .ecommerce_title h3{
+        font-size: 3rem;
+    }
+
+    .ecommerce_text p{
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+
+    .ecommerce_text a{
+        font-size: 1.5rem;
+    }
+}

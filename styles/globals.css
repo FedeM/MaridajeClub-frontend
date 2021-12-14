@@ -10,6 +10,8 @@ body {
 
 a {
   color: #04c3e9;
+  color: var(--global-tertiary-color);
+  display: inline-block;
 }
 
 * {

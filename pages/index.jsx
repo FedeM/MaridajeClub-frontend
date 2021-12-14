@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import Ecommerce from '../components/ecommerce/Ecommerce'
-import Live from '../components/events/Live'
-import Home from '../components/home/Home'
+import Ecommerce from '../components/screens/index/ecommerce/Ecommerce'
+import Live from '../components/screens/index/events/Live'
+import Home from '../components/screens/index/home/Home'
 import Layout from '../components/layout/Layout'
-import Wineries from '../components/wineries/Wineries'
+import Wineries from '../components/screens/index/wineries/Wineries'
 
 
 export default function Index({data}) {

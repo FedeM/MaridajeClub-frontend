@@ -1,4 +1,4 @@
-import styles from '../../styles/events/Live.module.css'
+import styles from '../../../../styles/screens/index/events/Live.module.css'
 import Slider from './Slider';
 
 

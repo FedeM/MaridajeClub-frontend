@@ -1,10 +1,10 @@
-import styles from '../../styles/home/Home.module.css'
+import styles from '../../../../styles/screens/index/home/Home.module.css'
 import Image from 'next/image';
 import {
     Link as LinkScroll
 } from 'react-scroll'
 import { isDesktop } from 'react-device-detect';
-import ScrollDown from '../assets/scrollDown/ScrollDown'
+// import ScrollDown from '../assets/scrollDown/ScrollDown'
 import { useEffect, useState } from 'react';
 
 
@@ -25,7 +25,7 @@ const Home = ({id}) => {
                     </div>
                     <div>
                         <LinkScroll className={styles.home_btn} to="events" spy={true}>Eventos</LinkScroll>
-                        <LinkScroll className={styles.home_btn} to="events" spy={true}>Comprar</LinkScroll>
+                        <LinkScroll className={styles.home_btn} to="commerce" spy={true}>Comprar</LinkScroll>
                     </div>
                 </div>
                 <div className={styles.home_img_container}>
