@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Ecommerce from '../components/ecommerce/Ecommerce'
 import Live from '../components/events/Live'
 import Home from '../components/home/Home'
 import Layout from '../components/layout/Layout'
@@ -19,12 +20,13 @@ export default function Index({data}) {
         <Home
           id="home"
         />
-        <Wineries
-          
-        />
+        <Wineries/>
         <Live
           data={data}
           id="events"
+        />
+        <Ecommerce
+          id="commerce"
         />
       </article>
     </Layout>

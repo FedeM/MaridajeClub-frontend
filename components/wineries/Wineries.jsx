@@ -2,7 +2,7 @@ import styles from '../../styles/wineries/Wineries.module.css'
 
 const Wineries = () => {
     return (
-        <div className={styles.wineries_section}>
+        <section className={styles.wineries_section}>
             <div className={styles.wineries_slider}>
                 <div className={styles.wineries_slider_track}>
                     <div className={styles.winaries_slide}>
@@ -22,7 +22,7 @@ const Wineries = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

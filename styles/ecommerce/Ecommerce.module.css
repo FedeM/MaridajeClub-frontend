@@ -1,0 +1,36 @@
+.ecommerce_section{
+    height: 100vh;
+    padding: 55px 15px;
+    position: relative;
+}
+
+.ecommerce_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ecommerce_title i{
+    color: var(--global-tertiary-color);
+    font-size: 1.4rem;
+    margin-right: 1rem;
+}
+
+.ecommerce_title h3{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.ecommerce_text{
+    text-align: center;
+    margin: 15px 0;
+}
+
+.ecommerce_text a{
+    display: inline-block;
+    margin-top: 15px;
+}
+
+
+/* ............................... */

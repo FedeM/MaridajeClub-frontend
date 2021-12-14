@@ -1,5 +1,6 @@
 .live_section{
     padding: 55px 15px;
+    border-bottom: 1px solid var(--global-gray3);
 }
 
 .live_title{
