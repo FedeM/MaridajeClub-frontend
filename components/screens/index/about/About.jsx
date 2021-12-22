@@ -23,10 +23,10 @@ const About = ({id}) => {
                         <h3>Live Streaming & eCommerce</h3>
                         <p>Viví la única experiencia <span> Live Streaming Shopping</span> de bebidas, conoce a sus creadores y encontrá precios únicos</p>
                     </div>
-                    <div>
+                    {/* <div>
                         <LinkScroll className={styles.about_btn} to="home" spy={true}>Eventos</LinkScroll>
                         <LinkScroll className={styles.about_btn} to="commerce" spy={true}>Comprar</LinkScroll>
-                    </div>
+                    </div> */}
                 </div>
                 <div className={styles.about_img_container}>
                     <Image
@@ -36,13 +36,13 @@ const About = ({id}) => {
                         priority
                     />
                 </div>
-                <div className={styles.about_svg_background}>
+                {/* <div className={styles.about_svg_background}>
                     <img
                         className={styles.about_svg_background_svg}
                         src={isDesktop ?("/assets/svg/about/background2.svg"):("/assets/svg/about/background.svg")}
                         layout="fill"
                     />
-                </div>
+                </div> */}
             </div>
         </section>
     );

@@ -1,13 +1,21 @@
 import style from '../../../../styles/screens/ecommerce/categoriesNav/CategoriesNav.module.css'
 
 const CategoriesNav = () => {
-    // const sl = document.getElementById('categoryTrack').scrollLeft
-    // console.log(sl)
+    
+    const moveScroll = (dir)=>{
+        let scroll = document.getElementById('categoryTrack')
+
+        if (dir) {
+            scroll.scrollLeft += (scroll.scrollWidth / 3)
+        }else{
+            scroll.scrollLeft -= (scroll.scrollWidth / 3)
+        }
+    }
 
 
     return (
         <div className={style.categories_container}>
-            <div className={style.categorieArrow}><i className="fas fa-chevron-left"></i></div>
+            <div className={style.categorieArrow} onClick={()=> moveScroll(false)}><i className="fas fa-chevron-left"></i></div>
             <div className={style.categorieTrack} id='categoryTrack'>
                 <div className={style.item}>
                     <img src="/assets/iconsCategory/all.png" alt="" />
@@ -38,7 +46,7 @@ const CategoriesNav = () => {
                     <p>Otros</p>
                 </div>
             </div>
-            <div className={style.categorieArrow}><i className="fas fa-chevron-right"></i></div>
+            <div className={style.categorieArrow} onClick={()=> moveScroll(true)}><i className="fas fa-chevron-right"></i></div>
         </div>
     );
 };

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Layout from "../../components/layout/Layout";
-import CategoriesNav from "../../components/screens/ecommerce/categoriesNav/CategoriesNav";
+import Ecommerce from "../../components/screens/ecommerce/Ecommerce";
 
 const index = () => {
     const [navHeigth, setNavHeigth] = useState()
@@ -12,9 +12,7 @@ const index = () => {
             setNavHeigth={setNavHeigth}
         >
         <article style={{marginTop:`${navHeigth}px`}}>
-            <section>
-                <CategoriesNav/>
-            </section>
+            <Ecommerce/>
         </article>
         </Layout>
     );
