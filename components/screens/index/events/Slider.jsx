@@ -1,45 +1,40 @@
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/bundle";
-import "swiper/css/pagination"
 import styles from '../../../../styles/screens/index/events/Slider.module.css'
-// import Swiper core and required modules
-import SwiperCore, {Pagination} from 'swiper';
-// install Swiper modules
-SwiperCore.use([Pagination]);
-import Image from 'next/image'
-import {isMobile} from 'react-device-detect';
-
-
-
-
 
 const Slider = ({lives}) => {
     return (
-        <>
-        <Swiper 
-            slidesPerView={isMobile ? (1.2):(3.1)} 
-            spaceBetween={30} 
-            pagination={{
-                "clickable": true
-            }} className={styles.swiper}
-        >
-        {
-            lives.map((e,i)=>(
-                <SwiperSlide key={i} className={`${styles.swiper_slide}`}>
+        <div className={styles.last_events_container} id="slider">
+            <div className={styles.last_events_title}>
+                <i className="fas fa-redo"></i>
+                <h3>Ver de nuevo</h3>
+            </div>
+            <div className={styles.events_track}>
+                <div className={styles.event_img_box}>
                     <img 
-                        src={`${e.cover}`}
-                        className={styles.swiper_slide_img}
+                        src={'/assets/img/1.jpg'}
                     />
-                </SwiperSlide>
-
-            ))
-        }
-            
-        </Swiper>
-    </>
+                </div>
+                <div className={styles.event_img_box}>
+                    <img 
+                        src={'/assets/img/2.jpg'}
+                    />
+                </div>
+                <div className={styles.event_img_box}>
+                    <img 
+                        src={'/assets/img/1.jpg'}
+                    />
+                </div>
+                <div className={styles.event_img_box}>
+                    <img 
+                        src={'/assets/img/2.jpg'}
+                    />
+                </div>
+                <div className={styles.event_img_box}>
+                    <img 
+                        src={'/assets/img/1.jpg'}
+                    />
+                </div>
+            </div>
+        </div>
     );
 };
 

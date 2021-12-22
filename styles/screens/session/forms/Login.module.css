@@ -1,0 +1,87 @@
+.form{
+    margin-top: 15px;
+}
+
+.title{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.fields_container input{
+    width: 100%;
+    padding: 5px;
+}
+
+.fields{
+    margin-bottom: 10px;
+}
+
+.button_container{
+    display: flex;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.button_container button{
+    width: 80%;
+    padding: 10px;
+    border-radius: 35px;
+    background-color: var(--global-tertiary-color);
+    color: var(--global-primary-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.register{
+    text-align: center;
+    padding: 10px; 
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.social_media_register{
+    display: flex;
+    justify-content: center;
+}
+
+.social_button{
+    margin: 10px;
+    width: 50%;
+    padding: 10px;
+    border-radius: 35px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.social_button:nth-child(1){
+    background-color: #D34A40;
+}
+.social_button:nth-child(2){
+    background-color: #5773F2;
+}
+
+.social_button i{
+    margin-right: 10px;
+}
+
+@media (min-width: 700px) {
+    .title{
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    
+    .field_confirm{
+        display: flex;
+    }
+
+    .field_confirm .fields:nth-child(1){
+        margin-right: 15px;
+    }
+
+    .field_confirm .fields{
+        width: 50%;
+    }
+}

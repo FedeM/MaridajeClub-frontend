@@ -1,34 +1,34 @@
 import styles from '../../../../styles/screens/index/events/Live.module.css'
-import Slider from './Slider';
+import ReactPlayer from 'react-player/lazy'
 
 
 const Live = ({data, id}) => {
 
-    const handleCategory = (e)=>{
-        const live_categories = document.getElementById('live_category').childNodes
-        for (let i = 0; i < live_categories.length; i++) {
-            live_categories[i].classList.remove(`${styles.live_category_activate}`)
-        }
-        //Le agregamos la clase al elemento
-        e.classList.add(`${styles.live_category_activate}`)
-    }
 
     return (
-        <section className={styles.live_section} id={id}>
+        <div className={styles.live_box}>
             <div className={styles.live_title}>
-                <i className="fas fa-circle"></i>
-                <h3>Transmisiones</h3>
+                <h3>Por empezar</h3>
+                <i className="fas fa-video"></i>
             </div>
-            <div className={`${styles.live_category}`} id="live_category">
-                <p onClick={(e)=> handleCategory(e.target)} className={ `${styles.live_category_activate}`}>Por comenzar</p>
-                <p onClick={(e)=> handleCategory(e.target)}>Archivo</p>
-            </div>
-            <div className={styles.live_slider_container}>
-                <Slider
-                    lives={data}
+            <div className={styles.video_container}>
+                <ReactPlayer
+                    id="video"
+                    className={styles.react_player}
+                    url={'/assets/video/1.mp4'}
+                    playing
+                    loop
+                    muted
+                    width={'100%'}
+                    height={'100%'}
                 />
+                <span className={styles.live_alert}>Live</span>
+                <div className={styles.live_info_container}>
+                    <h4>Presentación Bodega Los Haroldos</h4>
+                    <span>Ingresar al evento</span>
+                </div>
             </div>
-        </section>
+        </div>
     );
 };
 

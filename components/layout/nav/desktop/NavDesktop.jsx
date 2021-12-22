@@ -2,9 +2,11 @@ import styles from '../../../../styles/layout/nav/NavDesktop.module.css'
 import {
     Link as LinkScroll
 } from 'react-scroll'
+import Link from 'next/link'
+import { useState } from 'react/cjs/react.development';
 
 
-const NavDesktop = ({logo}) => {
+const NavDesktop = ({logo, home}) => {
 
     
     const selectMenuItem = (e) =>{
@@ -28,10 +30,31 @@ const NavDesktop = ({logo}) => {
             <nav className={styles.navDesktop_nav}>
                 <ul>
                     <div className={styles.navDesktop_nav_marker} id="marker"></div>
-                    <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} to="home"  spy={true} onClick={(e)=> selectMenuItem(e.target)}>Inicio</LinkScroll>
-                    <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} to="events"  spy={true} onClick={(e)=> selectMenuItem(e.target)}>Eventos</LinkScroll>
-                    <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} to="commerce"  spy={true} onClick={(e)=> selectMenuItem(e.target)}>Nosotros</LinkScroll>
-                    <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} to="home"  spy={true} onClick={(e)=> selectMenuItem(e.target)}>Ingresar</LinkScroll>
+                    {
+                        home ?
+                        (
+                            <>
+                                <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} to="home"  spy={true} onClick={(e)=> selectMenuItem(e.target)}>Inicio</LinkScroll>
+                                <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} to="about"  spy={true} onClick={(e)=> selectMenuItem(e.target)}>Nosotros</LinkScroll>
+                                <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} to="commerce"  spy={true} onClick={(e)=> selectMenuItem(e.target)}>Comprar</LinkScroll>
+                                <Link href={'/session'}>
+                                    <a className={`${styles.navDesktop_nav_li}`}>
+                                        Ingresar
+                                    </a>
+                                </Link>
+                            </>
+                        )
+                        :
+                        (
+                            <>
+                                <Link  onClick={()=> displayMenu()} href={'/'}>
+                                    <a className={`${styles.navDesktop_nav_li}`}>
+                                        Inicio
+                                    </a>
+                                </Link>
+                            </>
+                        )
+                    }
                 </ul>
             </nav>
         </div>

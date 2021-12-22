@@ -4,7 +4,7 @@
 }
 
 .navMobile_bar{
-    background-color: var(--global-primary-color);
+    background-color: var(--global-primary-color_opacity);
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -97,6 +97,9 @@
     text-align: center;
     padding: 25px;
     border-bottom: 1px solid var(--global-gray4);
+    color: var(--global-primary-text_color);
+    text-decoration: none;
+    display: inline-block;
 }
 
 .animate__animated.animate__slideOutUp{

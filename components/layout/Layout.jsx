@@ -3,7 +3,7 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import style from '../../styles/layout/Layout.module.css'
 
-const Layout = ({children, home, title, description, setNavHeigth}) => {
+const Layout = ({children, title, description, setNavHeigth, home}) => {
     const [header, setHeader] = useState('')
     
     useEffect(()=>{
@@ -28,7 +28,9 @@ const Layout = ({children, home, title, description, setNavHeigth}) => {
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600;700;800;900&display=swap" crossOrigin="true"/>
             </Head>
             <header id="header" className={style.header}>
-                <Nav/>
+                <Nav
+                    home={home}
+                />
             </header>
 
             <main>{children}</main>

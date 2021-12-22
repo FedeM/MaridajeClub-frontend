@@ -3,8 +3,9 @@ import {
     Link as LinkScroll
 } from 'react-scroll'
 import { useState } from 'react';
+import Link from 'next/link'
 
-const NavMobile = ({logo}) => {
+const NavMobile = ({logo, home}) => {
     const [openMenu, setOpenMenu] = useState(false);
 
     const displayMenu = ()=>{
@@ -45,10 +46,31 @@ const NavMobile = ({logo}) => {
                 (
                 <nav className={ `${styles.navMobile_nav} animate__animated animate__slideInDown animate__faster`} id="navMobile_nav">
                     <ul>
-                        <LinkScroll className={`${styles.navMobile_nav_li} ${styles.activeMobileLink}`} activeClass="activeMobileLink"  to="home"  spy={true} onClick={()=> displayMenu()}>Inicio</LinkScroll>
-                        <LinkScroll className={`${styles.navMobile_nav_li}`} activeClass="activeMobileLink"  to="events"  spy={true} onClick={()=> displayMenu()}>Eventos</LinkScroll>
-                        <LinkScroll className={`${styles.navMobile_nav_li}`} activeClass="activeMobileLink"  to="commerce"  spy={true} onClick={()=> displayMenu()}>Nosotros</LinkScroll>
-                        <LinkScroll className={`${styles.navMobile_nav_li}`} activeClass="activeMobileLink"  to="home"  spy={true} onClick={()=> displayMenu()}>Ingresar</LinkScroll>
+                    {
+                        home ? 
+                        (
+                            <>
+                                <LinkScroll className={`${styles.navMobile_nav_li} ${styles.activeMobileLink}`} activeClass="activeMobileLink"  to="home"  spy={true} onClick={()=> displayMenu()}>Inicio</LinkScroll>
+                                <LinkScroll className={`${styles.navMobile_nav_li}`} activeClass="activeMobileLink"  to="about"  spy={true} onClick={()=> displayMenu()}>Nostros</LinkScroll>
+                                <LinkScroll className={`${styles.navMobile_nav_li}`} activeClass="activeMobileLink"  to="commerce"  spy={true} onClick={()=> displayMenu()}>Comprar</LinkScroll>
+                                <Link  onClick={()=> displayMenu()} href={'/session'}>
+                                    <a className={`${styles.navMobile_nav_li}`}>
+                                        Ingresar
+                                    </a>
+                                </Link>
+                            </>
+                        )
+                        :
+                        (
+                            <>
+                                <Link  onClick={()=> displayMenu()} href={'/'}>
+                                    <a className={`${styles.navMobile_nav_li}`}>
+                                        Inicio
+                                    </a>
+                                </Link>
+                            </>
+                        )
+                    }
                     </ul>
                 </nav>
                 ):("")

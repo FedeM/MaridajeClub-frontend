@@ -1,58 +1,102 @@
-.live_section{
-    padding: 55px 15px;
-    border-bottom: 1px solid var(--global-gray3);
+
+.video_container{
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
 }
 
 .live_title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: none;
 }
 
-.live_title i{
-    color: var(--global-secondary-color);
-    font-size: .5rem;
-    margin-right: 8px;
+.live_alert{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    background-color: var(--global-secondary-color);
+    border-radius: 10px;
+    animation: liveAlert .5s ease-in-out infinite alternate;
 }
 
-.live_title h3{
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 300;
+.live_info_container{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--global-gray4);
+    padding: 10px;
+    border-top: 2px solid var(--global-gray);
 }
 
-.live_category{
-    display: flex;
-    padding: 15px;
-    justify-content: space-evenly;
+.live_info_container h4{
+    font-size: 1.2rem;
 }
 
-.live_category p{
+.live_info_container span{
+    padding: 5px 5px;
+    margin-top: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    background-color: var(--global-tertiary-color);
+    color: var(--global-primary-color);
     cursor: pointer;
 }
 
-.live_category_activate{
-    color: var(--global-secondary-color);
+.live_info_container p{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
 }
 
-@media (min-width:800px){
+
+@media (min-width: 800px) {
+    .live_box{
+        width: 50%;
+        padding-right: 35px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .live_title{
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    
     .live_title i{
-        font-size: .75rem;
+        margin-left: 10px;
+        color: var(--global-secondary-color);
     }
     
     .live_title h3{
-        font-size: 3rem;
+        text-align: left;
+        font-size: 1.5rem;
+        font-weight: 500;
     }
 
-    .live_category{
-        justify-content: center;
+    .video_container{
+        width: 40%;
+        overflow: hidden;
+        border-radius: 5px;
+        position: relative;
     }
+}
 
-    .live_category p{
-        margin: 0 50px;
+
+@keyframes liveAlert {
+    0%{
+        opacity: 1;
     }
-
-    .live_slider_container{
-        margin-left: 5rem;
+    
+    50%{
+        opacity: .85;
+    }
+    
+    100%{
+        opacity: .6;
     }
 }

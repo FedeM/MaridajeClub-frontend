@@ -1,0 +1,112 @@
+.categories_container{
+    display: grid;
+    grid-template-columns: 12% 76% 12%;
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--global-gray3);
+    background-color: var(--global-gray5);
+}
+
+.categorieArrow{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff00;
+}
+
+.categorieTrack{
+    display: flex;
+    overflow: scroll;
+    border: 1px solid var(--global-gray3);
+    border-bottom: none;
+    border-top: none;
+}
+
+.categorieTrack::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
+.categorieTrack::-webkit-scrollbar-thumb{
+    background: #ffffff00;
+    border-radius: 0px;
+}
+.categorieTrack::-webkit-scrollbar-thumb:hover{
+    background: #ffffff00;
+}
+.categorieTrack::-webkit-scrollbar-track{
+    background: #ffffff00;
+    border-radius: 0px;
+    box-shadow: inset 0px 0px 0px 0px #f0f0f000;
+}
+
+.item{
+    min-width: 60px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.item img{
+    width: 70%;
+    filter: invert(100%);
+}
+
+.item p{
+    font-size: 1rem;
+    margin-top: 5px;
+    font-weight: 200;
+    transition: .5s;
+}
+
+.item:hover p{
+    color: var(--global-tertiary-color);
+    transition: .5s;
+}
+
+@media (min-width: 700px) {
+    .categories_container{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 15px 30px;
+    }
+
+    .categorieArrow{
+        display: none;
+    }
+
+    .categorieTrack{
+        display: flex;
+        overflow: scroll;
+        border: none;
+    }
+    .item img{
+        width: 70%;
+    }
+}
+
+
+@media (min-width: 800px) {
+
+    .item{
+        min-width: 50px;
+        max-width: 50px;
+        margin: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .item img{
+        width: 100%;
+    }
+    
+    .item p{
+        margin-top: 10px;
+    }
+}

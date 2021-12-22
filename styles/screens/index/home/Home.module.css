@@ -1,129 +1,38 @@
 .home_section{
-    position: relative;
-    height: 90vh;
-    overflow: hidden;
+    color: var(--global-primary-text_color);
+    padding-bottom: 35px;
 }
 
-.home_container{
-    position: relative;
+.live_title{
     display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.home_text_container{
-    margin-top: 35px;
-    padding: 15px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    text-align: center;
-    z-index: 1;
+    margin-bottom: 15px;
 }
 
-.home_text_container h3{
-    font-size: 2rem;
-}
-.home_text_container p span{
-    color: var(--global-tertiary-color);
-}
-
-.home_btn{
-    display: inline-block;
-    color: #fff;
-    padding: 10px;
-    font-size: 1.2rem;
-    border-radius: 10px;
-    margin: 15px 5px 0 5px;
-    cursor: pointer;
-}
-.home_btn:nth-child(2){
-    background-color: var(--global-secondary-color);
-}
-.home_btn:nth-child(1){
-    border: 1px solid var(--global-secondary-color);
+.live_title i{
     color: var(--global-secondary-color);
+    font-size: .5rem;
+    margin-right: 8px;
 }
 
-.home_img_container{
-    position: relative;
-    flex-grow: 1;
-    width: 100%;
+.live_title h2{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.live_container{
+    width: 70%;
     margin: auto;
-    z-index: 1;
 }
 
-.home_img_container_img{
-    object-fit: contain;
-}
 
-.home_svg_background{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    z-index: 0;
-}
 
-.home_svg_background_svg{
-    width: 100%;
-    z-index: 0;
-    opacity: .8;
-}
-
-@media (min-width:700px){ 
-    .home_text_container h3{
-        font-size: 3rem;
-    }
-    .home_text_container p{
-        font-size: 2rem;
-        width: 80%;
-        margin: 15px auto;
-    }
-
-    .home_btn{
-        font-size: 2rem;
-    }
-}
-
-@media (min-width:800px){    
-    .home_container{
-        flex-direction: row;
+@media (min-width: 800px) {
+    .live_container{
+        width: 90%;
+        display: flex;
     }
     
-    .home_text_container{
-        align-items: flex-start;
-        justify-content: center;
-        text-align: left;
-        width: 60%;
-        padding-left: 5%;
-        margin-top: 0px;
-    }
-    
-    .home_text_container h3{
-        font-size: 4rem;
-    }
-    .home_text_container p{
-        font-size: 1.5rem;
-        width: 100%;
-        margin: 0;
-    }
-
-    .home_btn{
-        font-size: 1.5rem;
-    }
-    
-    .home_img_container{
-        flex-grow: 0;
-        width: 40%;
-        margin: 0;
-    }
-    
-    .home_img_container_img{
-        object-fit: contain;
-    }
 }

@@ -37,6 +37,7 @@
     color: var(--global-text_color);
     cursor: pointer;
     font-weight: 400;
+    text-decoration: none;
 }
 
 .navDesktop_nav_marker{

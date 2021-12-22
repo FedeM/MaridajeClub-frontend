@@ -8,6 +8,10 @@ body {
   scroll-behavior: smooth;
 }
 
+body{
+  min-height: 100vh;
+}
+
 a {
   color: #04c3e9;
   color: var(--global-tertiary-color);
@@ -35,6 +39,7 @@ a {
   --global-gray2:#8C8C8C;
   --global-gray3:#595959;
   --global-gray4:#363636;
+  --global-gray5:#212121;
 
   --global-error:#BF1F1F;
   --global-warning:#ffee00;
