@@ -3,6 +3,7 @@ import Ecommerce from '../components/screens/index/ecommerce/Ecommerce'
 import Home from '../components/screens/index/home/Home'
 import Layout from '../components/layout/Layout'
 import Wineries from '../components/screens/index/wineries/Wineries'
+import About from '../components/screens/index/about/About'
 
 
 export default function Index({data}) {
@@ -21,6 +22,7 @@ export default function Index({data}) {
           id="home"
         />
         <Wineries/>
+        <About id="about"/>
         <Ecommerce
           id="commerce"
         />

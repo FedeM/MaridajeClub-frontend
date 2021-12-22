@@ -29,7 +29,7 @@ const NavMobile = ({logo, home}) => {
 
     return (
         <div className={styles.navMobile_container}>
-            <div className={styles.navMobile_bar}>
+            <div className={styles.navMobile_bar} style={openMenu ? ({backgroundColor:"var(--global-primary-color)"}):({})}>
                 <div className={styles.navMobile_logo_container}>
                     <img
                         src={logo}
