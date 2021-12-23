@@ -4,6 +4,7 @@ import { BrowserView, MobileView} from 'react-device-detect';
 import ProductFilterResponsive from "./productFilter/Responsive/ProductFilterResponsive";
 import CategoryProduct from './categoryProduct/CategoryProduct'
 import { useEffect, useState } from "react";
+import FilterDesktop from "./productFilter/Desktop/FilterDesktop";
 
 const Ecommerce = () => {
     const [mounted, setMounted] = useState(false)
@@ -20,7 +21,12 @@ const Ecommerce = () => {
                 <CategoryProduct title="Vinos"/>
             </MobileView>
             <BrowserView>
-
+                <div className={styles.browserView_container}>
+                    <FilterDesktop/>
+                    <div>
+                        <CategoryProduct title={"Vinos"}/>
+                    </div>
+                </div>
             </BrowserView>
         </section>
     );

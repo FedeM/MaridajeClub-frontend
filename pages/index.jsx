@@ -17,13 +17,14 @@ export default function Index({data}) {
       setNavHeigth={setNavHeigth}
       home
     >
-      <article style={{marginTop:`${navHeigth}px`}}>
+      <article style={{paddingTop:`15vh`}}>
         <Home
           id="home"
         />
         <Wineries/>
         <About id="about"/>
         <Ecommerce
+          home
           id="commerce"
         />
       </article>

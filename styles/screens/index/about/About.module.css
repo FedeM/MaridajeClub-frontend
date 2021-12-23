@@ -1,6 +1,5 @@
 .about_section{
     position: relative;
-    height: 100vh;
     overflow: hidden;
 }
 
@@ -50,12 +49,13 @@
     position: relative;
     flex-grow: 1;
     width: 100%;
-    margin: auto;
+    margin: 50px auto;
     z-index: 1;
 }
 
 .about_img_container_img{
     object-fit: contain;
+    width: 100%;
 }
 
 .about_svg_background{
@@ -91,6 +91,12 @@
 }
 
 @media (min-width:800px){    
+    .about_section{
+        position: relative;
+        overflow: hidden;
+        height: 100vh;
+    }
+    
     .about_container{
         flex-direction: row;
     }
@@ -121,6 +127,8 @@
         flex-grow: 0;
         width: 40%;
         margin: 0;
+        display: flex;
+        align-items: center;
     }
     
     .about_img_container_img{

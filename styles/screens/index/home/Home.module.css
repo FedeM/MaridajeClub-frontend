@@ -27,12 +27,11 @@
     margin: auto;
 }
 
-
-
 @media (min-width: 800px) {
     .live_container{
-        width: 90%;
-        display: flex;
+        width: 85%;
+        margin: auto;
+        margin-left: 15%;
     }
     
 }

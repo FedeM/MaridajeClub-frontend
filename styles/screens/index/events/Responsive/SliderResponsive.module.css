@@ -53,22 +53,3 @@
   overflow: hidden;
   border-radius: 10px;
 }
-
-@media (min-width: 800px) {
-  .last_events_container{
-    width: 50%;
-    margin: 0px 0;
-    padding-left: 35px;
-    border-left: 1px solid var(--global-gray3);
-  }
-
-  .events_track{
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .event_img_box{
-    cursor: pointer;
-    max-width: 100px;
-  }
-}

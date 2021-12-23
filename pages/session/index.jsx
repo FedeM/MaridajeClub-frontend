@@ -11,7 +11,7 @@ const index = () => {
             description={"Login de Maridaje Club"}
             setNavHeigth={setNavHeigth}
         >
-            <article style={{marginTop:`${navHeigth}px`}}>
+            <article style={{paddingTop:`15vh`}}>
                 <Session/>
             </article>
         </Layout>

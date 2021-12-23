@@ -11,6 +11,7 @@
     border-top: 1px solid var(--global-gray3);
     padding: 15px 30px;
     font-size: 13px;
+    background-color: var(--global-primary-color);
 }
 
 .links a{

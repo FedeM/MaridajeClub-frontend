@@ -1,7 +1,14 @@
-import styles from '../../../../styles/screens/index/events/Slider.module.css'
+import { useEffect, useState } from 'react';
+import styles from '../../../../../styles/screens/index/events/Responsive/SliderResponsive.module.css'
 
-const Slider = ({lives}) => {
-    return (
+const SliderResponsive = ({lives}) => {
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(()=>{
+        setMounted(true)
+    },[mounted])
+
+    return mounted && (
         <div className={styles.last_events_container} id="slider">
             <div className={styles.last_events_title}>
                 <i className="fas fa-redo"></i>
@@ -38,7 +45,7 @@ const Slider = ({lives}) => {
     );
 };
 
-export default Slider;
+export default SliderResponsive;
 
 
 {/* <ReactPlayer

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import CategoryProduct from '../../ecommerce/categoryProduct/CategoryProduct';
 
 
-const Ecommerce = ({id}) => {
+const Ecommerce = ({id, home}) => {
     return (
         <section id={id} className={styles.ecommerce_section}>
             <div className={styles.ecommerce_title}>
@@ -17,6 +17,7 @@ const Ecommerce = ({id}) => {
                 </Link>
             </div>
             <CategoryProduct
+                home={home}
                 title="Más vendidos"
             />
         </section>

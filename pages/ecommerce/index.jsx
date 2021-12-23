@@ -11,7 +11,7 @@ const index = () => {
             description="Compra de vinos y bebidas"
             setNavHeigth={setNavHeigth}
         >
-        <article style={{marginTop:`${navHeigth}px`}}>
+        <article style={{paddingTop:`15vh`}}>
             <Ecommerce/>
         </article>
         </Layout>
