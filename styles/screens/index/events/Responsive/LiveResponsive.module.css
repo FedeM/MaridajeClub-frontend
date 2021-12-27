@@ -30,24 +30,50 @@
 }
 
 .liveRes_info_container h4{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
-.liveRes_info_container span{
-    padding: 5px 5px;
-    margin-top: 10px;
-    display: inline-block;
-    border-radius: 5px;
+.liveRes_info_container button{
     background-color: var(--global-tertiary-color);
     color: var(--global-primary-color);
+    padding: 10px 25px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
     cursor: pointer;
+    margin-top: 5px;
 }
 
-.liveRes_info_container p{
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
+.liveRes_info_container button:hover{
+    filter: brightness(1.2);
+}
+
+.liveRes_text{
+    display: none;
+}
+
+.date_container div{
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.date_container div i{
+    margin-right: 10px;
+}
+
+@media (min-width: 700px) {
+    .videoRes_container{
+        width: 70%;
+        margin: auto;
+    }
+    .liveRes_text{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        margin: 15px 0;
+    }
 }
 
 @keyframes liveAlert {

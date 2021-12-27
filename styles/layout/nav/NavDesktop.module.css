@@ -50,3 +50,25 @@
     transition: 0.5s;
     border-radius: 4px;
 }
+
+.activeClass::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background-color: var(--global-tertiary-color);
+    bottom: -5px;
+    transition: 0.5s;
+    border-radius: 4px;
+    animation: activeClass .5s ease normal forwards;
+}
+
+@keyframes activeClass {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}

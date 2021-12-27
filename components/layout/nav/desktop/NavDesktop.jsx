@@ -3,7 +3,6 @@ import {
     Link as LinkScroll
 } from 'react-scroll'
 import Link from 'next/link'
-import { useState } from 'react/cjs/react.development';
 
 
 const NavDesktop = ({logo, home}) => {
@@ -34,9 +33,9 @@ const NavDesktop = ({logo, home}) => {
                         home ?
                         (
                             <>
-                                <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} to="home"  spy={true} onClick={(e)=> selectMenuItem(e.target)}>Inicio</LinkScroll>
-                                <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} to="about"  spy={true} onClick={(e)=> selectMenuItem(e.target)}>Nosotros</LinkScroll>
-                                <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} to="commerce"  spy={true} onClick={(e)=> selectMenuItem(e.target)}>Comprar</LinkScroll>
+                                <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} activeClass={styles.activeClass} to="home"  spy={true}>Inicio</LinkScroll>
+                                <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} activeClass={styles.activeClass} to="about"  spy={true}>Nosotros</LinkScroll>
+                                <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} activeClass={styles.activeClass} to="commerce"  spy={true}>Comprar</LinkScroll>
                                 <Link href={'/session'}>
                                     <a className={`${styles.navDesktop_nav_li}`}>
                                         Ingresar

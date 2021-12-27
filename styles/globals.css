@@ -48,7 +48,7 @@ a {
   --ligth-primary-text_color: #000;
 
   --dark-primary-color:#1a1a1a;
-  --dark-primary-color_opacity:#1a1a1ac4;
+  --dark-primary-color_opacity:#1a1a1a50;
   --dark-secondary-color:#FF2A3F;
   --dark-tertiary-color:#F2D43D;
   --dark-primary-text_color: #fff;
@@ -64,10 +64,4 @@ a {
   user-select: none; 
 }
 
-@media (min-width: 800px) {
-  body{
-    background-image: url('../public/assets/img/background_blur.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-  }
-}
+

@@ -60,9 +60,14 @@
     color: var(--global-primary-color);
     padding: 10px 25px;
     border-radius: 15px;
-    border: none;
+    border: 1px solid var(--global-tertiary-color);
     outline: none;
     cursor: pointer;
+    transition: .5s;
+}
+
+.live_info_container button:hover{
+    filter: brightness(1.2);
 }
 
 .date_container{

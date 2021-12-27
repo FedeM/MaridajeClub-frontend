@@ -4,7 +4,7 @@ import Home from '../components/screens/index/home/Home'
 import Layout from '../components/layout/Layout'
 import Wineries from '../components/screens/index/wineries/Wineries'
 import About from '../components/screens/index/about/About'
-
+import style from '../styles/screens/index/Index.module.css'
 
 export default function Index({data}) {
 
@@ -17,7 +17,7 @@ export default function Index({data}) {
       setNavHeigth={setNavHeigth}
       home
     >
-      <article style={{paddingTop:`15vh`}}>
+      <article style={{paddingTop:`15vh`}} className={style.article}>
         <Home
           id="home"
         />

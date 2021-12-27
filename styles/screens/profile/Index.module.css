@@ -1,0 +1,6 @@
+@media (min-width: 800px) {
+    .article{
+        display: flex;
+        padding-bottom: 15px;
+    }
+}
