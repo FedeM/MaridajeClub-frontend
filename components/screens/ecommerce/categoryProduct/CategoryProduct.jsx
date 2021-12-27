@@ -3,10 +3,14 @@ import styles from './CategoryProduct.module.css'
 
 const CategoryProduct = ({title, home}) => {
     return (
-        <div className={styles.product_section} style={home?({}):({background: `var(--global-primary-color)`})}>
-            <div className={styles.product_section_title}>
-                <h4>{title}</h4>
-            </div>
+        <div className={styles.product_section}>
+        {
+            home && (
+                <div className={styles.product_section_title}>
+                    <h4>{title}</h4>
+                </div>
+            )
+        }
             <div className={styles.product_container}>
                 <ProductCard
                     name="Vino 1"

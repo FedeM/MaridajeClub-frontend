@@ -18,7 +18,7 @@ const Register = ({setLogin}) => {
                     </div>
                     <div className={styles.fields}>
                         <label htmlFor="username">Confirmar correo electrónico</label>
-                        <input type="text" id='username' placeholder='user@gmail.com'/>
+                        <input type="text" id='re-username' placeholder='user@gmail.com'/>
                     </div>
                 </div>
                 <div className={styles.field_confirm}>
@@ -28,7 +28,7 @@ const Register = ({setLogin}) => {
                     </div>
                     <div className={styles.fields}>
                         <label htmlFor="password">Confirmar contraseña</label>
-                        <input type="password" id='password' placeholder='*******'/>
+                        <input type="password" id='re-password' placeholder='*******'/>
                     </div>
                 </div>
             </div>

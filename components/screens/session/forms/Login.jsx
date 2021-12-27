@@ -13,7 +13,7 @@ const Login = ({setLogin}) => {
                 </div>
                 <div className={styles.fields}>
                     <label htmlFor="password">Contraseña</label>
-                    <input type="password" id='password' placeholder='*******'/>
+                    <input type="password" id='password' placeholder='*********'/>
                 </div>
             </div>
             <div className={styles.forget_password}>

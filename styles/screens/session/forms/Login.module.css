@@ -10,11 +10,30 @@
 
 .fields_container input{
     width: 100%;
-    padding: 5px;
+    padding: 5px 0;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--global-gray2);
+    transition: .5s;
+    color: var(--global-primary-text_color);
+}
+
+.fields_container input:focus{
+    border-bottom: 1px solid var(--global-gray);
 }
 
 .fields{
     margin-bottom: 10px;
+}
+
+.forget_password a{
+    color: var(--global-gray2);
+    transition: .5s;
+}
+
+.forget_password a:hover{
+    color: var(--global-gray);
 }
 
 .button_container{
@@ -32,13 +51,38 @@
     font-size: 1.3rem;
     font-weight: 600;
     cursor: pointer;
+    transition: .5s;
+}
+
+
+.button_container button:hover{
+    filter: brightness(1.2);
 }
 
 .register{
+    width: max-content;
+    margin: auto;
     text-align: center;
     padding: 10px; 
     font-size: 1.3rem;
     cursor: pointer;
+    position: relative;
+}
+
+.register::before{
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 0;
+    transition: .5s;
+    background-color: var(--global-tertiary-color);
+    height: 1px;
+}
+
+.register:hover::before{
+    width: 100%;
+    transition: .5s;
 }
 
 .social_media_register{
@@ -53,6 +97,11 @@
     border-radius: 35px;
     text-align: center;
     cursor: pointer;
+    transition: .5s;
+}
+
+.social_button:hover{
+    filter: brightness(1.2);
 }
 
 .social_button:nth-child(1){

@@ -18,14 +18,13 @@ const Ecommerce = () => {
             <CategoriesNav/>
             <MobileView>
                 <ProductFilterResponsive/>
-                <CategoryProduct title="Vinos"/>
+                <CategoryProduct title="Vinos" home/>
             </MobileView>
             <BrowserView>
                 <div className={styles.browserView_container}>
-                    <FilterDesktop/>
-                    <div>
-                        <CategoryProduct title={"Vinos"}/>
-                    </div>
+                    <FilterDesktop name={'Vinos'}/>
+                    <CategoryProduct/>
+                    
                 </div>
             </BrowserView>
         </section>
