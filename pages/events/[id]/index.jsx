@@ -8,10 +8,21 @@ import Link from "next/link";
 import style from '../../../styles/screens/events/Event.module.css'
 import { Router } from "next/router";
 
+//Variables de prueba
+const user = {
+    name:"santillienzo",
+    photo:"/assets/img/profile/user.png"
+}
 
 const index = () => {
     const [mounted, setMounted] = useState(false)
     const [leaveAlert, setLeaveAlert] = useState(false)
+    const [post, setPost] = useState({
+        photo: "",
+        user: "",
+        msg:""
+    })
+    const [posts, setPosts] = useState([])
 
     const leave = ()=>{
         return leaveAlert && (
@@ -28,8 +39,8 @@ const index = () => {
                         <div className={style.modal_button} onClick={()=>setLeaveAlert(false)}>Cancelar</div>
                         <Link href="/">
                             <a className={style.modal_button} onClick={()=> {
-                                Router.push('/')
                                 setLeaveAlert(false)
+                                Router.push('/')
                             }}>Salir</a>
                         </Link>
                     </div>
@@ -37,6 +48,28 @@ const index = () => {
             </div>
         )
     }
+
+    const handleChange = (e)=>{
+        const {value} = e.target;
+        setPost({
+            photo:user.photo,
+            user:user.name,
+            msg:value
+        })
+    }
+
+    const submitPost = (e)=>{
+        e.preventDefault()
+        setPosts([...posts,{
+            photo: post.photo,
+            user: post.user,
+            msg: post.msg
+        }])
+        e.target.reset()
+        console.log(posts)
+    }
+
+
 
     useEffect(()=>{
         setMounted(true)
@@ -48,10 +81,20 @@ const index = () => {
             description={"Descripción video"}
         >
             <MobileView>
-                <EventResponsive setLeaveAlert={setLeaveAlert}/>
+                <EventResponsive 
+                    setLeaveAlert={setLeaveAlert}
+                    submitPost={submitPost}
+                    handleChange={handleChange}
+                    posts={posts}
+                />
             </MobileView>
             <BrowserView>
-                <EventDesktop setLeaveAlert={setLeaveAlert}/>
+                <EventDesktop 
+                    setLeaveAlert={setLeaveAlert}
+                    submitPost={submitPost}
+                    handleChange={handleChange}
+                    posts={posts}
+                />
             </BrowserView>
             {leave()}
         </Layout>

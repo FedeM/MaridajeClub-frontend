@@ -1,9 +1,7 @@
 import style from '../../../styles/screens/events/EventDesktop.module.css'
 import ReactPlayer from "react-player";
-import Link from 'next/link'
-import { useState } from 'react';
 
-const EventDesktop = ({setLeaveAlert}) => {
+const EventDesktop = ({setLeaveAlert, submitPost, posts, handleChange}) => {
 
 
     return (
@@ -30,31 +28,24 @@ const EventDesktop = ({setLeaveAlert}) => {
                     <div className={style.chat_box}>
                         <div className={style.chat_div}>
                             <div className={style.chat_container}>
-                                <div className={style.chat}>
-                                    <div className={style.chat_msg}>
-                                        <div className={style.chat_msg_img}>
-                                            <img src="/assets/img/profile/user.png" alt="" />
-                                        </div>
-                                        <div className={style.chat_msg_text}>
-                                            <h5>manumoretta</h5>
-                                            <p>Holaaa, bienvenidos a MaridajeClub!!</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className={style.chat}>
-                                    <div className={style.chat_msg}>
-                                        <div className={style.chat_msg_img}>
-                                            <img src="/assets/img/profile/user.png" alt="" />
-                                        </div>
-                                        <div className={style.chat_msg_text}>
-                                            <h5>manumoretta</h5>
-                                            <p>Holaaa, bienvenidos a MaridajeClub!!</p>
+                            {
+                                posts.map((e,i)=>(
+                                    <div className={style.chat} key={i}>
+                                        <div className={style.chat_msg}>
+                                            <div className={style.chat_msg_img}>
+                                                <img src={e.photo} alt="" />
+                                            </div>
+                                            <div className={style.chat_msg_text}>
+                                                <h5>{e.user}</h5>
+                                                <p>{e.msg}</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                ))
+                            }
                             </div>
-                            <form>
-                                <input type="text" placeholder="Escribe un mensaje aquí..."/>
+                            <form onSubmit={(e)=> submitPost(e)}>
+                                <input type="text" placeholder="Escribe un mensaje aquí..." onChange={(e)=>handleChange(e)}/>
                                 <button>Publicar</button>
                             </form>
                         </div>

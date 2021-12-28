@@ -1,9 +1,8 @@
 import style from '../../../styles/screens/events/EventResponsive.module.css'
 import ReactPlayer from "react-player";
-import Link from 'next/link'
 
 
-const EventResponsive = ({setLeaveAlert}) => {
+const EventResponsive = ({setLeaveAlert,submitPost, posts, handleChange}) => {
     return (
         <div className={style.live_container}>
             <ReactPlayer
@@ -19,45 +18,22 @@ const EventResponsive = ({setLeaveAlert}) => {
             <div className={style.live_close} onClick={()=>setLeaveAlert(true)}>X</div>
             <div className={style.chat}>
                 <div className={style.chat_container}>
-                    <div className={style.chat_msg}>
-                        <div className={style.chat_msg_img}>
-                            <img src="/assets/img/profile/user.png" alt="" />
+                {
+                    posts.map((e,i)=>(
+                        <div className={style.chat_msg} key={i}>
+                            <div className={style.chat_msg_img}>
+                                <img src={e.photo} alt="" />
+                            </div>
+                            <div className={style.chat_msg_text}>
+                                <h5>{e.user}</h5>
+                                <p>{e.msg}</p>
+                            </div>
                         </div>
-                        <div className={style.chat_msg_text}>
-                            <h5>manumoretta</h5>
-                            <p>Holaaa, bienvenidos a MaridajeClub!!</p>
-                        </div>
-                    </div>
-                    <div className={style.chat_msg}>
-                        <div className={style.chat_msg_img}>
-                            <img src="/assets/img/profile/user.png" alt="" />
-                        </div>
-                        <div className={style.chat_msg_text}>
-                            <h5>santillienzo</h5>
-                            <p>Holaaa soy Enzoo, como les va?</p>
-                        </div>
-                    </div>
-                    <div className={style.chat_msg}>
-                        <div className={style.chat_msg_img}>
-                            <img src="/assets/img/profile/user.png" alt="" />
-                        </div>
-                        <div className={style.chat_msg_text}>
-                            <h5>santillienzo</h5>
-                            <p>Holaaa soy Enzoo, como les va?</p>
-                        </div>
-                    </div>
-                    <div className={style.chat_msg}>
-                        <div className={style.chat_msg_img}>
-                            <img src="/assets/img/profile/user.png" alt="" />
-                        </div>
-                        <div className={style.chat_msg_text}>
-                            <h5>santillienzo</h5>
-                            <p>Holaaa soy Enzoo, como les va?</p>
-                        </div>
-                    </div>
+                    ))
+                }
                 </div>
-                <form>
-                    <input type="text" placeholder="Escribe un mensaje aquí..."/>
+                <form onSubmit={(e)=> submitPost(e)}>
+                    <input type="text" placeholder="Escribe un mensaje aquí..." onChange={(e)=>handleChange(e)}/>
                     <button>Publicar</button>
                 </form>
             </div>
