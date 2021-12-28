@@ -16,6 +16,8 @@ export default function Index({data}) {
       description="Descripción"
       setNavHeigth={setNavHeigth}
       home
+      nav
+      footer
     >
       <article style={{paddingTop:`15vh`}} className={style.article}>
         <Home

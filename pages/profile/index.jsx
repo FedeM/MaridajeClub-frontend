@@ -13,6 +13,8 @@ const index = () => {
             title={'Profile'}
             description={'Descripción del perfil'}
             setNavHeigth={setNavHeigth}
+            nav
+            footer
         >
             <article style={{paddingTop:`15vh`}} className={style.article}>
                 <UserInfo/> 

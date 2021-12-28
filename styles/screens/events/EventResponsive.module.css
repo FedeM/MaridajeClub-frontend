@@ -1,0 +1,152 @@
+.live_container{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    overflow: hidden;
+    max-height: 100vh;
+}
+
+.live{
+    position: relative;
+}
+.live_alert{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    background-color: var(--global-secondary-color);
+    border-radius: 10px;
+    animation: liveAlert .5s ease-in-out infinite alternate;
+}
+
+.live_close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: var(--global-secondary-color);
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.chat{
+    position: absolute;
+    bottom: 0px;
+    padding: 15px 0;
+    width: 100%;
+    margin: auto;
+    background: rgb(109,117,129);
+    background: linear-gradient(180deg, rgba(109,117,129,0) 0%, rgba(26,26,26,1) 100%);
+}
+
+.chat_container{
+    margin-bottom: 15px;
+    overflow-y: scroll;
+    max-height: 140px;
+}
+.chat_container::-webkit-scrollbar{
+    display: none;
+}
+
+.chat_msg{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.chat_msg_img{
+    min-width: 30px;
+    min-height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+    background-color: rgb(143, 143, 219);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.chat_msg_img img{
+    width: 100%;
+}
+
+.chat_msg_text{
+    font-size: 1rem;
+}
+
+.chat form{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    border: 1px solid var(--global-gray);
+    border-radius: 50px;
+}
+
+.chat input{
+    flex-grow: 3;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.chat input::placeholder{
+    color: var(--global-gray);
+}
+
+.chat button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    flex-grow: 1;
+    color: var(--global-gray);
+}
+
+
+@media (min-width: 700px) {
+    .live_alert{
+        padding: 8px 16px;
+        font-size: 1.5rem;
+        animation: liveAlert .5s ease-in-out infinite alternate;
+    }
+
+    .chat_container{
+        max-height: 224px;
+    }
+    
+    .live_close{
+        padding: 8px 16px;
+        font-size: 1.5rem;
+    }
+
+    .chat_msg_img{
+        min-width: 56px;
+        min-height: 56px;
+        max-width: 56px;
+        max-height: 56px;
+    }
+    .chat_msg_text{
+        font-size: 1.5rem;
+    }
+    
+    .chat input{
+        font-size: 1.5rem;
+    }
+    
+    .chat button{font-size: 1.5rem;
+    }
+}
+
+@keyframes liveAlert {
+    0%{
+        opacity: 1;
+    }
+    
+    50%{
+        opacity: .85;
+    }
+    
+    100%{
+        opacity: .6;
+    }
+}

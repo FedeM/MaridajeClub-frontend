@@ -3,12 +3,14 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import style from '../../styles/layout/Layout.module.css'
 
-const Layout = ({children, title, description, setNavHeigth, home}) => {
+const Layout = ({children, title, description, setNavHeigth, home, nav, footer}) => {
     const [header, setHeader] = useState('')
     
     useEffect(()=>{
-        setHeader(document.getElementById('header').clientHeight)
-        setNavHeigth(header)
+        if (nav) {
+            setHeader(document.getElementById('header').clientHeight)
+            setNavHeigth(header)
+        }
     })
     
     return (
@@ -27,25 +29,32 @@ const Layout = ({children, title, description, setNavHeigth, home}) => {
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600;700;800;900&display=swap" crossOrigin="true"/>
             </Head>
-            <header id="header" className={style.header}>
-                <Nav
-                    home={home}
-                />
-            </header>
+            {
+                nav &&(
+                    <header id="header" className={style.header}>
+                        <Nav
+                            home={home}
+                        />
+                    </header>
+                ) 
+            }
 
             <main>{children}</main>
-
-            <footer className={style.footer}>
-                <div className={style.links}>
-                    <a href="">Terminos y condiciones</a>
-                    <a href="">Ayuda</a>
-                    <a href="">Defensa del consumidor</a>
-                    <a href="">Contáctanos</a>
-                </div>
-                <div className={style.copyright}>
-                    <p>Copyright 2021 © Maridaje Club</p>
-                </div>
-            </footer>
+            {
+                footer && (
+                    <footer className={style.footer}>
+                        <div className={style.links}>
+                            <a href="">Terminos y condiciones</a>
+                            <a href="">Ayuda</a>
+                            <a href="">Defensa del consumidor</a>
+                            <a href="">Contáctanos</a>
+                        </div>
+                        <div className={style.copyright}>
+                            <p>Copyright 2021 © Maridaje Club</p>
+                        </div>
+                    </footer>
+                )
+            }
         </>
     );
 };

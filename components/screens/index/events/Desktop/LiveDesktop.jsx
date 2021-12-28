@@ -1,7 +1,7 @@
 import ReactPlayer from 'react-player';
 import styles from '../../../../../styles/screens/index/events/Desktop/Live.module.css'
 
-const LiveDesktop = () => {
+const LiveDesktop = ({enterEvent}) => {
     return (
         <div className={styles.live_box}>
             <div className={styles.live_title}>
@@ -29,7 +29,7 @@ const LiveDesktop = () => {
                         <div><i className="far fa-calendar-alt"></i><p>22 - 12 - 2021</p></div>
                         <div><i className="far fa-clock"></i><p>16:15</p></div>
                     </div>
-                    <button>Ingresar al evento</button>
+                    <button onClick={()=> enterEvent()}>Ingresar al evento</button>
                 </div>
             </div>
         </div>

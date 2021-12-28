@@ -10,6 +10,8 @@ const index = () => {
             title={"Login"}
             description={"Login de Maridaje Club"}
             setNavHeigth={setNavHeigth}
+            nav
+            footer
         >
             <article style={{paddingTop:`15vh`}}>
                 <Session/>

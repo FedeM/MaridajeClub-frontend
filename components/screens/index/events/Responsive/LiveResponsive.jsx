@@ -3,13 +3,9 @@ import ReactPlayer from 'react-player/lazy'
 import { useEffect, useState } from 'react';
 
 
-const LiveResponsive = ({data, id}) => {
+const LiveResponsive = ({data, enterEvent}) => {
     const [mounted, setMounted] = useState(false)
 
-    const fullScreen = ()=>{
-        const video = document.getElementById('video')
-        video.requestFullscreen()
-    }
 
     useEffect(()=>{
         setMounted(true)
@@ -39,7 +35,7 @@ const LiveResponsive = ({data, id}) => {
                         <div><i className="far fa-calendar-alt"></i><p>22 - 12 - 2021</p></div>
                         <div><i className="far fa-clock"></i><p>16:15</p></div>
                     </div>
-                    <button onClick={()=> fullScreen()}>Ingresar al evento</button>
+                    <button onClick={()=> enterEvent()}>Ingresar al evento</button>
                 </div>
             </div>
         </div>
