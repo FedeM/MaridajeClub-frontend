@@ -8,6 +8,30 @@
     margin-bottom: 15px;
 }
 
+.form_div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+.form_div div{
+    width: 45%;
+    height: 1px;
+    background-color: var(--global-tertiary-color);
+}
+
+.error{
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid var(--global-secondary-color);
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: rgb(218, 118, 118);
+    transition: .5s;
+}
+
 .fields_container input{
     width: 100%;
     padding: 5px 0;
@@ -23,8 +47,43 @@
     border-bottom: 1px solid var(--global-gray);
 }
 
+.fields_container .errorInput{
+    border-bottom: 1px solid var(--global-secondary-color);
+}
+.fields_container .errorInput:focus{
+    border-bottom: 1px solid var(--global-secondary-color);
+}
+
 .fields{
     margin-bottom: 10px;
+}
+
+.input_container{
+    display: flex;
+    align-items: center;
+}
+
+.input_help{
+    width: 1rem;
+    height: 1rem;
+    position: relative;
+    margin-left: 10px;
+}
+
+.input_help i:hover ~ p{
+    display: block;
+}
+
+.input_help p{
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    right: 100%;
+    width: min-content;
+    background-color: #fff;
+    color: var(--global-primary-color);
+    padding: 10px;
+    width: 300px;
 }
 
 .forget_password a{
@@ -88,16 +147,19 @@
 .social_media_register{
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .social_button{
     margin: 10px;
-    width: 50%;
+    width: 100%;
     padding: 10px;
     border-radius: 35px;
     text-align: center;
     cursor: pointer;
     transition: .5s;
+    font-size: 1.3rem;
+    background-color: var(--global-gray);
 }
 
 .social_button:hover{
@@ -105,10 +167,10 @@
 }
 
 .social_button:nth-child(1){
-    background-color: #D34A40;
+    color: #D34A40;
 }
 .social_button:nth-child(2){
-    background-color: #5773F2;
+    color: #5773F2;
 }
 
 .social_button i{
@@ -132,5 +194,25 @@
 
     .field_confirm .fields{
         width: 50%;
+    }
+
+    .social_media_register{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .social_button{
+        width: 50%;
+        margin: 10px 0;
+    }
+
+    .social_button:nth-child(1){
+        color: #D34A40;
+        margin-right: 20px;
+    }
+    .social_button:nth-child(2){
+        color: #5773F2;
+        margin-left: 20px;
     }
 }

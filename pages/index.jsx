@@ -19,9 +19,10 @@ export default function Index({data}) {
       nav
       footer
     >
-      <article style={{paddingTop:`15vh`}} className={style.article}>
+      <article className={style.article}>
         <Home
           id="home"
+          paddingTop={"15vh"}
         />
         <Wineries/>
         <About id="about"/>

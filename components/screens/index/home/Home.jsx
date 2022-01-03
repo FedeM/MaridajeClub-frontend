@@ -8,7 +8,7 @@ import { BrowserView, MobileView} from 'react-device-detect';
 import Link from 'next/link';
 import Router from 'next/router';
 
-const Home = ({id}) => {
+const Home = ({id, paddingTop}) => {
     const [mounted, setMounted] = useState(false)
     const [openModal, setOpenModal] = useState(false)
 
@@ -44,7 +44,7 @@ const Home = ({id}) => {
     },[mounted])
 
     return mounted &&(
-        <section id={id} className={styles.home_section}>
+        <section id={id} className={styles.home_section} style={{paddingTop: paddingTop}}>
             <div className={styles.live_title}>
                 <i className="fas fa-circle"></i>
                 <h2>Live session</h2>
