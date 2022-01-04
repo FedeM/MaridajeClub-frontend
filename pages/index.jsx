@@ -24,7 +24,7 @@ export default function Index({data}) {
           id="home"
           paddingTop={"15vh"}
         />
-        <Wineries/>
+        <Wineries id="winaries"/>
         <About id="about"/>
         <Ecommerce
           home

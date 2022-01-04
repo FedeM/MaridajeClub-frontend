@@ -30,7 +30,7 @@ const Register = ({setLogin}) => {
         _password: "",
         loading: false,
         error: ""
-    })
+    })  
 
     const validateExpression = (expression, e, name)=>{
         if(expression.test(e.target.value.trim())){

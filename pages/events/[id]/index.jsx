@@ -6,7 +6,7 @@ import { useState } from "react/cjs/react.development";
 import { useEffect } from "react";
 import Link from "next/link";
 import style from '../../../styles/screens/events/Event.module.css'
-import { Router } from "next/router";
+import Router from "next/router";
 
 //Variables de prueba
 const user = {
@@ -66,7 +66,6 @@ const index = () => {
             msg: post.msg
         }])
         e.target.reset()
-        console.log(posts)
     }
 
 

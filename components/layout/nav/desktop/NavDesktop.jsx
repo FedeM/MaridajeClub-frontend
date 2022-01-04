@@ -3,10 +3,10 @@ import {
     Link as LinkScroll
 } from 'react-scroll'
 import Link from 'next/link'
+import { isAuthenticate } from '../../../../lib/auth'
 
 
 const NavDesktop = ({logo, home}) => {
-
     
     const selectMenuItem = (e) =>{
         const marker = document.querySelector("#marker")
@@ -34,13 +34,23 @@ const NavDesktop = ({logo, home}) => {
                         (
                             <>
                                 <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} activeClass={styles.activeClass} to="home"  spy={true}>Inicio</LinkScroll>
-                                <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} activeClass={styles.activeClass} to="about"  spy={true}>Nosotros</LinkScroll>
+                                <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} activeClass={styles.activeClass} to={"about" || "winaries"}  spy={true}>Nosotros</LinkScroll>
                                 <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} activeClass={styles.activeClass} to="commerce"  spy={true}>Comprar</LinkScroll>
-                                <Link href={'/session'}>
-                                    <a className={`${styles.navDesktop_nav_li}`}>
-                                        Ingresar
-                                    </a>
-                                </Link>
+                                {
+                                    isAuthenticate() ? (
+                                        <Link href={'/profile'}>
+                                            <a className={`${styles.navDesktop_nav_li}`}>
+                                                Perfil
+                                            </a>
+                                        </Link>
+                                    ):(
+                                        <Link href={'/session'}>
+                                            <a className={`${styles.navDesktop_nav_li}`}>
+                                                Ingresar
+                                            </a>
+                                        </Link>
+                                    )
+                                }
                             </>
                         )
                         :

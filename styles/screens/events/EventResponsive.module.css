@@ -42,7 +42,7 @@
 .chat_container{
     margin-bottom: 15px;
     overflow-y: scroll;
-    max-height: 140px;
+    max-height: 320px;
 }
 .chat_container::-webkit-scrollbar{
     display: none;
@@ -112,12 +112,16 @@
     }
 
     .chat_container{
-        max-height: 224px;
+        max-height: 460px;
     }
     
     .live_close{
         padding: 8px 16px;
         font-size: 1.5rem;
+    }
+
+    .chat_msg{
+        margin-bottom: 15px;
     }
 
     .chat_msg_img{

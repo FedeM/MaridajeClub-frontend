@@ -1,8 +1,8 @@
 import styles from '../../../../styles/screens/index/wineries/Wineries.module.css'
 
-const Wineries = () => {
+const Wineries = ({id}) => {
     return (
-        <section className={styles.wineries_section}>
+        <section className={styles.wineries_section} id={id}>
             <div className={styles.wineries_slider}>
                 <div className={styles.wineries_slider_track}>
                     <div className={styles.winaries_slide}>

@@ -1,13 +1,22 @@
 import style from '../../../styles/screens/events/EventDesktop.module.css'
 import ReactPlayer from "react-player";
+import { useEffect } from 'react';
 
 const EventDesktop = ({setLeaveAlert, submitPost, posts, handleChange}) => {
 
+    useEffect(()=>{
+        const chat_container = document.getElementById('chat_container')
+        const content_chat = document.getElementById('content_chat')
+        if (chat_container) {
+            chat_container.scrollTo(0, content_chat.offsetHeight)
+            console.log(content_chat.offsetHeight)
+        }
+    })
 
     return (
         <article className={style.eventDesktop_container}>
             <section className={style.button_section}>
-                <div className={style.button_close} onClick={()=>setLeaveAlert(true)}><i class="fas fa-sign-out-alt"></i></div>
+                <div className={style.button_close} title='Salir del evento' onClick={()=>setLeaveAlert(true)}><i className="fas fa-sign-out-alt"></i></div>
             </section>
             <section className={style.live_section}>
                 <div className={style.side_live}>
@@ -27,23 +36,39 @@ const EventDesktop = ({setLeaveAlert, submitPost, posts, handleChange}) => {
                 <div className={style.side_chat}>
                     <div className={style.chat_box}>
                         <div className={style.chat_div}>
-                            <div className={style.chat_container}>
+                            <div className={style.logo_chat_container}>
+                                <img src="/logo/logo_blanco.png" alt="" />
+                            </div>
                             {
-                                posts.map((e,i)=>(
-                                    <div className={style.chat} key={i}>
-                                        <div className={style.chat_msg}>
-                                            <div className={style.chat_msg_img}>
-                                                <img src={e.photo} alt="" />
-                                            </div>
-                                            <div className={style.chat_msg_text}>
-                                                <h5>{e.user}</h5>
-                                                <p>{e.msg}</p>
-                                            </div>
+                                posts.length === 0 ?
+                                (
+                                    <div className={style.first_comment}>
+                                        <p>Ups! Parece que nadie ha escrito nada, ¡se tú el primero!</p>
+                                    </div>
+                                )
+                                :
+                                (
+                                    <div className={style.chat_container} id="chat_container">
+                                        <div className={style.content_chat} id="content_chat">
+                                            {
+                                                posts.reverse().map((e,i)=>(
+                                                    <div className={style.chat} key={i}>
+                                                        <div className={style.chat_msg}>
+                                                            <div className={style.chat_msg_img}>
+                                                                <img src={e.photo} alt="" />
+                                                            </div>
+                                                            <div className={style.chat_msg_text}>
+                                                                <h5>{e.user}</h5>
+                                                                <p>{e.msg}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                ))
+                                            }
                                         </div>
                                     </div>
-                                ))
+                                )
                             }
-                            </div>
                             <form onSubmit={(e)=> submitPost(e)}>
                                 <input type="text" placeholder="Escribe un mensaje aquí..." onChange={(e)=>handleChange(e)}/>
                                 <button>Publicar</button>

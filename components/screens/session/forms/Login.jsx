@@ -4,6 +4,7 @@ import GoogleLogin from 'react-google-login';
 import { useState } from 'react';
 import Loader from '../../../assets/loader/Loader';
 import Router from 'next/router';
+import { authenticate } from '../../../../lib/Auth';
 
 const Login = ({setLogin}) => {
 
@@ -13,6 +14,7 @@ const Login = ({setLogin}) => {
         error: "",
         loading: false
     })
+    const {username, password} = values;
 
     const handleChange = (name, e)=>{
         setValues({...values, error:false, [name]: e.target.value})
@@ -20,28 +22,30 @@ const Login = ({setLogin}) => {
 
     const submitForm = (e)=>{
         e.preventDefault()
-        if (values.username.length != 0 && values.password != 0) {
+        if (username.length != 0 && password != 0) {
             setValues({...values,loading: true})
 
-            //LLAMAR AL BACKEND
+            //LLAMAR AL BACKEND Y DENTRO DE LA FUNCIÓN COLOCAR LO SIGUIENTE
+            authenticate({username, password}, ()=>{
+                Router.push('/')
+            })
 
-            Router.push('/')
         }else{
             setValues({...values, error:"Por favor rellena los campos"})
         }
     }
 
-    const registerWithSocialMedia = (email, username)=>{
+    const signInWithSocialMedia = (email, username)=>{
         //Enviar al backend
     }
 
     const responseFacebook = (response) => {
-        registerWithSocialMedia(response.email, response.name)
+        signInWithSocialMedia(response.email, response.name)
     }
 
     const responseGoogle = (response) => {
         const res = response.profileObj
-        registerWithSocialMedia(res.email, res.name)
+        signInWithSocialMedia(res.email, res.name)
     }
 
 

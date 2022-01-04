@@ -38,6 +38,16 @@
     justify-content: center;
 }
 
+.close_session{
+    background-color: var(--global-secondary-color);
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    padding: 5px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
 @media (min-width: 700px){
     .user_img{
         width: 30%;
@@ -54,4 +64,6 @@
     .user_img{
         width: 50%;
     }
+
+    
 }
