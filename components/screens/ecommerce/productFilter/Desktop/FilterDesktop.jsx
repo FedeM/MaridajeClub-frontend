@@ -11,7 +11,7 @@ const FilterDesktop = ({name}) => {
                 </div>
                 <div className={style.filter_container}>
                     <div className={style.filter_search}>
-                        <Image className='non-select' draggable="false" src="/assets/img/icon/loupe.png" alt="" width={"18"} height={"18"}/>
+                        <Image className='non-select' draggable="false" src="/assets/img/icon/loupe.png" alt="Botón buscar, search button" width={"18"} height={"18"}/>
                         <input type="search" placeholder='Buscar Bebida, bodega, tipo'/>
                     </div>
                     <div className={style.filter_select}>

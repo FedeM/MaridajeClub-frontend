@@ -39,7 +39,7 @@ const EventDesktop = ({setLeaveAlert, submitPost, posts, handleChange}) => {
                         <div className={style.chat_div}>
                             <div className={style.logo_chat_container}>
                                 <div className={style.logo_img}>
-                                    <Image src="/logo/logo_blanco.png" alt="" objectFit='contain' layout='fill'/>
+                                    <Image src="/logo/logo_blanco.png" alt="Maridaje club" objectFit='contain' layout='fill'/>
                                 </div>
                             </div>
                             {
@@ -58,7 +58,7 @@ const EventDesktop = ({setLeaveAlert, submitPost, posts, handleChange}) => {
                                                     <div className={style.chat} key={i}>
                                                         <div className={style.chat_msg}>
                                                             <div className={style.chat_msg_img}>
-                                                                <Image src={e.photo} alt=""  layout='fill' objectFit='contain'/>
+                                                                <Image src={e.photo} alt={e.user}  layout='fill' objectFit='contain'/>
                                                             </div>
                                                             <div className={style.chat_msg_text}>
                                                                 <h5>{e.user}</h5>

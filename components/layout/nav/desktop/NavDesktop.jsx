@@ -50,7 +50,7 @@ const NavDesktop = ({logo, home}) => {
                                                 </a>
                                             </Link>
                                             <div className={styles.cart_icon} onClick={()=> Router.push('/cart')}>
-                                                <Image src="/assets/img/icon/cart.png" alt="" layout='fill' objectFit='contain'/>
+                                                <Image src="/assets/img/icon/cart.png" alt="icono carrito" layout='fill' objectFit='contain'/>
                                             </div>
                                         </>
                                     ):(

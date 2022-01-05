@@ -3,7 +3,7 @@ import {signout} from '../../../../lib/auth'
 import Router from "next/router";
 import Image from 'next/image'
 
-const UserInfo = () => {
+const UserInfo = ({name}) => {
 
     const closeSesion = () =>{
         signout(()=>{
@@ -15,7 +15,7 @@ const UserInfo = () => {
         <section className={style.user_section}>
             <div className={style.user_container}>
                 <div className={style.user_img}>
-                    <Image src="/assets/img/profile/user.png" layout="fill" objectFit="contain" alt="" />
+                    <Image src="/assets/img/profile/user.png" layout="fill" objectFit="contain" alt={name || "nombre"} />
                 </div>
                 <div className={style.user_name}>santillienzo</div>
             </div>

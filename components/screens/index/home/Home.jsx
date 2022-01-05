@@ -21,7 +21,7 @@ const Home = ({id, paddingTop}) => {
             <div className={styles.modalEvent_container}>
                 <div className={styles.modal_container}>
                     <div className={styles.modal_icon}>
-                        <Image src="/assets/img/icon/alert.png" alt="" layout="fill" objectFit='contain' objectPosition={'50%'}/>
+                        <Image src="/assets/img/icon/alert.png" alt="Icono de alerta" layout="fill" objectFit='contain' objectPosition={'50%'}/>
                     </div>
                     <div className={styles.modal_text}>
                         <h3>Espera</h3>

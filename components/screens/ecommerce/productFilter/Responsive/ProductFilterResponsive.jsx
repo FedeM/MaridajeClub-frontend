@@ -50,8 +50,8 @@ const ProductFilterResponsive = () => {
     return (
         <>
             <div className={style.container}>
-                <div className={style.side} onClick={()=> setSortActivate(true)}><img src="/assets/img/icon/sort.png" alt="" /><span>Ordenar</span></div>
-                <div className={style.side} onClick={()=> setFilterActivate(true)}><img src="/assets/img/icon/filter.png" alt="" /><span>Filtrar</span></div>
+                <div className={style.side} onClick={()=> setSortActivate(true)}><img src="/assets/img/icon/sort.png" alt="icon order, icono ordenar" /><span>Ordenar</span></div>
+                <div className={style.side} onClick={()=> setFilterActivate(true)}><img src="/assets/img/icon/filter.png" alt="icon filter, icono filtrar" /><span>Filtrar</span></div>
             </div>
             {sortBox()}
             {filterBox()}

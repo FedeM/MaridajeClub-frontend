@@ -19,31 +19,31 @@ const CategoriesNav = () => {
             <div className={style.categorieArrow} onClick={()=> moveScroll(false)}><i className="fas fa-chevron-left"></i></div>
             <div className={style.categorieTrack} id='categoryTrack'>
                 <div className={style.item}>
-                    <Image src="/assets/iconsCategory/all.png" width={'70%'} height={50} objectFit='contain' alt="" />
+                    <Image src="/assets/iconsCategory/all.png" width={'70%'} height={50} objectFit='contain' alt="Categoría icono" />
                     <p>Todo</p>
                 </div>
                 <div className={style.item}>
-                    <Image src="/assets/iconsCategory/wine.png" width={'70%'} height={50} objectFit='contain' alt="" />
+                    <Image src="/assets/iconsCategory/wine.png" width={'70%'} height={50} objectFit='contain' alt="Categoría icono" />
                     <p>Vinos</p>
                 </div>
                 <div className={style.item}>
-                    <Image src="/assets/iconsCategory/liqueur.png" width={'70%'} height={50} objectFit='contain' alt="" />
+                    <Image src="/assets/iconsCategory/liqueur.png" width={'70%'} height={50} objectFit='contain' alt="Categoría icono" />
                     <p>Licor</p>
                 </div>
                 <div className={style.item}>
-                    <Image src="/assets/iconsCategory/beer.png" width={'70%'} height={50} objectFit='contain' alt="" />
+                    <Image src="/assets/iconsCategory/beer.png" width={'70%'} height={50} objectFit='contain' alt="Categoría icono" />
                     <p>Cervezas</p>
                 </div>
                 <div className={style.item}>
-                    <Image src="/assets/iconsCategory/whiskey.png" width={'70%'} height={50} objectFit='contain' alt="" />
+                    <Image src="/assets/iconsCategory/whiskey.png" width={'70%'} height={50} objectFit='contain' alt="Categoría icono" />
                     <p>Whisky</p>
                 </div>
                 <div className={style.item}>
-                    <Image src="/assets/iconsCategory/champagne.png" width={'70%'} height={50} objectFit='contain' alt="" />
+                    <Image src="/assets/iconsCategory/champagne.png" width={'70%'} height={50} objectFit='contain' alt="Categoría icono" />
                     <p>Champagne</p>
                 </div>
                 <div className={style.item}>
-                    <Image src="/assets/iconsCategory/coffee.png" width={'70%'} height={50} objectFit='contain' alt="" />
+                    <Image src="/assets/iconsCategory/coffee.png" width={'70%'} height={50} objectFit='contain' alt="Categoría icono" />
                     <p>Otros</p>
                 </div>
             </div>

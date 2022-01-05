@@ -29,7 +29,7 @@ const Index = () => {
             <div className={style.modal_container}>
                 <div className={style.modal}>
                     <div className={style.modal_icon}>
-                        <Image src="/assets/img/icon/stop.png" alt="" layout="fill" objectFit="contain"/>
+                        <Image src="/assets/img/icon/stop.png" alt="Icono stop" layout="fill" objectFit="contain"/>
                     </div>
                     <div className={style.modal_text}>
                         <h3>¡Momento!</h3>
