@@ -3,15 +3,7 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import style from '../../styles/layout/Layout.module.css'
 
-const Layout = ({children, title, description, setNavHeigth, home, nav, footer}) => {
-    const [header, setHeader] = useState('')
-    
-    useEffect(()=>{
-        if (nav) {
-            setHeader(document.getElementById('header').clientHeight)
-            setNavHeigth(header)
-        }
-    })
+const Layout = ({children, title, description, home, nav, footer}) => { 
     
     return (
         <>

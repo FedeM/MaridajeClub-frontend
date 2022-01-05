@@ -1,4 +1,5 @@
 import style from '../../../../styles/screens/ecommerce/categoriesNav/CategoriesNav.module.css'
+import Image from 'next/image'
 
 const CategoriesNav = () => {
     
@@ -18,31 +19,31 @@ const CategoriesNav = () => {
             <div className={style.categorieArrow} onClick={()=> moveScroll(false)}><i className="fas fa-chevron-left"></i></div>
             <div className={style.categorieTrack} id='categoryTrack'>
                 <div className={style.item}>
-                    <img src="/assets/iconsCategory/all.png" alt="" />
+                    <Image src="/assets/iconsCategory/all.png" width={'70%'} height={50} objectFit='contain' alt="" />
                     <p>Todo</p>
                 </div>
                 <div className={style.item}>
-                    <img src="/assets/iconsCategory/wine.png" alt="" />
+                    <Image src="/assets/iconsCategory/wine.png" width={'70%'} height={50} objectFit='contain' alt="" />
                     <p>Vinos</p>
                 </div>
                 <div className={style.item}>
-                    <img src="/assets/iconsCategory/liqueur.png" alt="" />
+                    <Image src="/assets/iconsCategory/liqueur.png" width={'70%'} height={50} objectFit='contain' alt="" />
                     <p>Licor</p>
                 </div>
                 <div className={style.item}>
-                    <img src="/assets/iconsCategory/beer.png" alt="" />
+                    <Image src="/assets/iconsCategory/beer.png" width={'70%'} height={50} objectFit='contain' alt="" />
                     <p>Cervezas</p>
                 </div>
                 <div className={style.item}>
-                    <img src="/assets/iconsCategory/whiskey.png" alt="" />
+                    <Image src="/assets/iconsCategory/whiskey.png" width={'70%'} height={50} objectFit='contain' alt="" />
                     <p>Whisky</p>
                 </div>
                 <div className={style.item}>
-                    <img src="/assets/iconsCategory/champagne.png" alt="" />
+                    <Image src="/assets/iconsCategory/champagne.png" width={'70%'} height={50} objectFit='contain' alt="" />
                     <p>Champagne</p>
                 </div>
                 <div className={style.item}>
-                    <img src="/assets/iconsCategory/coffee.png" alt="" />
+                    <Image src="/assets/iconsCategory/coffee.png" width={'70%'} height={50} objectFit='contain' alt="" />
                     <p>Otros</p>
                 </div>
             </div>

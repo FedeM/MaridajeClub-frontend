@@ -7,6 +7,10 @@ import SliderDesktop from '../events/Desktop/SliderDesktop'
 import { BrowserView, MobileView} from 'react-device-detect';
 import Link from 'next/link';
 import Router from 'next/router';
+import { isAuthenticate } from '../../../../lib/auth';
+import Image from 'next/image'
+
+
 
 const Home = ({id, paddingTop}) => {
     const [mounted, setMounted] = useState(false)
@@ -17,7 +21,7 @@ const Home = ({id, paddingTop}) => {
             <div className={styles.modalEvent_container}>
                 <div className={styles.modal_container}>
                     <div className={styles.modal_icon}>
-                        <img src="/assets/img/icon/alert.png" alt="" />
+                        <Image src="/assets/img/icon/alert.png" alt="" layout="fill" objectFit='contain' objectPosition={'50%'}/>
                     </div>
                     <div className={styles.modal_text}>
                         <h3>Espera</h3>
@@ -35,8 +39,11 @@ const Home = ({id, paddingTop}) => {
     }
 
     const enterEvent = ()=>{
-        // setOpenModal(true)
-        Router.push('/events/5')
+        if (isAuthenticate()) {
+            Router.push('/events/5')
+        }else{
+            setOpenModal(true)
+        }
     }
 
     useEffect(()=>{

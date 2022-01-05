@@ -2,11 +2,11 @@ import Layout from "../../../components/layout/Layout";
 import { BrowserView, MobileView} from 'react-device-detect';
 import EventResponsive from "../../../components/screens/events/EventResponsive";
 import EventDesktop from "../../../components/screens/events/EventDesktop";
-import { useState } from "react/cjs/react.development";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import style from '../../../styles/screens/events/Event.module.css'
 import Router from "next/router";
+import Image from 'next/image'
 
 //Variables de prueba
 const user = {
@@ -14,7 +14,7 @@ const user = {
     photo:"/assets/img/profile/user.png"
 }
 
-const index = () => {
+const Index = () => {
     const [mounted, setMounted] = useState(false)
     const [leaveAlert, setLeaveAlert] = useState(false)
     const [post, setPost] = useState({
@@ -29,7 +29,7 @@ const index = () => {
             <div className={style.modal_container}>
                 <div className={style.modal}>
                     <div className={style.modal_icon}>
-                        <img src="/assets/img/icon/stop.png" alt="" />
+                        <Image src="/assets/img/icon/stop.png" alt="" layout="fill" objectFit="contain"/>
                     </div>
                     <div className={style.modal_text}>
                         <h3>¡Momento!</h3>
@@ -100,4 +100,4 @@ const index = () => {
     );
 };
 
-export default index;
+export default Index;

@@ -1,4 +1,5 @@
 import style from '../../../../../styles/screens/ecommerce/productFilter/Desktop/Filter.module.css'
+import Image from 'next/image'
 
 const FilterDesktop = ({name}) => {
     return (
@@ -10,7 +11,7 @@ const FilterDesktop = ({name}) => {
                 </div>
                 <div className={style.filter_container}>
                     <div className={style.filter_search}>
-                        <img className='non-select' draggable="false" src="/assets/img/icon/loupe.png" alt="" />
+                        <Image className='non-select' draggable="false" src="/assets/img/icon/loupe.png" alt="" width={"18"} height={"18"}/>
                         <input type="search" placeholder='Buscar Bebida, bodega, tipo'/>
                     </div>
                     <div className={style.filter_select}>

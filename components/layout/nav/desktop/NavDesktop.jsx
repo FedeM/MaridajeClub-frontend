@@ -4,6 +4,9 @@ import {
 } from 'react-scroll'
 import Link from 'next/link'
 import { isAuthenticate } from '../../../../lib/auth'
+import Router from "next/router";
+import Image from 'next/image'
+
 
 
 const NavDesktop = ({logo, home}) => {
@@ -19,11 +22,13 @@ const NavDesktop = ({logo, home}) => {
 
     return (
         <div className={styles.navDesktop_container}>
-            <div className={styles.navDesktop_logo_container}>
-                <img
+            <div className={styles.navDesktop_logo_container} onClick={()=> Router.push('/')}>
+                <Image
                     src={logo}
                     className={styles.navDesktop_logo}
                     alt={"logo de maridaje club"}
+                    layout='fill'
+                    priority
                 />
             </div>
             <nav className={styles.navDesktop_nav}>
@@ -38,11 +43,16 @@ const NavDesktop = ({logo, home}) => {
                                 <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} activeClass={styles.activeClass} to="commerce"  spy={true}>Comprar</LinkScroll>
                                 {
                                     isAuthenticate() ? (
-                                        <Link href={'/profile'}>
-                                            <a className={`${styles.navDesktop_nav_li}`}>
-                                                Perfil
-                                            </a>
-                                        </Link>
+                                        <>
+                                            <Link href={'/profile'}>
+                                                <a className={`${styles.navDesktop_nav_li}`}>
+                                                    Perfil
+                                                </a>
+                                            </Link>
+                                            <div className={styles.cart_icon} onClick={()=> Router.push('/cart')}>
+                                                <Image src="/assets/img/icon/cart.png" alt="" layout='fill' objectFit='contain'/>
+                                            </div>
+                                        </>
                                     ):(
                                         <Link href={'/session'}>
                                             <a className={`${styles.navDesktop_nav_li}`}>

@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from '../../../../../styles/screens/index/events/Responsive/SliderResponsive.module.css'
+import Image from 'next/image'
+
 
 const SliderResponsive = ({lives}) => {
     const [mounted, setMounted] = useState(false)
@@ -16,28 +18,38 @@ const SliderResponsive = ({lives}) => {
             </div>
             <div className={styles.events_track}>
                 <div className={styles.event_img_box}>
-                    <img 
+                    <Image
                         src={'/assets/img/1.jpg'}
+                        layout='fill'
+                        objectFit='contain'
                     />
                 </div>
                 <div className={styles.event_img_box}>
-                    <img 
+                    <Image
                         src={'/assets/img/2.jpg'}
+                        layout='fill'
+                        objectFit='contain'
                     />
                 </div>
                 <div className={styles.event_img_box}>
-                    <img 
+                    <Image
                         src={'/assets/img/1.jpg'}
+                        layout='fill'
+                        objectFit='contain'
                     />
                 </div>
                 <div className={styles.event_img_box}>
-                    <img 
+                    <Image
                         src={'/assets/img/2.jpg'}
+                        layout='fill'
+                        objectFit='contain'
                     />
                 </div>
                 <div className={styles.event_img_box}>
-                    <img 
+                    <Image
                         src={'/assets/img/1.jpg'}
+                        layout='fill'
+                        objectFit='contain'
                     />
                 </div>
             </div>

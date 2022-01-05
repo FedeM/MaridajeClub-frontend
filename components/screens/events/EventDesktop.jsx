@@ -1,6 +1,7 @@
 import style from '../../../styles/screens/events/EventDesktop.module.css'
 import ReactPlayer from "react-player";
 import { useEffect } from 'react';
+import Image from 'next/image'
 
 const EventDesktop = ({setLeaveAlert, submitPost, posts, handleChange}) => {
 
@@ -37,7 +38,9 @@ const EventDesktop = ({setLeaveAlert, submitPost, posts, handleChange}) => {
                     <div className={style.chat_box}>
                         <div className={style.chat_div}>
                             <div className={style.logo_chat_container}>
-                                <img src="/logo/logo_blanco.png" alt="" />
+                                <div className={style.logo_img}>
+                                    <Image src="/logo/logo_blanco.png" alt="" objectFit='contain' layout='fill'/>
+                                </div>
                             </div>
                             {
                                 posts.length === 0 ?
@@ -55,7 +58,7 @@ const EventDesktop = ({setLeaveAlert, submitPost, posts, handleChange}) => {
                                                     <div className={style.chat} key={i}>
                                                         <div className={style.chat_msg}>
                                                             <div className={style.chat_msg_img}>
-                                                                <img src={e.photo} alt="" />
+                                                                <Image src={e.photo} alt=""  layout='fill' objectFit='contain'/>
                                                             </div>
                                                             <div className={style.chat_msg_text}>
                                                                 <h5>{e.user}</h5>

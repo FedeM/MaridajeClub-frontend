@@ -90,11 +90,18 @@
 }
 
 .logo_chat_container{
+    width: 100%;
     padding: 15px;
     border-bottom: 1px solid var(--global-gray);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.logo_img{
+    position: relative;
+    width: 70%;
+    height: 80px;
 }
 
 .first_comment{
@@ -150,6 +157,7 @@
 }
 
 .chat_msg_img{
+    position: relative;
     min-width: 30px;
     min-height: 30px;
     max-width: 30px;

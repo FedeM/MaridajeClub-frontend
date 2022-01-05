@@ -19,6 +19,8 @@
 }
 
 .modal_icon{
+    position: relative;
+    height: 70px;
     width: 30%;
     margin: auto;
 }

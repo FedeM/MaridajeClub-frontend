@@ -1,9 +1,5 @@
 import styles from '../../../../styles/screens/index/about/About.module.css'
 import Image from 'next/image';
-import {
-    Link as LinkScroll
-} from 'react-scroll'
-import { isDesktop } from 'react-device-detect';
 // import ScrollDown from '../assets/scrollDown/ScrollDown'
 import { useEffect, useState } from 'react';
 
@@ -25,7 +21,7 @@ const About = ({id}) => {
                     </div>
                 </div>
                 <div className={styles.about_img_container}>
-                    <img
+                    <Image
                         className={styles.about_img_container_img}
                         src="/assets/img/about/alcohol.png"
                         layout="fill"

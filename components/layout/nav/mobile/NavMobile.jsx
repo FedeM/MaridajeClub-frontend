@@ -5,6 +5,9 @@ import {
 import { useState } from 'react';
 import Link from 'next/link'
 import { isAuthenticate } from '../../../../lib/auth';
+import Router from "next/router";
+import Image from 'next/image'
+
 
 const NavMobile = ({logo, home}) => {
     const [openMenu, setOpenMenu] = useState(false);
@@ -32,14 +35,25 @@ const NavMobile = ({logo, home}) => {
         <div className={styles.navMobile_container}>
             <div className={styles.navMobile_bar} style={openMenu ? ({backgroundColor:"var(--global-primary-color)"}):({})}>
                 <div className={styles.navMobile_logo_container}>
-                    <img
+                    <Image
                         src={logo}
                         className={styles.navMobile_logo}
                         alt={"logo de maridaje club"}
+                        layout='fill'
+                        priority
                     />
                 </div>
-                <div className={`${styles.navMobile_menu} `} onClick={()=> displayMenu()} id="navMobile_menu">
-                    <span></span>
+                <div className={styles.navMobile_bar_content}>
+                    {
+                        isAuthenticate() &&(
+                            <div className={styles.cart_icon} onClick={()=> Router.push('/cart')}>
+                                <Image src="/assets/img/icon/cart.png" alt="" layout='fill' objectFit='contain'/>
+                            </div>
+                        )
+                    }
+                    <div className={`${styles.navMobile_menu} `} onClick={()=> displayMenu()} id="navMobile_menu">
+                        <span></span>
+                    </div>
                 </div>
             </div>
             {

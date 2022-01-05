@@ -49,12 +49,10 @@
 }
 
 .modal_icon {
+    position: relative;
     width: 30%;
+    height: 100px;
     margin: auto;
-}
-
-.modal_icon img {
-    width: 100%;
 }
 
 .modal_text {

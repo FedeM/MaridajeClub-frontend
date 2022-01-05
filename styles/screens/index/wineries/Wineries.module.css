@@ -16,23 +16,23 @@
 
 .wineries_slider_track{
     display: flex;
+    align-items: center;
     width: calc(150px * 10);
     height: 100%;
     animation: scroll 30s infinite linear;
 }
 
 .winaries_slide{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 30px;
-}
-
-.winaries_slide img{
     width: 150px;
     height: 80px;
-    object-fit: contain;
+    margin-top: calc(50%-40px);
 }
+
 
 @keyframes scroll {
     0%{

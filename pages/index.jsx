@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Ecommerce from '../components/screens/index/ecommerce/Ecommerce'
 import Home from '../components/screens/index/home/Home'
 import Layout from '../components/layout/Layout'
@@ -8,13 +7,11 @@ import style from '../styles/screens/index/Index.module.css'
 
 export default function Index({data}) {
 
-  const [navHeigth, setNavHeigth] = useState()
 
   return (
     <Layout
       title="Home"
       description="Descripción"
-      setNavHeigth={setNavHeigth}
       home
       nav
       footer

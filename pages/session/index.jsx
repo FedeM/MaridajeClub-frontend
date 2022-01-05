@@ -1,15 +1,12 @@
-import { useState } from "react/cjs/react.development";
 import Layout from "../../components/layout/Layout";
 import Session from "../../components/screens/session/Session";
 
-const index = () => {
-    const [navHeigth, setNavHeigth] = useState()
+const Index = () => {
 
     return (
         <Layout
             title={"Login"}
             description={"Login de Maridaje Club"}
-            setNavHeigth={setNavHeigth}
             nav
             footer
         >
@@ -20,4 +17,4 @@ const index = () => {
     );
 };
 
-export default index;
+export default Index;

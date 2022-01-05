@@ -15,14 +15,28 @@
 
 .navMobile_logo_container{
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
     width: 90px;
+    height: 50px;
 }
 
-.navMobile_logo{
-    object-fit: cover;
-    width: 100%;
+.navMobile_bar_content{
+    display: flex;
+    align-items: center;
+}
+
+.cart_icon{
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.cart_icon img{
+    filter: invert(100%);
 }
 
 .navMobile_menu{

@@ -8,14 +8,18 @@
     position: static;
     width: 100%;
     height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
 .navDesktop_logo_container{
+    position: relative;
+    top: 0;
+    left: 0;
     width: 8%;
-}
-
-.navDesktop_logo_container img{
-    width: 100%;
+    height: 50px;
+    cursor: pointer;
 }
 
 .navDesktop_nav{
@@ -23,6 +27,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.cart_icon{
+    position: relative;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.cart_icon img{
+    filter: invert(100%);
 }
 
 .navDesktop_nav ul{

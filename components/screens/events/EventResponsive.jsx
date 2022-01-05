@@ -1,6 +1,7 @@
 import style from '../../../styles/screens/events/EventResponsive.module.css'
 import ReactPlayer from "react-player";
 import { useEffect } from 'react';
+import Image from 'next/image'
 
 
 const EventResponsive = ({setLeaveAlert,submitPost, posts, handleChange}) => {
@@ -35,7 +36,7 @@ const EventResponsive = ({setLeaveAlert,submitPost, posts, handleChange}) => {
                             posts.map((e,i)=>(
                                 <div className={style.chat_msg} key={i}>
                                     <div className={style.chat_msg_img}>
-                                        <img src={e.photo} alt="" />
+                                        <Image src={e.photo} alt="" layout='fill' objectFit='contain' />
                                     </div>
                                     <div className={style.chat_msg_text}>
                                         <h5>{e.user}</h5>
