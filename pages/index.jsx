@@ -5,7 +5,7 @@ import Wineries from '../components/screens/index/wineries/Wineries'
 import About from '../components/screens/index/about/About'
 import style from '../styles/screens/index/Index.module.css'
 
-export default function Index({data}) {
+export default function Index() {
 
 
   return (
@@ -32,16 +32,16 @@ export default function Index({data}) {
   )
 }
 
-export async function getStaticProps(){
-  try {
-      const res = await fetch('http://localhost:3000/videos.json')
-      const data = await res.json()
-      return{
-          props: {
-              data
-          }
-      }
-  } catch (error) {
-      console.log(error)
-  }
-}
+// export async function getStaticProps(){
+//   try {
+//       const res = await fetch('http://localhost:3000/videos.json')
+//       const data = await res.json()
+//       return{
+//           props: {
+//               data
+//           }
+//       }
+//   } catch (error) {
+//       console.log(error)
+//   }
+// }

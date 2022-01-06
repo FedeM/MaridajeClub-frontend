@@ -25,6 +25,7 @@ const About = ({id}) => {
                         className={styles.about_img_container_img}
                         src="/assets/img/about/alcohol.png"
                         layout="fill"
+                        alt='Botellas de alcohol, alcohol bottle'
                     />
                 </div>
             </div>

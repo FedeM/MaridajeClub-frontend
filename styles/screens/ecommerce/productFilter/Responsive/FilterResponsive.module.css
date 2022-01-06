@@ -27,8 +27,9 @@
 
 .side img{
     filter: invert(100%);
-    width: 1rem;
-    margin-right: 10px;
+}
+.side span{
+    margin-left: 10px;
 }
 
 /*  */

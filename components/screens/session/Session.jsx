@@ -1,7 +1,7 @@
 import Login from "./forms/Login";
 import styles from '../../../styles/screens/session/Session.module.css'
 import Register from "./forms/Register";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 
 const Session = ({}) => {
 

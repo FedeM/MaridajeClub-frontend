@@ -4,7 +4,7 @@ import GoogleLogin from 'react-google-login';
 import { useState } from 'react';
 import Loader from '../../../assets/loader/Loader';
 import Router from 'next/router';
-import { authenticate } from '../../../../lib/Auth';
+import { authenticate } from '../../../../lib/auth';
 
 const Login = ({setLogin}) => {
 

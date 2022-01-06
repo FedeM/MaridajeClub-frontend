@@ -3,7 +3,7 @@ import styles from '../../../../../styles/screens/index/events/Responsive/Slider
 import Image from 'next/image'
 
 
-const SliderResponsive = ({lives}) => {
+const SliderResponsive = ({lives, description}) => {
     const [mounted, setMounted] = useState(false)
 
     useEffect(()=>{
@@ -22,6 +22,7 @@ const SliderResponsive = ({lives}) => {
                         src={'/assets/img/1.jpg'}
                         layout='fill'
                         objectFit='contain'
+                        alt={description}
                     />
                 </div>
                 <div className={styles.event_img_box}>
@@ -29,6 +30,7 @@ const SliderResponsive = ({lives}) => {
                         src={'/assets/img/2.jpg'}
                         layout='fill'
                         objectFit='contain'
+                        alt={description}
                     />
                 </div>
                 <div className={styles.event_img_box}>
@@ -36,6 +38,7 @@ const SliderResponsive = ({lives}) => {
                         src={'/assets/img/1.jpg'}
                         layout='fill'
                         objectFit='contain'
+                        alt={description}
                     />
                 </div>
                 <div className={styles.event_img_box}>
@@ -43,6 +46,7 @@ const SliderResponsive = ({lives}) => {
                         src={'/assets/img/2.jpg'}
                         layout='fill'
                         objectFit='contain'
+                        alt={description}
                     />
                 </div>
                 <div className={styles.event_img_box}>
@@ -50,6 +54,7 @@ const SliderResponsive = ({lives}) => {
                         src={'/assets/img/1.jpg'}
                         layout='fill'
                         objectFit='contain'
+                        alt={description}
                     />
                 </div>
             </div>
