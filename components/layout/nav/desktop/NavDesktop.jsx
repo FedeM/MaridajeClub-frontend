@@ -29,6 +29,7 @@ const NavDesktop = ({logo, home}) => {
                     alt={"logo de maridaje club"}
                     layout='fill'
                     priority
+                    objectFit="contain"
                 />
             </div>
             <nav className={styles.navDesktop_nav}>

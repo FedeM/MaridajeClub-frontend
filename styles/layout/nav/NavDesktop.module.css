@@ -33,7 +33,8 @@
     position: relative;
     height: 1.5rem;
     width: 1.5rem;
-    margin: 0 20px;
+    margin: 0 10px;
+    padding: 15px 10px;
     cursor: pointer;
 }
 
@@ -48,15 +49,34 @@
 
 .navDesktop_nav_li{
     position: relative;
-    margin: 0 20px;
+    margin: 0 10px;
+    padding: 5px  10px;
     font-size: 1.2em;
     color: var(--global-text_color);
     cursor: pointer;
     font-weight: 400;
     text-decoration: none;
+    transition: .5s;
 }
 
-.navDesktop_nav_marker{
+.navDesktop_nav_li::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: var(--global-tertiary-color);
+    bottom: 0px;
+    transition: 0.5s;
+    border-radius: 4px;
+    
+}
+
+.navDesktop_nav_li:hover::before{
+    width: 100%;
+}
+
+/* .navDesktop_nav_marker{
     position: absolute;
     left: 0;
     height: 2px;
@@ -65,9 +85,15 @@
     bottom: -5px;
     transition: 0.5s;
     border-radius: 4px;
+} */
+
+.activeClass{
+    background-color: var(--global-gray4);
+    border-radius: 4px;
+    transition: .5s;
 }
 
-.activeClass::before{
+/* .activeClass::before{
     content: '';
     position: absolute;
     left: 0;
@@ -77,8 +103,8 @@
     bottom: -5px;
     transition: 0.5s;
     border-radius: 4px;
-    /* animation: activeClass .5s ease normal forwards; */
-}
+    animation: activeClass .5s ease normal forwards;
+} */
 
 @keyframes activeClass {
     0%{

@@ -1,0 +1,80 @@
+.checkout_container{
+    width: 100%;
+    height: 100%;
+    background: rgb(64,60,59);
+    background: linear-gradient(180deg, rgba(64,60,59,1) 38%, rgba(50,47,47,1) 84%, rgba(26,26,26,1) 100%);
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+}
+
+.title{
+    padding: 15px;
+}
+
+.title h3{
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.steps_marker{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.steps_marker span{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 5px;
+    border: 2px solid var(--global-primary-color);
+}
+
+.marker_selected{
+    background-color: var(--global-tertiary-color);
+}
+
+.detail_content{
+    padding: 25px;
+    overflow: hidden;
+}
+
+.input_container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.input_container input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--global-gray2);
+    color: #fff;
+}
+
+.number_card_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.number_card_container label{
+    white-space: nowrap;
+}
+
+.number_card_container .input_container:nth-child(1){
+    width: 50%;
+}
+.number_card_container .input_container:nth-child(2){
+    width: 30%;
+}
+
+.checkout_btn{
+    padding: 15px;
+    background-color: var(--global-tertiary-color);
+    text-align: center;
+    cursor: pointer;
+    color: var(--global-primary-color);
+}

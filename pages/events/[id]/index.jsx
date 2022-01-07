@@ -7,6 +7,7 @@ import Link from "next/link";
 import style from '../../../styles/screens/events/Event.module.css'
 import Router from "next/router";
 import Image from 'next/image'
+import { isAuthenticate } from "../../../lib/auth";
 
 //Variables de prueba
 const user = {
@@ -74,7 +75,7 @@ const Index = () => {
         setMounted(true)
     },[mounted])
 
-    return mounted && (
+    return mounted && isAuthenticate() &&(
         <Layout
             title={"Video 1"}
             description={"Descripción video"}
