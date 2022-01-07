@@ -74,13 +74,15 @@ const ArticlesDesktop = () => {
     useEffect(()=>{
         setPriceTotal(updatePrice())
         setMounted(true)
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cart, mounted])
 
     return mounted && (
         <div className={style.articles_desktop_container}>
             <div className={style.title}>
                 <div className={style.title_img}>
-                    <Image src="/assets/img/icon/cart.png" layout='fill' objectFit='contain'/>
+                    <Image src="/assets/img/icon/cart.png" layout='fill' objectFit='contain' alt="icon cart"/>
                 </div>
                 <h3>Tu carrito</h3>
             </div>

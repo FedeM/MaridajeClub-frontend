@@ -7,7 +7,7 @@ const Article = ({id, img, name, price, quantity, width, updateQuantity}) => {
     return (
         <div className={style.article_content} style={{width:`${width}%`}}>
             <div className={style.article_img}>
-                <Image src={img} layout='fill' objectFit='cover' priority/>
+                <Image src={img} layout='fill' objectFit='cover' priority alt={name}/>
             </div>
             <div className={style.article_info}>
                 <div className={style.article_name}>
