@@ -9,15 +9,7 @@ import Image from 'next/image'
 
 
 
-const NavDesktop = ({logo, home}) => {
-    
-    const selectMenuItem = (e) =>{
-        const marker = document.querySelector("#marker")
-
-        marker.style.left = e.offsetLeft+"px";
-        marker.style.width = e.offsetWidth+"px";
-    }
-
+const NavDesktop = ({logo, home,cart}) => {
     
 
     return (
@@ -50,9 +42,6 @@ const NavDesktop = ({logo, home}) => {
                                                     Perfil
                                                 </a>
                                             </Link>
-                                            <div className={styles.cart_icon} onClick={()=> Router.push('/cart')}>
-                                                <Image src="/assets/img/icon/cart.png" alt="icono carrito" layout='fill' objectFit='contain'/>
-                                            </div>
                                         </>
                                     ):(
                                         <Link href={'/session'}>
@@ -60,6 +49,13 @@ const NavDesktop = ({logo, home}) => {
                                                 Ingresar
                                             </a>
                                         </Link>
+                                    )
+                                }
+                                {
+                                    cart && (
+                                        <div className={styles.cart_icon} onClick={()=> Router.push('/cart')}>
+                                            <Image src="/assets/img/icon/cart.png" alt="icono carrito" layout='fill' objectFit='contain'/>
+                                        </div>
                                     )
                                 }
                             </>
@@ -72,6 +68,13 @@ const NavDesktop = ({logo, home}) => {
                                         Inicio
                                     </a>
                                 </Link>
+                                {
+                                    cart && (
+                                        <div className={styles.cart_icon} onClick={()=> Router.push('/cart')}>
+                                            <Image src="/assets/img/icon/cart.png" alt="icono carrito" layout='fill' objectFit='contain'/>
+                                        </div>
+                                    )
+                                }
                             </>
                         )
                     }

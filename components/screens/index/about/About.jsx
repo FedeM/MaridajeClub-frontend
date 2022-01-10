@@ -15,7 +15,7 @@ const About = ({id}) => {
         <section id={id} className={styles.about_section}>
             <div className={styles.about_container}>
                 <div className={styles.about_text_container}>
-                    <div className={styles.about_text_container_text}>
+                    <div className={`${styles.about_text_container_text} wow animate__animated animate__fadeIn`}>
                         <h3>Live Streaming & eCommerce</h3>
                         <p>Viví la única experiencia <span> Live Streaming Shopping</span> de bebidas, conoce a sus creadores y encontrá precios únicos</p>
                     </div>

@@ -10,6 +10,7 @@ const Index = () => {
             description={"Login de Maridaje Club"}
             nav
             footer
+            cart
         >
             <article style={{paddingTop:`15vh`}}>
                 <Session/>

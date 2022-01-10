@@ -13,6 +13,7 @@ const Index = () => {
             description={'Descripción del perfil'}
             nav
             footer
+            cart
         >
             <article style={{paddingTop:`15vh`}} className={style.article}>
                 <UserInfo/> 

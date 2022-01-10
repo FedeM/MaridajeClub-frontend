@@ -15,6 +15,7 @@ export default function Index() {
       home
       nav
       footer
+      cart
     >
       <article className={style.article}>
         <Home

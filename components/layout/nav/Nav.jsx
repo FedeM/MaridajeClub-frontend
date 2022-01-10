@@ -3,7 +3,7 @@ import { BrowserView, MobileView} from 'react-device-detect';
 import NavDesktop from "./desktop/NavDesktop";
 import NavMobile from "./mobile/NavMobile";
 
-const Nav = ({home}) => {
+const Nav = ({home, cart}) => {
     const [mounted, setMounted] = useState(false)
     const logo= '/logo/logo_blanco.png'
 
@@ -14,10 +14,10 @@ const Nav = ({home}) => {
     return mounted && (
         <>
             <BrowserView>
-                <NavDesktop logo={logo} home={home}/>
+                <NavDesktop logo={logo} home={home} cart={cart}/>
             </BrowserView>
             <MobileView>
-                <NavMobile logo={logo} home={home}/>
+                <NavMobile logo={logo} home={home} cart={cart}/>
             </MobileView>
         </>
     )

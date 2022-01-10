@@ -3,7 +3,7 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import style from '../../styles/layout/Layout.module.css'
 
-const Layout = ({children, title, description, home, nav, footer}) => { 
+const Layout = ({children, title, description, home, cart, nav, footer}) => { 
     
     return (
         <>
@@ -20,6 +20,7 @@ const Layout = ({children, title, description, home, nav, footer}) => {
                     <header id="header" className={style.header}>
                         <Nav
                             home={home}
+                            cart={cart}
                         />
                     </header>
                 ) 

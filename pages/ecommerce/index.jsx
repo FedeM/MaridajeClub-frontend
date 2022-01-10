@@ -9,6 +9,7 @@ const Index = () => {
             description="Compra de vinos y bebidas"
             nav
             footer
+            cart
         >
         <article style={{paddingTop:`15vh`}}>
             <Ecommerce/>
