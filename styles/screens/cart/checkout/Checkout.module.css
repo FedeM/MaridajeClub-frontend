@@ -17,6 +17,7 @@
 }
 
 .steps_marker{
+    position: relative;
     width: 100%;
     height: 30px;
     display: flex;
@@ -24,7 +25,15 @@
     align-items: center;
 }
 
+.stepBack{
+    cursor: pointer;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 15px;
+}
+
 .steps_marker span{
+    cursor: pointer;
     width: 15px;
     height: 15px;
     border-radius: 50%;
@@ -77,4 +86,7 @@
     text-align: center;
     cursor: pointer;
     color: var(--global-primary-color);
+    border: none;
+    font-family: outfit, sans-serif;
+    font-size: 1rem;
 }

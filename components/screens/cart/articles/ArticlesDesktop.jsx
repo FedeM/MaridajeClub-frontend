@@ -62,6 +62,11 @@ const ArticlesDesktop = () => {
         setCart(newCart)
     }
 
+    const removeProduct = (id)=>{
+        const newCart = cart.filter(product => product._id !== id);
+        setCart(newCart);
+    }
+
     const updatePrice = ()=>{
         let price = 0;
         cart.map(product=>{
@@ -98,6 +103,7 @@ const ArticlesDesktop = () => {
                         price={e.price}
                         quantity={e.quantity}
                         updateQuantity={updateQuantity}
+                        removeProduct={removeProduct}
                     />
                 ))
             }

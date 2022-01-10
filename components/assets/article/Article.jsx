@@ -2,7 +2,7 @@ import style from './Article.module.css'
 import Image from 'next/image'
 import { useState } from 'react';
 
-const Article = ({id, img, name, price, quantity, width, updateQuantity}) => {
+const Article = ({id, img, name, price, quantity, width, updateQuantity, removeProduct}) => {
 
     return (
         <div className={style.article_content} style={{width:`${width}%`}}>
@@ -23,7 +23,7 @@ const Article = ({id, img, name, price, quantity, width, updateQuantity}) => {
                 <div className={style.article_price}>
                     <span>${price}</span>
                 </div>
-                <div className={style.trash_article}>
+                <div className={style.trash_article} onClick={()=> removeProduct(id)}>
                     <i className="fas fa-trash"></i>
                 </div>
             </div>

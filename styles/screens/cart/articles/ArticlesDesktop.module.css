@@ -93,4 +93,7 @@
     .subtotal h5{
         margin-right: 10px;
     }
+    .fotter_link{
+        display: none;
+    }
 }
