@@ -10,17 +10,16 @@ class MyDocument extends Document {
                 <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="true"/>
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600;700;800;900&display=swap" crossOrigin="true"/>
-                <link rel="stylesheet" href="css/animate.css"></link>
-
-                <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet"></link>
+                <link
+                    rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+                />
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" crossOrigin="true"/>
             </Head>
             <body>
                 <Main />
                 <NextScript />
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-                <script>
-                new WOW().init();
-                </script>
+                
             </body>
         </Html>
         )

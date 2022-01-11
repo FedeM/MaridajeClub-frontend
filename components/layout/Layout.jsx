@@ -1,7 +1,8 @@
 import Nav from "./nav/Nav";
 import Head from "next/head";
-import { useEffect, useState } from "react";
 import style from '../../styles/layout/Layout.module.css'
+import Script from 'next/script'
+
 
 const Layout = ({children, title, description, home, cart, nav, footer}) => { 
     
@@ -42,6 +43,10 @@ const Layout = ({children, title, description, home, cart, nav, footer}) => {
                     </footer>
                 )
             }
+            <Script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" id="cdn_script"></Script>
+            <Script id="object_script">
+            new WOW().init();
+            </Script>
         </>
     );
 };
