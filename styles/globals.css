@@ -20,6 +20,10 @@ a {
   padding: 0;
 }
 
+h2{
+  font-family: 'Calligraffitti', cursive;
+}
+
 :root{
   /* Variables generales */
   --global-primary-color: var(--dark-primary-color);
@@ -28,6 +32,7 @@ a {
   --global-tertiary-color: var(--dark-tertiary-color);
   --global-inverse-color: var(--dark-primary-text_color);
   --global-text_color: var(--dark-primary-text_color);
+  --global-background_color: rgb(105, 13, 105);
 
   /* Colores */
   --global-ligth-gray: #F7F7FF;

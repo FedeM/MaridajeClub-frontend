@@ -1,8 +1,6 @@
+.article {
+    
+}
 
 @media (min-width: 800px) {
-    .article {
-        background-image: url('../../../public/assets/img/background_blur.jpg');
-        background-size: cover;
-        background-attachment: fixed;
-    }
 }

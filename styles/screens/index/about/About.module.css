@@ -3,6 +3,17 @@
     overflow: hidden;
 }
 
+.color{
+    position: absolute;
+    filter: blur(150px);
+    background-color: var(--global-background_color);
+    z-index: 0;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+}
+
 .about_container{
     position: relative;
     display: flex;

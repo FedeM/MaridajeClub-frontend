@@ -1,4 +1,6 @@
 .live_box{
+    position: relative;
+    z-index: 1;
 }
 
 .live_title {
@@ -28,6 +30,7 @@
     border-radius: 10px 0px 0 10px ;
     position: relative;
     width: 25%;
+    background-color: var(--global-primary-color);
 }
 
 .live_alert{

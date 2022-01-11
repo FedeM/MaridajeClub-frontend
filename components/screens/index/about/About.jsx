@@ -13,6 +13,7 @@ const About = ({id}) => {
 
     return mounted &&(
         <section id={id} className={styles.about_section}>
+            <div className={styles.color}></div>
             <div className={styles.about_container}>
                 <div className={styles.about_text_container}>
                     <div className={`${styles.about_text_container_text} wow animate__animated animate__fadeIn`}>

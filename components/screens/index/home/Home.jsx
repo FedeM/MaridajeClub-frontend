@@ -52,22 +52,24 @@ const Home = ({id, paddingTop}) => {
 
     return mounted &&(
         <section id={id} className={styles.home_section} style={{paddingTop: paddingTop}}>
-            <div className={styles.live_title}>
-                <i className="fas fa-circle"></i>
-                <h2>Live session</h2>
-            </div>
+            <div className={styles.color}></div>
+            <div className={styles.color}></div>
             <div className={styles.live_container}>
                 <BrowserView>
                     <LiveDesktop
                         enterEvent={enterEvent}
                     />
-                    <SliderDesktop/>
+                    <SliderDesktop
+                        enterEvent={enterEvent}
+                    />
                 </BrowserView>
                 <MobileView>
                     <LiveResponsive
                         enterEvent={enterEvent}
                     />
-                    <SliderResponsive/>
+                    <SliderResponsive
+                        enterEvent={enterEvent}
+                    />
                 </MobileView>
             </div>
             {modalEvent()}

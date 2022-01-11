@@ -19,7 +19,7 @@ const ProductCard = ({name, description, price, img, cart = true}) => {
             </div>
             <div className={styles.product_content}>
                 <div className={styles.title_price}>
-                    <h2>{name}</h2>
+                    <h3>{name}</h3>
                     <div className={styles.price}>${price}</div>
                 </div>
                 <div className={styles.description} onClick={(e)=> openDescription(e)} onMouseLeave={(e)=> closeDescription(e)}>
