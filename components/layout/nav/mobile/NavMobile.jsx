@@ -34,7 +34,7 @@ const NavMobile = ({logo, home, cart}) => {
     return (
         <div className={styles.navMobile_container}>
             <div className={styles.navMobile_bar} style={openMenu ? ({backgroundColor:"var(--global-primary-color)"}):({})}>
-                <div className={styles.navMobile_logo_container}>
+                <div className={styles.navMobile_logo_container} onClick={()=> Router.push('/')}>
                     <Image
                         src={logo}
                         className={styles.navMobile_logo}

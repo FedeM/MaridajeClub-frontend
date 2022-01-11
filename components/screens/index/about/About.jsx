@@ -1,6 +1,5 @@
 import styles from '../../../../styles/screens/index/about/About.module.css'
 import Image from 'next/image';
-// import ScrollDown from '../assets/scrollDown/ScrollDown'
 import { useEffect, useState } from 'react';
 
 
@@ -26,7 +25,9 @@ const About = ({id}) => {
                         className={styles.about_img_container_img}
                         src="/assets/img/about/alcohol.png"
                         layout="fill"
+                        objectFit='contain'
                         alt='Botellas de alcohol, alcohol bottle'
+                        priority
                     />
                 </div>
             </div>
