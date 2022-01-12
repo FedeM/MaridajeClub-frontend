@@ -3,11 +3,10 @@ import { BrowserView, MobileView} from 'react-device-detect';
 import EventResponsive from "../../../components/screens/events/EventResponsive";
 import EventDesktop from "../../../components/screens/events/EventDesktop";
 import { useState, useEffect } from "react";
-import Link from "next/link";
-import style from '../../../styles/screens/events/Event.module.css'
 import Router from "next/router";
-import Image from 'next/image'
 import { isAuthenticate } from "../../../lib/auth";
+import AlertModal from "../../../components/assets/AlertModal/AlertModal";
+import style from '../../../styles/screens/events/Event.module.css'
 
 //Variables de prueba
 const user = {
@@ -27,26 +26,18 @@ const Index = () => {
 
     const leave = ()=>{
         return leaveAlert && (
-            <div className={style.modal_container}>
-                <div className={style.modal}>
-                    <div className={style.modal_icon}>
-                        <Image src="/assets/img/icon/stop.png" alt="Icono stop" layout="fill" objectFit="contain"/>
-                    </div>
-                    <div className={style.modal_text}>
-                        <h3>¡Momento!</h3>
-                        <p>¿Estás seguro que deseas salir del evento?</p>
-                    </div>
-                    <div className={style.modal_buttons}>
-                        <div className={style.modal_button} onClick={()=>setLeaveAlert(false)}>Cancelar</div>
-                        <Link href="/">
-                            <a className={style.modal_button} onClick={()=> {
-                                setLeaveAlert(false)
-                                Router.push('/')
-                            }}>Salir</a>
-                        </Link>
-                    </div>
-                </div>
-            </div>
+            <AlertModal
+                img={"/assets/img/icon/stop.png"}
+                title="¡Momento!"
+                alert="¿Estás seguro que deseas salir del evento?"
+                btnText="Salir"
+                closeCallback={()=>{
+                    setLeaveAlert(false)
+                }}
+                callback= {()=>{
+                    Router.push('/')
+                }}
+            />
         )
     }
 

@@ -24,7 +24,6 @@ const Ecommerce = () => {
                 <div className={styles.browserView_container}>
                     <FilterDesktop name={'Vinos'}/>
                     <CategoryProduct/>
-                    
                 </div>
             </BrowserView>
         </section>

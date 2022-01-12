@@ -117,13 +117,3 @@ const SliderResponsive = ({lives, description, enterEvent}) => {
 };
 
 export default SliderResponsive;
-
-
-{/* <ReactPlayer
-    url={'/assets/video/live.mp4'}
-    width='100%'
-    height='100%'
-    controls
-    muted
-    className={styles.slider_react_player}
-/> */}
