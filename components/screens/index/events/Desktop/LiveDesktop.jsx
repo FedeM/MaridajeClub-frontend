@@ -1,5 +1,7 @@
-import ReactPlayer from 'react-player';
 import styles from '../../../../../styles/screens/index/events/Desktop/Live.module.css'
+import { lazy, Suspense } from 'react';
+import Loader from '../../../../assets/loader/Loader';
+const ReactPlayer = lazy(()=> import('react-player'))
 
 const LiveDesktop = ({enterEvent}) => {
     return (
@@ -10,16 +12,18 @@ const LiveDesktop = ({enterEvent}) => {
             </div>
             <div className={styles.live_wrapper}>
                 <div className={styles.video_container}>
-                    <ReactPlayer
-                        id="video"
-                        className={styles.react_player}
-                        url={'/assets/video/1.mp4'}
-                        playing
-                        loop
-                        muted
-                        width={'100%'}
-                        height={'100%'}
-                    />
+                    <Suspense fallback={<Loader size={50} style={{position: "absolute", top: "calc(50% - 25px)", left:"calc(50% - 25px)"}}/>}>
+                        <ReactPlayer
+                            id="video"
+                            className={styles.react_player}
+                            url={'/assets/video/1.mp4'}
+                            playing
+                            loop
+                            muted
+                            width={'100%'}
+                            height={'100%'}
+                        />
+                    </Suspense>
                     <span className={styles.live_alert}>Live</span>
                 </div>
                 <div className={styles.live_info_container}>

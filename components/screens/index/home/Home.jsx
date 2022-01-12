@@ -4,7 +4,7 @@ import LiveResponsive from '../events/Responsive/LiveResponsive'
 import SliderResponsive from '../events/Responsive/SliderResponsive'
 import LiveDesktop from '../events/Desktop/LiveDesktop'
 import SliderDesktop from '../events/Desktop/SliderDesktop'
-import { BrowserView, MobileView} from 'react-device-detect';
+import { BrowserView, isBrowser, MobileView} from 'react-device-detect';
 import Link from 'next/link';
 import Router from 'next/router';
 import { isAuthenticate } from '../../../../lib/auth';
@@ -54,7 +54,7 @@ const Home = ({id, paddingTop}) => {
         <section id={id} className={styles.home_section} style={{paddingTop: paddingTop}}>
             <div className={styles.color}></div>
             <div className={styles.color}></div>
-            <div className={styles.live_container}>
+            <div className={styles.live_container} style={isBrowser ? ({marginLeft: '15%'}):({})}>
                 <BrowserView>
                     <LiveDesktop
                         enterEvent={enterEvent}
