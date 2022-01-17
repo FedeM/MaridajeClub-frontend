@@ -1,11 +1,22 @@
 import { useEffect, useState } from 'react';
 import styles from '../../../../../styles/screens/index/events/Responsive/SliderResponsive.module.css'
 import Image from 'next/image'
+import ModalEventInfo from './modalEventInfo/ModalEventInfo';
 
 
-const SliderResponsive = ({lives, description, enterEvent}) => {
+const SliderResponsive = ({enterEvent, events}) => {
     const [mounted, setMounted] = useState(false)
+    //Controlamos el display del event info
     const [eventInfo, setEventInfo] = useState(false)
+    //Cargamos los datos del evento seleccionado
+    const [eventSelected, setEventSelected] = useState({
+        _id: "",
+        img: "",
+        title: "",
+        description: "",
+        date:"",
+        hour: ""
+    })
 
     useEffect(()=>{
         setMounted(true)
@@ -26,33 +37,6 @@ const SliderResponsive = ({lives, description, enterEvent}) => {
         }
     }
 
-    const modalEventInfo = ()=>{
-        return eventInfo && (
-            <div className={`${styles.event_info_container} animate__animated animate__slideInUp animate__faster`} id='eventInfo'>
-                <div className={styles.event_info}>
-                    <div className={styles.event_close} onClick={()=> displayEventInfo()}><i className="far fa-times-circle"></i></div>
-                    <div className={styles.event_img_container}>
-                        <Image
-                            src={'/assets/img/1.jpg'}
-                            layout='fill'
-                            objectFit='cover'
-                            alt={description}
-                        />
-                    </div>
-                    <div className={styles.event_info_content}>
-                        <h4>Presentación Bodega Los Haroldos</h4>
-                        <p className={styles.text}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea velit ad commodi reprehenderit iusto, quam pariatur at, aut non beatae aliquid, praesentium deleniti! Sit, cupiditate aspernatur. Deserunt unde nemo magni.</p>
-                        <div className={styles.date_container}>
-                            <div><i className="far fa-calendar-alt"></i><p>22 - 12 - 2021</p></div>
-                            <div><i className="far fa-clock"></i><p>16:15</p></div>
-                        </div>
-                    </div>
-                </div>
-                <button onClick={()=> enterEvent()}>Ingresar al evento</button>
-            </div>
-        )
-    }
-
     return mounted && (
         <>
 
@@ -62,55 +46,35 @@ const SliderResponsive = ({lives, description, enterEvent}) => {
                     <h3>Ver de nuevo</h3>
                 </div>
                 <div className={styles.events_track}>
-                    <div className={styles.event_img_box} onClick={()=> displayEventInfo()}>
-                        <Image
-                            src={'/assets/img/1.jpg'}
-                            layout='fill'
-                            objectFit='cover'
-                            alt={description}
-                            priority
-                        />
-                    </div>
-                    <div className={styles.event_img_box} onClick={()=> displayEventInfo()}>
-                        <Image
-                            src={'/assets/img/2.jpg'}
-                            layout='fill'
-                            objectFit='cover'
-                            alt={description}
-                            priority
-                        />
-                    </div>
-                    <div className={styles.event_img_box} onClick={()=> displayEventInfo()}>
-                        <Image
-                            src={'/assets/img/1.jpg'}
-                            layout='fill'
-                            objectFit='cover'
-                            alt={description}
-                            priority
-                        />
-                    </div>
-                    <div className={styles.event_img_box} onClick={()=> displayEventInfo()}>
-                        <Image
-                            src={'/assets/img/2.jpg'}
-                            layout='fill'
-                            objectFit='cover'
-                            alt={description}
-                            priority
-                        />
-                    </div>
-                    <div className={styles.event_img_box} onClick={()=> displayEventInfo()}>
-                        <Image
-                            src={'/assets/img/1.jpg'}
-                            layout='fill'
-                            objectFit='cover'
-                            alt={description}
-                            priority
-                        />
-                    </div>
+                    {
+                        events.map((e,i)=>(
+                            <div className={styles.event_img_box} key={i} onClick={()=>{
+                                setEventInfo(true)
+                                setEventSelected({
+                                _id: e._id,
+                                img: e.img,
+                                title: e.title,
+                                description: e.description,
+                                date: e.date,
+                                hour: e.hour
+                                })
+                            }}>
+                                <Image
+                                    src={e.img}
+                                    layout="fill"
+                                    objectFit='cover'
+                                    alt={e.title}
+                                    priority
+                                />
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
             {
-                modalEventInfo()
+                eventInfo && (
+                    <ModalEventInfo enterEvent={enterEvent} displayEventInfo={displayEventInfo} eventSelected={eventSelected}/>
+                )
             }
         </>
     );

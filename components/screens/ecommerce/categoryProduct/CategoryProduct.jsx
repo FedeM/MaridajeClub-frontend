@@ -1,7 +1,8 @@
 import ProductCard from '../../../assets/productCard/ProductCard';
 import styles from './CategoryProduct.module.css'
 
-const CategoryProduct = ({title, home}) => {
+const CategoryProduct = ({title, home, products, justifyContent}) => {
+
     return (
         <div className={styles.product_section}>
         {
@@ -11,37 +12,19 @@ const CategoryProduct = ({title, home}) => {
                 </div>
             )
         }
-            <div className={styles.product_container}>
-                <ProductCard
-                    name="Vino 1"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pretium ultrices libero, et tincidunt justo aliquam vel. Sed aliquet quis urna ut cursus. Integer et augue ut arcu condimentum rhoncus non et nibh. Sed interdum et neque quis fermentum. "
-                    price="99.75"
-                    img="/assets/img/products/wine1.jpg"
-                />
-                <ProductCard
-                    name="Vino 2"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pretium ultrices libero, et tincidunt justo aliquam vel. Sed aliquet quis urna ut cursus. Integer et augue ut arcu condimentum rhoncus non et nibh. Sed interdum et neque quis fermentum. "
-                    price="90.75"
-                    img="/assets/img/products/wine2.jpg"
-                />
-                <ProductCard
-                    name="Vino 3"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pretium ultrices libero, et tincidunt justo aliquam vel. Sed aliquet quis urna ut cursus. Integer et augue ut arcu condimentum rhoncus non et nibh. Sed interdum et neque quis fermentum. "
-                    price="108.99"
-                    img="/assets/img/products/wine3.jpg"
-                />
-                <ProductCard
-                    name="Vino 4"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pretium ultrices libero, et tincidunt justo aliquam vel. Sed aliquet quis urna ut cursus. Integer et augue ut arcu condimentum rhoncus non et nibh. Sed interdum et neque quis fermentum. "
-                    price="56.50"
-                    img="/assets/img/products/wine1.jpg"
-                />
-                <ProductCard
-                    name="Vino 1"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pretium ultrices libero, et tincidunt justo aliquam vel. Sed aliquet quis urna ut cursus. Integer et augue ut arcu condimentum rhoncus non et nibh. Sed interdum et neque quis fermentum. "
-                    price="99.75"
-                    img="/assets/img/products/wine2.jpg"
-                />
+            <div className={styles.product_container} style={{justifyContent: justifyContent}}>
+                {
+                    products.map((e,i)=>(
+                        <ProductCard
+                            key={i}
+                            id={e._id}
+                            name={e.name}
+                            description={e.description}
+                            price={e.price}
+                            img={e.img}
+                        />
+                    ))
+                }
             </div>
         </div>
     );

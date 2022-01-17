@@ -1,5 +1,6 @@
 .filter{
-    width: 35%;
+    min-width: 25%;
+    max-width: 25%;
     padding-top: 15px;
     padding-left: 20px;
     background-color: var(--global-primary-color);

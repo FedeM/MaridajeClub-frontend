@@ -32,17 +32,3 @@ export default function Index() {
     </Layout>
   )
 }
-
-// export async function getStaticProps(){
-//   try {
-//       const res = await fetch('http://localhost:3000/videos.json')
-//       const data = await res.json()
-//       return{
-//           props: {
-//               data
-//           }
-//       }
-//   } catch (error) {
-//       console.log(error)
-//   }
-// }

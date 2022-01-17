@@ -1,41 +1,64 @@
 import styles from '../../../../styles/screens/index/home/Home.module.css'
+
 import { useEffect, useState } from 'react';
+import { BrowserView, isBrowser, MobileView} from 'react-device-detect';
+import Router from "next/router";
+
+import { isAuthenticate } from '../../../../lib/auth';
+
+import AlertModal from '../../../assets/AlertModal/AlertModal';
+
 import LiveResponsive from '../events/Responsive/LiveResponsive'
 import SliderResponsive from '../events/Responsive/SliderResponsive'
 import LiveDesktop from '../events/Desktop/LiveDesktop'
 import SliderDesktop from '../events/Desktop/SliderDesktop'
-import { BrowserView, isBrowser, MobileView} from 'react-device-detect';
-import Router from "next/router";
-import { isAuthenticate } from '../../../../lib/auth';
-import AlertModal from '../../../assets/AlertModal/AlertModal';
 
 
-
-const Home = ({id, paddingTop}) => {
+const Home = ({id}) => {
+    //Verificamos que el componente esté montado
     const [mounted, setMounted] = useState(false)
+    //Controlamos la apertura/cierre del modal
     const [openModal, setOpenModal] = useState(false)
+    //En este array guardaremos los eventos
+    const [events, setEvents] = useState([
+        {
+            _id: 1,
+            img: "/assets/img/1.jpg",
+            title: "Presentación Bodega Garzón",
+            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, suscipit deserunt, molestias ex iste laboriosam distinctio beatae molestiae veniam assumenda voluptatem dolore consequuntur officia sapiente debitis. Adipisci enim dolor iste.",
+            date: "19-02-2022",
+            hour: `18:55`
+        },
+        {
+            _id: 2,
+            img: "/assets/img/2.jpg",
+            title: "Presentación Bodega Super Úco",
+            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, suscipit deserunt, molestias ex iste laboriosam distinctio beatae molestiae veniam assumenda voluptatem dolore consequuntur officia sapiente debitis. Adipisci enim dolor iste.",
+            date: "20-02-2022",
+            hour: `15:00`
+        },
+        {
+            _id: 3,
+            img: "/assets/img/1.jpg",
+            title: "Presentación Bodega Zuccardi",
+            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, suscipit deserunt, molestias ex iste laboriosam distinctio beatae molestiae veniam assumenda voluptatem dolore consequuntur officia sapiente debitis. Adipisci enim dolor iste.",
+            date: "25-02-2022",
+            hour: `17:15`
+        },
+        {
+            _id: 4,
+            img: "/assets/img/2.jpg",
+            title: "Presentación Bodega Marqués de Riscal",
+            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, suscipit deserunt, molestias ex iste laboriosam distinctio beatae molestiae veniam assumenda voluptatem dolore consequuntur officia sapiente debitis. Adipisci enim dolor iste.",
+            date: "01-03-2022",
+            hour: `18:00`
+        },
+    ])
 
-    const modalEvent= ()=>{
-        return openModal && (
-            ////////////////////////////////////////////
-            <AlertModal
-                img={"/assets/img/icon/alert.png"}
-                title="Espera"
-                alert="Para ingresar al evento primero debes iniciar sesión"
-                btnText="Iniciar Sesión"
-                closeCallback={()=>{
-                    setOpenModal(false)
-                }}
-                callback= {()=>{
-                    Router.push('/session')
-                }}
-            />
-        )
-    }
 
-    const enterEvent = ()=>{
+    const enterEvent = (id)=>{
         if (isAuthenticate()) {
-            Router.push('/events/5')
+            Router.push(`/events/${id}`)
         }else{
             setOpenModal(true)
         }
@@ -46,7 +69,7 @@ const Home = ({id, paddingTop}) => {
     },[mounted])
 
     return mounted &&(
-        <section id={id} className={styles.home_section} style={{paddingTop: paddingTop}}>
+        <section id={id} className={styles.home_section}>
             <div className={styles.color}></div>
             <div className={styles.color}></div>
             <div className={styles.live_container} style={isBrowser ? ({marginLeft: '15%'}):({})}>
@@ -56,6 +79,7 @@ const Home = ({id, paddingTop}) => {
                     />
                     <SliderDesktop
                         enterEvent={enterEvent}
+                        events={events}
                     />
                 </BrowserView>
                 <MobileView>
@@ -64,10 +88,26 @@ const Home = ({id, paddingTop}) => {
                     />
                     <SliderResponsive
                         enterEvent={enterEvent}
+                        events={events}
                     />
                 </MobileView>
             </div>
-            {modalEvent()}
+            {
+                openModal && (
+                    <AlertModal
+                        img={"/assets/img/icon/alert.png"}
+                        title="Espera"
+                        alert="Para ingresar al evento primero debes iniciar sesión"
+                        btnText="Iniciar Sesión"
+                        closeCallback={()=>{
+                            setOpenModal(false)
+                        }}
+                        callback= {()=>{
+                            Router.push('/session')
+                        }}
+                    />
+                )
+            }
         </section>
     );
 };

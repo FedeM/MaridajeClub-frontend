@@ -1,6 +1,7 @@
 .home_section {
     color: var(--global-primary-text_color);
     padding-bottom: 35px;
+    padding-top: 15vh;
     min-height: 100vh;
     position: relative;
 }

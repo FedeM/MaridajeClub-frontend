@@ -20,10 +20,6 @@ a {
   padding: 0;
 }
 
-h2{
-  font-family: 'Calligraffitti', cursive;
-}
-
 :root{
   /* Variables generales */
   --global-primary-color: var(--dark-primary-color);

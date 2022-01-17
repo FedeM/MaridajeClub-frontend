@@ -1,8 +1,8 @@
 import styles from './ProductCard.module.css';
-import Link from 'next/link'
 import Image from 'next/image'
+import Router from 'next/router';
 
-const ProductCard = ({name, description, price, img, cart = true}) => {
+const ProductCard = ({id, name, description, price, img, cart = true}) => {
 
     const openDescription =(e)=>{
         e.target.parentNode.classList.add(`${styles.description_hidden}`)
@@ -27,9 +27,14 @@ const ProductCard = ({name, description, price, img, cart = true}) => {
                 </div>
                 {
                     cart &&(
-                        <Link href="/">
-                            <a>Agregar al carrito</a>
-                        </Link>
+                        <div className={styles.buttons}>
+                            <div className={styles.button} onClick={()=> Router.push(`/ecommerce/${id}`)}>
+                                <span>Ver más</span>
+                            </div>
+                            <div className={styles.button}>
+                                <i className="fas fa-cart-arrow-down"></i>
+                            </div>
+                        </div>
                     )
                 }
             </div>
