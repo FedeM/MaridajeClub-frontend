@@ -1,5 +1,4 @@
-import Nav from '../Nav/Nav'
-import Footer from '../Footer/Footer'
+import { Footer, Nav } from "../";
 import Head from "next/head";
 import style from './Layout.module.css'
 
