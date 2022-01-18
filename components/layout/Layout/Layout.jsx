@@ -1,4 +1,4 @@
-import { Footer, Nav } from "../index.js";
+import { Footer, Nav } from "../";
 import Head from "next/head";
 import style from './Layout.module.css'
 

@@ -69,7 +69,7 @@ const NavDesktop = ({logo, home,cart}) => {
                                     </a>
                                 </Link>
                                 {
-                                    cart && (
+                                    cart && isAuthenticate() &&(
                                         <div className={styles.cart_icon} onClick={()=> Router.push('/cart')}>
                                             <Image src="/assets/img/icon/cart.png" alt="icono carrito" layout='fill' objectFit='contain'/>
                                         </div>
