@@ -24,7 +24,7 @@ const EventDesktop = ({setLeaveAlert, submitPost, posts, handleChange}) => {
                     <div className={style.live_container}>
                         <ReactPlayer
                             className={style.live}
-                            url="/assets/video/1.mp4"
+                            url="/assets/video/videoWine.mp4"
                             playing
                             loop
                             muted

@@ -16,7 +16,7 @@ const LiveDesktop = ({enterEvent}) => {
                         <ReactPlayer
                             id="video"
                             className={styles.react_player}
-                            url={'/assets/video/1.mp4'}
+                            url={'/assets/video/videoWine.mp4'}
                             playing
                             loop
                             muted
