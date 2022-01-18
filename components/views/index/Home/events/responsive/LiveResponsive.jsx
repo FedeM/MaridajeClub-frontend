@@ -28,6 +28,7 @@ const LiveResponsive = ({data, enterEvent}) => {
                         muted
                         width={'100%'}
                         height={'100%'}
+                        style={{border:"5px solid red"}}
                     />
                 </Suspense>
                 <span className={styles.liveRes_alert}>Live</span>
