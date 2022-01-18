@@ -8,6 +8,23 @@ body {
   scroll-behavior: smooth;
 }
 
+  body::-webkit-scrollbar{
+  width: 5px;
+  height: 5px;
+  }
+  body::-webkit-scrollbar-thumb{
+  background: #B3AFB3;
+  border-radius: 30px;
+  }
+  body::-webkit-scrollbar-thumb:hover{
+  background: #B3AFB3;
+  }
+  body::-webkit-scrollbar-track{
+  background: #000000;
+  border-radius: 0px;
+  box-shadow: inset 0px 0px 0px 0px #F0F0F0;
+  }
+
 body > div{
   height: 100vh;
   display: grid;

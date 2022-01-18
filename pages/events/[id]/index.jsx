@@ -10,7 +10,7 @@ import { AlertModal } from '../../../components/common';
 
 //Variables de prueba
 const user = {
-    name:"santillienzo",
+    name: isAuthenticate().username,
     photo:"/assets/img/profile/user.png"
 }
 
