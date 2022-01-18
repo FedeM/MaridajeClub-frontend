@@ -1,0 +1,26 @@
+.purchase_section{
+    width: 100%;
+}
+
+.purchase_title{
+    padding: 25px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.purchase_title h3{
+    font-weight: 300;
+}
+
+.purchase_cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+@media (min-width: 800px) {
+    .purchase_section{
+        width: 80%;
+    }
+}

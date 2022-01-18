@@ -1,9 +1,6 @@
-import Ecommerce from '../components/screens/index/ecommerce/Ecommerce'
-import Home from '../components/screens/index/home/Home'
-import Layout from '../components/layout/Layout'
-import Wineries from '../components/screens/index/wineries/Wineries'
-import About from '../components/screens/index/about/About'
-import style from '../styles/screens/index/Index.module.css'
+import { Layout } from '../components/layout'
+import {Home, Wineries, About, Ecommerce} from '../components/views/index'
+import style from '../styles/pages/Index.module.css'
 
 export default function Index() {
 

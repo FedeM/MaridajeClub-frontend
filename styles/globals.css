@@ -8,6 +8,13 @@ body {
   scroll-behavior: smooth;
 }
 
+body > div{
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 100%;
+}
+
 a {
   color: #04c3e9;
   color: var(--global-tertiary-color);

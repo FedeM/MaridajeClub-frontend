@@ -1,5 +1,6 @@
-import Layout from "../../components/layout/Layout";
-import Session from "../../components/screens/session/Session";
+import { Layout } from "../../components/layout";
+import {Session} from "../../components/views";
+
 import { isAuthenticate } from "../../lib/auth";
 
 const Index = () => {

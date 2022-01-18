@@ -1,11 +1,11 @@
-import styles from '../../../../styles/layout/nav/NavDesktop.module.css'
+import styles from './NavDesktop.module.css'
 import {
     Link as LinkScroll
 } from 'react-scroll'
 import Link from 'next/link'
-import { isAuthenticate } from '../../../../lib/auth'
 import Router from "next/router";
 import Image from 'next/image'
+import {isAuthenticate} from '../../../../lib/auth'
 
 
 
@@ -52,7 +52,7 @@ const NavDesktop = ({logo, home,cart}) => {
                                     )
                                 }
                                 {
-                                    cart && (
+                                    cart && isAuthenticate() &&(
                                         <div className={styles.cart_icon} onClick={()=> Router.push('/cart')}>
                                             <Image src="/assets/img/icon/cart.png" alt="icono carrito" layout='fill' objectFit='contain'/>
                                         </div>

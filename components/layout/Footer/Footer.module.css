@@ -1,0 +1,17 @@
+.footer{
+    border-top: 1px solid var(--global-gray3);
+    padding: 15px 30px;
+    font-size: 13px;
+    background-color: var(--global-primary-color);
+}
+
+.links a{
+    color: var(--global-primary-text_color);
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.copyright{
+    margin-top: 10px;
+    font-weight: 200;
+}

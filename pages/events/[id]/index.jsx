@@ -1,12 +1,12 @@
-import Layout from "../../../components/layout/Layout";
+import { Layout } from '../../../components/layout'
+import { EventDesktop, EventResponsive } from '../../../components/views';
+
+
 import { BrowserView, MobileView} from 'react-device-detect';
-import EventResponsive from "../../../components/screens/events/EventResponsive";
-import EventDesktop from "../../../components/screens/events/EventDesktop";
 import { useState, useEffect } from "react";
 import Router from "next/router";
 import { isAuthenticate } from "../../../lib/auth";
-import AlertModal from "../../../components/assets/AlertModal/AlertModal";
-import style from '../../../styles/screens/events/Event.module.css'
+import { AlertModal } from '../../../components/common';
 
 //Variables de prueba
 const user = {
@@ -80,7 +80,7 @@ const Index = () => {
                 />
             </MobileView>
             <BrowserView>
-                <EventDesktop 
+                <EventDesktop
                     setLeaveAlert={setLeaveAlert}
                     submitPost={submitPost}
                     handleChange={handleChange}
