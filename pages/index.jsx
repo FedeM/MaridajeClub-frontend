@@ -1,4 +1,4 @@
-import { Layout } from '../components/layout'
+import { Layout } from '../components/layout/index.js'
 import {Home, Wineries, About, Ecommerce} from '../components/views/index'
 import style from '../styles/pages/Index.module.css'
 
