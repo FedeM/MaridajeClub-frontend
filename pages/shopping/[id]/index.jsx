@@ -1,7 +1,7 @@
 import { Layout } from '../../../components/layout'
 
 import { useEffect, useState } from 'react';
-import ProductDetail from '../../../components/screens/ecommerce/ProductDetail/ProductDetail';
+import { ProductDetail } from '../../../components/views';
 
 const Index = () => {
     const [mounted, setMounted] = useState(false)

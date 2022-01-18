@@ -28,7 +28,7 @@ const ProductCard = ({id, name, description, price, img, cart = true}) => {
                 {
                     cart &&(
                         <div className={styles.buttons}>
-                            <div className={styles.button} onClick={()=> Router.push(`/ecommerce/${id}`)}>
+                            <div className={styles.button} onClick={()=> Router.push(`/shopping/${id}`)}>
                                 <span>Ver más</span>
                             </div>
                             <div className={styles.button}>

@@ -27,5 +27,6 @@ export {default as Session} from './session/Session.jsx'
 
 //Componentes del SHOPPING
 export {default as Shopping} from './shopping/Shopping.jsx'
+export {default as ProductDetail} from './shopping/ProductDetail/ProductDetail.jsx'
 
 
