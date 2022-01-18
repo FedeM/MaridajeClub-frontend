@@ -18,7 +18,7 @@ const LiveResponsive = ({data, enterEvent}) => {
                 <h3>Próximo</h3>
             </div>
             <div className={styles.videoRes_container}>
-                <Suspense fallback={<Loader size={50} style={{position: "absolute", top: "calc(50% - 25px)", left:"calc(50% - 25px)"}}/>}>
+                {/* <Suspense fallback={<Loader size={50} style={{position: "absolute", top: "calc(50% - 25px)", left:"calc(50% - 25px)"}}/>}>
                     <ReactPlayer
                         id="video"
                         className={styles.react_player}
@@ -30,7 +30,8 @@ const LiveResponsive = ({data, enterEvent}) => {
                         height={'100%'}
                         style={{border:"5px solid red"}}
                     />
-                </Suspense>
+                </Suspense> */}
+                <video src="/assets/video/1.mp4" width={'100%'} height={'100%'} autoPlay muted loop></video>
                 <span className={styles.liveRes_alert}>Live</span>
                 <div className={styles.liveRes_info_container}>
                     <h4>Presentación Bodega Los Haroldos</h4>
