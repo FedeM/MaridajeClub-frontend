@@ -31,7 +31,7 @@ const LiveResponsive = ({data, enterEvent}) => {
                         style={{border:"5px solid red"}}
                     />
                 </Suspense> */}
-                <video src="/assets/video/1.mp4" width={'100%'} height={'100%'} autoPlay muted loop></video>
+                <video src="/assets/video/2.mp4" width={'100%'} height={'100%'} autoPlay muted loop></video>
                 <span className={styles.liveRes_alert}>Live</span>
                 <div className={styles.liveRes_info_container}>
                     <h4>Presentación Bodega Los Haroldos</h4>
