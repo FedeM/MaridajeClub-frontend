@@ -1,8 +1,9 @@
 import styles from './LiveResponsive.module.css'
 import { useEffect, useState } from 'react';
 import { lazy, Suspense } from 'react';
-import { Loader } from '../../../../../common';
-const ReactPlayer = lazy(()=> import('react-player'))
+// import { Loader } from '../../../../../common';
+// const ReactPlayer = lazy(()=> import('react-player'))
+import ReactPlayer from 'react-player'
 
 const LiveResponsive = ({data, enterEvent}) => {
     const [mounted, setMounted] = useState(false)
@@ -18,18 +19,16 @@ const LiveResponsive = ({data, enterEvent}) => {
                 <h3>Próximo</h3>
             </div>
             <div className={styles.videoRes_container}>
-                <Suspense fallback={<Loader size={50} style={{position: "absolute", top: "calc(50% - 25px)", left:"calc(50% - 25px)"}}/>}>
-                    <ReactPlayer
-                        id="video"
-                        className={styles.react_player}
-                        url={'/assets/video/1.mp4'}
-                        playing
-                        loop
-                        muted
-                        width={'100%'}
-                        height={'100%'}
-                    />
-                </Suspense>
+                <ReactPlayer
+                    id="video"
+                    className={styles.react_player}
+                    url={'/assets/video/1.mp4'}
+                    playing
+                    loop
+                    muted
+                    width={'100%'}
+                    height={'100%'}
+                />
                 <span className={styles.liveRes_alert}>Live</span>
                 <div className={styles.liveRes_info_container}>
                     <h4>Presentación Bodega Los Haroldos</h4>
