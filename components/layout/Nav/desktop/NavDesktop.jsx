@@ -46,7 +46,7 @@ const NavDesktop = ({logo, home,cart}) => {
                                     ):(
                                         <Link href={'/session'}>
                                             <a className={`${styles.navDesktop_nav_li}`} title='Iniciar sesión'>
-                                                <i class="fas fa-sign-in-alt"></i>
+                                                <i className="fas fa-sign-in-alt"></i>
                                             </a>
                                         </Link>
                                     )
@@ -55,7 +55,7 @@ const NavDesktop = ({logo, home,cart}) => {
                                     cart && isAuthenticate() &&(
                                         <Link href={'/shopping'}>
                                             <a className={`${styles.navDesktop_nav_li}`} title='Carrito'>
-                                                <i class="fas fa-shopping-cart"></i>
+                                                <i className="fas fa-shopping-cart"></i>
                                             </a>
                                         </Link>
                                     )
@@ -74,7 +74,7 @@ const NavDesktop = ({logo, home,cart}) => {
                                     cart && isAuthenticate() &&(
                                         <Link href={'/shopping'}>
                                             <a className={`${styles.navDesktop_nav_li}`} title='Carrito'>
-                                                <i class="fas fa-shopping-cart"></i>
+                                                <i className="fas fa-shopping-cart"></i>
                                             </a>
                                         </Link>
                                     )
