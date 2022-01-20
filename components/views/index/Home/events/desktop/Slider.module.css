@@ -1,8 +1,9 @@
 .last_events_container {
     position: relative;
     z-index: 1;
-    width: 100%;
+    width: 95%;
     margin-top: 45px;
+    margin-left: 5%;
 }
 
 .last_events_title {
@@ -27,8 +28,8 @@
 }
 
 .event_info{
-    min-width: 300px;
-    max-width: 300px;
+    min-width: 400px;
+    max-width: 400px;
     min-height: 400px;
     max-height: 400px;
 }

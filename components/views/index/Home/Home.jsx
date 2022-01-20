@@ -1,6 +1,9 @@
 import style from './Home.module.css'
 
 import { useEffect, useState } from 'react';
+import {
+    Link as LinkScroll
+} from 'react-scroll'
 import { BrowserView, isBrowser, MobileView} from 'react-device-detect';
 import Router from "next/router";
 
@@ -70,17 +73,35 @@ const Home = ({id}) => {
         <section id={id} className={style.home_section}>
             <div className={style.color}></div>
             <div className={style.color}></div>
-            <div className={style.live_container} style={isBrowser ? ({marginLeft: '15%'}):({})}>
+            <div className={style.live_container}>
                 <BrowserView>
-                    <LiveDesktop
-                        enterEvent={enterEvent}
-                    />
+                    <div className={style.presentation_container}>
+                        <div className={style.about_text_container}>
+                            <div className={style.about_text_container_text}>
+                                <h3>Live Streaming & eCommerce</h3>
+                                <p>Viví la única experiencia <span> Live Streaming Shopping</span> de bebidas, conoce a sus creadores y encontrá precios únicos</p>
+                            </div>
+                            <div>
+                                <LinkScroll className={style.about_btn} to="events" spy={true}><i className="fas fa-video"></i> Ver en vivo</LinkScroll>
+                                <LinkScroll className={style.about_btn} to="commerce" spy={true}><i className="fas fa-shopping-bag"></i> Comprar</LinkScroll>
+                            </div>
+                        </div>
+                        <LiveDesktop
+                            enterEvent={enterEvent}
+                        />
+                    </div>
                     <SliderDesktop
                         enterEvent={enterEvent}
                         events={events}
                     />
                 </BrowserView>
                 <MobileView>
+                    <div className={style.about_text_container}>
+                        <div className={style.about_text_container_text}>
+                            <h3>Live Streaming & eCommerce</h3>
+                            <p>Viví la única experiencia <span> Live Streaming Shopping</span> de bebidas, conoce a sus creadores y encontrá precios únicos</p>
+                        </div>
+                    </div>
                     <LiveResponsive
                         enterEvent={enterEvent}
                     />

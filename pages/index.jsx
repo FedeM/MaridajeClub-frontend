@@ -20,7 +20,7 @@ export default function Index() {
           paddingTop={"15vh"}
         />
         <Wineries id="winaries"/>
-        <About id="about"/>
+        {/* <About id="about"/> */}
         <Ecommerce
           home
           id="commerce"

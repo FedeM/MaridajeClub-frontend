@@ -1,7 +1,7 @@
 .home_section {
     color: var(--global-primary-text_color);
     padding-bottom: 35px;
-    padding-top: 15vh;
+    padding-top: 10vh;
     min-height: 100vh;
     position: relative;
 }
@@ -27,17 +27,109 @@
 }
 
 .live_container {
-    width: 70%;
+    width: 90%;
     margin: auto;
 }
 
 
+.about_container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.about_text_container{
+    margin-top: 35px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+}
+
+.about_text_container h3{
+    font-size: 2rem;
+}
+.about_text_container p span{
+    color: var(--global-tertiary-color);
+}
+
+.about_btn{
+    display: inline-block;
+    color: #fff;
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    margin-top: 25px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.about_btn:nth-child(1){
+    background-color: var(--global-secondary-color);
+}
+.about_btn:nth-child(2){
+    border: 1px solid var(--global-secondary-color);
+    color: var(--global-secondary-color);
+}
+
+@media (min-width:700px){ 
+    .presentation_container{
+        display: flex;
+    }
+
+    .about_text_container h3{
+        font-size: 3rem;
+    }
+    .about_text_container p{
+        font-size: 2rem;
+        width: 80%;
+        margin: 15px auto;
+    }
+
+    .about_btn{
+        font-size: 2rem;
+    }
+}
 
 @media (min-width: 800px) {
+
     .live_container {
-        width: 85%;
+        width: 100%;
         margin: auto;
     }
+
+    .about_text_container{
+        align-items: flex-start;
+        justify-content: center;
+        text-align: left;
+        min-width: calc(465px + 137px);
+        margin-left: 5%;
+        margin-top: 0px;
+    }
+    
+    .about_text_container h3{
+        font-size: 5rem;
+    }
+    .about_text_container p{
+        font-size: 1.5rem;
+        width: 100%;
+        margin: 0;
+    }
+
+    .about_btn{
+        font-size: 1.2rem;
+    }
+    
+    .about_img_container{
+        flex-grow: 1;
+        width: 40%;
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+
 
     .color:nth-child(1){
         width: 350px;

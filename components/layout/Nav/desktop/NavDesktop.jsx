@@ -31,31 +31,33 @@ const NavDesktop = ({logo, home,cart}) => {
                         home ?
                         (
                             <>
-                                <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} activeClass={styles.activeClass} to="home"  spy={true}>Inicio</LinkScroll>
-                                <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} activeClass={styles.activeClass} to={"about" || "winaries"}  spy={true}>Nosotros</LinkScroll>
-                                <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} activeClass={styles.activeClass} to="commerce"  spy={true}>Comprar</LinkScroll>
+                                <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} activeClass={styles.activeClass} to="home"  spy={true} title='Inicio'><i className="fas fa-home"></i></LinkScroll>
+                                <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} activeClass={styles.activeClass} to="slider"  spy={true} title='Volver a ver'><i className="fas fa-redo"></i></LinkScroll>
+                                <LinkScroll className={`${styles.navDesktop_nav_li} li non_select`} activeClass={styles.activeClass} to="commerce"  spy={true} title='Comprar'><i className="fas fa-shopping-bag"></i></LinkScroll>
                                 {
                                     isAuthenticate() ? (
                                         <>
                                             <Link href={'/profile'}>
-                                                <a className={`${styles.navDesktop_nav_li}`}>
-                                                    Perfil
+                                                <a className={`${styles.navDesktop_nav_li}`} title='Perfil'>
+                                                    <i className="fas fa-user"></i>
                                                 </a>
                                             </Link>
                                         </>
                                     ):(
                                         <Link href={'/session'}>
-                                            <a className={`${styles.navDesktop_nav_li}`}>
-                                                Ingresar
+                                            <a className={`${styles.navDesktop_nav_li}`} title='Iniciar sesión'>
+                                                <i class="fas fa-sign-in-alt"></i>
                                             </a>
                                         </Link>
                                     )
                                 }
                                 {
                                     cart && isAuthenticate() &&(
-                                        <div className={styles.cart_icon} onClick={()=> Router.push('/cart')}>
-                                            <Image src="/assets/img/icon/cart.png" alt="icono carrito" layout='fill' objectFit='contain'/>
-                                        </div>
+                                        <Link href={'/shopping'}>
+                                            <a className={`${styles.navDesktop_nav_li}`} title='Carrito'>
+                                                <i class="fas fa-shopping-cart"></i>
+                                            </a>
+                                        </Link>
                                     )
                                 }
                             </>
@@ -64,15 +66,17 @@ const NavDesktop = ({logo, home,cart}) => {
                         (
                             <>
                                 <Link  onClick={()=> displayMenu()} href={'/'}>
-                                    <a className={`${styles.navDesktop_nav_li}`}>
-                                        Inicio
+                                    <a className={`${styles.navDesktop_nav_li}`} title='Inicio'>
+                                        <i className="fas fa-home"></i>
                                     </a>
                                 </Link>
                                 {
                                     cart && isAuthenticate() &&(
-                                        <div className={styles.cart_icon} onClick={()=> Router.push('/cart')}>
-                                            <Image src="/assets/img/icon/cart.png" alt="icono carrito" layout='fill' objectFit='contain'/>
-                                        </div>
+                                        <Link href={'/shopping'}>
+                                            <a className={`${styles.navDesktop_nav_li}`} title='Carrito'>
+                                                <i class="fas fa-shopping-cart"></i>
+                                            </a>
+                                        </Link>
                                     )
                                 }
                             </>
