@@ -4,14 +4,14 @@ import { useEffect, useState } from 'react';
 import {
     Link as LinkScroll
 } from 'react-scroll'
-import { BrowserView, isBrowser, MobileView} from 'react-device-detect';
+import { BrowserView, MobileView} from 'react-device-detect';
 import Router from "next/router";
 
 import { isAuthenticate } from '../../../../lib/auth';
 
 import {AlertModal} from '../../../common';
 
-import {LiveResponsive, SliderResponsive, LiveDesktop,SliderDesktop} from '../../'
+import { SliderResponsive, Live,SliderDesktop} from '../../'
 
 
 
@@ -86,7 +86,7 @@ const Home = ({id}) => {
                                 <LinkScroll className={style.about_btn} to="commerce" spy={true}><i className="fas fa-shopping-bag"></i> Comprar</LinkScroll>
                             </div>
                         </div>
-                        <LiveDesktop
+                        <Live
                             enterEvent={enterEvent}
                         />
                     </div>
@@ -102,7 +102,7 @@ const Home = ({id}) => {
                             <p>Viví la única experiencia <span> Live Streaming Shopping</span> de bebidas, conoce a sus creadores y encontrá precios únicos</p>
                         </div>
                     </div>
-                    <LiveResponsive
+                    <Live
                         enterEvent={enterEvent}
                     />
                     <SliderResponsive

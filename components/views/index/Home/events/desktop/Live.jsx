@@ -4,7 +4,7 @@ import { Loader } from '../../../../../common';
 const ReactPlayer = lazy(()=> import('react-player'))
 import {useState} from 'react'
 
-const LiveDesktop = ({enterEvent}) => {
+const Live = ({enterEvent}) => {
     const [modalActivate, setModalActivate] = useState(false)
 
     const MoreInfoModal = ()=>{
@@ -64,4 +64,4 @@ const LiveDesktop = ({enterEvent}) => {
     );
 };
 
-export default LiveDesktop;
+export default Live;

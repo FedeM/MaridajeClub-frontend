@@ -5,9 +5,8 @@ export {default as About} from './index/About/About'
 export {default as Ecommerce} from './index/Ecommerce/Ecommerce'
 
 //Componentes del index
-export {default as LiveResponsive} from './index/Home/events/responsive/LiveResponsive.jsx'
 export {default as SliderResponsive} from './index/Home/events/responsive/SliderResponsive.jsx'
-export {default as LiveDesktop} from './index/Home/events/desktop/LiveDesktop.jsx'
+export {default as Live} from './index/Home/events/desktop/Live.jsx'
 export {default as SliderDesktop} from './index/Home/events/desktop/SliderDesktop.jsx'
 
 //Componentes de CART
