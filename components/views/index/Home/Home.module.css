@@ -50,8 +50,14 @@
 }
 
 .about_text_container h3{
-    font-size: 2rem;
+    font-size: 3rem;
 }
+
+.about_text_container p{
+    font-size: 1.3rem;
+    margin-top: 15px;
+}
+
 .about_text_container p span{
     color: var(--global-tertiary-color);
 }
@@ -63,6 +69,7 @@
     font-size: 1.2rem;
     border-radius: 10px;
     margin-top: 25px;
+    margin-bottom: 35px;
     margin-right: 10px;
     cursor: pointer;
 }
@@ -90,6 +97,7 @@
 
     .about_btn{
         font-size: 2rem;
+        margin-bottom:0 ;
     }
 }
 

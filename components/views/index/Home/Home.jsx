@@ -101,6 +101,10 @@ const Home = ({id}) => {
                             <h3>Live Streaming & eCommerce</h3>
                             <p>Viví la única experiencia <span> Live Streaming Shopping</span> de bebidas, conoce a sus creadores y encontrá precios únicos</p>
                         </div>
+                        <div>
+                            <LinkScroll className={style.about_btn} to="events" spy={true}><i className="fas fa-video"></i> Ver en vivo</LinkScroll>
+                            <LinkScroll className={style.about_btn} to="commerce" spy={true}><i className="fas fa-shopping-bag"></i> Comprar</LinkScroll>
+                        </div>
                     </div>
                     <Live
                         enterEvent={enterEvent}
