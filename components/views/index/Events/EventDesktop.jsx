@@ -3,7 +3,7 @@ import ReactPlayer from "react-player";
 import { useEffect } from 'react';
 import Image from 'next/image'
 
-const EventDesktop = ({setLeaveAlert, submitPost, posts, handleChange}) => {
+const EventDesktop = ({submitPost, posts, handleChange}) => {
 
     useEffect(()=>{
         const chat_container = document.getElementById('chat_container')
@@ -17,7 +17,7 @@ const EventDesktop = ({setLeaveAlert, submitPost, posts, handleChange}) => {
     return (
         <article className={style.eventDesktop_container}>
             <section className={style.button_section}>
-                <div className={style.button_close} title='Salir del evento' onClick={()=>setLeaveAlert(true)}><i className="fas fa-sign-out-alt"></i></div>
+                <div className={style.button_close} title='Salir del evento'><i className="fas fa-sign-out-alt"></i></div>
             </section>
             <section className={style.live_section}>
                 <div className={style.side_live}>

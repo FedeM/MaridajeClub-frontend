@@ -15,7 +15,7 @@ import { SliderResponsive, Live,SliderDesktop} from '../../'
 
 
 
-const Home = ({id}) => {
+const Home = ({id, enterEvent, close}) => {
     //Verificamos que el componente esté montado
     const [mounted, setMounted] = useState(false)
     //Controlamos la apertura/cierre del modal
@@ -56,15 +56,6 @@ const Home = ({id}) => {
         },
     ])
     const [helpOpacity, setHelpOpacity] = useState(0)
-
-
-    const enterEvent = (id)=>{
-        if (isAuthenticate()) {
-            Router.push(`/events/${id}`)
-        }else{
-            setOpenModal(true)
-        }
-    }
 
 
 

@@ -57,7 +57,7 @@ const SliderDesktop = ({enterEvent, events}) => {
                         <div><i className="far fa-calendar-alt"></i><p>{eventSelected.date}</p></div>
                         <div><i className="far fa-clock"></i><p>{eventSelected.hour}</p></div>
                     </div>
-                    <button onClick={()=> enterEvent(eventSelected._id)}>Ingresar al evento</button>
+                    <button onClick={()=> enterEvent()}>Ingresar al evento</button>
                 </div>
                 <div className={styles.events_track_container}>
                     <div className={styles.event_track_arrow} id='arrowRight' onClick={()=>moveScroll(true)}><i className="fas fa-chevron-right"></i></div>
