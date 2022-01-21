@@ -7,8 +7,6 @@ import {
 import { BrowserView, MobileView} from 'react-device-detect';
 import Router from "next/router";
 
-import { isAuthenticate } from '../../../../lib/auth';
-
 import {AlertModal} from '../../../common';
 
 import { SliderResponsive, Live,SliderDesktop} from '../../'

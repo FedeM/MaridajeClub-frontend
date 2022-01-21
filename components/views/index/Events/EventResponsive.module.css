@@ -8,7 +8,7 @@
     z-index: 100;
     width: 100%;
     height: 100vh;
-    background-color: var(--global-primary-color);
+    background-color: rgba(0, 0, 0, 0.774);
 }
 
 .live_container{

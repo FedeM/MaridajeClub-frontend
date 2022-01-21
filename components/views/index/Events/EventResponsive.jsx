@@ -2,6 +2,7 @@ import style from './EventResponsive.module.css'
 import ReactPlayer from "react-player";
 import { useEffect, useState } from 'react';
 import Image from 'next/image'
+import { ShopEventResponsive } from '../..';
 
 
 const EventResponsive = ({submitPost, posts, handleChange, close}) => {
@@ -55,9 +56,14 @@ const EventResponsive = ({submitPost, posts, handleChange, close}) => {
                     </form>
                 </div>
                 <div className={style.options_buttons}>
-                    <span><i className="fas fa-shopping-bag"></i></span>
+                    <span onClick={()=> setOpenShop(true)}><i className="fas fa-shopping-bag"></i></span>
                 </div>
             </div>
+            {
+                openShop &&(
+                    <ShopEventResponsive close={()=> setOpenShop(false)}/>
+                )
+            }
         </div>
     );
 };
