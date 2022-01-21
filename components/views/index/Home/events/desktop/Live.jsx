@@ -4,7 +4,7 @@ import { Loader } from '../../../../../common';
 const ReactPlayer = lazy(()=> import('react-player'))
 import {useState} from 'react'
 
-const Live = ({enterEvent}) => {
+const Live = ({enterEvent, helpOpacity}) => {
     const [modalActivate, setModalActivate] = useState(false)
 
     const MoreInfoModal = ()=>{
@@ -55,7 +55,7 @@ const Live = ({enterEvent}) => {
                             <div><i className="far fa-clock"></i><p>16:15</p></div>
                         </div>
                     </div>
-                    <span className={styles.help_cover}>Haz click en el título para ingresar al evento</span>
+                    <span className={styles.help_cover} style={{opacity: helpOpacity}}>Haz click en el título para ingresar al evento</span>
                     <span className={styles.live_alert} title='En vivo'>Live</span>
                     <span className={styles.more_info} title='Más Info' onClick={()=> setModalActivate(true)}><i className="fas fa-exclamation-circle"></i></span>
                 </div>

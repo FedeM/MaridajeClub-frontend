@@ -55,6 +55,7 @@ const Home = ({id}) => {
             hour: `18:00`
         },
     ])
+    const [helpOpacity, setHelpOpacity] = useState(0)
 
 
     const enterEvent = (id)=>{
@@ -64,6 +65,8 @@ const Home = ({id}) => {
             setOpenModal(true)
         }
     }
+
+
 
     useEffect(()=>{
         setMounted(true)
@@ -82,12 +85,13 @@ const Home = ({id}) => {
                                 <p>Viví la única experiencia <span> Live Streaming Shopping</span> de bebidas, conoce a sus creadores y encontrá precios únicos</p>
                             </div>
                             <div>
-                                <LinkScroll className={style.about_btn} to="live" spy={true} offset={-40}><i className="fas fa-video"></i> Ver en vivo</LinkScroll>
+                                <LinkScroll className={style.about_btn} to="live" spy={true} offset={-40} onClick={()=> setHelpOpacity(1)}><i className="fas fa-video"></i> Ver en vivo</LinkScroll>
                                 <LinkScroll className={style.about_btn} to="commerce" spy={true}><i className="fas fa-shopping-bag"></i> Comprar</LinkScroll>
                             </div>
                         </div>
                         <Live
                             enterEvent={enterEvent}
+                            helpOpacity={helpOpacity}
                         />
                     </div>
                     <SliderDesktop
@@ -102,12 +106,13 @@ const Home = ({id}) => {
                             <p>Viví la única experiencia <span> Live Streaming Shopping</span> de bebidas, conoce a sus creadores y encontrá precios únicos</p>
                         </div>
                         <div>
-                            <LinkScroll className={style.about_btn} to="live" spy={true} offset={-150}><i className="fas fa-video"></i> Ver en vivo</LinkScroll>
+                            <LinkScroll className={style.about_btn} to="live" spy={true} offset={-150} onClick={()=> setHelpOpacity(1)}><i className="fas fa-video"></i> Ver en vivo</LinkScroll>
                             <LinkScroll className={style.about_btn} to="commerce" spy={true}><i className="fas fa-shopping-bag"></i> Comprar</LinkScroll>
                         </div>
                     </div>
                     <Live
                         enterEvent={enterEvent}
+                        helpOpacity={helpOpacity}
                     />
                     <SliderResponsive
                         enterEvent={enterEvent}
