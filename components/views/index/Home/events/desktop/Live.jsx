@@ -34,7 +34,7 @@ const Live = ({enterEvent}) => {
                     <MoreInfoModal/>
                 )
             }
-            <div className={styles.live_wrapper}>
+            <div className={styles.live_wrapper} id='live'>
                 <div className={styles.video_container}>
                     <Suspense fallback={<Loader size={50} style={{position: "absolute", top: "calc(50% - 25px)", left:"calc(50% - 25px)"}}/>}>
                         <ReactPlayer
