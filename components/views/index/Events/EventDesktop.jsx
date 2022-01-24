@@ -1,7 +1,6 @@
 import style from './EventDesktop.module.css'
 import ReactPlayer from "react-player";
 import { useEffect, useState } from 'react';
-import Image from 'next/image'
 import { ChatDesktop, ShopEventDesktop } from '../..';
 
 const EventDesktop = ({submitPost, posts, handleChange, close}) => {

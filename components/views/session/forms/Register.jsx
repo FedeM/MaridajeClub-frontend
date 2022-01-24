@@ -2,7 +2,6 @@ import { useState } from 'react';
 import styles from './Login.module.css'
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 import GoogleLogin from 'react-google-login';
-import Router from 'next/router';
 import { Loader } from '../../../common';
 
 const Register = ({setLogin}) => {
@@ -88,7 +87,7 @@ const Register = ({setLogin}) => {
 
                     //LLAMAR AL BACKEND
 
-                    Router.push('/')                    
+                    window.location.href = "/"                   
                 }else{
                     setValues({...values, error:"Por favor revisa los campos"})
                 }

@@ -1,6 +1,7 @@
 import style from './ChatDesktop.module.css'
 import Image from 'next/image'
 import { useEffect } from 'react';
+import { isAuthenticate } from '../../../../../../lib/auth';
 
 
 const ChatDesktop = ({open, setOpen, posts, submitPost, handleChange}) => {
@@ -25,36 +26,25 @@ const ChatDesktop = ({open, setOpen, posts, submitPost, handleChange}) => {
                             <Image src="/logo/logo_blanco.png" alt="Maridaje club" objectFit='contain' layout='fill'/>
                         </div>
                     </div>
-                    {
-                        posts.length === 0 ?
-                        (
-                            <div className={style.first_comment}>
-                                <p>Ups! Parece que nadie ha escrito nada, ¡se tú el primero!</p>
-                            </div>
-                        )
-                        :
-                        (
-                            <div className={style.chat_container} id="chat_container">
-                                <div className={style.content_chat} id="content_chat">
-                                    {
-                                        posts.reverse().map((e,i)=>(
-                                            <div className={style.chat} key={i}>
-                                                <div className={style.chat_msg}>
-                                                    <div className={style.chat_msg_img}>
-                                                        <Image src={e.photo} alt={e.user}  layout='fill' objectFit='contain'/>
-                                                    </div>
-                                                    <div className={style.chat_msg_text}>
-                                                        <h5>{e.user}</h5>
-                                                        <p>{e.msg}</p>
-                                                    </div>
-                                                </div>
+                    <div className={style.chat_container} id="chat_container">
+                        <div className={style.content_chat} id="content_chat">
+                            {
+                                posts.map((e,i)=>(
+                                    <div className={style.chat} key={i}>
+                                        <div className={style.chat_msg}>
+                                            <div className={style.chat_msg_img}>
+                                                <Image src={e.photo} alt={e.user}  layout='fill' objectFit='contain'/>
                                             </div>
-                                        ))
-                                    }
-                                </div>
-                            </div>
-                        )
-                    }
+                                            <div className={e.role === 0 ?(`${style.chat_msg_text}`):(`${style.chat_msg_text} ${style.admin_text}`)}>
+                                                <h5>{e.user}</h5>
+                                                <p>{e.msg}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </div>
                     <form onSubmit={(e)=> submitPost(e)}>
                         <input type="text" placeholder="Escribe un mensaje aquí..." onChange={(e)=>handleChange(e)}/>
                         <button>Publicar</button>

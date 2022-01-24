@@ -1,5 +1,4 @@
 import style from './UserInfo.module.css'
-import Router from "next/router";
 import Image from 'next/image'
 import { signout } from '../../../../lib/auth';
 
@@ -7,7 +6,7 @@ const UserInfo = ({name}) => {
 
     const closeSesion = () =>{
         signout(()=>{
-            Router.push('/')
+            window.location.href = "/"
         })
     }
     

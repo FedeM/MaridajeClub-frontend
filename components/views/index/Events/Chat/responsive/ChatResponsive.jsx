@@ -23,7 +23,7 @@ const ChatResponsive = ({submitPost, posts, handleChange}) => {
                                 <div className={style.chat_msg_img}>
                                     <Image src={e.photo} alt={e.user} layout='fill' objectFit='contain' />
                                 </div>
-                                <div className={style.chat_msg_text}>
+                                <div className={e.role === 0 ?(`${style.chat_msg_text}`):(`${style.chat_msg_text} ${style.admin_text}`)}>
                                     <h5>{e.user}</h5>
                                     <p>{e.msg}</p>
                                 </div>

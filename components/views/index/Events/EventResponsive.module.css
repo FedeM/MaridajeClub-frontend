@@ -46,7 +46,7 @@
 
 .options_buttons{
     position: absolute;
-    bottom: calc(35px + 1rem + 20px);
+    bottom: calc(55px + 1rem);
     right: 5%;
 }
 
@@ -74,6 +74,21 @@
     .live_close{
         padding: 8px 16px;
         font-size: 1.5rem;
+    }
+
+    .options_buttons{
+        position: absolute;
+        bottom: calc(55px + 1.5rem + 15px);
+        right: 5%;
+    }
+
+    .options_buttons span{
+        min-width: 60px;
+        min-height: 60px;
+        font-size: 2.25rem;
+        margin-top: 20px;
+        background-color: #fff;
+        color: var(--global-gray5);
     }
 }
 

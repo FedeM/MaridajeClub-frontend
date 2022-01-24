@@ -32,7 +32,6 @@
     min-height: 30px;
     max-width: 30px;
     max-height: 30px;
-    background-color: rgb(143, 143, 219);
     border-radius: 50%;
     margin-right: 10px;
 }
@@ -45,6 +44,12 @@
     font-size: 1rem;
     width: 60%;
     overflow: hidden;
+}
+
+.admin_text{
+    background-color: var(--global-primary-color);
+    background-color: rgba(125, 230, 125, 0.25);
+    border-radius: 5px;
 }
 
 .chat_msg_text p{

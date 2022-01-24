@@ -87,7 +87,7 @@
     }
 
     .about_text_container h3{
-        font-size: 3rem;
+        font-size: 4rem;
     }
     .about_text_container p{
         font-size: 2rem;
@@ -101,7 +101,7 @@
     }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 850px) {
 
     .live_container {
         width: 100%;

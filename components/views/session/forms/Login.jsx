@@ -2,7 +2,6 @@ import styles from './Login.module.css'
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 import GoogleLogin from 'react-google-login';
 import { useState } from 'react';
-import Router from 'next/router';
 import { authenticate } from '../../../../lib/auth';
 import { Loader } from '../../../common';
 
@@ -27,7 +26,7 @@ const Login = ({setLogin}) => {
 
             //LLAMAR AL BACKEND Y DENTRO DE LA FUNCIÓN COLOCAR LO SIGUIENTE
             authenticate({username, password}, ()=>{
-                Router.push('/')
+                window.location.href = "/"
             })
 
         }else{

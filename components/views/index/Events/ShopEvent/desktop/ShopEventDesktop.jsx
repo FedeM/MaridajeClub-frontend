@@ -11,7 +11,7 @@ const ShopEventDesktop = ({open, setOpen}) => {
             <div className={style.card_box}>
                 <div className={style.card}>
                     <div className={style.card_image}>
-                        <Image src={'/assets/img/products/wine1.jpg'} layout='fill' objectFit='cover'/>
+                        <Image src={'/assets/img/products/wine1.jpg'} layout='fill' objectFit='cover' alt='Descripción de producto'/>
                     </div>
                     <div className={style.card_title}>
                         <h3>Vino 1</h3>
@@ -19,7 +19,7 @@ const ShopEventDesktop = ({open, setOpen}) => {
                 </div>
                 <div className={style.card}>
                     <div className={style.card_image}>
-                        <Image src={'/assets/img/products/wine2.jpg'} layout='fill' objectFit='cover'/>
+                        <Image src={'/assets/img/products/wine2.jpg'} layout='fill' objectFit='cover'  alt='Descripción de producto'/>
                     </div>
                     <div className={style.card_title}>
                         <h3>Vino 2</h3>
@@ -27,7 +27,7 @@ const ShopEventDesktop = ({open, setOpen}) => {
                 </div>
                 <div className={style.card}>
                     <div className={style.card_image}>
-                        <Image src={'/assets/img/products/wine2.jpg'} layout='fill' objectFit='cover'/>
+                        <Image src={'/assets/img/products/wine2.jpg'} layout='fill' objectFit='cover'  alt='Descripción de producto'/>
                     </div>
                     <div className={style.card_title}>
                         <h3>Vino 2</h3>
@@ -35,7 +35,7 @@ const ShopEventDesktop = ({open, setOpen}) => {
                 </div>
                 <div className={style.card}>
                     <div className={style.card_image}>
-                        <Image src={'/assets/img/products/wine2.jpg'} layout='fill' objectFit='cover'/>
+                        <Image src={'/assets/img/products/wine2.jpg'} layout='fill' objectFit='cover'  alt='Descripción de producto'/>
                     </div>
                     <div className={style.card_title}>
                         <h3>Vino 2</h3>
@@ -43,7 +43,7 @@ const ShopEventDesktop = ({open, setOpen}) => {
                 </div>
                 <div className={style.card}>
                     <div className={style.card_image}>
-                        <Image src={'/assets/img/products/wine2.jpg'} layout='fill' objectFit='cover'/>
+                        <Image src={'/assets/img/products/wine2.jpg'} layout='fill' objectFit='cover'  alt='Descripción de producto'/>
                     </div>
                     <div className={style.card_title}>
                         <h3>Vino 2</h3>
@@ -51,7 +51,7 @@ const ShopEventDesktop = ({open, setOpen}) => {
                 </div>
                 <div className={style.card}>
                     <div className={style.card_image}>
-                        <Image src={'/assets/img/products/wine2.jpg'} layout='fill' objectFit='cover'/>
+                        <Image src={'/assets/img/products/wine2.jpg'} layout='fill' objectFit='cover'  alt='Descripción de producto'/>
                     </div>
                     <div className={style.card_title}>
                         <h3>Vino 2</h3>
@@ -59,7 +59,7 @@ const ShopEventDesktop = ({open, setOpen}) => {
                 </div>
                 <div className={style.card}>
                     <div className={style.card_image}>
-                        <Image src={'/assets/img/products/wine2.jpg'} layout='fill' objectFit='cover'/>
+                        <Image src={'/assets/img/products/wine2.jpg'} layout='fill' objectFit='cover'  alt='Descripción de producto'/>
                     </div>
                     <div className={style.card_title}>
                         <h3>Vino 4</h3>
