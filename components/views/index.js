@@ -13,6 +13,9 @@ export {default as Live} from './index/Home/events/desktop/Live.jsx'
 export {default as ShopEventDesktop} from './index/Events/ShopEvent/desktop/ShopEventDesktop.jsx'
 export {default as ShopEventResponsive} from './index/Events/ShopEvent/responsive/ShopEventResponsive.jsx'
 
+export {default as ChatDesktop} from './index/Events/Chat/desktop/ChatDesktop.jsx'
+export {default as ChatResponsive} from './index/Events/Chat/responsive/ChatResponsive'
+
 
 //Componentes de CART
 export {default as ListArticles} from './cart/listArticles/ListArticles'

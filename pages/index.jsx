@@ -31,12 +31,18 @@ export default function Index() {
 
   const submitPost = (e)=>{
       e.preventDefault()
-      setPosts([...posts,{
-          photo: post.photo,
-          user: post.user,
-          msg: post.msg
-      }])
+      if(post.msg.length > 0){
+        setPosts([...posts,{
+            photo: post.photo,
+            user: post.user,
+            msg: post.msg
+        }])
+      }
       e.target.reset()
+      setPost({
+        ...post,
+        msg:""
+      })
   }
 
   useEffect(()=>{
