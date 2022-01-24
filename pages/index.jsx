@@ -74,7 +74,13 @@ export default function Index() {
 
   useEffect(()=>{
     setMounted(true)
-  }, [mounted])
+    if(enterEvent){
+      document.querySelector('body').style.overflowY="hidden"
+    }else{
+      document.querySelector('body').style.overflowY="auto"
+    }
+
+  }, [mounted, enterEvent])
 
 
   return mounted &&(
