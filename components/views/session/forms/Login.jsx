@@ -34,17 +34,20 @@ const Login = ({setLogin}) => {
         }
     }
 
-    const signInWithSocialMedia = (email, username)=>{
+    const signInWithSocialMedia = (email = "enzo135246@gmail.com", username, password, photo = false)=>{
         //Enviar al backend
+        authenticate({email, username, password, photo}, ()=>{
+            window.location.href = "/"
+        })
     }
 
     const responseFacebook = (response) => {
-        signInWithSocialMedia(response.email, response.name)
+        signInWithSocialMedia(response.email, response.name, response.accessToken, response.picture.data.url)
     }
 
     const responseGoogle = (response) => {
         const res = response.profileObj
-        signInWithSocialMedia(res.email, res.name)
+        signInWithSocialMedia(res.email, res.name, response.accessToken, res.imageUrl)
     }
 
 
@@ -70,7 +73,6 @@ const Login = ({setLogin}) => {
                             <div onClick={renderProps.onClick} className={styles.social_button}><i className="fab fa-google"></i> <span>Iniciar sesión con Google</span></div>
                         )}
                         onSuccess={responseGoogle}
-                        onFailure={responseGoogle}
                         cookiePolicy={'single_host_origin'}
                     />
                     <FacebookLogin

@@ -62,7 +62,7 @@
 }
 
 .video_container:hover .help_cover{
-    opacity: 1;
+    opacity: 1 !important;
 }
 
 .more_info{
@@ -213,4 +213,10 @@
     font-size: 2rem;
     color: var(--global-secondary-color);
     cursor: pointer;
+}
+
+@media (min-width:850px) {
+    .modal_container{
+        width: 50%;
+    }
 }

@@ -3,17 +3,9 @@ import { BrowserView, MobileView } from 'react-device-detect'
 import { Layout } from '../components/layout'
 import {Home, Wineries, Ecommerce, EventResponsive, EventDesktop} from '../components/views/index'
 import style from '../styles/pages/Index.module.css'
+
 import { isAuthenticate } from "../lib/auth";
-
-import cryptoRandomString from 'crypto-random-string';
-
-let id = cryptoRandomString({length: 10, type: 'alphanumeric'});
-
-const user = {
-  name: isAuthenticate() ? (isAuthenticate().username):(`user${id}`),
-  photo:"/assets/img/profile/user.png",
-  role: 0
-}
+import {user} from "../lib/user"
 
 const welcomeMsgs = !isAuthenticate() ?([{
   photo: "/assets/img/profile/robot.png",

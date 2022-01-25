@@ -102,17 +102,17 @@ const Register = ({setLogin}) => {
         }
     }
 
-    const registerWithSocialMedia = (email, username)=>{
+    const registerWithSocialMedia = (email, username, password)=>{
         //Enviar al backend
     }
 
     const responseFacebook = (response) => {
-        registerWithSocialMedia(response.email, response.name)
+        registerWithSocialMedia(response.email, response.name, response.accessToken)
     }
 
     const responseGoogle = (response) => {
         const res = response.profileObj
-        registerWithSocialMedia(res.email, res.name)
+        registerWithSocialMedia(res.email, res.name, response.accessToken)
     }
 
     return (

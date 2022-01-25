@@ -16,53 +16,8 @@ const ShopEventDesktop = ({open, setOpen}) => {
                     <div className={style.card_title}>
                         <h3>Vino 1</h3>
                     </div>
-                </div>
-                <div className={style.card}>
-                    <div className={style.card_image}>
-                        <Image src={'/assets/img/products/wine2.jpg'} layout='fill' objectFit='cover'  alt='Descripción de producto'/>
-                    </div>
-                    <div className={style.card_title}>
-                        <h3>Vino 2</h3>
-                    </div>
-                </div>
-                <div className={style.card}>
-                    <div className={style.card_image}>
-                        <Image src={'/assets/img/products/wine2.jpg'} layout='fill' objectFit='cover'  alt='Descripción de producto'/>
-                    </div>
-                    <div className={style.card_title}>
-                        <h3>Vino 2</h3>
-                    </div>
-                </div>
-                <div className={style.card}>
-                    <div className={style.card_image}>
-                        <Image src={'/assets/img/products/wine2.jpg'} layout='fill' objectFit='cover'  alt='Descripción de producto'/>
-                    </div>
-                    <div className={style.card_title}>
-                        <h3>Vino 2</h3>
-                    </div>
-                </div>
-                <div className={style.card}>
-                    <div className={style.card_image}>
-                        <Image src={'/assets/img/products/wine2.jpg'} layout='fill' objectFit='cover'  alt='Descripción de producto'/>
-                    </div>
-                    <div className={style.card_title}>
-                        <h3>Vino 2</h3>
-                    </div>
-                </div>
-                <div className={style.card}>
-                    <div className={style.card_image}>
-                        <Image src={'/assets/img/products/wine2.jpg'} layout='fill' objectFit='cover'  alt='Descripción de producto'/>
-                    </div>
-                    <div className={style.card_title}>
-                        <h3>Vino 2</h3>
-                    </div>
-                </div>
-                <div className={style.card}>
-                    <div className={style.card_image}>
-                        <Image src={'/assets/img/products/wine2.jpg'} layout='fill' objectFit='cover'  alt='Descripción de producto'/>
-                    </div>
-                    <div className={style.card_title}>
-                        <h3>Vino 4</h3>
+                    <div className={style.add_cart} title='Agregar al carrito'>
+                        <i className="fas fa-cart-arrow-down"></i>
                     </div>
                 </div>
             </div>

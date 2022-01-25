@@ -5,9 +5,6 @@ import {
     Link as LinkScroll
 } from 'react-scroll'
 import { BrowserView, MobileView} from 'react-device-detect';
-import Router from "next/router";
-
-import {AlertModal} from '../../../common';
 
 import { SliderResponsive, Live,SliderDesktop} from '../../'
 
@@ -109,22 +106,6 @@ const Home = ({id, enterEvent, close}) => {
                     />
                 </MobileView>
             </div>
-            {
-                openModal && (
-                    <AlertModal
-                        img={"/assets/img/icon/alert.png"}
-                        title="Espera"
-                        alert="Para ingresar al evento primero debes iniciar sesión"
-                        btnText="Iniciar Sesión"
-                        closeCallback={()=>{
-                            setOpenModal(false)
-                        }}
-                        callback= {()=>{
-                            Router.push('/session')
-                        }}
-                    />
-                )
-            }
         </section>
     );
 };

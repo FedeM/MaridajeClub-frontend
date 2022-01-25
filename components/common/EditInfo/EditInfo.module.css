@@ -1,0 +1,84 @@
+/* EDIT INFO MODAL */
+.background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: var(--global-primary-color_opacity);
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background form{
+    background-color: var(--global-gray2);
+    padding: 15px;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.inputs_container{
+    margin: 15px 0;
+}
+
+.input_box{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.input_box label i{
+    margin-left: 5px;
+}
+
+.input_box input{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 5px 0;
+    color: #fff;
+    transition: .5s;
+    border-bottom: 1px solid var(--global-primary-color);
+}
+
+.input_box input:focus{
+    border-bottom: 1px solid var(--global-tertiary-color);
+}
+
+.buttons_container{
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+.button{
+    margin-left: 10px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    transition: .5s;
+}
+
+.button:active{
+    transform: scale(.9);
+}
+
+.button:last-child{
+    background-color: var(--global-succesfully);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .25);
+}
+
+.button:last-child:hover{
+    filter: brightness(1.2);
+}
+
+@media (min-width: 800px) {
+    .background form{
+        width: 50%;
+    }
+}

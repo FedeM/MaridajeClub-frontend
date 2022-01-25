@@ -70,6 +70,7 @@
     /* Modal de verificación */
     .modal_container {
         width: 30%;
+        background-color: red;
     }
 
     .modal_icon {

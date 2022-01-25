@@ -1,6 +1,6 @@
 import style from './EventDesktop.module.css'
 import ReactPlayer from "react-player";
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ChatDesktop, ShopEventDesktop } from '../..';
 
 const EventDesktop = ({submitPost, posts, handleChange, close}) => {
@@ -8,6 +8,7 @@ const EventDesktop = ({submitPost, posts, handleChange, close}) => {
         chat: false,
         shop: false
     })
+    const [paused, setPaused] = useState(false)
 
     return (
         <article className={style.eventDesktop_container}>
@@ -15,11 +16,11 @@ const EventDesktop = ({submitPost, posts, handleChange, close}) => {
                 <div className={style.side_live}>
                     <div className={style.live_container}>
                         <ReactPlayer
+                            id="live"
                             className={style.live}
                             url="/assets/video/videoWine.mp4"
-                            playing
+                            playing={paused ? (false):(true)}
                             loop
-                            muted
                             width={'100%'}
                             height={'100%'}
                         />
@@ -28,6 +29,18 @@ const EventDesktop = ({submitPost, posts, handleChange, close}) => {
                             <span onClick={()=>close()}><i className="fas fa-times"></i></span>
                             <span onClick={()=> setOpen({...open, chat: true})} style={open.chat ? ({opacity: 0}):({opacity: 1})}><i className="far fa-comments"></i></span>
                             <span onClick={()=> setOpen({...open, shop: true})} style={open.shop ? ({opacity: 0}):({opacity: 1})}><i className="fas fa-shopping-bag"></i></span>
+                        </div>
+                        <div className={style.controls}>
+                            <div>
+                                {
+                                    paused ?(
+                                        <i className="fas fa-play" onClick={()=> setPaused(false)}></i>
+                                    ):(
+                                        <i className="fas fa-pause" onClick={()=> setPaused(true)}></i>
+                                    )
+                                }
+                            </div>
+                            <div></div>
                         </div>
                     </div>
                     <ShopEventDesktop

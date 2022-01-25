@@ -26,6 +26,8 @@ export {default as Checkout} from './cart/checkout/Checkout'
 export {default as Purchase} from './profile/Purchase/Purchase'
 export {default as UserInfo} from './profile/UserInfo/UserInfo'
 
+
+
 //Componentes de SESSION
 export {default as Session} from './session/Session.jsx'
 

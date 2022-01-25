@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Layout } from '../../components/layout'
 
 import {UserInfo, Purchase} from '../../components/views'
@@ -6,8 +7,13 @@ import style from '../../styles/pages/Profile.module.css'
 
 
 const Index = () => {
+    const [mounted, setMounted] = useState(false)
 
-    return isAuthenticate() &&(
+    useEffect(()=>{
+        setMounted(true)
+    }, [mounted])
+
+    return isAuthenticate() && mounted &&(
         <Layout
             title={'Profile'}
             description={'Descripción del perfil'}

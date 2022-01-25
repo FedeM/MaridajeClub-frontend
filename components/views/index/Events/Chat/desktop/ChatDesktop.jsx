@@ -12,7 +12,6 @@ const ChatDesktop = ({open, setOpen, posts, submitPost, handleChange}) => {
         const content_chat = document.getElementById('content_chat')
         if (chat_container) {
             chat_container.scrollTo(0, content_chat.offsetHeight)
-            console.log(content_chat.offsetHeight)
         }
     })
 
