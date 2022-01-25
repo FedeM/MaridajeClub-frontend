@@ -23,7 +23,7 @@ const ShopEventResponsive = ({close}) => {
             <div className={style.card_box}>
                 <div className={style.card}>
                     <div className={style.card_image}>
-                        <Image src={'/assets/img/products/wine1.jpg'} layout='fill' objectFit='cover'/>
+                        <Image src={'/assets/img/products/wine1.jpg'} layout='fill' objectFit='cover' alt='description'/>
                     </div>
                     <div className={style.card_title}>
                         <h3>Vino 1</h3>

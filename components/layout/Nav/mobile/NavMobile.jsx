@@ -69,7 +69,7 @@ const NavMobile = ({logo, home, cart}) => {
                                 <LinkScroll className={`${styles.navMobile_nav_li}`} activeClass="activeMobileLink"  to="about"  spy={true} onClick={()=> displayMenu()}>Nostros</LinkScroll>
                                 <LinkScroll className={`${styles.navMobile_nav_li}`} activeClass="activeMobileLink"  to="commerce"  spy={true} onClick={()=> displayMenu()}>Comprar</LinkScroll>
                                 {
-                                    isAuthenticate ? (
+                                    isAuthenticate() ? (
                                         <Link href={'/profile'} onClick={()=> displayMenu()}>
                                             <a className={`${styles.navMobile_nav_li}`}>
                                                 Perfil
