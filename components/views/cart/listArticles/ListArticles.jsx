@@ -4,40 +4,12 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react';
 import { isMobile } from 'react-device-detect';
 import { Article } from '../../../common';
+import {user} from '../../../../lib/user'
 
 const ListArticles = () => {
     const [mounted, setMounted] = useState(false)
     const [priceTotal, setPriceTotal] = useState()
-    const [cart, setCart] = useState([
-        {
-            _id: 1,
-            img: '/assets/img/products/wine1.jpg',
-            name: 'Vino Malbec',
-            price: 98.50,
-            quantity: 1,
-        },
-        {
-            _id: 2,
-            img: '/assets/img/products/wine2.jpg',
-            name: 'Vino Chandon',
-            price: 105.75,
-            quantity: 1,
-        },
-        {
-            _id: 3,
-            img: '/assets/img/products/wine3.jpg',
-            name: 'Champagne',
-            price: 100.50,
-            quantity: 1,
-        },
-        {
-            _id: 4,
-            img: '/assets/img/products/wine4.jpg',
-            name: 'Vino Sidra',
-            price: 98.50,
-            quantity: 1,
-        },
-    ])
+    const [cart, setCart] = useState(user.cart)
 
     const updateQuantity = (id, type)=>{
         const newCart = cart.map(product =>{

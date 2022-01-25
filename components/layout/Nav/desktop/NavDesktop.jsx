@@ -9,7 +9,7 @@ import {isAuthenticate} from '../../../../lib/auth'
 
 
 
-const NavDesktop = ({logo, home,cart}) => {
+const NavDesktop = ({logo, home,cart, quantity}) => {
     
 
     return (
@@ -53,8 +53,13 @@ const NavDesktop = ({logo, home,cart}) => {
                                 }
                                 {
                                     cart && isAuthenticate() &&(
-                                        <Link href={'/shopping'}>
+                                        <Link href={'/cart'}>
                                             <a className={`${styles.navDesktop_nav_li}`} title='Carrito'>
+                                                {
+                                                    quantity > 0 &&(
+                                                        <span className={styles.cart_marker}>{quantity}</span>
+                                                    )
+                                                }
                                                 <i className="fas fa-shopping-cart"></i>
                                             </a>
                                         </Link>
@@ -72,8 +77,13 @@ const NavDesktop = ({logo, home,cart}) => {
                                 </Link>
                                 {
                                     cart && isAuthenticate() &&(
-                                        <Link href={'/shopping'}>
+                                        <Link href={'/cart'}>
                                             <a className={`${styles.navDesktop_nav_li}`} title='Carrito'>
+                                                {
+                                                    quantity > 0 &&(
+                                                        <span className={styles.cart_marker}>{quantity}</span>
+                                                    )
+                                                }
                                                 <i className="fas fa-shopping-cart"></i>
                                             </a>
                                         </Link>
