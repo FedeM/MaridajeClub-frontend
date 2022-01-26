@@ -6,12 +6,8 @@ import {products as arrayProducts} from '../../../../lib/products.js'
 
 
 const Ecommerce = ({id, home}) => {
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState(arrayProducts.filter(product => product.is_BestSeller === true))
 
-
-    useEffect(()=>{
-        setProducts(arrayProducts.filter(product => product.is_BestSeller === true))
-    }, [products])
 
     return (
         <section id={id} className={styles.ecommerce_section}>

@@ -8,10 +8,10 @@ const SliderDesktop = ({enterEvent, events}) => {
     const [scroll, setScroll] = useState(0)
     //Cargamos los datos del evento seleccionado
     const [eventSelected, setEventSelected] = useState({
-        _id: events[0]._id,
-        title: events[0].title,
+        id: events[0].id,
+        name: events[0].name,
         description: events[0].description,
-        date:events[0].date,
+        date_from:events[0].date_from,
         hour: events[0].hour
     })
 
@@ -51,10 +51,10 @@ const SliderDesktop = ({enterEvent, events}) => {
             </div>
             <div className={styles.events_container}>
                 <div className={styles.event_info}>
-                    <h4 title={eventSelected.title}>{eventSelected.title}</h4>
+                    <h4 title={eventSelected.name}>{eventSelected.name}</h4>
                     <p className={styles.info_text}>{eventSelected.description}</p>
                     <div className={styles.date_container}>
-                        <div><i className="far fa-calendar-alt"></i><p>{eventSelected.date}</p></div>
+                        <div><i className="far fa-calendar-alt"></i><p>{eventSelected.date_from}</p></div>
                         <div><i className="far fa-clock"></i><p>{eventSelected.hour}</p></div>
                     </div>
                     <button onClick={()=> enterEvent()}>Ingresar al evento</button>
@@ -66,17 +66,17 @@ const SliderDesktop = ({enterEvent, events}) => {
                         {
                             events.map((e,i)=>(
                                 <div className={styles.event_img_box} key={i} onClick={()=>setEventSelected({
-                                    _id: e._id,
-                                    title: e.title,
+                                    id: e.id,
+                                    name: e.name,
                                     description: e.description,
-                                    date: e.date,
+                                    date_from: e.date_from,
                                     hour: e.hour
                                 })}>
                                     <Image
-                                        src={e.img}
+                                        src={e.banner}
                                         layout="fill"
                                         objectFit='cover'
-                                        alt={e.title}
+                                        alt={e.name}
                                         priority
                                     />
                                 </div>

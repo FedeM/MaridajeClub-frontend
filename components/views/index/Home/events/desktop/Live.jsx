@@ -4,18 +4,18 @@ import { Loader } from '../../../../../common';
 const ReactPlayer = lazy(()=> import('react-player'))
 import {useState} from 'react'
 
-const Live = ({enterEvent, helpOpacity}) => {
+const Live = ({enterEvent, helpOpacity, liveEvent}) => {
     const [modalActivate, setModalActivate] = useState(false)
 
     const MoreInfoModal = ()=>{
         return(
             <div className={styles.modal_background}>
                 <div className={`${styles.modal_container} animate__animated animate__lightSpeedInRight animate__faster`}>
-                    <h4 onClick={()=> enterEvent()}>Presentación Bodega Los Haroldos</h4>
-                    <p className={styles.liveRes_text}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea velit ad commodi reprehenderit iusto, quam pariatur at, aut non beatae aliquid, praesentium deleniti! Sit, cupiditate aspernatur. Deserunt unde nemo magni.</p>
+                    <h4 onClick={()=> enterEvent()}>{liveEvent[0].name}</h4>
+                    <p className={styles.liveRes_text}>{liveEvent[0].description}</p>
                     <div className={styles.date_container}>
-                        <div><i className="far fa-calendar-alt"></i><p>22 - 12 - 2021</p></div>
-                        <div><i className="far fa-clock"></i><p>16:15</p></div>
+                        <div><i className="far fa-calendar-alt"></i><p>{liveEvent[0].date_from}</p></div>
+                        <div><i className="far fa-clock"></i><p>{liveEvent[0].hour}</p></div>
                     </div>
                     <button onClick={()=> enterEvent()}>Ingresar al evento</button>
                     <span className={styles.modal_more_info}><i className="fas fa-exclamation-circle"></i></span>
@@ -49,10 +49,10 @@ const Live = ({enterEvent, helpOpacity}) => {
                         />
                     </Suspense>
                     <div className={styles.live_info_container} onClick={()=> enterEvent()}>
-                        <h4>Presentación Bodega Los Haroldos</h4>
+                        <h4>{liveEvent[0].name}</h4>
                         <div className={styles.date_container}>
-                            <div><i className="far fa-calendar-alt"></i><p>22 - 12 - 2021</p></div>
-                            <div><i className="far fa-clock"></i><p>16:15</p></div>
+                            <div><i className="far fa-calendar-alt"></i><p>{liveEvent[0].date_from}</p></div>
+                            <div><i className="far fa-clock"></i><p>{liveEvent[0].hour}</p></div>
                         </div>
                     </div>
                     <span className={styles.help_cover} style={{opacity: helpOpacity}}>Haz click en el título para ingresar al evento</span>

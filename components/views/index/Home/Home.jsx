@@ -8,54 +8,24 @@ import { BrowserView, MobileView} from 'react-device-detect';
 
 import { SliderResponsive, Live,SliderDesktop} from '../../'
 
+import { events as arrayEvents } from '../../../../lib/events';
+
 
 
 const Home = ({id, enterEvent, close}) => {
     //Verificamos que el componente esté montado
     const [mounted, setMounted] = useState(false)
-    //Controlamos la apertura/cierre del modal
-    const [openModal, setOpenModal] = useState(false)
+    //Aquí guardaremos el evento en vivo
+    const [liveEvent, setLiveEvent] = useState(arrayEvents.filter(event => event.is_live === true))
     //En este array guardaremos los eventos
-    const [events, setEvents] = useState([
-        {
-            _id: 1,
-            img: "/assets/img/1.jpg",
-            title: "Presentación Bodega Garzón",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, suscipit deserunt, molestias ex iste laboriosam distinctio beatae molestiae veniam assumenda voluptatem dolore consequuntur officia sapiente debitis. Adipisci enim dolor iste.",
-            date: "19-02-2022",
-            hour: `18:55`
-        },
-        {
-            _id: 2,
-            img: "/assets/img/2.jpg",
-            title: "Presentación Bodega Super Úco",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, suscipit deserunt, molestias ex iste laboriosam distinctio beatae molestiae veniam assumenda voluptatem dolore consequuntur officia sapiente debitis. Adipisci enim dolor iste.",
-            date: "20-02-2022",
-            hour: `15:00`
-        },
-        {
-            _id: 3,
-            img: "/assets/img/1.jpg",
-            title: "Presentación Bodega Zuccardi",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, suscipit deserunt, molestias ex iste laboriosam distinctio beatae molestiae veniam assumenda voluptatem dolore consequuntur officia sapiente debitis. Adipisci enim dolor iste.",
-            date: "25-02-2022",
-            hour: `17:15`
-        },
-        {
-            _id: 4,
-            img: "/assets/img/2.jpg",
-            title: "Presentación Bodega Marqués de Riscal",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, suscipit deserunt, molestias ex iste laboriosam distinctio beatae molestiae veniam assumenda voluptatem dolore consequuntur officia sapiente debitis. Adipisci enim dolor iste.",
-            date: "01-03-2022",
-            hour: `18:00`
-        },
-    ])
+    const [events, setEvents] = useState(arrayEvents.filter(event => event.is_live === false))
     const [helpOpacity, setHelpOpacity] = useState(0)
 
 
 
     useEffect(()=>{
         setMounted(true)
+        // console.log(liveEvent)
     },[mounted])
 
     return mounted &&(
@@ -78,6 +48,7 @@ const Home = ({id, enterEvent, close}) => {
                         <Live
                             enterEvent={enterEvent}
                             helpOpacity={helpOpacity}
+                            liveEvent={liveEvent}
                         />
                     </div>
                     <SliderDesktop
@@ -99,6 +70,7 @@ const Home = ({id, enterEvent, close}) => {
                     <Live
                         enterEvent={enterEvent}
                         helpOpacity={helpOpacity}
+                        liveEvent={liveEvent}
                     />
                     <SliderResponsive
                         enterEvent={enterEvent}

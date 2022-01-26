@@ -9,23 +9,23 @@ const ModalEventInfo = ({displayEventInfo, eventSelected, enterEvent}) => {
                 <div className={style.event_close} onClick={()=> displayEventInfo()}><i className="far fa-times-circle"></i></div>
                 <div className={style.event_img_container}>
                     <Image
-                        src={eventSelected.img}
+                        src={eventSelected.banner}
                         layout='fill'
                         objectFit='cover'
-                        alt={eventSelected.title}
+                        alt={eventSelected.name}
                         priority
                     />
                 </div>
                 <div className={style.event_info_content}>
-                    <h4>{eventSelected.title}</h4>
+                    <h4>{eventSelected.name}</h4>
                     <p className={style.text}>{eventSelected.description}</p>
                     <div className={style.date_container}>
-                        <div><i className="far fa-calendar-alt"></i><p>{eventSelected.date}</p></div>
+                        <div><i className="far fa-calendar-alt"></i><p>{eventSelected.date_from}</p></div>
                         <div><i className="far fa-clock"></i><p>{eventSelected.hour}</p></div>
                     </div>
                 </div>
             </div>
-            <button onClick={()=> enterEvent(eventSelected._id)}>Ingresar al evento</button>
+            <button onClick={()=> enterEvent(eventSelected.id)}>Ingresar al evento</button>
         </div>
     );
 };

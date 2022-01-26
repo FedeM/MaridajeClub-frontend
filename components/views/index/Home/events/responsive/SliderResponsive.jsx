@@ -10,11 +10,11 @@ const SliderResponsive = ({enterEvent, events}) => {
     const [eventInfo, setEventInfo] = useState(false)
     //Cargamos los datos del evento seleccionado
     const [eventSelected, setEventSelected] = useState({
-        _id: "",
-        img: "",
-        title: "",
+        id: "",
+        banner: "",
+        name: "",
         description: "",
-        date:"",
+        date_from:"",
         hour: ""
     })
 
@@ -51,19 +51,19 @@ const SliderResponsive = ({enterEvent, events}) => {
                             <div className={styles.event_img_box} key={i} onClick={()=>{
                                 setEventInfo(true)
                                 setEventSelected({
-                                _id: e._id,
-                                img: e.img,
-                                title: e.title,
+                                id: e.id,
+                                banner: e.banner,
+                                name: e.name,
                                 description: e.description,
-                                date: e.date,
+                                date_from: e.date_from,
                                 hour: e.hour
                                 })
                             }}>
                                 <Image
-                                    src={e.img}
+                                    src={e.banner}
                                     layout="fill"
                                     objectFit='cover'
-                                    alt={e.title}
+                                    alt={e.name}
                                     priority
                                 />
                             </div>
