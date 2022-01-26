@@ -11,15 +11,19 @@ import styles from './Ecommerce.module.css'
 const Shopping = ({products}) => {
     const [mounted, setMounted] = useState(false)
     const [filterBy, setFilterBy] = useState({
-        category: false
+        category: false,
+        name : "Todo"
     })
-    console.log(filterBy.category)
 
-    const [productsFilter, setProductsFilter] = useState([])
+    const [productsFilter, setProductsFilter] = useState(products)
+
     useEffect(()=>{
         setMounted(true)
-
-        setProductsFilter(products.filter(product => product.category === filterBy.category))
+        if(filterBy.category !== false){
+            setProductsFilter(products.filter(product => product.category === filterBy.category))
+        }else{
+            setProductsFilter(products)
+        }
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [mounted, filterBy])
@@ -30,7 +34,7 @@ const Shopping = ({products}) => {
             <MobileView>
                 <FilterResponsive/>
                 <ProductGalery
-                    title="Vinos" 
+                    title={filterBy.name} 
                     home
                     products={products}
                     justifyContent="center"
@@ -39,7 +43,7 @@ const Shopping = ({products}) => {
             <BrowserView>
                 <div className={styles.browserView_container}>
                     <FilterDesktop 
-                        name={'Vinos'}
+                        name={filterBy.name}
                     />
                     <ProductGalery
                         products={productsFilter}

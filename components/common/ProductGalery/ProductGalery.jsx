@@ -14,16 +14,22 @@ const ProductGalery = ({title, home, products, justifyContent}) => {
         }
             <div className={styles.product_container} style={{justifyContent: justifyContent}}>
                 {
-                    products.map((e,i)=>(
-                        <ProductCard
-                            key={i}
-                            id={e._id}
-                            name={e.name}
-                            description={e.description}
-                            price={e.price}
-                            img={e.img}
-                        />
-                    ))
+                    products.length > 0 ? (
+                        products.map((e,i)=>(
+                            <ProductCard
+                                key={i}
+                                id={e._id}
+                                name={e.name}
+                                description={e.description}
+                                price={e.price}
+                                img={e.img}
+                            />
+                        ))
+                    ):(
+                        <div className={styles.empty_shopping}>
+                            <h4>Ups! No hay resultados para esta búsqueda</h4>
+                        </div>
+                    )
                 }
             </div>
         </div>

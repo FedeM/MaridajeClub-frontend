@@ -4,12 +4,10 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react';
 import { isMobile } from 'react-device-detect';
 import { Article } from '../../../common';
-import {user} from '../../../../lib/user'
 
-const ListArticles = () => {
+const ListArticles = ({cart, setCart}) => {
     const [mounted, setMounted] = useState(false)
     const [priceTotal, setPriceTotal] = useState()
-    const [cart, setCart] = useState(user.cart)
 
     const updateQuantity = (id, type)=>{
         const newCart = cart.map(product =>{
@@ -81,7 +79,7 @@ const ListArticles = () => {
             }
             </div>
             <div className={style.articles_fotter_container}>
-                <Link href={'/ecommerce'}>
+                <Link href={'/shopping'}>
                     <a className={style.fotter_link}><i className="fas fa-chevron-left"></i> Ir a la tienda</a>
                 </Link>
                 <div className={style.subtotal}>
