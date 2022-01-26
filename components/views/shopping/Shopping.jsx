@@ -36,7 +36,7 @@ const Shopping = ({products}) => {
                 <ProductGalery
                     title={filterBy.name} 
                     home
-                    products={products}
+                    products={productsFilter}
                     justifyContent="center"
                 />
             </MobileView>
