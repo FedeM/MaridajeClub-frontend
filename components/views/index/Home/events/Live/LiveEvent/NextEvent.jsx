@@ -5,7 +5,7 @@ import { Loader } from '../../../../../../common';
 const Image = lazy(()=> import('next/image'))
 
 
-const NextEvent = ({event, helpOpacity}) => {
+const NextEvent = ({event, helpOpacity, setModalActivate}) => {
 
     return (
         <div className={style.image_container}>
@@ -21,7 +21,7 @@ const NextEvent = ({event, helpOpacity}) => {
                 </div>
             </div>
             <span className={style.help_cover} style={{opacity: helpOpacity}}>Haz click en el título para ingresar al evento</span>
-            <span className={style.more_info} title='Más Info' onClick={()=> setModalActivate(true)}><i className="fas fa-exclamation-circle"></i></span>
+            <span className={style.more_info} title='Más Info' onClick={()=> setModalActivate({activate: true, event: event, isNext: true})}><i className="fas fa-exclamation-circle"></i></span>
         </div>
     );
 };

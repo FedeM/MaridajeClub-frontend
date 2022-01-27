@@ -48,17 +48,25 @@
 }
 
 .modal_container{
+    position: relative;
+    z-index: 10;
     background-color: var(--global-gray3);
     width: 90%;
     padding: 15px;
     border-radius: 15px;
-    border: 5px solid var(--global-gray2);
     box-shadow: 0 5px 15px rgba(0, 0, 0, .55);
-
+    background-color: rgb(255, 255, 255);
+    color: #000;
 }
 
 .modal_container h4{
     font-size: 3rem;
+    color: #000;
+    color: var(--global-gray4);
+}
+
+.modal_text{
+    color: var(--global-gray2);
 }
 
 .modal_container h4:hover{
@@ -75,6 +83,7 @@
     outline: none;
     cursor: pointer;
     margin-top: 5px;
+    width: 100%;
 }
 
 .modal_more_info{
@@ -92,12 +101,29 @@
     top: 5px;
     right: 15px;
     font-size: 2rem;
-    color: var(--global-secondary-color);
     cursor: pointer;
+}
+
+
+.date_container{
+    margin: 15px 0;
+}
+
+.date_container div{
+    display: flex;
+    align-items: center;
+}
+
+.date_container div p{
+    margin-left: 10px;
 }
 
 @media (min-width:850px) {
     .modal_container{
         width: 50%;
+    }
+
+    .modal_container button{
+        width: auto;
     }
 }

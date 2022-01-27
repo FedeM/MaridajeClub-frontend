@@ -25,12 +25,18 @@ const Home = ({id, enterEvent, close}) => {
     const [lastEvent, setLastEvent] = useState(false)
     const [nextEvent, setNextEvent] = useState(false)
     //En este array guardaremos los eventos
-    const [events, setEvents] = useState(arrayEvents.filter(event => event.is_live === false))
+    const [events, setEvents] = useState(arrayEvents.filter(event => {
+        if(event.is_live === false && event.date_from < new Date()){
+            return true
+        }
+        return false
+    }))
     const [helpOpacity, setHelpOpacity] = useState(0)
 
     const fillLiveEnter = ()=>{
         const currentDate = new Date();
         let lastDate = new Date(0, 0, 0);
+        let mostNextDate = new Date(2099, 11, 30)
 
         for (let i = 0; i < arrayEvents.length; i++) {
             if (arrayEvents[i].is_live === true) {
@@ -40,8 +46,13 @@ const Home = ({id, enterEvent, close}) => {
                 lastDate = arrayEvents[i].date_from
                 setLastEvent(arrayEvents[i])
             }
-            if (arrayEvents[i].date_from > currentDate) {
+            if (arrayEvents[i].date_from > currentDate && arrayEvents[i].date_from < mostNextDate) {
+                console.log("Se encontró uno")
+                mostNextDate = arrayEvents[i].date_from
                 setNextEvent(arrayEvents[i])
+            }
+            if (arrayEvents[i].date_from < currentDate) {
+                
             }
         }
     }
@@ -59,6 +70,8 @@ const Home = ({id, enterEvent, close}) => {
         })
         
     },[mounted])
+
+    console.log(nextEvent)
     
     return mounted &&(
         <section id={id} className={style.home_section}>

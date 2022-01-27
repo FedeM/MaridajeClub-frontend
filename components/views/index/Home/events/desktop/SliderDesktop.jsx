@@ -7,13 +7,13 @@ const SliderDesktop = ({enterEvent, events}) => {
     //Controlamos la posición del scroll
     const [scroll, setScroll] = useState(0)
     //Cargamos los datos del evento seleccionado
-    const [eventSelected, setEventSelected] = useState({
+    const [eventSelected, setEventSelected] = useState(events.length > 0 &&({
         id: events[0].id,
         name: events[0].name,
         description: events[0].description,
         date_from:`${events[0].date_from.getDate()}/${events[0].date_from.getMonth() + 1}/${events[0].date_from.getFullYear()}`,
         hour: `${events[0].date_from.getHours()}:${events[0].date_from.getMinutes()}`
-    })
+    }))
 
     //Le damos funcionalidad al scroll
     const moveScroll = (dir)=>{
@@ -31,10 +31,12 @@ const SliderDesktop = ({enterEvent, events}) => {
     const hiddenArrow = ()=>{
         let arrowLeft = document.getElementById('arrowLeft')
 
-        if(scroll === 0){
-            arrowLeft.style.opacity = "0"
-        }else{
-            arrowLeft.style.opacity = "1"
+        if (arrowLeft) {
+            if(scroll === 0){
+                arrowLeft.style.opacity = "0"
+            }else{
+                arrowLeft.style.opacity = "1"
+            }
         }
     }
 
@@ -43,8 +45,8 @@ const SliderDesktop = ({enterEvent, events}) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [scroll])
 
-    return (
-        <div className={styles.last_events_container} id="slider">
+    return events.length > 0 ?(
+        <div className={styles.last_events_container}>
             <div className={styles.last_events_title}>
                 <i className="fas fa-redo"></i>
                 <h3>Ver de nuevo</h3>
@@ -86,7 +88,18 @@ const SliderDesktop = ({enterEvent, events}) => {
                 </div>
             </div>
         </div>
-    );
+    ):(
+        <div className={styles.last_events_container}>
+            <div className={styles.last_events_title}>
+                <i className="fas fa-redo"></i>
+                <h3>Ver de nuevo</h3>
+            </div>
+            <div className={styles.empty_lastVideos}>
+                <p>Parece que aquí no hay nada, por favor espera a que tengamos eventos que mostrar.</p>
+                <span onClick={()=> location.reload()}>Reiniciar Página</span>
+            </div>
+        </div>
+    )
 };
 
 export default SliderDesktop;

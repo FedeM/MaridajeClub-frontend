@@ -141,3 +141,19 @@
 .event_img_box:last-child{
     margin-right: 75px;
 }
+
+.empty_lastVideos{
+    margin: 35px;
+    width: 95%;
+    text-align: center;
+}
+
+.empty_lastVideos p{
+    font-size: 2rem;
+}
+
+.empty_lastVideos span{
+    color: var(--global-tertiary-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
