@@ -16,18 +16,50 @@ const Home = ({id, enterEvent, close}) => {
     //Verificamos que el componente esté montado
     const [mounted, setMounted] = useState(false)
     //Aquí guardaremos el evento en vivo
-    const [liveEvent, setLiveEvent] = useState(arrayEvents.filter(event => event.is_live === true))
+    const [homeEvent, setHomeEvent] = useState({
+        inLiveEvent: false,
+        lastEvent: false,
+        nextEvent: false
+    })
+    const [inLiveEvent, setInLiveEvent] = useState(false)
+    const [lastEvent, setLastEvent] = useState(false)
+    const [nextEvent, setNextEvent] = useState(false)
     //En este array guardaremos los eventos
     const [events, setEvents] = useState(arrayEvents.filter(event => event.is_live === false))
     const [helpOpacity, setHelpOpacity] = useState(0)
 
+    const fillLiveEnter = ()=>{
+        const currentDate = new Date();
+        let lastDate = new Date(0, 0, 0);
 
-
+        for (let i = 0; i < arrayEvents.length; i++) {
+            if (arrayEvents[i].is_live === true) {
+                setInLiveEvent(arrayEvents[i])
+            }
+            if (arrayEvents[i].date_from > lastDate && arrayEvents[i].date_from < currentDate && arrayEvents[i].is_live === false) {
+                lastDate = arrayEvents[i].date_from
+                setLastEvent(arrayEvents[i])
+            }
+            if (arrayEvents[i].date_from > currentDate) {
+                setNextEvent(arrayEvents[i])
+            }
+        }
+    }
+    
+    
     useEffect(()=>{
         setMounted(true)
-        // console.log(liveEvent)
+        if(!mounted){
+            fillLiveEnter()
+        }
+        setHomeEvent({
+            inLiveEvent: inLiveEvent,
+            lastEvent: lastEvent,
+            nextEvent: nextEvent
+        })
+        
     },[mounted])
-
+    
     return mounted &&(
         <section id={id} className={style.home_section}>
             <div className={style.color}></div>
@@ -48,7 +80,7 @@ const Home = ({id, enterEvent, close}) => {
                         <Live
                             enterEvent={enterEvent}
                             helpOpacity={helpOpacity}
-                            liveEvent={liveEvent}
+                            homeEvent={homeEvent}
                         />
                     </div>
                     <SliderDesktop
@@ -70,7 +102,7 @@ const Home = ({id, enterEvent, close}) => {
                     <Live
                         enterEvent={enterEvent}
                         helpOpacity={helpOpacity}
-                        liveEvent={liveEvent}
+                        homeEvent={homeEvent}
                     />
                     <SliderResponsive
                         enterEvent={enterEvent}

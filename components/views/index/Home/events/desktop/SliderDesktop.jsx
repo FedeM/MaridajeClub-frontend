@@ -11,8 +11,8 @@ const SliderDesktop = ({enterEvent, events}) => {
         id: events[0].id,
         name: events[0].name,
         description: events[0].description,
-        date_from:events[0].date_from,
-        hour: events[0].hour
+        date_from:`${events[0].date_from.getDate()}/${events[0].date_from.getMonth() + 1}/${events[0].date_from.getFullYear()}`,
+        hour: `${events[0].date_from.getHours()}:${events[0].date_from.getMinutes()}`
     })
 
     //Le damos funcionalidad al scroll
@@ -69,8 +69,8 @@ const SliderDesktop = ({enterEvent, events}) => {
                                     id: e.id,
                                     name: e.name,
                                     description: e.description,
-                                    date_from: e.date_from,
-                                    hour: e.hour
+                                    date_from: `${e.date_from.getDate()}/${e.date_from.getMonth() + 1}/${e.date_from.getFullYear()}`,
+                                    hour: `${e.date_from.getHours()}:${e.date_from.getMinutes()}`
                                 })}>
                                     <Image
                                         src={e.banner}

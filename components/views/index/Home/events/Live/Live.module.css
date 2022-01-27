@@ -1,0 +1,103 @@
+.live_box{
+    position: relative;
+    z-index: 1;
+    flex-grow: 1;
+}
+
+.live_title {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.live_title i {
+    margin-right: 10px;
+    color: var(--global-secondary-color);
+}
+
+.live_title h3 {
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.live_wrapper{
+    display: flex ;
+    justify-content: center;
+    margin-top: 15px;
+    
+}
+
+
+
+
+
+/* MODAL MORE INFO */
+
+.modal_background{
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--global-primary-color_opacity);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_container{
+    background-color: var(--global-gray3);
+    width: 90%;
+    padding: 15px;
+    border-radius: 15px;
+    border: 5px solid var(--global-gray2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .55);
+
+}
+
+.modal_container h4{
+    font-size: 3rem;
+}
+
+.modal_container h4:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.modal_container button{
+    background-color: var(--global-tertiary-color);
+    color: var(--global-primary-color);
+    padding: 10px 25px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.modal_more_info{
+    position: absolute;
+    top: -4rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 4rem;
+    font-size: 4rem;
+}
+
+.close_modal{
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 2rem;
+    color: var(--global-secondary-color);
+    cursor: pointer;
+}
+
+@media (min-width:850px) {
+    .modal_container{
+        width: 50%;
+    }
+}

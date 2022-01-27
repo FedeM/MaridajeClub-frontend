@@ -8,7 +8,10 @@ export {default as EventResponsive} from './index/Events/EventResponsive'
 //Componentes del index
 export {default as SliderResponsive} from './index/Home/events/responsive/SliderResponsive.jsx'
 export {default as SliderDesktop} from './index/Home/events/desktop/SliderDesktop.jsx'
-export {default as Live} from './index/Home/events/desktop/Live.jsx'
+export {default as Live} from './index/Home/events/Live/Live.jsx'
+
+export {default as LiveEvent} from './index/Home/events/Live/LiveEvent/LiveEvent.jsx'
+export {default as NextEvent} from './index/Home/events/Live/LiveEvent/NextEvent.jsx'
 
 export {default as ShopEventDesktop} from './index/Events/ShopEvent/desktop/ShopEventDesktop.jsx'
 export {default as ShopEventResponsive} from './index/Events/ShopEvent/responsive/ShopEventResponsive.jsx'

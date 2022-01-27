@@ -113,6 +113,7 @@
         justify-content: center;
         text-align: left;
         min-width: calc(465px + 137px);
+        max-width: calc(500px + 137px);
         margin-left: 5%;
         margin-top: 0px;
     }

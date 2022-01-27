@@ -55,8 +55,8 @@ const SliderResponsive = ({enterEvent, events}) => {
                                 banner: e.banner,
                                 name: e.name,
                                 description: e.description,
-                                date_from: e.date_from,
-                                hour: e.hour
+                                date_from: `${e.date_from.getDate()}/${e.date_from.getMonth() + 1}/${e.date_from.getFullYear()}`,
+                                hour: `${e.date_from.getHours()}:${e.date_from.getMinutes()}`
                                 })
                             }}>
                                 <Image
