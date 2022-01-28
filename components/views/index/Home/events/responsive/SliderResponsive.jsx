@@ -15,7 +15,8 @@ const SliderResponsive = ({enterEvent, events}) => {
         name: "",
         description: "",
         date_from:"",
-        hour: ""
+        hour: "",
+        url: ""
     })
 
     useEffect(()=>{
@@ -51,12 +52,13 @@ const SliderResponsive = ({enterEvent, events}) => {
                             <div className={styles.event_img_box} key={i} onClick={()=>{
                                 setEventInfo(true)
                                 setEventSelected({
-                                id: e.id,
-                                banner: e.banner,
-                                name: e.name,
-                                description: e.description,
-                                date_from: `${e.date_from.getDate()}/${e.date_from.getMonth() + 1}/${e.date_from.getFullYear()}`,
-                                hour: `${e.date_from.getHours()}:${e.date_from.getMinutes()}`
+                                    id: e.id,
+                                    banner: e.banner,
+                                    name: e.name,
+                                    description: e.description,
+                                    date_from: `${e.date_from.getDate()}/${e.date_from.getMonth() + 1}/${e.date_from.getFullYear()}`,
+                                    hour: `${e.date_from.getHours()}:${e.date_from.getMinutes()}`,
+                                    url: e.video_url
                                 })
                             }}>
                                 <Image

@@ -5,6 +5,8 @@
     width: 90%;
     background-color: var(--global-primary-color);
     height: 500px;
+    min-width: 280px;
+    max-width: 280px;
 }
 
 

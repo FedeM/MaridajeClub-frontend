@@ -25,7 +25,15 @@ const ModalEventInfo = ({displayEventInfo, eventSelected, enterEvent}) => {
                     </div>
                 </div>
             </div>
-            <button onClick={()=> enterEvent(eventSelected.id)}>Ingresar al evento</button>
+            <button 
+                onClick={()=> enterEvent({
+                    activate: true,
+                    eventId: eventSelected.id,
+                    eventUrl: eventSelected.url
+                })}
+            >
+                Ingresar al evento
+            </button>
         </div>
     );
 };

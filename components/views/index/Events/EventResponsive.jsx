@@ -4,8 +4,9 @@ import { useState } from 'react';
 import { ChatResponsive, ShopEventResponsive } from '../..';
 
 
-const EventResponsive = ({submitPost, posts, handleChange, close}) => {
+const EventResponsive = ({submitPost, posts, handleChange, close, eventUrl}) => {
     const [openShop, setOpenShop] = useState(false)
+    const [paused, setPaused] = useState(false)
 
 
 
@@ -14,15 +15,23 @@ const EventResponsive = ({submitPost, posts, handleChange, close}) => {
             <div className={`${style.live_container} animate__animated animate__slideInRight`}>
                 <ReactPlayer
                     className={style.live}
-                    url="/assets/video/videoWine.mp4"
-                    playing
+                    url={eventUrl}
+                    playing={paused ? (false):(true)}
                     loop
-                    muted
                     width={'100%'}
                     height={'100%'}
                 />
                 <span className={style.live_alert}>En vivo</span>
                 <div className={style.live_close} onClick={()=> close()}>X</div>
+                    <div className={style.pauseBottom}>
+                        {
+                            paused ?(
+                                <i className="fas fa-play" onClick={()=> setPaused(false)}></i>
+                            ):(
+                                <i className="fas fa-pause" onClick={()=> setPaused(true)}></i>
+                            )
+                        }
+                    </div>
                 <ChatResponsive
                     submitPost={submitPost}
                     posts={posts}

@@ -12,7 +12,8 @@ const SliderDesktop = ({enterEvent, events}) => {
         name: events[0].name,
         description: events[0].description,
         date_from:`${events[0].date_from.getDate()}/${events[0].date_from.getMonth() + 1}/${events[0].date_from.getFullYear()}`,
-        hour: `${events[0].date_from.getHours()}:${events[0].date_from.getMinutes()}`
+        hour: `${events[0].date_from.getHours()}:${events[0].date_from.getMinutes()}`,
+        url: events[0].video_url
     }))
 
     //Le damos funcionalidad al scroll
@@ -59,7 +60,15 @@ const SliderDesktop = ({enterEvent, events}) => {
                         <div><i className="far fa-calendar-alt"></i><p>{eventSelected.date_from}</p></div>
                         <div><i className="far fa-clock"></i><p>{eventSelected.hour}</p></div>
                     </div>
-                    <button onClick={()=> enterEvent()}>Ingresar al evento</button>
+                    <button 
+                        onClick={()=> enterEvent({
+                            activate: true,
+                            eventId: eventSelected.id,
+                            eventUrl: eventSelected.url
+                        })}
+                    >
+                        Ingresar al evento
+                    </button>
                 </div>
                 <div className={styles.events_track_container}>
                     <div className={styles.event_track_arrow} id='arrowRight' onClick={()=>moveScroll(true)}><i className="fas fa-chevron-right"></i></div>
@@ -72,7 +81,8 @@ const SliderDesktop = ({enterEvent, events}) => {
                                     name: e.name,
                                     description: e.description,
                                     date_from: `${e.date_from.getDate()}/${e.date_from.getMonth() + 1}/${e.date_from.getFullYear()}`,
-                                    hour: `${e.date_from.getHours()}:${e.date_from.getMinutes()}`
+                                    hour: `${e.date_from.getHours()}:${e.date_from.getMinutes()}`,
+                                    url: e.video_url
                                 })}>
                                     <Image
                                         src={e.banner}

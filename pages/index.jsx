@@ -28,7 +28,11 @@ const welcomeMsgs = !isAuthenticate() ?([{
 
 export default function Index() {
   const [mounted, setMounted] = useState(false)
-  const [enterEvent, setEnterEvent] = useState(false)
+  const [enterEvent, setEnterEvent] = useState({
+    activate: false,
+    eventId: "",
+    eventUrl: ""
+  })
   const [post, setPost] = useState({
       photo: "",
       user: "",
@@ -66,14 +70,13 @@ export default function Index() {
 
   useEffect(()=>{
     setMounted(true)
-    if(enterEvent){
+    if(enterEvent.activate){
       document.querySelector('body').style.overflowY="hidden"
     }else{
       document.querySelector('body').style.overflowY="auto"
     }
 
   }, [mounted, enterEvent])
-
 
   return mounted &&(
     <Layout
@@ -88,7 +91,7 @@ export default function Index() {
         <Home
           id="home"
           paddingTop={"15vh"}
-          enterEvent={()=> setEnterEvent(true)}
+          enterEvent={setEnterEvent}
         />
         <Wineries id="winaries"/>
         <Ecommerce
@@ -96,14 +99,19 @@ export default function Index() {
           id="commerce"
         />
         {
-          enterEvent &&(
+          enterEvent.activate &&(
             <>
               <MobileView>
                 <EventResponsive
                     submitPost={submitPost}
                     handleChange={handleChange}
                     posts={posts}
-                    close={()=> setEnterEvent(false)}
+                    close={()=> setEnterEvent({
+                      activate: false,
+                      eventId: "",
+                      eventUrl: ""
+                    })}
+                    eventUrl= {enterEvent.eventUrl}
                 />
               </MobileView>
               <BrowserView>
@@ -111,7 +119,12 @@ export default function Index() {
                     submitPost={submitPost}
                     handleChange={handleChange}
                     posts={posts}
-                    close={()=> setEnterEvent(false)}
+                    close={()=> setEnterEvent({
+                      activate: false,
+                      eventId: "",
+                      eventUrl: ""
+                    })}
+                    eventUrl= {enterEvent.eventUrl}
                 />
               </BrowserView>
             </>

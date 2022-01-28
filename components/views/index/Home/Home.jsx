@@ -47,7 +47,6 @@ const Home = ({id, enterEvent, close}) => {
                 setLastEvent(arrayEvents[i])
             }
             if (arrayEvents[i].date_from > currentDate && arrayEvents[i].date_from < mostNextDate) {
-                console.log("Se encontró uno")
                 mostNextDate = arrayEvents[i].date_from
                 setNextEvent(arrayEvents[i])
             }
@@ -70,8 +69,6 @@ const Home = ({id, enterEvent, close}) => {
         })
         
     },[mounted])
-
-    console.log(nextEvent)
     
     return mounted &&(
         <section id={id} className={style.home_section}>

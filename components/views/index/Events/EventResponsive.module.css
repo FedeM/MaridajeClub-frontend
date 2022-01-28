@@ -18,11 +18,14 @@
     display: flex;
     border-radius: 5px;
     overflow: hidden;
-    max-height: 100vh;
+    height: 550px;
+    background-color: var(--global-primary-color);
 }
 
 .live{
     position: relative;
+    width: 100%;
+    height: 100%;
 }
 .live_alert{
     position: absolute;
@@ -61,6 +64,40 @@
     margin-top: 20px;
     background-color: #fff;
     color: var(--global-gray5);
+}
+
+
+.live_container:hover .pauseBottom{
+    opacity: 1;
+}
+
+.pauseBottom{
+    opacity: 0;
+    transition: .5s;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+}
+
+.pauseBottom i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: var(--global-gray);
+    opacity: .6;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    border: 1px solid var(--global-gray);
 }
 
 

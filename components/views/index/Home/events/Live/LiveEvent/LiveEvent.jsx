@@ -4,7 +4,7 @@ import { lazy, Suspense } from 'react';
 import { Loader } from '../../../../../../common';
 const ReactPlayer = lazy(()=> import('react-player'))
 
-const LiveEvent = ({event, helpOpacity, last, setModalActivate}) => {
+const LiveEvent = ({event, helpOpacity, last, setModalActivate, enterEvent}) => {
 
     return (
         <div className={style.video_container}>
@@ -20,7 +20,13 @@ const LiveEvent = ({event, helpOpacity, last, setModalActivate}) => {
                     height={'100%'}
                 />
             </Suspense>
-            <div className={style.live_info_container} onClick={()=> enterEvent()}>
+            <div className={style.live_info_container} 
+                onClick={()=> enterEvent({
+                    activate: true,
+                    eventId: event.id,
+                    eventUrl: event.video_url
+                })}
+            >
             { last && (<p className={style.last_event}>Último evento</p>)}
                 <h4>{event.name}</h4>
                 <div className={style.date_container}>

@@ -153,6 +153,8 @@
 }
 
 .empty_lastVideos span{
+    display: inline-block;
+    margin-top: 10px;
     color: var(--global-tertiary-color);
     text-decoration: underline;
     cursor: pointer;
