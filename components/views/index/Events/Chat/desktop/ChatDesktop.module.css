@@ -11,6 +11,7 @@
     overflow: hidden;
     align-items: center;
     justify-content: flex-start;
+    color: #fff;
 }
 
 .close_chat{
@@ -23,7 +24,8 @@
 }
 
 .chat_box{
-    background-color: var(--global-gray2);
+    background-color: #fff;
+    background-color: var(--global-primary-color);
     width: 100%;
     height: 95vh;
 }
@@ -40,7 +42,7 @@
 .logo_chat_container{
     width: 100%;
     padding: 15px;
-    border-bottom: 1px solid var(--global-gray);
+    border-bottom: 1px solid var(--global-gray2);
     display: flex;
     align-items: center;
     justify-content: center
@@ -114,7 +116,6 @@
 }
 
 .admin_text{
-    background-color: var(--global-primary-color);
     background-color: rgba(125, 230, 125, 0.25);
     border-radius: 5px;
 }
@@ -134,7 +135,7 @@
     background-color: transparent;
     border: none;
     outline: none;
-    color: #fff;
+    color: #000;
 }
 
 .chat_box input::placeholder{

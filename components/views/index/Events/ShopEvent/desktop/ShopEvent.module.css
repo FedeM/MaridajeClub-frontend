@@ -9,7 +9,9 @@
     height: 100%;
     border-radius: 5px 0px 0px 5px;
     overflow: hidden;
-    background-color: var(--global-gray2);
+    background-color: var(--global-gray);
+    background-color: var(--global-primary-color);
+    color: #fff;
 }
 
 .close_shop{
@@ -32,7 +34,7 @@
 
 .card_box{
     max-height: calc(100% - 110px);
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
     .card_box::-webkit-scrollbar{
@@ -40,21 +42,21 @@
     height: 5px;
     }
     .card_box::-webkit-scrollbar-thumb{
-        background: #F0F0F0;
+        background: #B3AFB3;
         border-radius: 30px;
     }
     .card_box::-webkit-scrollbar-thumb:hover{
         background: #dfdddd;
     }
     .card_box::-webkit-scrollbar-track{
-        background: #B3AFB3;
+        background: #F0F0F0;
     border-radius: 30px;
     box-shadow: inset 0px 0px 0px 0px #F0F0F0;
     }
 
 .card{
     padding: 15px 0;
-    border-top: 1px solid var(--global-gray);
+    border-top: 1px solid var(--global-gray5);
     margin: 0 30px;
     display: flex;
     align-items: center;
@@ -80,19 +82,20 @@
     display: block;
     position: relative;
     overflow: hidden;
+    color: var(--global-background_color);
     color: #fff;
-    background: var(--global-background_color);
     text-align: center;
     text-decoration: none;
     transition: .5s;
     z-index: 1;
     border: 1px solid var(--global-background_color);
+    border: 1px solid #fff;
     width: 20%;
 }
 
 .add_cart:hover{
-    color: var(--global-background_color);
-    background-color: #fff;
+    color: #fff;
+    border: 1px solid var(--global-background_color);
 }
 
 .add_cart:active{
@@ -110,13 +113,13 @@
     content: '';
     top: 0;
     bottom: 0;
-    left: 0;
+    left: -2px;
     right: 0;
     margin: auto;
     width: 0;
     height: 0;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: var(--global-background_color);
     transition: .5s;
 }
 

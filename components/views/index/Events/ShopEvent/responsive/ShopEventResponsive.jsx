@@ -18,7 +18,7 @@ const ShopEventResponsive = ({close}) => {
         <div className={`${style.shop_container} animate__animated ${classContainer} animate__faster`}>
             <span className={style.move_tab} onClick={()=> hiddenTab()}></span>
             <div className={style.shop_title}>
-                <h3>Shop</h3>
+                <h3>Tienda</h3>
             </div>
             <div className={style.card_box}>
                 <div className={style.card}>

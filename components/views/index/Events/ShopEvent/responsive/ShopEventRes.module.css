@@ -7,8 +7,9 @@
     width: 95%;
     padding-bottom: 15px;
     max-height: 75vh;
-    background-color: var(--global-gray);
+    background-color: var(--global-primary-color);
     border-radius: 15px 15px 0 0;
+    color: #fff;
 }
 
 .move_tab{
@@ -17,12 +18,11 @@
     margin-left: calc(50% - 75px);
     width: 150px;
     height: 7px;
-    background-color: var(--global-gray4);
+    background-color: var(--global-gray2);
     border-radius: 25px;
 }
 
 .shop_title{
-    color: var(--global-primary-color);
     font-size: 1.5rem;
     padding: 15px 30px;
 }
@@ -38,7 +38,6 @@
     margin: 0 30px;
     display: flex;
     align-items: center;
-    color: var(--global-primary-color);
 }
 
 
@@ -62,12 +61,11 @@
     position: relative;
     overflow: hidden;
     color: #fff;
-    background: var(--global-background_color);
     text-align: center;
     text-decoration: none;
     transition: .5s;
     z-index: 1;
-    border: 1px solid var(--global-background_color);
+    border: 1px solid #fff;
     width: 20%;
 }
 
