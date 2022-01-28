@@ -16,12 +16,6 @@
     font-size: 1.3rem;
 }
 
-.carrousel_container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .viewImage{
     position: relative;
     background-color: var(--global-gray5);
@@ -33,55 +27,10 @@
     overflow: hidden;
     border-radius: 5px;
 }
-
-.slider_container{
-    display: flex;
-    margin-top: 15px;
-    width: 100%;
-    overflow: auto;
-}
-
-.img{
-    position: relative;
-    min-width: 75px;
-    max-width: 75px;
-    min-height: 75px;
-    max-height: 75px;
-    margin: 0 5px;
-    overflow: hidden;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.img:first-child{
-    margin-left: 0;
-}
-.img:last-child{
-    margin-right: 0;
-}
-
 @media (min-width: 750px) {
     .image_section{
         width: max-content;
         padding-right: 15px;
-        border-right: 1px solid var(--global-gray2);
-    }
-
-    .carrousel_container{
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .slider_container{
-        padding: 0 15px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 0px;
-        width: max-content;
-        height: 300px;
-        overflow-x: hidden;
-        overflow-y: auto;
     }
 
     .viewImage{
@@ -96,48 +45,10 @@
         border-radius: 5px;
     }
 
-    .img{
-        position: relative;
-        min-width: 90px;
-        max-width: 90px;
-        min-height: 90px;
-        max-height: 90px;
-        margin: 5px 0px;
-        overflow: hidden;
-        border-radius: 5px;
-        cursor: pointer;
-    }
     @media (min-width: 850px) {
         .viewImage{
             width: 450px;
             height: 450px;
-        }
-
-        .slider_container{
-            height: 450px;
-        }
-            .slider_container::-webkit-scrollbar{
-            width: 5px;
-            height: 5px;
-            }
-            .slider_container::-webkit-scrollbar-thumb{
-            background: #B3AFB3;
-            border-radius: 30px;
-            }
-            .slider_container::-webkit-scrollbar-thumb:hover{
-            background: #B3AFB3;
-            }
-            .slider_container::-webkit-scrollbar-track{
-            background: #F0F0F0;
-            border-radius: 25px;
-            box-shadow: inset 0px 0px 0px 0px #F0F0F0;
-            }
-
-        .img{
-            min-width: 100px;
-            max-width: 100px;
-            min-height: 100px;
-            max-height: 100px;
         }
     }
 }

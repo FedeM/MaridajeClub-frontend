@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './ProductDetail.module.css'
 import Image from 'next/image'
 import { isDesktop, isMobile} from 'react-device-detect';
-const ProductDetail = () => {
+const ProductDetail = ({product}) => {
+    const [quantity, setQuantity] = useState(1)
     return (
         <>
             <div className={style.productDetail_container}>                
@@ -11,49 +12,35 @@ const ProductDetail = () => {
                         {
                             isMobile &&(
                                 <div className={style.title}>
-                                    <h2>Vino 1</h2>
+                                    <h2>{product.name}</h2>
                                 </div>
                             )
                         }
-                        <div className={style.carrousel_container}>
-                            <div className={style.viewImage}>
-                                <Image src={'/assets/img/products/wine1.jpg'} layout='fill' objectFit='contain' priority alt="description"/>
-                            </div>
-                            <div className={style.slider_container}>
-                                <div className={style.img}>
-                                    <Image src={'/assets/img/products/wine1.jpg'} layout='fill' objectFit='cover' alt="description"/>
-                                </div>
-                                <div className={style.img}>
-                                    <Image src={'/assets/img/products/wine1.jpg'} layout='fill' objectFit='cover' alt="description"/>
-                                </div>
-                                <div className={style.img}>
-                                    <Image src={'/assets/img/products/wine1.jpg'} layout='fill' objectFit='cover' alt="description"/>
-                                </div>
-                                <div className={style.img}>
-                                    <Image src={'/assets/img/products/wine1.jpg'} layout='fill' objectFit='cover' alt="description"/>
-                                </div>
-                            </div>
+                        <div className={style.viewImage}>
+                            <Image src={product.img} layout='fill' objectFit='cover' priority alt="description"/>
                         </div>
                     </section>
                     <section className={style.agregate_section}>
                         <div className={style.payment_info}>
                             {
                                 isDesktop &&(
-                                    <h2>Vino 1</h2>
+                                    <h2>{product.name}</h2>
                                 )
                             }
                             <div className={style.description}>
-                                <p>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est magnam iste dolorum reprehenderit dignissimos at nesciunt soluta sed doloribus, dicta accusantium quos asperiores molestias ducimus, ipsum id labore quo placeat.
-                                </p>
+                                <p>{product.description}</p>
                             </div>
-                            <div className={style.price}>$130.70</div>
+                            <div className={style.price}>${product.price}</div>
                             <div className={style.addToCart}>
                                 <div className={style.quantity}>
-                                    <div>1</div>
+                                    <div>{quantity}</div>
                                     <div className={style.counters}>
-                                        <i className="fas fa-chevron-circle-up"></i>
-                                        <i className="fas fa-chevron-circle-down" ></i>
+                                        <i className="fas fa-chevron-circle-up" onClick={()=> setQuantity(quantity +1)}></i>
+                                        <i className="fas fa-chevron-circle-down" onClick={()=> {
+                                            quantity > 1 ?(
+                                                setQuantity(quantity -1)
+                                            ):(quantity)
+                                        }}></i>
                                     </div>
                                 </div>
                                 <div className={style.add_button}>
