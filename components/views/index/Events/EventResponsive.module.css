@@ -45,6 +45,7 @@
     background-color: var(--global-secondary-color);
     border-radius: 10px;
     text-decoration: none;
+    z-index: 10;
 }
 
 .options_buttons{

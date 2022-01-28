@@ -16,7 +16,8 @@ const SliderResponsive = ({enterEvent, events}) => {
         description: "",
         date_from:"",
         hour: "",
-        url: ""
+        url: "",
+        is_live: ""
     })
 
     useEffect(()=>{
@@ -58,7 +59,8 @@ const SliderResponsive = ({enterEvent, events}) => {
                                     description: e.description,
                                     date_from: `${e.date_from.getDate()}/${e.date_from.getMonth() + 1}/${e.date_from.getFullYear()}`,
                                     hour: `${e.date_from.getHours()}:${e.date_from.getMinutes()}`,
-                                    url: e.video_url
+                                    url: e.video_url,
+                                    is_live: e.is_live
                                 })
                             }}>
                                 <Image

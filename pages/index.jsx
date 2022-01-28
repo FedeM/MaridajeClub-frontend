@@ -31,7 +31,8 @@ export default function Index() {
   const [enterEvent, setEnterEvent] = useState({
     activate: false,
     eventId: "",
-    eventUrl: ""
+    eventUrl: "",
+    eventIsLive: false
   })
   const [post, setPost] = useState({
       photo: "",
@@ -109,9 +110,10 @@ export default function Index() {
                     close={()=> setEnterEvent({
                       activate: false,
                       eventId: "",
-                      eventUrl: ""
+                      eventUrl: "",
+                      eventIsLive: false
                     })}
-                    eventUrl= {enterEvent.eventUrl}
+                    event={enterEvent}
                 />
               </MobileView>
               <BrowserView>
@@ -122,9 +124,10 @@ export default function Index() {
                     close={()=> setEnterEvent({
                       activate: false,
                       eventId: "",
-                      eventUrl: ""
+                      eventUrl: "",
+                      eventIsLive: false
                     })}
-                    eventUrl= {enterEvent.eventUrl}
+                    event={enterEvent}
                 />
               </BrowserView>
             </>

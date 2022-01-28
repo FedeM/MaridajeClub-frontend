@@ -21,7 +21,8 @@ const Live = ({enterEvent, helpOpacity, homeEvent}) => {
                         onClick={()=> enterEvent({
                             activate: true,
                             eventId: modalActivate.event.id,
-                            eventUrl: modalActivate.event.video_url
+                            eventUrl: modalActivate.event.video_url,
+                            eventIsLive: modalActivate.event.is_live
                         })}
                     >
                             {modalActivate.event.name}
@@ -36,7 +37,8 @@ const Live = ({enterEvent, helpOpacity, homeEvent}) => {
                                 onClick={()=> enterEvent({
                                     activate: true,
                                     eventId: modalActivate.event.id,
-                                    eventUrl: modalActivate.event.video_url
+                                    eventUrl: modalActivate.event.video_url,
+                                    eventIsLive: modalActivate.event.is_live
                                 })}>
                                     Ingresar al evento
                             </button>

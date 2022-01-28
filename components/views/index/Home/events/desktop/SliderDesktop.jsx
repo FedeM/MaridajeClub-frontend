@@ -13,7 +13,8 @@ const SliderDesktop = ({enterEvent, events}) => {
         description: events[0].description,
         date_from:`${events[0].date_from.getDate()}/${events[0].date_from.getMonth() + 1}/${events[0].date_from.getFullYear()}`,
         hour: `${events[0].date_from.getHours()}:${events[0].date_from.getMinutes()}`,
-        url: events[0].video_url
+        url: events[0].video_url,
+        is_live: events[0].is_live
     }))
 
     //Le damos funcionalidad al scroll
@@ -64,7 +65,8 @@ const SliderDesktop = ({enterEvent, events}) => {
                         onClick={()=> enterEvent({
                             activate: true,
                             eventId: eventSelected.id,
-                            eventUrl: eventSelected.url
+                            eventUrl: eventSelected.url,
+                            eventIsLive: eventSelected.is_live
                         })}
                     >
                         Ingresar al evento
@@ -82,7 +84,8 @@ const SliderDesktop = ({enterEvent, events}) => {
                                     description: e.description,
                                     date_from: `${e.date_from.getDate()}/${e.date_from.getMonth() + 1}/${e.date_from.getFullYear()}`,
                                     hour: `${e.date_from.getHours()}:${e.date_from.getMinutes()}`,
-                                    url: e.video_url
+                                    url: e.video_url,
+                                    is_live: e.is_live
                                 })}>
                                     <Image
                                         src={e.banner}

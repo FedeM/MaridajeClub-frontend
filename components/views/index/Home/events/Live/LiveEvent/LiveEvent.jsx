@@ -24,7 +24,8 @@ const LiveEvent = ({event, helpOpacity, last, setModalActivate, enterEvent}) => 
                 onClick={()=> enterEvent({
                     activate: true,
                     eventId: event.id,
-                    eventUrl: event.video_url
+                    eventUrl: event.video_url,
+                    eventIsLive: event.is_live
                 })}
             >
             { last && (<p className={style.last_event}>Último evento</p>)}
@@ -35,7 +36,7 @@ const LiveEvent = ({event, helpOpacity, last, setModalActivate, enterEvent}) => 
                 </div>
             </div>
             <span className={style.help_cover} style={{opacity: helpOpacity}}>Haz click en el título para ingresar al evento</span>
-            {!last &&(<span className={style.live_alert} title='En vivo'>Live</span>)}
+            {!last &&(<span className={style.live_alert} title='En vivo'>En vivo</span>)}
             <span className={style.more_info} title='Más Info' onClick={()=> setModalActivate({activate: true, event: event, isNext: false})}><i className="fas fa-exclamation-circle"></i></span>
         </div>
     );

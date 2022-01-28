@@ -3,13 +3,12 @@ import ReactPlayer from "react-player";
 import { useState } from 'react';
 import { ChatDesktop, ShopEventDesktop } from '../..';
 
-const EventDesktop = ({submitPost, posts, handleChange, close, eventUrl}) => {
+const EventDesktop = ({submitPost, posts, handleChange, close, event}) => {
     const [open, setOpen] = useState({
         chat: false,
         shop: false
     })
     const [paused, setPaused] = useState(false)
-    console.log(paused)
 
     return (
         <article className={style.eventDesktop_container}>
@@ -19,13 +18,13 @@ const EventDesktop = ({submitPost, posts, handleChange, close, eventUrl}) => {
                         <ReactPlayer
                             id="live"
                             className={style.live}
-                            url={eventUrl}
+                            url={event.eventUrl}
                             playing={paused ? (false):(true)}
                             loop
                             width={'100%'}
                             height={'100%'}
                         />
-                        <span className={style.live_alert}>Live</span>
+                        {event.eventIsLive &&(<span className={style.live_alert}>En vivo</span>)}
                         <div className={style.pauseBottom}>
                             {
                                 paused ?(
