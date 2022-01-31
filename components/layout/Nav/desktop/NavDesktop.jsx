@@ -9,7 +9,7 @@ import {isAuthenticate} from '../../../../lib/auth'
 
 
 
-const NavDesktop = ({logo, home,cart, quantity}) => {
+const NavDesktop = ({logo, home,cart, quantity, user}) => {
     
 
     return (
@@ -42,6 +42,15 @@ const NavDesktop = ({logo, home,cart, quantity}) => {
                                                     <i className="fas fa-user"></i>
                                                 </a>
                                             </Link>
+                                            {
+                                                user.role === 1 &&(
+                                                    <Link href={'/admin'}>
+                                                        <a className={`${styles.navDesktop_nav_li}`} title='Administración'>
+                                                            <i className="fas fa-tachometer-alt"></i>
+                                                        </a>
+                                                    </Link>
+                                                )
+                                            }
                                         </>
                                     ):(
                                         <Link href={'/session'}>
@@ -77,16 +86,27 @@ const NavDesktop = ({logo, home,cart, quantity}) => {
                                 </Link>
                                 {
                                     cart && isAuthenticate() &&(
-                                        <Link href={'/cart'}>
-                                            <a className={`${styles.navDesktop_nav_li}`} title='Carrito'>
-                                                {
-                                                    quantity > 0 &&(
-                                                        <span className={styles.cart_marker}>{quantity}</span>
-                                                    )
-                                                }
-                                                <i className="fas fa-shopping-cart"></i>
-                                            </a>
-                                        </Link>
+                                        <>
+                                            <Link href={'/cart'}>
+                                                <a className={`${styles.navDesktop_nav_li}`} title='Carrito'>
+                                                    {
+                                                        quantity > 0 &&(
+                                                            <span className={styles.cart_marker}>{quantity}</span>
+                                                        )
+                                                    }
+                                                    <i className="fas fa-shopping-cart"></i>
+                                                </a>
+                                            </Link>
+                                            {
+                                                user.role === 1 &&(
+                                                    <Link href={'/admin'}>
+                                                        <a className={`${styles.navDesktop_nav_li}`} title='Administración'>
+                                                            <i className="fas fa-tachometer-alt"></i>
+                                                        </a>
+                                                    </Link>
+                                                )
+                                            }
+                                        </>
                                     )
                                 }
                             </>

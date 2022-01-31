@@ -12,7 +12,7 @@ import { events as arrayEvents } from '../../../../lib/events';
 
 
 
-const Home = ({id, enterEvent, close}) => {
+const Home = ({enterEvent}) => {
     //Verificamos que el componente esté montado
     const [mounted, setMounted] = useState(false)
     //Aquí guardaremos el evento en vivo
@@ -71,12 +71,12 @@ const Home = ({id, enterEvent, close}) => {
     },[mounted])
     
     return mounted &&(
-        <section id={id} className={style.home_section}>
+        <section className={style.home_section}>
             <div className={style.color}></div>
             <div className={style.color}></div>
             <div className={style.live_container}>
                 <BrowserView>
-                    <div className={style.presentation_container}>
+                    <div className={style.presentation_container} id="home">
                         <div className={style.about_text_container}>
                             <div className={style.about_text_container_text}>
                                 <h3>Live Streaming & eCommerce</h3>
@@ -99,7 +99,7 @@ const Home = ({id, enterEvent, close}) => {
                     />
                 </BrowserView>
                 <MobileView>
-                    <div className={style.about_text_container}>
+                    <div className={style.about_text_container} id="home">
                         <div className={style.about_text_container_text}>
                             <h3>Live Streaming & eCommerce</h3>
                             <p>Viví la única experiencia <span> Live Streaming Shopping</span> de bebidas, conoce a sus creadores y encontrá precios únicos</p>

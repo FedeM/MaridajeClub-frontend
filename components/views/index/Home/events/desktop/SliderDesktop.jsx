@@ -48,7 +48,7 @@ const SliderDesktop = ({enterEvent, events}) => {
     }, [scroll])
 
     return events.length > 0 ?(
-        <div className={styles.last_events_container}>
+        <div className={styles.last_events_container} id='slider'>
             <div className={styles.last_events_title}>
                 <i className="fas fa-redo"></i>
                 <h3>Ver de nuevo</h3>

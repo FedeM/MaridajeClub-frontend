@@ -16,10 +16,10 @@ const NavBar = ({home, cart}) => {
     return mounted && (
         <>
             <BrowserView>
-                <NavDesktop logo={logo} home={home} cart={cart} quantity={user.cart.length}/>
+                <NavDesktop logo={logo} home={home} cart={cart} quantity={user.cart.length} user={user}/>
             </BrowserView>
             <MobileView>
-                <NavMobile logo={logo} home={home} cart={cart} quantity={user.cart.length}/>
+                <NavMobile logo={logo} home={home} cart={cart} quantity={user.cart.length} user={user}/>
             </MobileView>
         </>
     )

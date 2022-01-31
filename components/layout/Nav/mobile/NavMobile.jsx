@@ -9,7 +9,7 @@ import Router from "next/router";
 import Image from 'next/image'
 
 
-const NavMobile = ({logo, home, cart, quantity}) => {
+const NavMobile = ({logo, home, cart, quantity, user}) => {
     const [openMenu, setOpenMenu] = useState(false);
 
     const displayMenu = ()=>{
@@ -75,11 +75,22 @@ const NavMobile = ({logo, home, cart, quantity}) => {
                                 <LinkScroll className={`${styles.navMobile_nav_li}`} activeClass="activeMobileLink"  to="commerce"  spy={true} onClick={()=> displayMenu()}>Comprar</LinkScroll>
                                 {
                                     isAuthenticate() ? (
-                                        <Link href={'/profile'} onClick={()=> displayMenu()}>
-                                            <a className={`${styles.navMobile_nav_li}`}>
-                                                Perfil
-                                            </a>
-                                        </Link>
+                                        <>
+                                            <Link href={'/profile'} onClick={()=> displayMenu()}>
+                                                <a className={`${styles.navMobile_nav_li}`}>
+                                                    Perfil
+                                                </a>
+                                            </Link>
+                                            {
+                                                user.role &&(
+                                                    <Link href={'/admin'} onClick={()=> displayMenu()}>
+                                                        <a className={`${styles.navMobile_nav_li}`}>
+                                                            Administración
+                                                        </a>
+                                                    </Link>
+                                                )
+                                            }
+                                        </>
                                     ):(
                                         <Link href={'/session'} onClick={()=> displayMenu()}>
                                             <a className={`${styles.navMobile_nav_li}`}>
