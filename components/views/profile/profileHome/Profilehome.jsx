@@ -1,7 +1,7 @@
 import { DataUser, FeaturedInfo } from '../../../common';
 import style from './ProfileHome.module.css'
 
-const Profilehome = () => {
+const ProfileHome = () => {
     return (
         <div className={style.profileHomeContainer}>
             <FeaturedInfo/>
@@ -10,4 +10,4 @@ const Profilehome = () => {
     );
 };
 
-export default Profilehome;
+export default ProfileHome;
