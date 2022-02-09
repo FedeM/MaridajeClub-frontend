@@ -7,7 +7,7 @@ const PurchaseItem = () => {
     return (
         <div className={style.container}>
             <div className={style.item}>
-                <Image src={'/assets/img/products/wine1.jpg'} width="50px" height={"50px"} objectFit="cover"/>
+                <Image src={'/assets/img/products/wine1.jpg'} width="50px" height={"50px"} objectFit="cover" alt='product'/>
                 <span>Vino Malbec</span>
             </div>
             <div className={style.item}>

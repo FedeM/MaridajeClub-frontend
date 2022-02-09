@@ -56,7 +56,7 @@ const PersonalData = () => {
                     ({errors})=>(
                     <Form> 
                         <div className={style.photoInputContainer}>
-                            <Image src={img} layout="fill" objectFit='contain'/>
+                            <Image src={img} layout="fill" objectFit='contain' alt={user.name}/>
                             <label htmlFor="photo"><ion-icon name="camera-outline"></ion-icon></label>
                             <Field type="file" name='photo' id="photo"/>
                         </div>

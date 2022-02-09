@@ -68,6 +68,7 @@ const Home = ({enterEvent}) => {
             nextEvent: nextEvent
         })
         
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[mounted])
     
     return mounted &&(

@@ -14,6 +14,8 @@ const Index = ({success, id, error}) => {
     useEffect(()=>{
         setMounted(true)
         setProduct(arrayProducts.filter(e=> e._id == id))
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [mounted])
 
 

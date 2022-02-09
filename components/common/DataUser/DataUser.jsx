@@ -9,7 +9,7 @@ const DataUser = () => {
             <div className={style.dataUserHeader}>
                 <div className={style.dataUserHeaderContainer}>
                     <div className={style.img}>
-                        <Image src={user.photo} layout="fill" objectFit="contain"/>
+                        <Image src={user.photo} layout="fill" objectFit="contain" alt={user.name}/>
                     </div>
                     <h4>{user.name}</h4>
                 </div>

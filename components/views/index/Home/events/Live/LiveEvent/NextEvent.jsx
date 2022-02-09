@@ -10,7 +10,7 @@ const NextEvent = ({event, helpOpacity, setModalActivate}) => {
     return (
         <div className={style.image_container}>
             <Suspense fallback={<Loader size={50} style={{position: "absolute", top: "calc(50% - 25px)", left:"calc(50% - 25px)"}}/>}>
-                <Image src={event.banner} layout='fill' objectFit='cover'/>
+                <Image src={event.banner} layout='fill' objectFit='cover' alt='44564'/>
             </Suspense>
             <div className={style.live_info_container}>
                 <p className={style.next_event}>Proximo evento</p>
