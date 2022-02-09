@@ -1,6 +1,11 @@
-@media (min-width: 800px) {
+.article{
+    padding-top: 70px;
+    position: relative;
+    display: flex;
+}
+@media (max-width: 800px) {
     .article{
-        display: flex;
-        padding-bottom: 15px;
+        display: block;
+        padding-top: 90px;
     }
 }

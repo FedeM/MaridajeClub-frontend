@@ -15,6 +15,8 @@ class MyDocument extends Document {
                     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" crossOrigin="true"/>
+                <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+                <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
                 <link rel="manifest" href="/manifest.json" />
                 <link rel="apple-touch-icon" href="/icon-500x500.png" />
                 <meta name='theme-color' content='#1a1a1a'/>

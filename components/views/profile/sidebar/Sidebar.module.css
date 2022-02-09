@@ -1,0 +1,159 @@
+.sidebar {
+  width: 20%;
+  min-height: 75vh;
+  background-color: var(--global-gray5);
+  position: sticky;
+  top: 50px;
+}
+
+.sidebarWrapper {
+  padding: 20px;
+  color: #fff;
+}
+
+.link{
+  display: inline-block;
+  width: 100%;
+  color: #000;
+  text-decoration: none;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+
+.sidebarMenu {
+  margin-bottom: 10px;
+}
+
+.sidebarTitle {
+  font-size: 13px;
+  color: var(--global-gray);
+}
+
+.sidebarList {
+  list-style: none;
+  padding: 5px;
+}
+
+.sidebarListItem {
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.sidebarListItem ion-icon{
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.sidebarListItem.active,
+.sidebarListItem:hover {
+  background-color: var(--global-gray4);
+}
+
+.close{
+  transition: .5s;
+}
+
+.close:hover{
+  background-color: var(--global-secondary-color);
+}
+
+@media (max-width: 850px) {
+  .sidebar {
+    width: auto;
+    border-radius: 0 10px 10px 0px;
+    min-height: calc(100vh - 90px - 30px - 2rem);
+    background-color: var(--global-gray5);
+    position: sticky;
+    top: 50px;
+  }
+
+  .sidebarWrapper {
+    padding: 10px;
+  }
+
+  .sidebarMenu{
+    padding-top: 5px;
+    border-top: 1px solid var(--global-gray);
+  }
+  .sidebarMenu:nth-child(1){
+    padding-top: 0px;
+    border-top: none;
+  }
+  
+  .sidebarList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebarTitle {
+    display: none;
+  }
+  
+  .sidebarListItem span{
+    display: none;
+  }
+
+  .sidebarListItem{
+    padding: 20px;
+    justify-content: center;
+  }
+
+  .link{
+    width: auto;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+
+  .sidebarListItem ion-icon{
+    margin-right: 0px;
+  }
+}
+
+@media (max-width: 800px) {
+  .sidebar {
+    width: 100%;
+    border-radius:0;
+    min-height: auto;
+    top: 0;
+    position: relative;
+  }
+
+  .sidebarWrapper {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .sidebarMenu{
+    margin: 0;
+    padding-top: 5px;
+    border-top:none;
+    border-left: 1px solid var(--global-gray);
+  }
+  .sidebarMenu:nth-child(1){
+    padding-top: 0px;
+    border-top: none;
+    border-left: none;
+  }
+  
+  .sidebarList {
+    flex-direction: row;
+  }
+  
+  .sidebarListItem span{
+    display: none;
+  }
+
+  .link{
+    width: auto;
+  }
+  
+  .close{
+    margin-left: 10px;
+  }
+}

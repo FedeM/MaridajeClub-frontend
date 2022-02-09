@@ -76,20 +76,20 @@ const NavMobile = ({logo, home, cart, quantity, user}) => {
                                 {
                                     isAuthenticate() ? (
                                         <>
-                                            <Link href={'/profile'} onClick={()=> displayMenu()}>
+                                            <Link href={'/profile/home'} onClick={()=> displayMenu()}>
                                                 <a className={`${styles.navMobile_nav_li}`}>
                                                     Perfil
                                                 </a>
                                             </Link>
-                                            {
-                                                user.role &&(
+                                            {/* {
+                                                user.role === 0 &&(
                                                     <Link href={'/admin'} onClick={()=> displayMenu()}>
                                                         <a className={`${styles.navMobile_nav_li}`}>
                                                             Administración
                                                         </a>
                                                     </Link>
                                                 )
-                                            }
+                                            } */}
                                         </>
                                     ):(
                                         <Link href={'/session'} onClick={()=> displayMenu()}>

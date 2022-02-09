@@ -26,8 +26,10 @@ export {default as Checkout} from './cart/checkout/Checkout'
 
 
 //Componentes de PROFILE
-export {default as Purchase} from './profile/Purchase/Purchase'
-export {default as UserInfo} from './profile/UserInfo/UserInfo'
+export {default as Sidebar} from './profile/sidebar/Sidebar'
+export {default as ProfileHome} from './profile/profileHome/ProfileHome'
+export {default as PersonalData} from './profile/personalData/PersonalData'
+export {default as MyShopping} from './profile/myShopping/MyShopping'
 
 
 

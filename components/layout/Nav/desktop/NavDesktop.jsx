@@ -37,7 +37,7 @@ const NavDesktop = ({logo, home,cart, quantity, user}) => {
                                 {
                                     isAuthenticate() ? (
                                         <>
-                                            <Link href={'/profile'}>
+                                            <Link href={'/profile/home'}>
                                                 <a className={`${styles.navDesktop_nav_li}`} title='Perfil'>
                                                     <i className="fas fa-user"></i>
                                                 </a>

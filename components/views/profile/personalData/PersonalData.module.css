@@ -1,0 +1,139 @@
+.container{
+    width: 80%;
+    height: 75vh;
+    padding: 0 20px;
+    padding-bottom: 20px;
+}
+
+.personalDataContainer{
+    position: relative;
+    background-color: var(--global-gray4);
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.personalDataContainer form{
+    height: 100%;
+    width: 100%;
+    padding: 40px;
+}
+
+.updateBtn{
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    padding: 5px 10px;
+    background-color: var(--global-tertiary-color);
+    border-radius: 25px;
+    color: var(--global-gray5);
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 'outfit', sans-serif;
+    border: none;
+    outline: none;
+}
+
+.photoInputContainer{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.photoInputContainer img{
+    border-radius: 50%;
+    transition: .5s;
+}
+
+.photoInputContainer img:hover{
+    filter: brightness(0.8);
+}
+
+.photoInputContainer label{
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.photoInputContainer input{
+    display: none;
+}
+
+.personalData{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.personalData input{
+    background-color: transparent;
+    color: #fff;
+    font-family: 'outfit', sans-serif;
+    border: none;
+    font-size: 1em;
+}
+
+.personalData input:focus{
+    border-bottom: 1px solid var(--global-tertiary-color);
+    outline: none;
+}
+
+.personalData ion-icon{
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+@media (max-width: 850px) {
+    .container{
+        width: 100%;
+        height: min-content;
+        padding-bottom: 20px;
+    }
+
+    .photoInputContainer{
+        width: 150px;
+        height: 150px;
+    }
+
+    .photoInputContainer label{
+        right: 15px;
+        font-size: 1.5em;
+    }
+
+    .personalData{
+        font-size: 1.2em;
+    }
+}
+@media (max-width: 850px) {
+    .container{
+        width: 100%;
+        height: min-content;
+        margin-top: 20px;
+    }
+    .photoInputContainer{
+        max-width: 150px;
+        min-width: 150px;
+        min-height: 150px;
+        max-height: 150px;
+        margin: auto;
+        margin-bottom: 15px;
+    }    
+
+    .photoInputContainer label{
+        right: 15px;
+        font-size: 1.5em;
+    }
+
+    .personalData{
+        font-size: 1.2em;
+    }
+
+    .updateBtn{
+        position: relative;
+        bottom: auto;
+        right: auto;
+    }
+}

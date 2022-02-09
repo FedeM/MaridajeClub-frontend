@@ -1,0 +1,21 @@
+.profileHomeContainer{
+    width: 80%;
+    min-height: 75vh;
+}
+
+@media (max-width: 850px) {
+    .profileHomeContainer{
+        width: auto;
+        min-height: calc(100vh - 90px - 30px - 2rem);
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width: 800px) {
+    .profileHomeContainer{
+        width: 100%;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+}

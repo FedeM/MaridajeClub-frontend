@@ -1,0 +1,108 @@
+.featured {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.featuredItem {
+    position: relative;
+    flex: 1;
+    margin: 0px 20px;
+    padding: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 15px -10px rgb(0, 0, 0);
+    box-shadow: 0px 0px 15px -10px rgb(0, 0, 0);
+    transition: .5s;
+    background-color: var(--global-gray4);
+    color: var(--global-gray);
+}
+
+.featuredTitle{
+    font-size: 20px;
+}
+
+.featuredMoneyContainer{
+    margin: 10px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.featuredMoney{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.featuredMoneyRate{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.featuredIcon{
+    font-size: 14px;
+    margin-left: 5px;
+    color: green;
+}
+
+.featuredIcon.negative{
+    color: red;
+}
+
+.featuredSub{
+    font-size: 15px;
+    color: gray;
+}
+
+.featuredItem ion-icon{
+    position: absolute;
+    right: 25px;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    font-size: 4em;
+    color: var(--global-tertiary-color);
+    transition: .5s;
+}
+
+.featuredItem:hover{
+    background-color: var(--global-tertiary-color);
+    color: #fff;
+}
+
+.featuredItem:hover ion-icon{
+    color: #fff;
+}
+
+@media (max-width: 850px) {
+    .featured {
+        flex-wrap: wrap;
+    }
+    
+    .featuredItem {
+        flex: none;
+        width: calc(50% - 40px);
+        margin-bottom: 20px;
+    }
+
+    .featuredItem:last-child{
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 850px) {
+    .featured {
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+    
+    .featuredItem {
+        flex: none;
+        width: calc(100% - 40px);
+        margin-bottom: 20px;
+    }
+
+    .featuredItem:last-child{
+        margin-bottom: 0;
+    }
+}
