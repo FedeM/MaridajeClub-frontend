@@ -1,7 +1,7 @@
 import { PurchaseItem } from '../../../common';
-import style from './MyShopping.module.css'
+import style from './Purchase.module.css'
 
-const MyShopping = () => {
+const Purchase = () => {
     return (
         <div className={style.container}>
             <div className={style.myShoppingContainer}>
@@ -16,4 +16,4 @@ const MyShopping = () => {
     );
 };
 
-export default MyShopping;
+export default Purchase;

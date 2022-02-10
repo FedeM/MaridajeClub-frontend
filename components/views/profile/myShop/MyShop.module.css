@@ -1,0 +1,37 @@
+.container{
+    width: 80%;
+    min-height: 75vh;
+    padding: 0 20px;
+    padding-bottom: 20px;
+}
+
+.titleContainer{
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.titleContainer h4{
+    margin-right: 10px;
+}
+
+.titleContainer ion-icon{
+    cursor: pointer;
+}
+
+
+@media (max-width: 850px) {
+    .container{
+        width: 90%;
+        margin: auto;
+        min-height: calc(100vh - 90px - 30px - 2rem);
+    }
+}
+@media (max-width: 750) {
+    .container{
+        width: 100%;
+        margin: auto;
+        margin-top: 15px;
+    }
+}

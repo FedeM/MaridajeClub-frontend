@@ -4,6 +4,7 @@ import Link from "next/link";
 import { signout } from "../../../../lib/auth";
 
 import { useRouter } from 'next/router';
+import { user } from "../../../../lib/user";
 
 const Sidebar = ()=> {
   const router = useRouter()
@@ -31,9 +32,9 @@ const Sidebar = ()=> {
                 </li>
               </a>
             </Link>
-            <Link href="/profile/shopping" >
+            <Link href="/profile/purchase" >
               <a className={style.link}>
-                <li className={`${style.sidebarListItem} ${view === "shopping" &&(style.active)}`}>
+                <li className={`${style.sidebarListItem} ${view === "purchase" &&(style.active)}`}>
                   <ion-icon name="cart-outline"></ion-icon>
                   <span>Mis compras</span>
                 </li>
@@ -41,6 +42,31 @@ const Sidebar = ()=> {
             </Link>
           </ul>
         </div>
+          {
+            user.role === 1 &&(
+              <div className={style.sidebarMenu}>
+                <h3 className={style.sidebarTitle}>Vendedor</h3>
+                <ul className={style.sidebarList}>
+                  <Link href="/profile/shopping" >
+                    <a className={style.link}>
+                      <li className={`${style.sidebarListItem} ${view === "shopping" &&(style.active)}`}>
+                        <ion-icon name="bag-outline"></ion-icon>
+                        <span>Mi tienda</span>
+                      </li>
+                    </a>
+                  </Link>
+                  <Link href="/profile/sales" >
+                    <a className={style.link}>
+                      <li className={`${style.sidebarListItem} ${view === "sales" &&(style.active)}`}>
+                        <ion-icon name="cart-outline"></ion-icon>
+                        <span>Pedidos</span>
+                      </li>
+                    </a>
+                  </Link>
+                </ul>
+              </div>
+            )
+          }
         <div className={style.sidebarMenu}>
           <h3 className={style.sidebarTitle}>Configuración</h3>
           <ul className={style.sidebarList}>

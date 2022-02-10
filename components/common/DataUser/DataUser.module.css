@@ -89,7 +89,7 @@
         font-size: 1.2em;
     }
 }
-@media (max-width: 800px) {
+@media (max-width: 750px) {
     .dataUserContainer{
         width: calc(100% - 40px);
         background-color: var(--global-gray5);

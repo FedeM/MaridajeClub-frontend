@@ -29,7 +29,9 @@ export {default as Checkout} from './cart/checkout/Checkout'
 export {default as Sidebar} from './profile/sidebar/Sidebar'
 export {default as ProfileHome} from './profile/profileHome/ProfileHome'
 export {default as PersonalData} from './profile/personalData/PersonalData'
-export {default as MyShopping} from './profile/myShopping/MyShopping'
+export {default as Purchase} from './profile/purchase/Purchase'
+export {default as MyShop} from './profile/myShop/MyShop'
+export {default as Orders} from './profile/orders/Orders'
 
 
 

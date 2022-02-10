@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Layout } from '../../components/layout'
-import { MyShopping, PersonalData, ProfileHome, Sidebar } from '../../components/views';
+import { MyShop, Orders, PersonalData, ProfileHome, Purchase, Sidebar } from '../../components/views';
 
 import { isAuthenticate } from '../../lib/auth';
 import style from '../../styles/pages/Profile.module.css'
 
 import { useRouter } from 'next/router';
+import { user } from '../../lib/user';
 
 
 const Index = () => {
@@ -32,8 +33,12 @@ const Index = () => {
                         <ProfileHome/>
                     ): view === "personal-data" ?(
                         <PersonalData/>
-                    ): view === "shopping" ?(
-                        <MyShopping/>
+                    ): view === "purchase" ?(
+                        <Purchase/>
+                    ): view === "shopping" && user.role === 1 ?(
+                        <MyShop/>
+                    ): view === "sales" && user.role === 1 ?(
+                        <Orders/>
                     ):('')
                 }
             </article>

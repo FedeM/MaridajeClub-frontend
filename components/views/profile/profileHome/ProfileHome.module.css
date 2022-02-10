@@ -11,7 +11,7 @@
         flex-direction: column;
     }
 }
-@media (max-width: 800px) {
+@media (max-width: 750px) {
     .profileHomeContainer{
         width: 100%;
         min-height: auto;
