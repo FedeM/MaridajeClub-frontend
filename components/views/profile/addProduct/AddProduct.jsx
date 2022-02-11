@@ -16,7 +16,7 @@ const AddProduct = ({close}) => {
                         <div className={style.inputImage}>
                             <label htmlFor="img"><ion-icon name="image-outline"></ion-icon></label>
                             <input type="file" id='img'/>
-                            <Image src={img} layout="fill" objectFit='contain'/>
+                            <Image src={img} layout="fill" objectFit='contain' alt="asd"/>
                         </div>
                         <div className={style.inputName}>
                             <ion-icon name="pencil-outline"></ion-icon>

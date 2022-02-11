@@ -6,7 +6,7 @@ class MyDocument extends Document {
         <Html>
             <Head>
                 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossOrigin="true"></link>
-                <script src="https://kit.fontawesome.com/1571dcf13d.js" crossorigin="anonymous"></script>
+                <script src="https://kit.fontawesome.com/1571dcf13d.js" crossOrigin="anonymous"></script>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" crossOrigin="true"/>
                 <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="true"/>
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>

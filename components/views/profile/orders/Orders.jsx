@@ -37,7 +37,7 @@ const Orders = () => {
                         <td>Santilli</td>
                         <td>
                             <div className={style.img}>
-                                <Image src={'/assets/img/products/wine1.jpg'} layout="fill" objectFit='cover'/>
+                                <Image src={'/assets/img/products/wine1.jpg'} layout="fill" objectFit='cover' alt="asd"/>
                             </div>
                             Vino Malbec
                         </td>
@@ -65,7 +65,7 @@ const Orders = () => {
                         <td>Santilli</td>
                         <td>
                             <div className={style.img}>
-                                <Image src={'/assets/img/products/wine1.jpg'} layout="fill" objectFit='cover'/>
+                                <Image src={'/assets/img/products/wine1.jpg'} layout="fill" objectFit='cover' alt="asd"/>
                             </div>
                             Vino Malbec
                         </td>
