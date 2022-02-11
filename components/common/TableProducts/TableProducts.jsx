@@ -1,10 +1,16 @@
 import style from './TableProducts.module.css'
 import Image from 'next/image'
+import Link from 'next/link';
 
-const TableProducts = () => {
+const TableProducts = ({add}) => {
     return (
         <table className={style.table}>
-            <caption className={style.title}>Productos</caption>
+            <caption className={style.title}>
+                <span>Productos</span>
+                <div className={style.addBtn} onClick={add}>
+                    Añadir
+                </div>
+            </caption>
             <thead>
                 <tr>
                     <th scope='col'>#</th>

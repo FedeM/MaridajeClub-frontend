@@ -1,7 +1,22 @@
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { AddProduct } from '../..';
 import { FeaturedInfo, TableProducts } from '../../../common';
 import style from './MyShop.module.css'
 
 const MyShop = () => {
+    const [add, setAdd] = useState(false)
+
+
+    useEffect(()=>{
+        if (add) {
+            document.querySelector('body').style.overflowY="hidden"
+        }else{
+            document.querySelector('body').style.overflowY="hidden"
+        }
+
+    }, [add])
+
     return (
         <div className={style.container}>
             <div className={style.titleContainer}>
@@ -27,7 +42,12 @@ const MyShop = () => {
                     },
                 ]}
             />
-            <TableProducts/>
+            <TableProducts add={()=> setAdd(true)}/>
+            {
+                add &&(
+                    <AddProduct close={()=> setAdd(false)}/>
+                )
+            }
         </div>
     );
 };
