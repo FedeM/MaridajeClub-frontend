@@ -12,7 +12,7 @@ const MyShop = () => {
         if (add) {
             document.querySelector('body').style.overflowY="hidden"
         }else{
-            document.querySelector('body').style.overflowY="hidden"
+            document.querySelector('body').style.overflowY="auto"
         }
 
     }, [add])
