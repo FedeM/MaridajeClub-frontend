@@ -3,10 +3,21 @@ import { useState } from 'react';
 import { AddProduct } from '../..';
 import { FeaturedInfo, TableProducts } from '../../../common';
 import style from './MyShop.module.css'
+import { products as arrayProducts } from '../../../../lib/products';
+
+import toast, { Toaster } from 'react-hot-toast';
+const deleteSuccess = (name) => toast.success(`${name.toUpperCase()} eliminado correctamente`,{
+    position: "bottom-center"
+});
 
 const MyShop = () => {
     const [add, setAdd] = useState(false)
+    const [products, setProducts] = useState(arrayProducts)
 
+    const deleteProduct = (id,name)=>{
+        setProducts(products.filter(product=> product.id !== id))
+        deleteSuccess(name)
+    }
 
     useEffect(()=>{
         if (add) {
@@ -19,6 +30,7 @@ const MyShop = () => {
 
     return (
         <div className={style.container}>
+            <Toaster/>
             <div className={style.titleContainer}>
                 <h4>Los Haroldos</h4>
                 <ion-icon name="create-outline"></ion-icon>
@@ -42,10 +54,10 @@ const MyShop = () => {
                     },
                 ]}
             />
-            <TableProducts add={()=> setAdd(true)}/>
+            <TableProducts add={()=> setAdd(true)} products={products} deleteProduct={deleteProduct}/>
             {
                 add &&(
-                    <AddProduct close={()=> setAdd(false)}/>
+                    <AddProduct close={()=> setAdd(false)} setProducts={setProducts} products={products}/>
                 )
             }
         </div>

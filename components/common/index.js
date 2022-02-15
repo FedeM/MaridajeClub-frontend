@@ -7,4 +7,5 @@ export {default as FeaturedInfo} from './FeaturedInfo/FeaturedInfo.jsx'
 export {default as DataUser} from './DataUser/DataUser.jsx'
 export {default as PurchaseItem} from './PurchaseItem/PurchaseItem.jsx'
 export {default as TableProducts} from './TableProducts/TableProducts.jsx'
+export {default as ErrorInput} from './ErrorInput/ErrorInput.jsx'
 

@@ -1,9 +1,14 @@
 import style from './TableProducts.module.css'
 import Image from 'next/image'
-import Link from 'next/link';
 
-const TableProducts = ({add}) => {
+
+
+const TableProducts = ({add, products, deleteProduct}) => {
+
+    
+
     return (
+        <>
         <table className={style.table}>
             <caption className={style.title}>
                 <span>Productos</span>
@@ -25,46 +30,40 @@ const TableProducts = ({add}) => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>
-                        <div className={style.img}>
-                            <Image src={'/assets/img/products/wine1.jpg'} layout="fill" objectFit='cover' alt="asd"/>
-                        </div>
-                        Vino Malbec
-                    </td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pretium ultrices libero, et tincidunt justo aliquam vel. Sed</td>
-                    <td>Vino</td>
-                    <td>12</td>
-                    <td>$105.00</td>
-                    <td>$200.00</td>
-                    <td><span className={style.statusActivate}>Activado</span></td>
-                    <td>
-                        <ion-icon name="create-outline"></ion-icon>
-                        <ion-icon name="trash-outline"></ion-icon>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>
-                        <div className={style.img}>
-                            <Image src={'/assets/img/products/wine1.jpg'} layout="fill" objectFit='cover' alt="asd"/>
-                        </div>
-                        Vino Malbec
-                    </td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pretium ultrices libero, et tincidunt justo aliquam vel. Sed</td>
-                    <td>Vino</td>
-                    <td>12</td>
-                    <td>$105.00</td>
-                    <td>$200.00</td>
-                    <td><span className={style.statusDesactivate}>Desactivado</span></td>
-                    <td>
-                        <ion-icon name="create-outline"></ion-icon>
-                        <ion-icon name="trash-outline"></ion-icon>
-                    </td>
-                </tr>
+            {
+                products.map((e,i)=>(
+                    <tr key={i}>
+                        <td>{i + 1}</td>
+                        <td>
+                            <div className={style.img}>
+                                <Image src={e.img} layout="fill" objectFit='cover' alt="asd"/>
+                            </div>
+                            {e.name}
+                        </td>
+                        <td>{e.description}</td>
+                        <td>{e.category}</td>
+                        <td>{e.stock}</td>
+                        <td>${e.regular_price}</td>
+                        <td>${e.price}</td>
+                        <td>
+                            {
+                                e.status ?(
+                                    <span className={style.statusActivate}>Activado</span>
+                                ):(
+                                    <span className={style.statusDesactivate}>Desactivado</span>
+                                )
+                            }
+                        </td>
+                        <td>
+                            <ion-icon name="create-outline"></ion-icon>
+                            <ion-icon name="trash-outline" onClick={()=> deleteProduct(e.id, e.name)}></ion-icon>
+                        </td>
+                    </tr>
+                ))
+            }
             </tbody>
         </table>
+        </>
     );
 };
 

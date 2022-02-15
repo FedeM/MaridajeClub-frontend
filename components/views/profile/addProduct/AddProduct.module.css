@@ -34,6 +34,13 @@
     display: none;
 }
 
+.selected img{
+    filter: brightness(1) !important;
+}
+.selected label{
+    opacity: 0 !important;
+}
+
 .inputImage label{
     cursor: pointer;
     position: absolute;
