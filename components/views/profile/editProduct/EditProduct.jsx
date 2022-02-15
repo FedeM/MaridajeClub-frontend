@@ -6,7 +6,7 @@ import 'animate.css';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import toast, { Toaster } from 'react-hot-toast';
-import { ErrorInput } from '../../../common';
+import { ActionButtons, ErrorInput } from '../../../common';
 const updateSuccess = () => toast.success('Actualizado correctamente');
 
 
@@ -140,9 +140,8 @@ const EditProduct = ({close, edit, editProduct}) => {
                             </div>
                         </div>
                         <div className={style.btnContainer}>
-                            <div className={style.button} onClick={close}>Cerrar</div>
-                            <button type='submit' className={style.button}><span>Actualizar</span></button>
-                        </div>    
+                            <ActionButtons close={close} textAction={"Actualizar"}/>
+                        </div>
                     </Form>
                 )
             }

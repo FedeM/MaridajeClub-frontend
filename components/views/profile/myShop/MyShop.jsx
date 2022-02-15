@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { AddProduct, EditProduct } from '../..';
+import { AddProduct, EditProduct, EditTitle } from '../..';
 import { FeaturedInfo, TableProducts } from '../../../common';
 import style from './MyShop.module.css'
 import { products as arrayProducts } from '../../../../lib/products';
@@ -11,13 +11,17 @@ const deleteSuccess = (name) => toast.success(`${name.toUpperCase()} eliminado c
 });
 
 const MyShop = () => {
-    //Declarar los estados (Abrir Pestaña Añadir - Abrir Pestaña Editar - Productos) 
+    //Declarar los estados (Abrir Pestaña Añadir - Abrir Pestaña Editar - Productos - Editar título) 
     const [add, setAdd] = useState(false)
     const [edit, setEdit] = useState({
         activate: false,
         product: {}
     })
     const [products, setProducts] = useState(arrayProducts)
+    const [isEditTitle, setIsEditTitle] = useState({
+        activate: false,
+        title: "Los Haroldos"
+    })
 
     //Borrar productos
     const deleteProduct = (id,name)=>{
@@ -46,22 +50,27 @@ const MyShop = () => {
         setProducts(newProducts)
     }
 
+    //Editar el título de la tienda
+    const editTitle = ()=>{
+        
+    }
+
     useEffect(()=>{
         //Bloqueamos el scroll cuando las pestañas de editar y añadir están abiertas
-        if (add || edit.activate) {
+        if (add || edit.activate || isEditTitle.activate) {
             document.querySelector('body').style.overflowY="hidden"
         }else{
             document.querySelector('body').style.overflowY="auto"
         }
 
-    }, [add, edit])
+    }, [add, edit, isEditTitle])
 
     return (
         <div className={style.container}>
             <Toaster/>
             <div className={style.titleContainer}>
-                <h4>Los Haroldos</h4>
-                <ion-icon name="create-outline"></ion-icon>
+                <h4>{isEditTitle.title}</h4>
+                <ion-icon name="create-outline" title="Editar" onClick={()=> setIsEditTitle({...isEditTitle, activate:true})}></ion-icon>
             </div>
             <FeaturedInfo
                 cards={[
@@ -91,6 +100,11 @@ const MyShop = () => {
             {
                 edit.activate &&(
                     <EditProduct close={()=> setEdit({activate: false, product: {}})} edit={edit} editProduct={editProduct}/>
+                )
+            }
+            {
+                isEditTitle.activate &&(
+                    <EditTitle close={()=> setIsEditTitle({...isEditTitle, activate:false})} title={isEditTitle.title} setIsEditTitle={setIsEditTitle}/>
                 )
             }
         </div>
