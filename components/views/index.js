@@ -33,6 +33,7 @@ export {default as Purchase} from './profile/purchase/Purchase'
 export {default as MyShop} from './profile/myShop/MyShop'
 export {default as Orders} from './profile/orders/Orders'
 export {default as AddProduct} from './profile/addProduct/AddProduct'
+export {default as EditProduct} from './profile/editProduct/EditProduct'
 
 
 

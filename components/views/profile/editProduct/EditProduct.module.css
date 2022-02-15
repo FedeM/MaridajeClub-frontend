@@ -26,19 +26,8 @@
     height: 225px;
 }
 
-.inputImage img{
-    filter: brightness(.5);
-}
-
 .inputImage input{
     display: none;
-}
-
-.selected img{
-    filter: brightness(1) !important;
-}
-.selected label{
-    opacity: 0 !important;
 }
 
 .inputImage label{
@@ -55,7 +44,6 @@
     font-size: 4em;
     color: var(--global-gray2);
 }
-
 
 .input{
     background-color: transparent;

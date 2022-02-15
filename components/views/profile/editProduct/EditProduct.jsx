@@ -1,4 +1,4 @@
-import style from './AddProduct.module.css'
+import style from './EditProduct.module.css'
 import Image from 'next/image'
 import { useState } from 'react';
 import 'animate.css';
@@ -7,13 +7,13 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import toast, { Toaster } from 'react-hot-toast';
 import { ErrorInput } from '../../../common';
-const updateSuccess = () => toast.success('Agregado correctamente');
+const updateSuccess = () => toast.success('Actualizado correctamente');
 
 
-const AddProduct = ({close, setProducts, products}) => {
-    //Definir estados (Imagen - Si la imagen está seleccionada)
-    const [img, setImg] = useState('/assets/img/products/wine1.jpg')
-    const [isSelected, setIsSelected] = useState(false)
+
+const EditProduct = ({close, edit, editProduct}) => {
+    //Declarar estados (Imagen)
+    const [img, setImg] = useState(edit.product.img)
 
     //Renderizar nueva foto al seleccionarla
     const changePhoto=(e)=>{
@@ -23,22 +23,21 @@ const AddProduct = ({close, setProducts, products}) => {
         setIsSelected(true)
     }  
 
-    //Valores iniciales del input
-    const initialValues = {
+    //VAlores iniciales de los inputs
+    let initialValues ={
         img: "",
-        name: "",
-        description: "",
-        category: "wine",
-        stock: 0,
-        regular_price: 0,
-        price: 0,
-        status: true
+        name: edit.product.name,
+        description: edit.product.description,
+        category: edit.product.category,
+        stock: edit.product.stock,
+        regular_price: edit.product.regular_price,
+        price: edit.product.price,
+        status: edit.product.status
     }
 
     //Esquema de validación de YUP
     const emptyInputMsg = "Por favor rellena el campo"
     const validationSchema = Yup.object().shape({
-        img: Yup.mixed().required(emptyInputMsg).nullable(),
         name: Yup.string().required(emptyInputMsg),
         description: Yup.string().required(emptyInputMsg).max(230, "La descripción debe tener como máximo 230 carácteres"),
         stock: Yup.number().required(emptyInputMsg).min(0,"Tiene que ser un número mayor o igual a 0"),
@@ -47,14 +46,14 @@ const AddProduct = ({close, setProducts, products}) => {
     })
 
     //Función para enviar el formulario
-    const onSubmit = (values, {resetForm})=> {
+    const onSubmit = (values)=> {
         updateSuccess()
-        resetForm()
         values ={
             ...values,
-            img:img
+            img:img,
+            id: edit.product.id
         }
-        setProducts([...products, values])
+        editProduct(edit.product.id, values)
     }
 
     return (
@@ -68,11 +67,11 @@ const AddProduct = ({close, setProducts, products}) => {
             {
                 ({errors, setFieldValue, touched, handleBlur})=>(
                     <Form>
-                        <div className={style.title}><h4>Añadir producto</h4></div>
+                        <div className={style.title}><h4>Editar producto</h4></div>
                         <div className={style.inputsContainer}>
                             <div className={style.side}>
-                                <div className={`${style.inputImage} ${isSelected &&(style.selected)}`}>
-                                    <label htmlFor="img"><ion-icon name="image-outline"></ion-icon></label>
+                                <div className={style.inputImage}>
+                                    <label htmlFor="img"></label>
                                     <Field 
                                         id='img' 
                                         name="img" 
@@ -142,7 +141,7 @@ const AddProduct = ({close, setProducts, products}) => {
                         </div>
                         <div className={style.btnContainer}>
                             <div className={style.button} onClick={close}>Cerrar</div>
-                            <button type='submit' className={style.button}><span>Añadir</span></button>
+                            <button type='submit' className={style.button}><span>Actualizar</span></button>
                         </div>    
                     </Form>
                 )
@@ -152,4 +151,4 @@ const AddProduct = ({close, setProducts, products}) => {
     );
 };
 
-export default AddProduct;
+export default EditProduct;

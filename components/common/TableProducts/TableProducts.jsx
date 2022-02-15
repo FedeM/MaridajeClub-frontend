@@ -3,9 +3,8 @@ import Image from 'next/image'
 
 
 
-const TableProducts = ({add, products, deleteProduct}) => {
+const TableProducts = ({add, products, deleteProduct, edit}) => {
 
-    
 
     return (
         <>
@@ -38,7 +37,9 @@ const TableProducts = ({add, products, deleteProduct}) => {
                             <div className={style.img}>
                                 <Image src={e.img} layout="fill" objectFit='cover' alt="asd"/>
                             </div>
-                            {e.name}
+                            <div>
+                                {e.name}
+                            </div>
                         </td>
                         <td>{e.description}</td>
                         <td>{e.category}</td>
@@ -55,7 +56,7 @@ const TableProducts = ({add, products, deleteProduct}) => {
                             }
                         </td>
                         <td>
-                            <ion-icon name="create-outline"></ion-icon>
+                            <ion-icon name="create-outline" onClick={()=> edit({activate: true, product: e})}></ion-icon>
                             <ion-icon name="trash-outline" onClick={()=> deleteProduct(e.id, e.name)}></ion-icon>
                         </td>
                     </tr>
