@@ -47,17 +47,17 @@ const Sidebar = ()=> {
               <div className={style.sidebarMenu}>
                 <h3 className={style.sidebarTitle}>Vendedor</h3>
                 <ul className={style.sidebarList}>
-                  <Link href="/profile/shopping" >
+                  <Link href="/profile/shop" >
                     <a className={style.link}>
-                      <li className={`${style.sidebarListItem} ${view === "shopping" &&(style.active)}`}>
+                      <li className={`${style.sidebarListItem} ${view === "shop" &&(style.active)}`}>
                         <ion-icon name="bag-outline"></ion-icon>
                         <span>Mi tienda</span>
                       </li>
                     </a>
                   </Link>
-                  <Link href="/profile/sales" >
+                  <Link href="/profile/orders" >
                     <a className={style.link}>
-                      <li className={`${style.sidebarListItem} ${view === "sales" &&(style.active)}`}>
+                      <li className={`${style.sidebarListItem} ${view === "orders" &&(style.active)}`}>
                         <ion-icon name="cart-outline"></ion-icon>
                         <span>Pedidos</span>
                       </li>

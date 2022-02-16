@@ -11,7 +11,7 @@ const ListArticles = ({cart, setCart}) => {
 
     const updateQuantity = (id, type)=>{
         const newCart = cart.map(product =>{
-            if (product._id === id) {
+            if (product.id === id) {
                 if (type) {
                     return {
                         ...product,
@@ -33,7 +33,7 @@ const ListArticles = ({cart, setCart}) => {
     }
 
     const removeProduct = (id)=>{
-        const newCart = cart.filter(product => product._id !== id);
+        const newCart = cart.filter(product => product.id !== id);
         setCart(newCart);
     }
 
@@ -66,7 +66,7 @@ const ListArticles = ({cart, setCart}) => {
                 cart.map((e,i)=>(
                     <Article
                         key={i}
-                        id={e._id}
+                        id={e.id}
                         width={isMobile ? (95):(90) }
                         img={e.img}
                         name={e.name}

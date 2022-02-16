@@ -3,6 +3,7 @@ import style from './ProductDetail.module.css'
 import Image from 'next/image'
 import { isDesktop, isMobile} from 'react-device-detect';
 const ProductDetail = ({product}) => {
+    console.log(product)
     const [quantity, setQuantity] = useState(1)
     return (
         <>

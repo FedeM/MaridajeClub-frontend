@@ -66,7 +66,7 @@ const AddProduct = ({close, setProducts, products}) => {
                 initialValues={initialValues}
             >
             {
-                ({errors, setFieldValue, touched, handleBlur})=>(
+                ({errors, setFieldValue})=>(
                     <Form>
                         <div className={style.title}><h4>Añadir producto</h4></div>
                         <div className={style.inputsContainer}>

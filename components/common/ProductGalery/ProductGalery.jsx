@@ -18,7 +18,7 @@ const ProductGalery = ({title, home, products, justifyContent}) => {
                         products.map((e,i)=>(
                             <ProductCard
                                 key={i}
-                                id={e._id}
+                                id={e.id}
                                 name={e.name}
                                 description={e.description}
                                 price={e.price}

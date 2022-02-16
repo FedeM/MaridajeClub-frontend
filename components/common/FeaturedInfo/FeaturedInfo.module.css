@@ -16,6 +16,22 @@
     transition: .5s;
     background-color: var(--global-gray4);
     color: var(--global-gray);
+    overflow: hidden;
+}
+
+.featuredItem::before{
+    content: 'No disponible';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background-color: #1a1a1ad8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
 }
 
 .featuredTitle{

@@ -35,9 +35,9 @@ const Index = () => {
                         <PersonalData/>
                     ): view === "purchase" ?(
                         <Purchase/>
-                    ): view === "shopping" && user.role === 1 ?(
+                    ): view === "shop" && user.role === 1 ?(
                         <MyShop/>
-                    ): view === "sales" && user.role === 1 ?(
+                    ): view === "orders" && user.role === 1 ?(
                         <Orders/>
                     ):('')
                 }

@@ -180,12 +180,34 @@
     margin-right: 10px;
     color: var(--global-tertiary-color);
     cursor: pointer;
+    color: red;
 }
 .table tr td:nth-child(18) ion-icon:nth-child(2){
     font-size: 1.2em;
     height: 40px;
     cursor: pointer;
-    color: red;
+}
+
+.aproved{
+    background-color: #146714;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.desaproved{
+    background-color: #AA0D0D;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.wait{
+    background-color: rgba(255, 255, 0, 0.548);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.emptyData td{
+    height: 1.5rem;
 }
 
 

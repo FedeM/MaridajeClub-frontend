@@ -30,37 +30,51 @@ const TableProducts = ({add, products, deleteProduct, edit}) => {
             </thead>
             <tbody>
             {
-                products.map((e,i)=>(
-                    <tr key={i}>
-                        <td>{i + 1}</td>
-                        <td>
-                            <div className={style.img}>
-                                <Image src={e.img} layout="fill" objectFit='cover' alt="asd"/>
-                            </div>
-                            <div>
-                                {e.name}
-                            </div>
-                        </td>
-                        <td>{e.description}</td>
-                        <td>{e.category}</td>
-                        <td>{e.stock}</td>
-                        <td>${e.regular_price}</td>
-                        <td>${e.price}</td>
-                        <td>
-                            {
-                                e.status ?(
-                                    <span className={style.statusActivate}>Activado</span>
-                                ):(
-                                    <span className={style.statusDesactivate}>Desactivado</span>
-                                )
-                            }
-                        </td>
-                        <td>
-                            <ion-icon name="create-outline" onClick={()=> edit({activate: true, product: e})}></ion-icon>
-                            <ion-icon name="trash-outline" onClick={()=> deleteProduct(e.id, e.name)}></ion-icon>
-                        </td>
+                products.length === 0 ?(
+                    <tr className={style.emptyData}>
+                        <td>-</td>
+                        <td>No hay Datos</td>
+                        <td>-</td>
+                        <td>No hay Datos</td>
+                        <td>-</td>
+                        <td>No hay Datos</td>
+                        <td>-</td>
+                        <td>No hay Datos</td>
+                        <td>-</td>
                     </tr>
-                ))
+                ):(
+                    products.map((e,i)=>(
+                        <tr key={i}>
+                            <td>{i + 1}</td>
+                            <td>
+                                <div className={style.img}>
+                                    <Image src={e.img} layout="fill" objectFit='cover' alt="asd"/>
+                                </div>
+                                <div>
+                                    {e.name}
+                                </div>
+                            </td>
+                            <td>{e.description}</td>
+                            <td>{e.category}</td>
+                            <td>{e.stock}</td>
+                            <td>${e.regular_price}</td>
+                            <td>${e.price}</td>
+                            <td>
+                                {
+                                    e.status ?(
+                                        <span className={style.statusActivate}>Activado</span>
+                                    ):(
+                                        <span className={style.statusDesactivate}>Desactivado</span>
+                                    )
+                                }
+                            </td>
+                            <td>
+                                <ion-icon name="create-outline" onClick={()=> edit({activate: true, product: e})}></ion-icon>
+                                <ion-icon name="trash-outline" onClick={()=> deleteProduct(e.id, e.name)}></ion-icon>
+                            </td>
+                        </tr>
+                    ))
+                )
             }
             </tbody>
         </table>

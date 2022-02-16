@@ -9,6 +9,7 @@ import toast, { Toaster } from 'react-hot-toast';
 const deleteSuccess = (name) => toast.success(`${name.toUpperCase()} eliminado correctamente`,{
     position: "bottom-center"
 });
+const updateSuccess = () => toast.success('Actualizado correctamente');
 
 const MyShop = () => {
     //Declarar los estados (Abrir Pestaña Añadir - Abrir Pestaña Editar - Productos - Editar título) 
@@ -51,8 +52,9 @@ const MyShop = () => {
     }
 
     //Editar el título de la tienda
-    const editTitle = ()=>{
-        
+    const editTitle = (value)=>{
+        setIsEditTitle({activate: false, title: value})
+        updateSuccess()
     }
 
     useEffect(()=>{
@@ -76,17 +78,17 @@ const MyShop = () => {
                 cards={[
                     {
                         title: "Pedidos pendientes",
-                        value: "2",
+                        value: "0",
                         icon: <ion-icon name="cart-outline"></ion-icon>
                     },
                     {
                         title: "Dinero recaudado",
-                        value: "$2,000",
+                        value: "$0",
                         icon: <ion-icon name="cash-outline"></ion-icon>
                     },
                     {
                         title: "Mis productos",
-                        value: "15",
+                        value: "0",
                         icon: <ion-icon name="cube-outline"></ion-icon>
                     },
                 ]}
@@ -104,7 +106,7 @@ const MyShop = () => {
             }
             {
                 isEditTitle.activate &&(
-                    <EditTitle close={()=> setIsEditTitle({...isEditTitle, activate:false})} title={isEditTitle.title} setIsEditTitle={setIsEditTitle}/>
+                    <EditTitle close={()=> setIsEditTitle({...isEditTitle, activate:false})} title={isEditTitle.title} editTitle={editTitle}/>
                 )
             }
         </div>
