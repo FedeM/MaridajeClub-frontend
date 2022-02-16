@@ -31,7 +31,7 @@
     display: flex;
     justify-content: space-between;
 }
-.filter_container div:last-child{
+.filter_container .filterDiv:last-child{
     border-bottom: 1px solid var(--global-gray3);
 }
 
@@ -53,18 +53,36 @@
     background-color: violet !important;
 }
 
-.filter_search img{
-    width: 1rem;
-    filter: invert(100%);
-    object-fit: contain;
+.filter_search {
+    display: flex;
+    border: none;
 }
 
 .filter_search input{
     padding: 5px 15px;
-    border: 15px;
+    border: none;
     border-radius: 15px;
     width: 100%;
-    margin-left: 15px;
+
+    outline: none;
+}
+
+.filter_search .img{
+    padding: 5px;
+    padding-left: 15px;
+    cursor: pointer;
+    border: none;
+    transition: .5s;
+}
+
+.filter_search .img:active{
+    transform: scale(.9);
+}
+
+.filter_search img{
+    width: 1rem;
+    filter: invert(100%);
+    object-fit: contain;
 }
 .filter_search input::placeholder{
     color: var(--global-gray);
