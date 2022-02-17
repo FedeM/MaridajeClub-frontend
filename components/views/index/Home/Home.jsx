@@ -81,11 +81,11 @@ const Home = ({enterEvent}) => {
                         <div className={style.about_text_container}>
                             <div className={style.about_text_container_text}>
                                 <h3>Live Streaming & eCommerce</h3>
-                                <p>Viví la única experiencia <span> Live Streaming Shopping</span> de bebidas, conoce a sus creadores y encontrá precios únicos</p>
+                                <p>Viví la única experiencia <span>Live Streaming Shopping</span> de bebidas, conoce a sus creadores y encontrá precios únicos</p>
                             </div>
                             <div>
                                 <LinkScroll className={style.about_btn} to="live" spy={true} offset={-40} onClick={()=> setHelpOpacity(1)}><i className="fas fa-video"></i> Ver en vivo</LinkScroll>
-                                <LinkScroll className={style.about_btn} to="commerce" spy={true}><i className="fas fa-shopping-bag"></i> Comprar</LinkScroll>
+                                <LinkScroll className={style.about_btn} to="commerce" spy={true}><span><i className="fas fa-shopping-bag"></i> Comprar</span></LinkScroll>
                             </div>
                         </div>
                         <Live

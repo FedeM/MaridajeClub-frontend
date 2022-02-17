@@ -1,7 +1,11 @@
+import { useEffect } from 'react';
 import {ProductCard} from '../';
 import styles from './ProductGalery.module.css'
 
+
 const ProductGalery = ({title, home, products, justifyContent}) => {
+
+    
 
     return (
         <div className={styles.product_section}>

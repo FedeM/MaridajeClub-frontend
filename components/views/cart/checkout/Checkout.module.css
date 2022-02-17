@@ -64,6 +64,21 @@
     color: #fff;
 }
 
+
+/* Step 1 */
+    .step h3{
+        margin-bottom: 15px;
+    }
+
+    .dualInput{
+        display: flex;
+        justify-content: space-between;
+    }
+    .dualInput .input_container{
+        width: 48%;
+    }
+
+/* Step 2 */
 .number_card_container{
     display: flex;
     justify-content: space-between;
@@ -89,4 +104,37 @@
     border: none;
     font-family: outfit, sans-serif;
     font-size: 1rem;
+}
+
+/* Step 3 */
+
+.coupon{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0;
+}
+.coupon input{
+    flex: 1;
+    margin-right: 15px;
+    font-family: 'outfit' , sans-serif;
+}
+
+.coupon button{
+    padding: 5px 10px;
+    width: min-content;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: var(--global-tertiary-color);
+    font-family: 'outfit' , sans-serif;
+}
+
+.detailPrice{
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.detailPrice:nth-child(1){
+    margin-top: 0;
 }

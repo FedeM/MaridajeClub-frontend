@@ -32,6 +32,7 @@
     max-width: 400px;
     min-height: 400px;
     max-height: 400px;
+    transition: .2s;
 }
 
 .event_info h4{
@@ -49,17 +50,20 @@
 
 .event_info button{
     background-color: var(--global-tertiary-color);
-    color: var(--global-primary-color);
+    color: var(--global-gray3);
     padding: 10px 25px;
     border-radius: 15px;
     border: 1px solid var(--global-tertiary-color);
     outline: none;
     cursor: pointer;
     transition: .5s;
+    animation: liveAlert .5s ease-in-out infinite alternate;
+    font-family: 'outfit', sans-serif;
 }
 
 .event_info button:hover{
     filter: brightness(1.2);
+    animation: none;
 }
 
 
@@ -158,4 +162,18 @@
     color: var(--global-tertiary-color);
     text-decoration: underline;
     cursor: pointer;
+}
+
+@keyframes liveAlert {
+    0%{
+        opacity: 1;
+    }
+    
+    50%{
+        opacity: .85;
+    }
+    
+    100%{
+        opacity: .6;
+    }
 }

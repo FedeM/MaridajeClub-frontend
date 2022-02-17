@@ -1,9 +1,11 @@
 import styles from './Slider.module.css'
 import Image from 'next/image'
 import { useEffect, useState } from 'react';
-
+const isServer = typeof window === 'undefined'
+const WOW = !isServer ? require('wow.js') : null
 
 const SliderDesktop = ({enterEvent, events}) => {
+    const [opacity, setOpacity] = useState(1)
     //Controlamos la posición del scroll
     const [scroll, setScroll] = useState(0)
     //Cargamos los datos del evento seleccionado
@@ -16,6 +18,15 @@ const SliderDesktop = ({enterEvent, events}) => {
         url: events[0].video_url,
         is_live: events[0].is_live
     }))
+
+    //Seleccionar evento y renderizar info
+    const selectEvent = (data)=>{
+        setOpacity(0)
+        setTimeout(()=>{
+            setOpacity(1)
+            setEventSelected(data)
+        },200)
+    }
 
     //Le damos funcionalidad al scroll
     const moveScroll = (dir)=>{
@@ -44,24 +55,26 @@ const SliderDesktop = ({enterEvent, events}) => {
 
     useEffect(()=>{
         hiddenArrow()
+        new WOW().init()
+
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [scroll])
 
     return events.length > 0 ?(
         <div className={styles.last_events_container} id='slider'>
-            <div className={styles.last_events_title}>
+            <div className={`${styles.last_events_title} wow animate__animated animate__slideInLeft`}>
                 <i className="fas fa-redo"></i>
                 <h3>Ver de nuevo</h3>
             </div>
             <div className={styles.events_container}>
-                <div className={styles.event_info}>
+                <div className={`${styles.event_info} wow animate__animated animate__slideInLeft`} style={{opacity: opacity}}>
                     <h4 title={eventSelected.name}>{eventSelected.name}</h4>
                     <p className={styles.info_text}>{eventSelected.description}</p>
                     <div className={styles.date_container}>
                         <div><i className="far fa-calendar-alt"></i><p>{eventSelected.date_from}</p></div>
                         <div><i className="far fa-clock"></i><p>{eventSelected.hour}</p></div>
                     </div>
-                    <button 
+                    <button
                         onClick={()=> enterEvent({
                             activate: true,
                             eventId: eventSelected.id,
@@ -72,13 +85,13 @@ const SliderDesktop = ({enterEvent, events}) => {
                         Ingresar al evento
                     </button>
                 </div>
-                <div className={styles.events_track_container}>
+                <div className={`${styles.events_track_container}`}>
                     <div className={styles.event_track_arrow} id='arrowRight' onClick={()=>moveScroll(true)}><i className="fas fa-chevron-right"></i></div>
                     <div className={styles.event_track_arrow} id='arrowLeft' onClick={()=>moveScroll(false)}><i className="fas fa-chevron-left"></i></div>
                     <div className={styles.events_track} id='eventTrack'>
                         {
                             events.map((e,i)=>(
-                                <div className={styles.event_img_box} key={i} onClick={()=>setEventSelected({
+                                <div className={`${styles.event_img_box} wow animate__animated animate__slideInRight`} key={i} onClick={()=>selectEvent({
                                     id: e.id,
                                     name: e.name,
                                     description: e.description,

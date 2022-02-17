@@ -16,7 +16,54 @@ const Checkout = () => {
         switch (step){
             case 1:
                 return(
-                    <div className={style.step_one}>
+                    <div className={style.step}>
+                        <h3>Contacto</h3>
+                        <div className={style.personalDataContainer}>
+                            <div className={style.dualInput}>
+                                <div className={style.input_container}>
+                                    <input type="text" placeholder='Nombre' id='name'/>
+                                </div>
+                                <div className={style.input_container}>
+                                    <input type="text" placeholder='Apellido' id='lastname'/>
+                                </div>
+                            </div>
+                            <div className={style.input_container}>
+                                <input type="text" placeholder='Escribe tú número de teléfono' id='phone'/>
+                            </div>
+                        </div>
+                        <h3>Dirección</h3>
+                        <div className={style.direction_container}>
+                            <div className={style.dualInput}>
+                                <div className={style.input_container}>
+                                    <input type="text" placeholder='País' id='country'/>
+                                </div>
+                                <div className={style.input_container}>
+                                    <input type="text" placeholder='Provincia' id='province'/>
+                                </div>
+                            </div>
+                            <div className={style.dualInput}>
+                                <div className={style.input_container}>
+                                    <input type="text" placeholder='Ciudad' id='city'/>
+                                </div>
+                                <div className={style.input_container}>
+                                    <input type="text" placeholder='Código postal' id='zip'/>
+                                </div>
+                            </div>
+                            <div className={style.dualInput}>
+                                <div className={style.input_container}>
+                                    <input type="text" placeholder='Calle, casa/apartamento' id="direction"/>
+                                </div>
+                                <div className={style.input_container}>
+                                    <input type="text" placeholder='Apt, Suite, unidad, etc. (Opcional)' id="dpto"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )
+            break;
+            case 2:
+                return(
+                    <div className={style.step}>
                         <div className={style.number_card_container}>
                             <div className={style.input_container}>
                                 <label htmlFor="card_number">Número de tarjeta</label>
@@ -42,14 +89,28 @@ const Checkout = () => {
                     </div>
                 )
             break;
-            case 2:
-                return(
-                    <div>Dirección</div>
-                )
-            break;
             case 3:
                 return(
-                    <div>Datos personales</div>
+                    <div className={style.step}>
+                        <div className={style.detailPrice}>
+                            <p>Costo de envío</p>
+                            <span>$750</span>
+                        </div>
+                        <div className={style.discount}>
+                            <div className={`${style.input_container} ${style.coupon}`}>
+                                <input type="text" placeholder='Ingresar cupón de descuento'/>
+                                <button>Confirmar</button>
+                            </div>
+                            <div className={style.detailPrice}>
+                                <p>Descuento</p>
+                                <span>$0</span>
+                            </div>
+                        </div>
+                        <div className={style.detailPrice}>
+                            <h4>Total</h4>
+                            <span>$5869</span>
+                        </div>
+                    </div>
                 )
             break;
             default:

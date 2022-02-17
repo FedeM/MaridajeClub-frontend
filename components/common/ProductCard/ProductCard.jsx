@@ -1,6 +1,11 @@
 import styles from './ProductCard.module.css';
 import Image from 'next/image'
 import Router from 'next/router';
+import { useEffect } from 'react';
+
+const isServer = typeof window === 'undefined'
+const WOW = !isServer ? require('wow.js') : null
+
 
 const ProductCard = ({id, name, description, price, img, cart = true}) => {
 
@@ -12,8 +17,12 @@ const ProductCard = ({id, name, description, price, img, cart = true}) => {
         e.target.parentNode.classList.remove(`${styles.description_hidden}`)
     }
 
+    useEffect(()=>{
+        new WOW().init()
+    }, [])
+
     return (
-        <div className={styles.product_card}>
+        <div className={`${styles.product_card} wow animate__animated animate__flipInY`}>
             <div className={styles.product_imgBox}>
                 <Image src={img} alt={name} layout="fill"/>
             </div>
