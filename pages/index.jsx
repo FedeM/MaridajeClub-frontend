@@ -72,7 +72,7 @@ export default function Index() {
 
   useEffect(()=>{
     setTimeout(()=>{
-      // setMounted(true)
+      setMounted(true)
     }, 2000)
     if(enterEvent.activate){
       document.querySelector('body').style.overflowY="hidden"
