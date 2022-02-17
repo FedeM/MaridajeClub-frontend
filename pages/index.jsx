@@ -6,6 +6,7 @@ import style from '../styles/pages/Index.module.css'
 
 import { isAuthenticate } from "../lib/auth";
 import {user} from "../lib/user"
+import { LoadingTab } from '../components/common'
 
 const welcomeMsgs = !isAuthenticate() ?([{
   photo: "/assets/img/profile/robot.png",
@@ -70,7 +71,9 @@ export default function Index() {
   }
 
   useEffect(()=>{
-    setMounted(true)
+    setTimeout(()=>{
+      // setMounted(true)
+    }, 2000)
     if(enterEvent.activate){
       document.querySelector('body').style.overflowY="hidden"
     }else{
@@ -79,7 +82,7 @@ export default function Index() {
 
   }, [mounted, enterEvent])
 
-  return mounted &&(
+  return mounted ?(
     <Layout
       title="Home"
       description="Descripción"
@@ -134,6 +137,13 @@ export default function Index() {
           )
         }
       </article>
+    </Layout>
+  ):(
+    <Layout
+      title="Home"
+      description="Descripción"
+    >
+      <LoadingTab/>
     </Layout>
   )
 }
