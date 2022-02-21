@@ -1,7 +1,7 @@
 .article{
     padding-top: 70px;
     position: relative;
-    /* display: flex; */
+    display: flex;
 }
 @media (max-width: 850px) {
     .article{

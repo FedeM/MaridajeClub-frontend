@@ -160,6 +160,7 @@
     transition: .5s;
     font-size: 1.3rem;
     background-color: var(--global-gray);
+    overflow: hidden;
 }
 
 .social_button:hover{

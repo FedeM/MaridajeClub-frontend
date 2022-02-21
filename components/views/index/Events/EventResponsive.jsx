@@ -13,14 +13,16 @@ const EventResponsive = ({submitPost, posts, handleChange, close, event}) => {
     return (
         <div className={`${style.live_background}`}>
             <div className={`${style.live_container} animate__animated animate__slideInRight`}>
-                <ReactPlayer
-                    className={style.live}
-                    url={event.eventUrl}
-                    playing={paused ? (false):(true)}
-                    loop
-                    width={'100%'}
-                    height={'100%'}
-                />
+                <iframe 
+                    className={style.live}    
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.instagram.com/fedetest13/live/18101408287304905?utm_medium=share_sheet" 
+                    title="YouTube video player" 
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowFullScreen={false}
+                ></iframe>
                 {event.eventIsLive &&(<span className={style.live_alert}>En vivo</span>)}
                 <div className={style.live_close} onClick={()=> close()}>X</div>
                     <div className={style.pauseBottom}>

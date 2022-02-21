@@ -2,6 +2,7 @@ import { Layout } from "../../components/layout";
 import {Session} from "../../components/views";
 
 import { isAuthenticate } from "../../lib/auth";
+import style from '../../styles/pages/Index.module.css'
 
 const Index = () => {
 
@@ -13,7 +14,7 @@ const Index = () => {
             footer
             cart
         >
-            <article style={{paddingTop:`15vh`}}>
+            <article className={style.article}>
                 <Session/>
             </article>
         </Layout>

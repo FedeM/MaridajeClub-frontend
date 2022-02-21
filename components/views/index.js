@@ -46,3 +46,8 @@ export {default as Shopping} from './shopping/Shopping.jsx'
 export {default as ProductDetail} from './shopping/ProductDetail/ProductDetail.jsx'
 
 
+//Componentes de HELP
+export {default as FAQ} from './help/faq/FAQ.jsx'
+export {default as Terms} from './help/terms/Terms.jsx'
+
+

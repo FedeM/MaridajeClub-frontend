@@ -15,15 +15,19 @@ const EventDesktop = ({submitPost, posts, handleChange, close, event}) => {
             <section className={style.live_section}>
                 <div className={style.side_live}>
                     <div className={style.live_container} >
-                        <ReactPlayer
-                            id="live"
-                            className={style.live}
-                            url={event.eventUrl}
-                            playing={paused ? (false):(true)}
-                            loop
-                            width={'100%'}
-                            height={'100%'}
-                        />
+
+                    {/* ********************************************************** */}
+                        <iframe 
+                            width="100%" 
+                            height="100%" 
+                            src="https://www.instagram.com/fedetest13/live/18101408287304905?utm_medium=share_sheet" 
+                            title="YouTube video player" 
+                            frameBorder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowFullScreen={false}
+                        ></iframe>
+                    {/* ********************************************************** */}
+
                         {event.eventIsLive &&(<span className={style.live_alert}>En vivo</span>)}
                         <div className={style.pauseBottom}>
                             {

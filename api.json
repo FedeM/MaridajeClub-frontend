@@ -1,0 +1,40 @@
+{
+    "users": [
+        {"id": 1, "name": "santillienzo", "email": "enzo135246@gmail.com", "phone": "2634786580", "address": "Barrio San Pedro M20 C27", "password": "Riverplate14"},
+        {"id": 2, "name": "rodriguezluis", "email": "rodri_l@gmail.com", "phone": "26347486580", "address": "Barrio Burgoa", "password": "1234567"},
+        {"id": 3, "name": "jereArgumedo", "email": "jere@gmail.com", "phone": "26347486580", "address": "Barrio Mebna", "password": "1234567"},
+        {"id": 4, "name": "quirogaafran", "email": "quiroga@gmail.com", "phone": "26347486580", "address": "Barrio San Antonio", "password": "1234567"},
+        {"id": 5, "name": "pepeMuj", "email": "pepe@gmail.com", "phone": "26347486580", "address": "Barrio San Pedro", "password": "1234567"},
+        {"id": 6, "name": "perettiPedro", "email": "peretti@gmail.com", "phone": "26347486580", "address": "Barrio Burgoa", "password": "1234567"},
+        {"id": 7, "name": "martinSandoval", "email": "martin@gmail.com", "phone": "26347486580", "address": "Barrio Burgoa", "password": "1234567"},
+        {"id": 8, "name": "martinezluis", "email": "martinez@gmail.com", "phone": "26347486580", "address": "Barrio Burgoa", "password": "1234567"}
+    ],
+    "products":[
+        {"id": 1, "shop_id": 1, "name": "Vino Malbec", "description": "Del latín vinum, el vino es una bebida alcohólica que se hace a partir de la uva. El proceso implica la fermentación alcohólica del zumo o mosto a través de la acción metabólica de levaduras. El cultivo de la vid ocupa cerca del 0,5% del suelo cultivable de todo el mundo.", "stock": 10, "regular_price": 100.00, "sale_price": 200.00, "feature_img": "/assets/img/products/wine1.jpg", "event_id": 1},
+        {"id": 2, "shop_id": 1, "name": "Vino Syrah", "description": "Del latín vinum, el vino es una bebida alcohólica que se hace a partir de la uva. El proceso implica la fermentación alcohólica del zumo o mosto a través de la acción metabólica de levaduras. El cultivo de la vid ocupa cerca del 0,5% del suelo cultivable de todo el mundo.", "stock": 10, "regular_price": 100.00, "sale_price": 200.00, "feature_img": "/assets/img/products/wine2.jpg", "event_id": 1},
+        {"id": 3, "shop_id": 1, "name": "Vino Blanco", "description": "Del latín vinum, el vino es una bebida alcohólica que se hace a partir de la uva. El proceso implica la fermentación alcohólica del zumo o mosto a través de la acción metabólica de levaduras. El cultivo de la vid ocupa cerca del 0,5% del suelo cultivable de todo el mundo.", "stock": 10, "regular_price": 100.00, "sale_price": 200.00, "feature_img": "/assets/img/products/wine3.jpg", "event_id": 2},
+        {"id": 4, "shop_id": 1, "name": "Vino Cabernet", "description": "Del latín vinum, el vino es una bebida alcohólica que se hace a partir de la uva. El proceso implica la fermentación alcohólica del zumo o mosto a través de la acción metabólica de levaduras. El cultivo de la vid ocupa cerca del 0,5% del suelo cultivable de todo el mundo.", "stock": 10, "regular_price": 100.00, "sale_price": 200.00, "feature_img": "/assets/img/products/wine4.jpg", "event_id": 2},
+        {"id": 5, "shop_id": 2, "name": "Vino Cabernet Sauvignon", "description": "Del latín vinum, el vino es una bebida alcohólica que se hace a partir de la uva. El proceso implica la fermentación alcohólica del zumo o mosto a través de la acción metabólica de levaduras. El cultivo de la vid ocupa cerca del 0,5% del suelo cultivable de todo el mundo.", "stock": 10, "regular_price": 100.00, "sale_price": 200.00, "feature_img": "/assets/img/products/wine2.jpg", "event_id": 3},
+        {"id": 6, "shop_id": 2, "name": "Vino Merlot", "description": "Del latín vinum, el vino es una bebida alcohólica que se hace a partir de la uva. El proceso implica la fermentación alcohólica del zumo o mosto a través de la acción metabólica de levaduras. El cultivo de la vid ocupa cerca del 0,5% del suelo cultivable de todo el mundo.", "stock": 10, "regular_price": 100.00, "sale_price": 200.00, "feature_img": "/assets/img/products/wine3.jpg", "event_id": 3},
+        {"id": 7, "shop_id": 3, "name": "Vino Syrah", "description": "Del latín vinum, el vino es una bebida alcohólica que se hace a partir de la uva. El proceso implica la fermentación alcohólica del zumo o mosto a través de la acción metabólica de levaduras. El cultivo de la vid ocupa cerca del 0,5% del suelo cultivable de todo el mundo.", "stock": 10, "regular_price": 100.00, "sale_price": 200.00, "feature_img": "/assets/img/products/wine2.jpg", "event_id": 4},
+        {"id": 8, "shop_id": 4, "name": "Vino Malbec", "description": "Del latín vinum, el vino es una bebida alcohólica que se hace a partir de la uva. El proceso implica la fermentación alcohólica del zumo o mosto a través de la acción metabólica de levaduras. El cultivo de la vid ocupa cerca del 0,5% del suelo cultivable de todo el mundo.", "stock": 10, "regular_price": 100.00, "sale_price": 200.00, "feature_img": "/assets/img/products/wine1.jpg", "event_id": 5}
+    ],
+    "shops": [
+        {"id": 1, "user_id": 2, "name": "Bodega Argentina", "description": "Descripción Bodega Argentina", "logo": "https://picsum.photos/500"},
+        {"id": 2, "user_id": 7, "name": "Los Haroldos", "description": "Descripción de Los Haroldos", "logo": "https://picsum.photos/500"},
+        {"id": 3, "user_id": 8, "name": "Tittarelli", "description": "Descripción de Tittarelli", "logo": "https://picsum.photos/500"},
+        {"id": 4, "user_id": 9, "name": "Estancia Mendoza", "description": "Descripción de Estancia Mendoza", "logo": "https://picsum.photos/500"}
+    ],
+    "events": [
+        {"id": 1, "shop_id": 1, "name": "Presentación Bodega Argentina", "description": "DEscripción del evento de la Tienda Enzo", "banner": "/assets/img/2.jpg", "date_from": "2022-08-14T16:00:38.066+00:00", "date_to":"2022-08-14T16:30:38.066+00:00", "video_url": "/assets/video/videoWine.mp4"},
+        {"id": 1, "shop_id": 1, "name": "Presentación Los Haroldos", "description": "DEscripción del evento de la Tienda Enzo", "banner": "/assets/img/2.jpg", "date_from": "2022-08-14T16:00:38.066+00:00", "date_to":"2022-08-14T16:30:38.066+00:00", "video_url": "/assets/video/videoWine.mp4"},
+        {"id": 1, "shop_id": 1, "name": "Presentación Titarelli", "description": "DEscripción del evento de la Tienda Enzo", "banner": "/assets/img/2.jpg", "date_from": "2022-08-14T16:00:38.066+00:00", "date_to":"2022-08-14T16:30:38.066+00:00", "video_url": "/assets/video/videoWine.mp4"},
+        {"id": 1, "shop_id": 1, "name": "Presentación Estancia Mendoza", "description": "DEscripción del evento de la Tienda Enzo", "banner": "/assets/img/2.jpg", "date_from": "2022-08-14T16:00:38.066+00:00", "date_to":"2022-08-14T16:30:38.066+00:00", "video_url": "/assets/video/videoWine.mp4"}
+    ],
+    "orders": [
+        {"id": 1, "user_id": 1,"product_id": 1, "first_name": "Enzo", "last_name": "Santilli", "country": "Argentina", "province": "Mendoza", "location": "San Martín", "address": "Barrio San Pedro M20 C27", "postal_code": "M5570", "phone_number": "02634756580", "payment_method":"Mercado Pago", "payment_order": "", "payment_status": "Ok", "shipping_method": "Andreani", "shipping_cost": "750"}
+    ],
+    "order_products": [
+        {"id":1, "shop_id":1, "product_id": 1}
+    ]
+}

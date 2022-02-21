@@ -115,9 +115,8 @@
     padding: 5px;
 }
 
-.admin_text{
-    background-color: rgba(125, 230, 125, 0.25);
-    border-radius: 5px;
+.admin_text h5{
+    color: rgb(14, 255, 14);
 }
 
 

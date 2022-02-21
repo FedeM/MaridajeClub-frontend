@@ -18,8 +18,9 @@
     display: flex;
     border-radius: 5px;
     overflow: hidden;
-    min-height: 650px;
-    max-height: 650px;
+    min-height: 600px;
+    max-height: 600px;
+    width: 336px;
     background-color: var(--global-primary-color);
     padding-top: 56.25% /* Player ratio: 100 / (1280 / 720) */
 }
@@ -138,9 +139,9 @@
 
 @media (min-height: 1000px) {
     .live_container{
-        width: 70%;
         min-height: 950px;
         max-height: 950px;
+        width: 532px;
     }
 }
 

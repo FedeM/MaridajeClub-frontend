@@ -46,10 +46,8 @@
     overflow: hidden;
 }
 
-.admin_text{
-    background-color: var(--global-primary-color);
-    background-color: rgba(125, 230, 125, 0.25);
-    border-radius: 5px;
+.admin_text h5{
+    color: rgb(14, 255, 14);
 }
 
 .chat_msg_text p{
