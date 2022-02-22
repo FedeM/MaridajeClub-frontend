@@ -8,7 +8,7 @@ import { BrowserView, MobileView} from 'react-device-detect';
 
 import { SliderResponsive, Live,SliderDesktop} from '../../'
 
-import { events as arrayEvents } from '../../../../lib/events';
+import { events as arrayEvents } from '../../../../lib/events'
 
 
 
