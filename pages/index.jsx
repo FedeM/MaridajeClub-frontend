@@ -7,6 +7,7 @@ import style from '../styles/pages/Index.module.css'
 import { isAuthenticate } from "../lib/auth";
 import {user} from "../lib/user"
 import { LoadingTab } from '../components/common'
+import { getAllProducts } from '../lib/service/products'
 
 const welcomeMsgs = !isAuthenticate() ?([{
   photo: "/assets/img/profile/robot.png",
@@ -27,7 +28,8 @@ const welcomeMsgs = !isAuthenticate() ?([{
   }]
 )
 
-export default function Index() {
+export default function Index({allProducts}) {
+  
   const [mounted, setMounted] = useState(false)
   const [enterEvent, setEnterEvent] = useState({
     activate: false,
@@ -57,10 +59,10 @@ export default function Index() {
       e.preventDefault()
       if(post.msg.length > 0){
         setPosts([...posts,{
-            photo: post.photo,
-            user: post.user,
-            msg: post.msg,
-            role: post.role
+          photo: post.photo,
+          user: post.user,
+          msg: post.msg,
+          role: post.role
         }])
       }
       e.target.reset()
@@ -101,6 +103,7 @@ export default function Index() {
         <Ecommerce
           home
           id="commerce"
+          allProducts={allProducts}
         />
         {
           enterEvent.activate &&(
@@ -146,4 +149,23 @@ export default function Index() {
       <LoadingTab/>
     </Layout>
   )
+}
+
+
+export async function getServerSideProps (){
+  let allProducts
+
+  try {
+    allProducts = await getAllProducts()
+  } catch (error) {
+    return{
+      notFound: true
+    };
+  }
+
+  return{
+    props: {
+      allProducts
+    }
+  }
 }

@@ -7,7 +7,7 @@ const isServer = typeof window === 'undefined'
 const WOW = !isServer ? require('wow.js') : null
 
 
-const ProductCard = ({id, name, description, price, img, cart = true}) => {
+const ProductCard = ({id, name, description, price, feature_img, cart = true}) => {
 
     const openDescription =(e)=>{
         e.target.parentNode.classList.add(`${styles.description_hidden}`)
@@ -24,7 +24,7 @@ const ProductCard = ({id, name, description, price, img, cart = true}) => {
     return (
         <div className={`${styles.product_card} wow animate__animated animate__flipInY`}>
             <div className={styles.product_imgBox}>
-                <Image src={img} alt={name} layout="fill"/>
+                <Image src={feature_img} alt={name} layout="fill"/>
             </div>
             <div className={styles.product_content}>
                 <div className={styles.title_price}>

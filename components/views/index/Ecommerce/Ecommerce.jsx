@@ -1,12 +1,9 @@
 import styles from './Ecommerce.module.css'
 import Link from 'next/link'
-import { useEffect, useState } from 'react';
 import { ProductGalery } from '../../../common';
-import {products as arrayProducts} from '../../../../lib/products.js'
 
 
-const Ecommerce = ({id, home}) => {
-    const [products, setProducts] = useState(arrayProducts.filter(product => product.is_BestSeller === true))
+const Ecommerce = ({id, home, allProducts}) => {
 
 
     return (
@@ -25,7 +22,7 @@ const Ecommerce = ({id, home}) => {
                 <ProductGalery
                     home={home}
                     title="Más vendidos"
-                    products={products}
+                    products={allProducts}
                     justifyContent="center"
                 />
             </div>

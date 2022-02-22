@@ -26,7 +26,7 @@ const ProductGalery = ({title, home, products, justifyContent}) => {
                                 name={e.name}
                                 description={e.description}
                                 price={e.price}
-                                img={e.img}
+                                feature_img={e.feature_img}
                             />
                         ))
                     ):(

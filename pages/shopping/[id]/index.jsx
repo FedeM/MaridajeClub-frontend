@@ -2,18 +2,18 @@ import { Layout } from '../../../components/layout'
 
 import { useEffect, useState } from 'react';
 import { ProductDetail } from '../../../components/views';
-import { products as arrayProducts } from '../../../lib/products';
+// import { products as arrayProducts } from '../../../lib/products';
 
 const Index = ({success, id, error}) => {
     const [mounted, setMounted] = useState(false)
-    const [product, setProduct] = useState()
+    const [product, setProduct] = useState([])
     
 
     console.log(product)
 
     useEffect(()=>{
         setMounted(true)
-        setProduct(arrayProducts.filter(e=> e.id == id))
+        // setProduct(arrayProducts.filter(e=> e.id == id))
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [mounted])

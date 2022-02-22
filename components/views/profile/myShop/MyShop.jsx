@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { AddProduct, EditProduct, EditTitle } from '../..';
 import { FeaturedInfo, TableProducts } from '../../../common';
 import style from './MyShop.module.css'
-import { products as arrayProducts } from '../../../../lib/products';
+// import { products as arrayProducts } from '../../../../lib/products';
 
 import toast, { Toaster } from 'react-hot-toast';
 const deleteSuccess = (name) => toast.success(`${name.toUpperCase()} eliminado correctamente`,{
@@ -18,7 +18,7 @@ const MyShop = () => {
         activate: false,
         product: {}
     })
-    const [products, setProducts] = useState(arrayProducts)
+    const [products, setProducts] = useState([])
     const [isEditTitle, setIsEditTitle] = useState({
         activate: false,
         title: "Los Haroldos"

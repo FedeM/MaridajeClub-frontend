@@ -1,13 +1,24 @@
 import { Layout } from '../../components/layout'
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {Shopping} from '../../components/views';
 
-import {products as arrayProducts} from '../../lib/products'
+import { getAllProducts } from '../../lib/service/products';
 
 
 const Index = () => {
-    const [products, setProducts] = useState(arrayProducts)
+    const [products, setProducts] = useState([])
+
+    useEffect(()=>{
+        getAllProducts().then(data=>{
+            if(data.error){
+                console.log(error)
+            }else{
+                setProducts(data)
+            }
+        })
+
+    }, [])
 
     return (
         <Layout
