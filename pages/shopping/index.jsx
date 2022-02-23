@@ -1,24 +1,12 @@
 import { Layout } from '../../components/layout'
 
-import { useEffect, useState } from "react";
 import {Shopping} from '../../components/views';
 
-import { getAllProducts } from '../../lib/service/products';
+import { getAllCategories, getAllProducts } from '../../lib/service/products';
 
 
-const Index = () => {
-    const [products, setProducts] = useState([])
-
-    useEffect(()=>{
-        getAllProducts().then(data=>{
-            if(data.error){
-                console.log(error)
-            }else{
-                setProducts(data)
-            }
-        })
-
-    }, [])
+const Index = ({allProducts, categories}) => {
+    
 
     return (
         <Layout
@@ -30,7 +18,8 @@ const Index = () => {
         >
         <article style={{paddingTop:`15vh`}}>
             <Shopping
-                products={products}
+                products={allProducts}
+                categories={categories}
             />
         </article>
         </Layout>
@@ -38,3 +27,24 @@ const Index = () => {
 };
 
 export default Index;
+
+export async function getServerSideProps (){
+    let allProducts;
+    let categories;
+
+    try {
+        allProducts = await getAllProducts()
+        categories = await getAllCategories()
+    } catch (error) {
+        return{
+            notFound: true
+        };
+    }
+
+    return{
+        props: {
+            allProducts,
+            categories
+        }
+    }
+}

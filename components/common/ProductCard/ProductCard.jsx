@@ -7,7 +7,7 @@ const isServer = typeof window === 'undefined'
 const WOW = !isServer ? require('wow.js') : null
 
 
-const ProductCard = ({id, name, description, price, feature_img, cart = true}) => {
+const ProductCard = ({id, name, description, sale_price, feature_img, cart = true}) => {
 
     const openDescription =(e)=>{
         e.target.parentNode.classList.add(`${styles.description_hidden}`)
@@ -29,7 +29,7 @@ const ProductCard = ({id, name, description, price, feature_img, cart = true}) =
             <div className={styles.product_content}>
                 <div className={styles.title_price}>
                     <h3>{name}</h3>
-                    <div className={styles.price}>${price}</div>
+                    <div className={styles.price}>${sale_price}</div>
                 </div>
                 <div className={styles.description} onClick={(e)=> openDescription(e)} onMouseLeave={(e)=> closeDescription(e)}>
                     <p>{description}</p>

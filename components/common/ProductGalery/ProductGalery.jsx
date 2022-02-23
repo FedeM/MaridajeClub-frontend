@@ -25,7 +25,7 @@ const ProductGalery = ({title, home, products, justifyContent}) => {
                                 id={e.id}
                                 name={e.name}
                                 description={e.description}
-                                price={e.price}
+                                sale_price={e.sale_price}
                                 feature_img={e.feature_img}
                             />
                         ))

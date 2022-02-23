@@ -8,7 +8,7 @@ import FilterDesktop from "./productFilter/Desktop/FilterDesktop";
 
 import styles from './Ecommerce.module.css'
 
-const Shopping = ({products}) => {
+const Shopping = ({products, categories}) => {
     const [mounted, setMounted] = useState(false)
     const [filterBy, setFilterBy] = useState({
         category: false,
@@ -20,7 +20,7 @@ const Shopping = ({products}) => {
     useEffect(()=>{
         setMounted(true)
         if(filterBy.category !== false){
-            setProductsFilter(products.filter(product => product.category === filterBy.category))
+            setProductsFilter(products.filter(product => product.category_id === filterBy.category))
         }else{
             setProductsFilter(products)
         }
@@ -30,7 +30,7 @@ const Shopping = ({products}) => {
 
     return mounted && (
         <section className={styles.section_ecommerce}>
-            <CategoriesNav setFilterBy={setFilterBy} filterBy={filterBy}/>
+            <CategoriesNav setFilterBy={setFilterBy} filterBy={filterBy} categories={categories}/>
             <MobileView>
                 <FilterResponsive/>
                 <ProductGalery

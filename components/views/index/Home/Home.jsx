@@ -13,6 +13,7 @@ import { events as arrayEvents } from '../../../../lib/events'
 
 
 const Home = ({enterEvent}) => {
+    console.log('')
     //Verificamos que el componente esté montado
     const [mounted, setMounted] = useState(false)
     //Aquí guardaremos el evento en vivo

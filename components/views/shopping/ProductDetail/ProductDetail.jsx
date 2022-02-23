@@ -3,7 +3,6 @@ import style from './ProductDetail.module.css'
 import Image from 'next/image'
 import { isDesktop, isMobile} from 'react-device-detect';
 const ProductDetail = ({product}) => {
-    console.log(product)
     const [quantity, setQuantity] = useState(1)
     return (
         <>
@@ -18,7 +17,7 @@ const ProductDetail = ({product}) => {
                             )
                         }
                         <div className={style.viewImage}>
-                            <Image src={product.img} layout='fill' objectFit='cover' priority alt="description"/>
+                            <Image src={product.feature_img} layout='fill' objectFit='cover' priority alt="description"/>
                         </div>
                     </section>
                     <section className={style.agregate_section}>
@@ -31,7 +30,7 @@ const ProductDetail = ({product}) => {
                             <div className={style.description}>
                                 <p>{product.description}</p>
                             </div>
-                            <div className={style.price}>${product.price}</div>
+                            <div className={style.price}>${product.sale_price}</div>
                             <div className={style.addToCart}>
                                 <div className={style.quantity}>
                                     <div>{quantity}</div>
@@ -53,7 +52,7 @@ const ProductDetail = ({product}) => {
                         </div>
                     </section>
                 </div>
-                <section className={style.description_section}>
+                {/* <section className={style.description_section}>
                     <div className={style.description_title}>
                         <h4>Descripción</h4>
                     </div>
@@ -75,7 +74,7 @@ const ProductDetail = ({product}) => {
                             <p>Individual</p>
                         </div>
                     </div>
-                </section>
+                </section> */}
             </div>
         </>
     );

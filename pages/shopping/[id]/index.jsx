@@ -2,18 +2,14 @@ import { Layout } from '../../../components/layout'
 
 import { useEffect, useState } from 'react';
 import { ProductDetail } from '../../../components/views';
+import { getProduct } from '../../../lib/service/products';
 // import { products as arrayProducts } from '../../../lib/products';
 
-const Index = ({success, id, error}) => {
+const Index = ({success, product, error}) => {
     const [mounted, setMounted] = useState(false)
-    const [product, setProduct] = useState([])
-    
-
-    console.log(product)
 
     useEffect(()=>{
         setMounted(true)
-        // setProduct(arrayProducts.filter(e=> e.id == id))
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [mounted])
@@ -28,7 +24,11 @@ const Index = ({success, id, error}) => {
             footer
         >
             <article style={{marginTop: "15vh"}}>
-                <ProductDetail product={product[0]}/>
+            {
+                success &&(
+                    <ProductDetail product={product}/>
+                )
+            }
             </article>
         </Layout>
     );
@@ -39,21 +39,37 @@ export default Index;
 
 
 export async function getServerSideProps({params}){
+    let product;
+
     try {
-        
-        return {
-            props:{
-                success: true,
-                id: params.id
+        product = await getProduct(params.id)
+
+        //Comprobamos que el objeto esté vacio, de ser así devolvemos un error
+        if (Object.keys(product).length === 0) {
+            return {
+                props:{
+                    success: false,
+                    error: "No se encontró el producto",
+                    product: null
+                }
             }
         }
+    
     } catch (error) {
-        console.log(error)
         return {
             props:{
                 success: false,
-                error: "Error de server"
+                error: "Error de server",
+                product: null
             }
+        }
+    }
+
+
+    return {
+        props:{
+            success: true,
+            product
         }
     }
 }
