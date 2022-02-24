@@ -70,7 +70,7 @@ const Login = ({setLogin}) => {
                         clientId="562820573281-vcod58jbo8ianekgcf8fufrdqqqsq4l9.apps.googleusercontent.com"
                         buttonText="Login"
                         render={renderProps=>(
-                            <div onClick={renderProps.onClick} className={styles.social_button}><i className="fab fa-google"></i> <span>Iniciar sesión con Google</span></div>
+                            <div onClick={renderProps.onClick} className={styles.social_button}><i  aria-hidden className="fab fa-google"></i> <span>Iniciar sesión con Google</span></div>
                         )}
                         onSuccess={responseGoogle}
                         cookiePolicy={'single_host_origin'}
@@ -81,7 +81,7 @@ const Login = ({setLogin}) => {
                         callback={responseFacebook} 
                         autoLoad={false}
                         render={renderProps=>(
-                            <div onClick={renderProps.onClick} className={styles.social_button}><i className="fab fa-facebook-f"></i> <span>Iniciar sesión con Facebook</span></div>
+                            <div onClick={renderProps.onClick} className={styles.social_button}><i  aria-hidden className="fab fa-facebook-f"></i> <span>Iniciar sesión con Facebook</span></div>
                         )}
                     />
                 </div>

@@ -22,16 +22,6 @@
     background-color: var(--global-tertiary-color);
 }
 
-.error{
-    padding: 10px;
-    box-sizing: border-box;
-    border: 2px solid var(--global-secondary-color);
-    border-radius: 5px;
-    margin-bottom: 15px;
-    background-color: rgb(218, 118, 118);
-    transition: .5s;
-}
-
 .fields_container input{
     width: 100%;
     padding: 5px 0;
@@ -102,9 +92,10 @@
 }
 
 .button_container button{
-    width: 80%;
+    position: relative;
+    width: 100%;
     padding: 10px;
-    border-radius: 35px;
+    border-radius: 15px;
     background-color: var(--global-tertiary-color);
     color: var(--global-primary-color);
     font-size: 1.3rem;
