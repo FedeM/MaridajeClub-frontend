@@ -18,6 +18,7 @@ const Register = ({setLogin}) => {
         password: ""
     })
     const [loader, setLoader] = useState(false)
+    const [error, setError] = useState(false)
 
     let expEmail = new RegExp("^"+ compareValues.email + "$");
     let expPassword = new RegExp("^"+ compareValues.password + "$")
@@ -34,7 +35,7 @@ const Register = ({setLogin}) => {
     //Esquema de validación
     const emptyInputMsg = "Por favor rellena el campo"
     const validationSchema = Yup.object().shape({
-        name: Yup.string().required(emptyInputMsg).max(10, "El nombre tiene que tener un máximo de 10 carácteres").matches(/^[a-zA-Z0-9_.-]{1,10}$/, "El nombre de usuario solo debe contener: letras (minusculas/mayúsculas sin acentos); números; carácteres especiales (solo . _ -)").trim(),
+        name: Yup.string().required(emptyInputMsg).max(40, "El nombre tiene que tener un máximo de 40 carácteres").matches(/^[a-zA-Z0-9_.-]{1,40}$/, "El nombre de usuario solo debe contener: letras (minusculas/mayúsculas sin acentos); números; carácteres especiales (solo . _ -)").trim(),
         email: Yup.string().required(emptyInputMsg).email("Por favor utiliza el formato 'user@gmail.com'").trim(),
         _email: Yup.string().required(emptyInputMsg).matches(expEmail, "Los correos tienen que coincidir").trim(),
         password: Yup.string().required(emptyInputMsg).matches(/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/, "La contraseña debe tener, al menos, lo siguiente:Entre 8 y 16 dígitos, 1 letra mayúscula, 1 letra minúscula, 1 número").trim(),
@@ -42,34 +43,54 @@ const Register = ({setLogin}) => {
     })
 
     //Enviar datos al backend
-    const onSubmit = (values)=> {
+    const onSubmit = async (values)=> {
         setLoader(true)
-        signUp({
-            name: values.name,
-            email: values.email,
-            password: values.password,
-            photo: "",
-            phone: "",
-            address: "",
-            role_id: 1
-        }, ()=>{
-            authenticate({name: values.name, email: values.email}, ()=> window.location.href = "/")
-        })
+        try {
+            await signUp({
+                name: values.name,
+                email: values.email,
+                password: values.password,
+                photo: "",
+                phone: "",
+                address: "",
+                role_id: 1
+            }, ()=>{
+                authenticate({name: values.name, email: values.email}, ()=> window.location.href = "/")
+            })
+        } catch (err) {
+            setLoader(false)
+            setError(err)
+        }
     }
 
 
 
-    const registerWithSocialMedia = (email, username, password)=>{
-        //Enviar al backend
+    const registerWithSocialMedia = async(email, name, password, photo)=>{
+        try {
+            await signUp({
+                name,
+                email,
+                password,
+                photo,
+                phone: "",
+                address: "",
+                role_id: 1
+            }, ()=>{
+                console.log("registrado")
+                authenticate({name, email, photo}, ()=> window.location.href = "/")
+            })
+        } catch (err) {
+            setError(err)
+        }
     }
 
     const responseFacebook = (response) => {
-        registerWithSocialMedia(response.email, response.name, response.accessToken)
+        registerWithSocialMedia(response.email, response.name, response.accessToken, response.picture.data.url)
     }
 
     const responseGoogle = (response) => {
         const res = response.profileObj
-        registerWithSocialMedia(res.email, res.name, response.accessToken)
+        registerWithSocialMedia(res.email, res.name, response.accessToken, res.imageUrl)
     }
 
     return (
@@ -111,6 +132,13 @@ const Register = ({setLogin}) => {
                             <p>Or</p>
                             <div></div>
                         </div>
+                        {
+                            error &&(
+                                <div className={styles.error}>
+                                    {error}
+                                </div>
+                            )
+                        }
                         <div className={styles.fields_container}>
                             <div className={styles.fields}>
                                 <label htmlFor="name">Nombre de usuario</label>

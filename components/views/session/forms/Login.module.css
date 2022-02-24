@@ -76,6 +76,16 @@
     width: 300px;
 }
 
+.error{
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid var(--global-secondary-color);
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: rgb(218, 118, 118);
+    transition: .5s;
+}
+
 .forget_password a{
     color: var(--global-gray2);
     transition: .5s;
