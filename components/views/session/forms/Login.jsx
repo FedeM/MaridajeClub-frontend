@@ -37,7 +37,7 @@ const Login = ({setLogin}) => {
             await signIn({
                 username: values.username, 
                 password: values.password
-            }, ()=> alert("hola"))
+            }, ()=> authenticate({name: values.name, email: values.email}, ()=> window.location.href = "/"))
             setError(false)
         } catch (error) {
             setLoader(false)

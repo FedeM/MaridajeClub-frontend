@@ -73,10 +73,6 @@ const PersonalData = () => {
                             <ErrorMessage name='photo' component={()=>(<ErrorInput error={errors.photo}/>)}/>
                         </div>
                         <div className={style.personalData}>
-                            <ion-icon name="id-card-outline"></ion-icon>
-                            {user.id}
-                        </div>
-                        <div className={style.personalData}>
                             <ion-icon name="at-outline"></ion-icon>
                             <Field type="text" name='username'/>
                             <ErrorMessage name='username' component={()=>(<ErrorInput error={errors.username}/>)}/>
