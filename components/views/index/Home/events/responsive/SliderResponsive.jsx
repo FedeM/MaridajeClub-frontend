@@ -4,7 +4,7 @@ import Image from 'next/image'
 import ModalEventInfo from './modalEventInfo/ModalEventInfo';
 
 
-const SliderResponsive = ({enterEvent, events}) => {
+const SliderResponsive = ({setEnterEvent, events}) => {
     const [mounted, setMounted] = useState(false)
     //Controlamos el display del event info
     const [eventInfo, setEventInfo] = useState(false)
@@ -77,7 +77,7 @@ const SliderResponsive = ({enterEvent, events}) => {
             </div>
             {
                 eventInfo && (
-                    <ModalEventInfo enterEvent={enterEvent} displayEventInfo={displayEventInfo} eventSelected={eventSelected}/>
+                    <ModalEventInfo enterEvent={setEnterEvent} displayEventInfo={displayEventInfo} eventSelected={eventSelected}/>
                 )
             }
         </>

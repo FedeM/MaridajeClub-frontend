@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 const isServer = typeof window === 'undefined'
 const WOW = !isServer ? require('wow.js') : null
 
-const SliderDesktop = ({enterEvent, events}) => {
+const SliderDesktop = ({ setEnterEvent, events}) => {
     const [opacity, setOpacity] = useState(1)
     //Controlamos la posición del scroll
     const [scroll, setScroll] = useState(0)
@@ -75,7 +75,7 @@ const SliderDesktop = ({enterEvent, events}) => {
                         <div><i className="far fa-clock"></i><p>{eventSelected.hour}</p></div>
                     </div>
                     <button
-                        onClick={()=> enterEvent({
+                        onClick={()=> setEnterEvent({
                             activate: true,
                             eventId: eventSelected.id,
                             eventUrl: eventSelected.url,

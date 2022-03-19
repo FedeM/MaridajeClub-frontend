@@ -1,6 +1,5 @@
 import style from './Orders.module.css'
 import Image from 'next/image'
-import { orders as arrayOrders} from '../../../../lib/orders';
 import { useState } from 'react';
 
 
@@ -12,7 +11,7 @@ const deleteSuccess = () => toast.success(`Eliminado correctamente`,{
 
 const Orders = () => {
     //Definir estados
-    const [orders, setOrders] = useState(arrayOrders)
+    const [orders, setOrders] = useState([])
 
     //Eliminar Pedido
     const deleteOrders = (id)=>{

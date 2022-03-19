@@ -1,0 +1,93 @@
+.modal_background{
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--global-primary-color_opacity);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_container{
+    position: relative;
+    z-index: 10;
+    background-color: var(--global-gray3);
+    width: 90%;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .55);
+    background-color: rgb(255, 255, 255);
+    color: #000;
+}
+
+.modal_container h4{
+    font-size: 3rem;
+    color: #000;
+    color: var(--global-gray4);
+}
+
+.modal_text{
+    color: var(--global-gray2);
+}
+
+.modal_container h4:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.modal_container button{
+    background-color: var(--global-tertiary-color);
+    color: var(--global-primary-color);
+    padding: 10px 25px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.modal_more_info{
+    position: absolute;
+    top: -4rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 4rem;
+    font-size: 4rem;
+}
+
+.close_modal{
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+.date_container{
+    margin: 15px 0;
+}
+
+.date_container div{
+    display: flex;
+    align-items: center;
+}
+
+.date_container div p{
+    margin-left: 10px;
+}
+
+@media (min-width:850px) {
+    .modal_container{
+        width: 50%;
+    }
+
+    .modal_container button{
+        width: auto;
+    }
+}

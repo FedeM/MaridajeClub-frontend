@@ -4,11 +4,13 @@ export {default as Wineries} from './index/Winaries/Wineries'
 export {default as Ecommerce} from './index/Ecommerce/Ecommerce'
 export {default as EventDesktop} from './index/Events/EventDesktop'
 export {default as EventResponsive} from './index/Events/EventResponsive'
+export {default as Events} from './index/Events/Events'
 
 //Componentes del index
 export {default as SliderResponsive} from './index/Home/events/responsive/SliderResponsive.jsx'
 export {default as SliderDesktop} from './index/Home/events/desktop/SliderDesktop.jsx'
 export {default as Live} from './index/Home/events/Live/Live.jsx'
+export {default as MoreInfoModal} from './index/Home/events/Live/MoreInfoModal/MoreInfoModal.jsx'
 
 export {default as LiveEvent} from './index/Home/events/Live/LiveEvent/LiveEvent.jsx'
 export {default as NextEvent} from './index/Home/events/Live/LiveEvent/NextEvent.jsx'
@@ -18,6 +20,7 @@ export {default as ShopEventResponsive} from './index/Events/ShopEvent/responsiv
 
 export {default as ChatDesktop} from './index/Events/Chat/desktop/ChatDesktop.jsx'
 export {default as ChatResponsive} from './index/Events/Chat/responsive/ChatResponsive'
+
 
 
 //Componentes de CART

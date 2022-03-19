@@ -4,51 +4,18 @@ const ReactPlayer = lazy(()=> import('react-player'))
 import {useState} from 'react'
 import LiveEvent from './LiveEvent/LiveEvent';
 import NextEvent from './LiveEvent/NextEvent';
+import { MoreInfoModal } from '../../../..';
 
-const Live = ({enterEvent, helpOpacity, homeEvent}) => {
+const Live = ({setEnterEvent, helpOpacity, homeEvent}) => {
 
     const [modalActivate, setModalActivate] = useState({
         activate:false,
         event: {},
+        time:{},
         isNext: false
     })
 
-    const MoreInfoModal = ()=>{
-        return(
-            <div className={styles.modal_background}>
-                <div className={`${styles.modal_container} animate__animated animate__lightSpeedInRight animate__faster`}>
-                    <h4 
-                        onClick={()=> enterEvent({
-                            activate: true,
-                            eventId: modalActivate.event.id,
-                            eventUrl: modalActivate.event.video_url,
-                            eventIsLive: modalActivate.event.is_live
-                        })}
-                    >
-                            {modalActivate.event.name}
-                    </h4>
-                    <p className={styles.modal_text}>{modalActivate.event.description}</p>
-                    <div className={styles.date_container}>
-                        <div><i className="far fa-calendar-alt"></i><p>{`${modalActivate.event.date_from.getDate()}/${modalActivate.event.date_from.getMonth() + 1}/${modalActivate.event.date_from.getFullYear()}`}</p></div>
-                        <div><i className="far fa-clock"></i><p>{`${modalActivate.event.date_from.getHours()}:${modalActivate.event.date_from.getMinutes()}`}</p></div>
-                    </div>
-                    {!modalActivate.isNext && (
-                            <button 
-                                onClick={()=> enterEvent({
-                                    activate: true,
-                                    eventId: modalActivate.event.id,
-                                    eventUrl: modalActivate.event.video_url,
-                                    eventIsLive: modalActivate.event.is_live
-                                })}>
-                                    Ingresar al evento
-                            </button>
-                        )
-                    }
-                    <span className={styles.close_modal} onClick={()=> setModalActivate(false)}>x</span>
-                </div>
-            </div>
-        )
-    }
+    
 
     useEffect(()=>{
         if(modalActivate.activate){
@@ -63,17 +30,20 @@ const Live = ({enterEvent, helpOpacity, homeEvent}) => {
         <div className={styles.live_box}>
             {
                 modalActivate.activate && (
-                    <MoreInfoModal/>
+                    <MoreInfoModal
+                        modalActivate={modalActivate}
+                        close={()=> setModalActivate(false)}
+                    />
                 )
             }
             <div className={styles.live_wrapper} id='live'>
                 {
                     homeEvent.inLiveEvent ?(
-                        <LiveEvent event={homeEvent.inLiveEvent} enterEvent={enterEvent} helpOpacity={helpOpacity} setModalActivate={setModalActivate}/>
+                        <LiveEvent event={homeEvent.inLiveEvent} enterEvent={setEnterEvent} helpOpacity={helpOpacity} setModalActivate={setModalActivate}/>
                     ): homeEvent.nextEvent ?(
                         <NextEvent event={homeEvent.nextEvent} helpOpacity={helpOpacity} setModalActivate={setModalActivate}/>
                     ): homeEvent.lastEvent ?(
-                        <LiveEvent event={homeEvent.lastEvent} enterEvent={enterEvent} helpOpacity={helpOpacity} last setModalActivate={setModalActivate}/>
+                        <LiveEvent event={homeEvent.lastEvent} enterEvent={setEnterEvent} helpOpacity={helpOpacity} last setModalActivate={setModalActivate}/>
                     ):('')
                 }
             </div>

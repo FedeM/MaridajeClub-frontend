@@ -8,61 +8,62 @@ import { BrowserView, MobileView} from 'react-device-detect';
 
 import { SliderResponsive, Live,SliderDesktop} from '../../'
 
-import { events as arrayEvents } from '../../../../lib/events'
 
 
-
-const Home = ({enterEvent}) => {
+const Home = ({setEnterEvent, allEvents}) => {
     //Verificamos que el componente esté montado
     const [mounted, setMounted] = useState(false)
     //Aquí guardaremos el evento en vivo
     const [homeEvent, setHomeEvent] = useState({
+        fill: false,
         inLiveEvent: false,
         lastEvent: false,
         nextEvent: false
     })
+    //En estos estados se guardarán el evento en vivo, el último evento y el siguiente evento respectivamente
     const [inLiveEvent, setInLiveEvent] = useState(false)
     const [lastEvent, setLastEvent] = useState(false)
     const [nextEvent, setNextEvent] = useState(false)
-    //En este array guardaremos los eventos
-    const [events, setEvents] = useState(arrayEvents.filter(event => {
-        if(event.is_live === false && event.date_from < new Date()){
-            return true
-        }
-        return false
-    }))
+    //En este array guardaremos todos los eventos anteriores al día de la fecha
+    const [events, setEvents] = useState(allEvents)
     const [helpOpacity, setHelpOpacity] = useState(0)
 
-    const fillLiveEnter = ()=>{
+    const fillLiveEnter = (allEvents)=>{
         const currentDate = new Date();
         let lastDate = new Date(0, 0, 0);
         let mostNextDate = new Date(2099, 11, 30)
 
-        for (let i = 0; i < arrayEvents.length; i++) {
-            if (arrayEvents[i].is_live === true) {
-                setInLiveEvent(arrayEvents[i])
+        console.log('///')
+        allEvents.map(e=>{
+            let date_from = new Date(e.date_from)
+            let date_to = new Date(e.date_to)
+
+            //Verificamos que sea el vivo actual
+            if(date_from <= currentDate && date_to >= currentDate){
+                setInLiveEvent(e)
             }
-            if (arrayEvents[i].date_from > lastDate && arrayEvents[i].date_from < currentDate && arrayEvents[i].is_live === false) {
-                lastDate = arrayEvents[i].date_from
-                setLastEvent(arrayEvents[i])
+            
+            //Verificamos cuál es el último evento 
+            if(date_from  > lastDate && date_from < currentDate && !(date_from <= currentDate && date_to >= currentDate)){
+                lastDate = date_from;
+                setLastEvent(e)
             }
-            if (arrayEvents[i].date_from > currentDate && arrayEvents[i].date_from < mostNextDate) {
-                mostNextDate = arrayEvents[i].date_from
-                setNextEvent(arrayEvents[i])
+
+            if (date_from > currentDate && date_from < mostNextDate && !(date_from <= currentDate && date_to >= currentDate)) {
+                mostNextDate = date_from
+                setNextEvent(e)
             }
-            if (arrayEvents[i].date_from < currentDate) {
-                
-            }
-        }
+        })
+
     }
     
     
     useEffect(()=>{
         setMounted(true)
-        if(!mounted){
-            fillLiveEnter()
-        }
+        fillLiveEnter(allEvents)
+        
         setHomeEvent({
+            fill: true,
             inLiveEvent: inLiveEvent,
             lastEvent: lastEvent,
             nextEvent: nextEvent
@@ -70,7 +71,7 @@ const Home = ({enterEvent}) => {
         
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[mounted])
-    
+
     return mounted &&(
         <section className={style.home_section}>
             <div className={style.color}></div>
@@ -89,15 +90,15 @@ const Home = ({enterEvent}) => {
                             </div>
                         </div>
                         <Live
-                            enterEvent={enterEvent}
+                            setEnterEvent={setEnterEvent}
                             helpOpacity={helpOpacity}
                             homeEvent={homeEvent}
                         />
                     </div>
-                    <SliderDesktop
-                        enterEvent={enterEvent}
+                    {/* <SliderDesktop
+                        setEnterEvent={setEnterEvent}
                         events={events}
-                    />
+                    /> */}
                 </BrowserView>
                 <MobileView>
                     <div className={style.about_text_container} id="home">
@@ -111,14 +112,14 @@ const Home = ({enterEvent}) => {
                         </div>
                     </div>
                     <Live
-                        enterEvent={enterEvent}
+                        setEnterEvent={setEnterEvent}
                         helpOpacity={helpOpacity}
                         homeEvent={homeEvent}
                     />
-                    <SliderResponsive
-                        enterEvent={enterEvent}
+                    {/* <SliderResponsive
+                        setEnterEvent={setEnterEvent}
                         events={events}
-                    />
+                    /> */}
                 </MobileView>
             </div>
         </section>
