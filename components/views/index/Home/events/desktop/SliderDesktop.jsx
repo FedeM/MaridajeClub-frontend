@@ -85,7 +85,7 @@ const SliderDesktop = ({ setEnterEvent, events}) => {
                             activate: true,
                             eventId: eventSelected.id,
                             eventUrl: eventSelected.video_urlurl,
-                            eventIsLive: eventSelected.is_live
+                            eventIsLive: false
                         })}
                     >
                         Ingresar al evento
@@ -103,8 +103,7 @@ const SliderDesktop = ({ setEnterEvent, events}) => {
                                     description: e.description,
                                     date_from: formatDate(e.date_from),
                                     hour: formatHour(e.date_from),
-                                    url: e.video_url,
-                                    is_live: e.is_live
+                                    url: e.video_url
                                 })}>
                                     <Image
                                         src={e.banner}

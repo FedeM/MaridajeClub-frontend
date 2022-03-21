@@ -1,13 +1,31 @@
 import style from './EventResponsive.module.css'
 import ReactPlayer from "react-player";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ChatResponsive, ShopEventResponsive } from '../..';
+import { getAllProducts } from '../../../../lib/service/products';
 
 
 const EventResponsive = ({submitPost, posts, handleChange, close, event}) => {
     const [openShop, setOpenShop] = useState(false)
     const [paused, setPaused] = useState(false)
+    const [products, setProducts] = useState([])
+    console.log(event.eventId)
 
+    useEffect(()=>{
+        Promise.all([
+            getAllProducts()
+        ]).then(([products])=>{
+            setProducts(products.filter(e=>{
+                if (e.event_id === event.eventId) {
+                    return true
+                }
+                return false
+            }))
+        }).catch(err=>{
+            new Error(err)
+            console.log(err)
+        })
+    }, [])
 
 
     return (
@@ -45,7 +63,10 @@ const EventResponsive = ({submitPost, posts, handleChange, close, event}) => {
             </div>
             {
                 openShop &&(
-                    <ShopEventResponsive close={()=> setOpenShop(false)}/>
+                    <ShopEventResponsive 
+                        close={()=> setOpenShop(false)}
+                        products={products}
+                    />
                 )
             }
         </div>

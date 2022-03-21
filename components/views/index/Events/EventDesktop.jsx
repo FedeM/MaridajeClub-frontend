@@ -1,7 +1,7 @@
 import style from './EventDesktop.module.css'
-import ReactPlayer from "react-player";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ChatDesktop, ShopEventDesktop } from '../..';
+import { getAllProducts } from '../../../../lib/service/products';
 
 const EventDesktop = ({submitPost, posts, handleChange, close, event}) => {
     const [open, setOpen] = useState({
@@ -9,6 +9,24 @@ const EventDesktop = ({submitPost, posts, handleChange, close, event}) => {
         shop: false
     })
     const [paused, setPaused] = useState(false)
+    const [products, setProducts] = useState([])
+    console.log(event.eventId)
+
+    useEffect(()=>{
+        Promise.all([
+            getAllProducts()
+        ]).then(([products])=>{
+            setProducts(products.filter(e=>{
+                if (e.event_id === event.eventId) {
+                    return true
+                }
+                return false
+            }))
+        }).catch(err=>{
+            new Error(err)
+            console.log(err)
+        })
+    }, [])
 
     return (
         <article className={style.eventDesktop_container}>
@@ -59,6 +77,7 @@ const EventDesktop = ({submitPost, posts, handleChange, close, event}) => {
                     <ShopEventDesktop
                         open={open}
                         setOpen={setOpen}
+                        products={products}
                     />
                     <ChatDesktop
                         open={open}

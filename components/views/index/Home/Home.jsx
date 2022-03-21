@@ -25,14 +25,14 @@ const Home = ({setEnterEvent, allEvents}) => {
     const [lastEvent, setLastEvent] = useState(false)
     const [nextEvent, setNextEvent] = useState(false)
     //En este array guardaremos todos los eventos anteriores al día de la fecha
-    const [events, setEvents] = useState(allEvents.filter(e => {
+    const events = allEvents.filter(e => {
         let date_from = new Date(e.date_from)
 
         if(date_from < new Date()){
             return true
         }
         return false
-    }))
+    })
     const [helpOpacity, setHelpOpacity] = useState(0)
 
     const fillLiveEnter = (allEvents)=>{
@@ -40,7 +40,6 @@ const Home = ({setEnterEvent, allEvents}) => {
         let lastDate = new Date(0, 0, 0);
         let mostNextDate = new Date(2099, 11, 30)
 
-        console.log('///')
         allEvents.map(e=>{
             let date_from = new Date(e.date_from)
             let date_to = new Date(e.date_to)

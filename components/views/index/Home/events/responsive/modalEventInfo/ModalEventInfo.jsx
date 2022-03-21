@@ -30,7 +30,7 @@ const ModalEventInfo = ({displayEventInfo, eventSelected, enterEvent}) => {
                     activate: true,
                     eventId: eventSelected.id,
                     eventUrl: eventSelected.url,
-                    eventIsLive: eventSelected.is_live
+                    eventIsLive: false
                 })}
             >
                 Ingresar al evento

@@ -26,7 +26,7 @@ const LiveEvent = ({event, helpOpacity, last, setModalActivate, enterEvent}) => 
                     activate: true,
                     eventId: event.id,
                     eventUrl: event.video_url,
-                    eventIsLive: event.is_live
+                    eventIsLive: last ?(false):(true)
                 })}
             >
             { last && (<p className={style.last_event}>Último evento</p>)}
