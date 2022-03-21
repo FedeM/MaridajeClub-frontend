@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import style from './ProductDetail.module.css'
 import Image from 'next/image'
 import { isDesktop, isMobile} from 'react-device-detect';
+
+
 const ProductDetail = ({product}) => {
     const [quantity, setQuantity] = useState(1)
     return (
@@ -52,29 +54,6 @@ const ProductDetail = ({product}) => {
                         </div>
                     </section>
                 </div>
-                {/* <section className={style.description_section}>
-                    <div className={style.description_title}>
-                        <h4>Descripción</h4>
-                    </div>
-                    <div className={style.table}>
-                        <div className={style.table_side}>
-                            <h5>Bodega</h5>
-                            <h5>Marca</h5>
-                            <h5>Linea</h5>
-                            <h5>Variedad</h5>
-                            <h5>Volumen de la unidad</h5>
-                            <h5>Formato de venta</h5>
-                        </div>
-                        <div className={style.table_side}>
-                            <p>La Rural</p>
-                            <p>Rutini Wines</p>
-                            <p>Bivarietal</p>
-                            <p>Tinto</p>
-                            <p>750 cc</p>
-                            <p>Individual</p>
-                        </div>
-                    </div>
-                </section> */}
             </div>
         </>
     );
