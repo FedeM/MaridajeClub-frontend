@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import styles from './SliderResponsive.module.css'
 import Image from 'next/image'
 import ModalEventInfo from './modalEventInfo/ModalEventInfo';
+import { formatDate, formatHour } from '../../../../../../lib/assets/formatTime';
 
 
 const SliderResponsive = ({setEnterEvent, events}) => {
@@ -57,8 +58,8 @@ const SliderResponsive = ({setEnterEvent, events}) => {
                                     banner: e.banner,
                                     name: e.name,
                                     description: e.description,
-                                    date_from: `${e.date_from.getDate()}/${e.date_from.getMonth() + 1}/${e.date_from.getFullYear()}`,
-                                    hour: `${e.date_from.getHours()}:${e.date_from.getMinutes()}`,
+                                    date_from: `${formatDate(e.date_from)}`,
+                                    hour: `${formatHour(e.date_from)}`,
                                     url: e.video_url,
                                     is_live: e.is_live
                                 })

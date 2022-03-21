@@ -1,8 +1,14 @@
+import { useEffect, useState } from 'react';
+
 import styles from './Slider.module.css'
 import Image from 'next/image'
-import { useEffect, useState } from 'react';
+
+import { formatDate, formatHour } from '../../../../../../lib/assets/formatTime';
+
 const isServer = typeof window === 'undefined'
 const WOW = !isServer ? require('wow.js') : null
+
+
 
 const SliderDesktop = ({ setEnterEvent, events}) => {
     const [opacity, setOpacity] = useState(1)
@@ -13,11 +19,11 @@ const SliderDesktop = ({ setEnterEvent, events}) => {
         id: events[0].id,
         name: events[0].name,
         description: events[0].description,
-        date_from:`${events[0].date_from.getDate()}/${events[0].date_from.getMonth() + 1}/${events[0].date_from.getFullYear()}`,
-        hour: `${events[0].date_from.getHours()}:${events[0].date_from.getMinutes()}`,
-        url: events[0].video_url,
-        is_live: events[0].is_live
+        date_from: formatDate(events[0].date_from),
+        hour: formatHour(events[0].date_from),
+        video_url: events[0].video_url
     }))
+
 
     //Seleccionar evento y renderizar info
     const selectEvent = (data)=>{
@@ -78,7 +84,7 @@ const SliderDesktop = ({ setEnterEvent, events}) => {
                         onClick={()=> setEnterEvent({
                             activate: true,
                             eventId: eventSelected.id,
-                            eventUrl: eventSelected.url,
+                            eventUrl: eventSelected.video_urlurl,
                             eventIsLive: eventSelected.is_live
                         })}
                     >
@@ -95,8 +101,8 @@ const SliderDesktop = ({ setEnterEvent, events}) => {
                                     id: e.id,
                                     name: e.name,
                                     description: e.description,
-                                    date_from: `${e.date_from.getDate()}/${e.date_from.getMonth() + 1}/${e.date_from.getFullYear()}`,
-                                    hour: `${e.date_from.getHours()}:${e.date_from.getMinutes()}`,
+                                    date_from: formatDate(e.date_from),
+                                    hour: formatHour(e.date_from),
                                     url: e.video_url,
                                     is_live: e.is_live
                                 })}>

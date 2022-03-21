@@ -1,3 +1,4 @@
+import { formatDate, formatHour } from '../../../../../../../lib/assets/formatTime';
 import style from './MoreInfoModal.module.css'
 
 
@@ -17,8 +18,8 @@ const MoreInfoModal = ({modalActivate, close})=>{
                 </h4>
                 <p className={style.modal_text}>{modalActivate.event.description}</p>
                 <div className={style.date_container}>
-                    <div><i className="far fa-calendar-alt"></i><p>{`${modalActivate.time.day}/${modalActivate.time.month + 1}/${modalActivate.time.year}`}</p></div>
-                    <div><i className="far fa-clock"></i><p>{`${modalActivate.time.hour}:${modalActivate.time.minute}`}</p></div>
+                    <div><i className="far fa-calendar-alt"></i><p>{`${formatDate(modalActivate.event.date_from)}`}</p></div>
+                    <div><i className="far fa-clock"></i><p>{`${formatHour(modalActivate.event.date_from)}`}</p></div>
                 </div>
                 {!modalActivate.isNext && (
                         <button 

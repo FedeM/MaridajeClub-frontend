@@ -25,7 +25,14 @@ const Home = ({setEnterEvent, allEvents}) => {
     const [lastEvent, setLastEvent] = useState(false)
     const [nextEvent, setNextEvent] = useState(false)
     //En este array guardaremos todos los eventos anteriores al día de la fecha
-    const [events, setEvents] = useState(allEvents)
+    const [events, setEvents] = useState(allEvents.filter(e => {
+        let date_from = new Date(e.date_from)
+
+        if(date_from < new Date()){
+            return true
+        }
+        return false
+    }))
     const [helpOpacity, setHelpOpacity] = useState(0)
 
     const fillLiveEnter = (allEvents)=>{
@@ -48,7 +55,8 @@ const Home = ({setEnterEvent, allEvents}) => {
                 lastDate = date_from;
                 setLastEvent(e)
             }
-
+            
+            //Verificamos cual es el próximo evento 
             if (date_from > currentDate && date_from < mostNextDate && !(date_from <= currentDate && date_to >= currentDate)) {
                 mostNextDate = date_from
                 setNextEvent(e)
@@ -95,10 +103,10 @@ const Home = ({setEnterEvent, allEvents}) => {
                             homeEvent={homeEvent}
                         />
                     </div>
-                    {/* <SliderDesktop
+                    <SliderDesktop
                         setEnterEvent={setEnterEvent}
                         events={events}
-                    /> */}
+                    />
                 </BrowserView>
                 <MobileView>
                     <div className={style.about_text_container} id="home">
@@ -116,10 +124,10 @@ const Home = ({setEnterEvent, allEvents}) => {
                         helpOpacity={helpOpacity}
                         homeEvent={homeEvent}
                     />
-                    {/* <SliderResponsive
+                    <SliderResponsive
                         setEnterEvent={setEnterEvent}
                         events={events}
-                    /> */}
+                    />
                 </MobileView>
             </div>
         </section>
