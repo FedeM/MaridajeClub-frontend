@@ -51,20 +51,16 @@ const NavDesktop = ({logo, home,cart, quantity, user}) => {
                                         </Link>
                                     )
                                 }
-                                {
-                                    cart && isAuthenticate() &&(
-                                        <Link href={'/cart'}>
-                                            <a className={`${styles.navDesktop_nav_li}`} title='Carrito'>
-                                                {
-                                                    quantity > 0 &&(
-                                                        <span className={styles.cart_marker}>{quantity}</span>
-                                                    )
-                                                }
-                                                <i className="fas fa-shopping-cart"></i>
-                                            </a>
-                                        </Link>
-                                    )
-                                }
+                                <Link href={'/cart'}>
+                                    <a className={`${styles.navDesktop_nav_li}`} title='Carrito'>
+                                        {
+                                            quantity > 0 &&(
+                                                <span className={styles.cart_marker}>{quantity}</span>
+                                            )
+                                        }
+                                        <i className="fas fa-shopping-cart"></i>
+                                    </a>
+                                </Link>
                             </>
                         )
                         :
@@ -75,22 +71,16 @@ const NavDesktop = ({logo, home,cart, quantity, user}) => {
                                         <i className="fas fa-home"></i>
                                     </a>
                                 </Link>
-                                {
-                                    cart && isAuthenticate() &&(
-                                        <>
-                                            <Link href={'/cart'}>
-                                                <a className={`${styles.navDesktop_nav_li}`} title='Carrito'>
-                                                    {
-                                                        quantity > 0 &&(
-                                                            <span className={styles.cart_marker}>{quantity}</span>
-                                                        )
-                                                    }
-                                                    <i className="fas fa-shopping-cart"></i>
-                                                </a>
-                                            </Link>
-                                        </>
-                                    )
-                                }
+                                <Link href={'/cart'}>
+                                    <a className={`${styles.navDesktop_nav_li}`} title='Carrito'>
+                                        {
+                                            quantity > 0 &&(
+                                                <span className={styles.cart_marker}>{quantity}</span>
+                                            )
+                                        }
+                                        <i className="fas fa-shopping-cart"></i>
+                                    </a>
+                                </Link>
                             </>
                         )
                     }

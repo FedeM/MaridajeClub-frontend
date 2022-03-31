@@ -9,7 +9,7 @@ import Router from "next/router";
 import Image from 'next/image'
 
 
-const NavMobile = ({logo, home, cart, quantity, user}) => {
+const NavMobile = ({logo, home, quantity, user}) => {
     const [openMenu, setOpenMenu] = useState(false);
 
     const displayMenu = ()=>{
@@ -44,18 +44,14 @@ const NavMobile = ({logo, home, cart, quantity, user}) => {
                     />
                 </div>
                 <div className={styles.navMobile_bar_content}>
-                    {
-                        isAuthenticate() && cart &&(
-                            <div className={styles.cart_icon} onClick={()=> Router.push('/cart')}>
-                                {
-                                    quantity > 0 &&(
-                                        <span className={styles.cart_marker}>{quantity}</span>
-                                    )
-                                }
-                                <Image src="/assets/img/icon/cart.png" alt="icono carrito" layout='fill' objectFit='contain'/>
-                            </div>
-                        )
-                    }
+                    <div className={styles.cart_icon} onClick={()=> Router.push('/cart')}>
+                        {
+                            quantity > 0 &&(
+                                <span className={styles.cart_marker}>{quantity}</span>
+                            )
+                        }
+                        <Image src="/assets/img/icon/cart.png" alt="icono carrito" layout='fill' objectFit='contain'/>
+                    </div>
                     <div className={`${styles.navMobile_menu} `} onClick={()=> displayMenu()} id="navMobile_menu">
                         <span></span>
                     </div>
