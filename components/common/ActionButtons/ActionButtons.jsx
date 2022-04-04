@@ -1,11 +1,22 @@
-import React from 'react';
-import style from './ActionButtons.module.css'
+import ActionButton from '../ActionButton/ActionButton';
+import CloseButton from '../CloseButton/CloseButton';
+import localStyle from './ActionButtons.module.css'
 
-const ActionButtons = ({close, textAction}) => {
+
+
+const ActionButtons = ({style, closeStyle, textClose, close, actionStyle, textAction, action}) => {
     return (
-        <div className={style.container}>
-            <div className={style.button} onClick={close}>Cerrar</div>
-            <button type='submit' className={style.button}><span>{textAction}</span></button>
+        <div className={localStyle.container} style={style}>
+            <CloseButton
+                action={close}
+                text={textClose}
+                style={closeStyle}
+            />
+            <ActionButton
+                action={action}
+                text={textAction}
+                style={{marginLeft: "10px"}}
+            />
         </div>    
     );
 };

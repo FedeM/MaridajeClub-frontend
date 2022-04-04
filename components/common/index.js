@@ -8,7 +8,10 @@ export {default as DataUser} from './DataUser/DataUser.jsx'
 export {default as PurchaseItem} from './PurchaseItem/PurchaseItem.jsx'
 export {default as TableProducts} from './TableProducts/TableProducts.jsx'
 export {default as ErrorInput} from './ErrorInput/ErrorInput.jsx'
-export {default as ActionButtons} from './ActionButtons/ActionButtons.jsx'
 export {default as LoadingTab} from './LoadingTab/LoadingTab.jsx'
 export {default as CartPoppup} from './CartPoppup/CartPoppup.jsx'
+export {default as ActionButtons} from './ActionButtons/ActionButtons.jsx'
+export {default as CloseButton} from './CloseButton/CloseButton.jsx'
+export {default as ActionButton} from './ActionButton/ActionButton.jsx'
+
 

@@ -6,11 +6,13 @@ import Link from 'next/link'
 import Router from "next/router";
 import Image from 'next/image'
 import {isAuthenticate} from '../../../../lib/auth'
+import { CartPoppup } from '../../../common';
+import { useState } from 'react';
 
 
 
 const NavDesktop = ({logo, home,cart, quantity, user}) => {
-    
+    const [cartPoppup, setCartPoppup] = useState(false)
 
     return (
         <div className={styles.navDesktop_container}>
@@ -51,16 +53,16 @@ const NavDesktop = ({logo, home,cart, quantity, user}) => {
                                         </Link>
                                     )
                                 }
-                                <Link href={'/cart'}>
-                                    <a className={`${styles.navDesktop_nav_li}`} title='Carrito'>
+                                <div onClick={()=> setCartPoppup(true)}>
+                                    <div className={`${styles.navDesktop_nav_li}`} title='Carrito'>
                                         {
                                             quantity > 0 &&(
                                                 <span className={styles.cart_marker}>{quantity}</span>
                                             )
                                         }
                                         <i className="fas fa-shopping-cart"></i>
-                                    </a>
-                                </Link>
+                                    </div>
+                                </div>
                             </>
                         )
                         :
@@ -86,6 +88,13 @@ const NavDesktop = ({logo, home,cart, quantity, user}) => {
                     }
                 </ul>
             </nav>
+            {
+                cartPoppup &&(
+                    <CartPoppup
+                        close={()=> setCartPoppup(false)}
+                    />
+                )
+            }
         </div>
     );
 };

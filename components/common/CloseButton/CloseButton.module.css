@@ -1,0 +1,7 @@
+.container{
+    background-color: var(--global-error);
+    width: max-content;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}

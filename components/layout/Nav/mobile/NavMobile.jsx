@@ -12,6 +12,8 @@ import { CartPoppup } from '../../../common';
 
 const NavMobile = ({logo, home, quantity, user}) => {
     const [openMenu, setOpenMenu] = useState(false);
+    const [cartPoppup, setCartPoppup] = useState(false)
+
 
     const displayMenu = ()=>{
         const navMobile = document.getElementById('navMobile_nav')
@@ -45,7 +47,7 @@ const NavMobile = ({logo, home, quantity, user}) => {
                     />
                 </div>
                 <div className={styles.navMobile_bar_content}>
-                    <div className={styles.cart_icon} onClick={()=> Router.push('/cart')}>
+                    <div className={styles.cart_icon} onClick={()=> setCartPoppup(true)}>
                         {
                             quantity > 0 &&(
                                 <span className={styles.cart_marker}>{quantity}</span>
@@ -113,7 +115,13 @@ const NavMobile = ({logo, home, quantity, user}) => {
                 </nav>
                 ):("")
             }
-            <CartPoppup/>
+            {
+                cartPoppup &&(
+                    <CartPoppup
+                        close={()=> setCartPoppup(false)}
+                    />
+                )
+            }
         </div>
     );
 };
