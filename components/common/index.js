@@ -10,4 +10,5 @@ export {default as TableProducts} from './TableProducts/TableProducts.jsx'
 export {default as ErrorInput} from './ErrorInput/ErrorInput.jsx'
 export {default as ActionButtons} from './ActionButtons/ActionButtons.jsx'
 export {default as LoadingTab} from './LoadingTab/LoadingTab.jsx'
+export {default as CartPoppup} from './CartPoppup/CartPoppup.jsx'
 

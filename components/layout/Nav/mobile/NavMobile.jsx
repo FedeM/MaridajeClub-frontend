@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { isAuthenticate } from '../../../../lib/auth';
 import Router from "next/router";
 import Image from 'next/image'
+import { CartPoppup } from '../../../common';
 
 
 const NavMobile = ({logo, home, quantity, user}) => {
@@ -112,6 +113,7 @@ const NavMobile = ({logo, home, quantity, user}) => {
                 </nav>
                 ):("")
             }
+            <CartPoppup/>
         </div>
     );
 };
