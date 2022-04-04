@@ -141,7 +141,13 @@ const AddProduct = ({close, setProducts, products}) => {
                             </div>
                         </div>
                         <div className={style.btnContainer}>
-                            <ActionButtons close={close} textAction={"Añadir"}/>
+                        <ActionButtons
+                            style={{marginTop: "15px"}}
+                            textClose={"Cerrar"}
+                            close={()=> close()}
+                            textAction={"Comprar"}
+                            action={()=> console.log("")}
+                        />
                         </div>   
                     </Form>
                 )
