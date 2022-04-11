@@ -2,18 +2,20 @@ import styles from './NavMobile.module.css'
 import {
     Link as LinkScroll
 } from 'react-scroll'
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Link from 'next/link'
 import { isAuthenticate } from '../../../../lib/auth';
 import Router from "next/router";
 import Image from 'next/image'
 import { CartPoppup } from '../../../common';
-import { getQuantity } from '../../../../lib/cart';
+import CartContext from '../../../../context/cartContext';
 
 
 const NavMobile = ({logo, home, quantity, user}) => {
     const [openMenu, setOpenMenu] = useState(false);
     const [cartPoppup, setCartPoppup] = useState(false)
+    const {countCart} = useContext(CartContext)
+
 
 
     const displayMenu = ()=>{
@@ -50,8 +52,8 @@ const NavMobile = ({logo, home, quantity, user}) => {
                 <div className={styles.navMobile_bar_content}>
                     <div className={styles.cart_icon} onClick={()=> setCartPoppup(true)}>
                         {
-                            getQuantity() > 0 &&(
-                                <span className={styles.cart_marker}>{getQuantity()}</span>
+                            countCart > 0 &&(
+                                <span className={styles.cart_marker}>{countCart}</span>
                             )
                         }
                         <Image src="/assets/img/icon/cart.png" alt="icono carrito" layout='fill' objectFit='contain'/>

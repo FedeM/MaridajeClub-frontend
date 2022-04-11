@@ -5,12 +5,13 @@ import { faChevronDown, faChevronUp, faTrash, faXmark } from '@fortawesome/free-
 import Image from 'next/image';
 import ActionButtons from '../ActionButtons/ActionButtons';
 import Router from 'next/router';
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import CartContext from '../../../context/cartContext';
+import CloseButton from '../CloseButton/CloseButton';
 
 
 const CartPoppup = ({close}) => {
-    const {cartItems, priceTotal} = useContext(CartContext)
+    const {cartItems, priceTotal, deleteItemToCart} = useContext(CartContext)
 
 
     return (
@@ -43,7 +44,7 @@ const CartPoppup = ({close}) => {
                                         </div>
                                         <span>${e.sale_price}</span>
                                     </div>
-                                    <FontAwesomeIcon icon={faTrash} className={style.trash}/>
+                                    <FontAwesomeIcon icon={faTrash} className={style.trash} onClick={()=> deleteItemToCart(e.id)}/>
                                 </div>
                             ))
                         }

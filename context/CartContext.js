@@ -28,6 +28,21 @@ export function CartContextProvider({children}) {
             }
         }
     }) 
+    const [countCart, setCountCart] = useState(()=>{
+        if (typeof window !== 'undefined') {
+            if (localStorage.getItem("cartProducts")) {
+                //Recorremos el carrito
+                let _count = 0
+                cartItems.map(item=>{
+                    //El precio total es igual al valor de precio total + precio del producto multiplicadp por la cantidad
+                    _count = _count + item.quantity
+                })  
+                return _count     
+            }else{
+                return 0
+            }
+        }
+    })
 
     useEffect(()=>{
         localStorage.setItem('cartProducts', JSON.stringify(cartItems))
@@ -48,6 +63,7 @@ export function CartContextProvider({children}) {
             const pro = cartItems.map(product=>{
                 if (product.id === item.id) {
                     product.quantity+= item.quantity
+                    setCountCart(countCart + item.quantity)
                     return product
                 }else{
                     return product
@@ -56,29 +72,26 @@ export function CartContextProvider({children}) {
             setCartItems([...pro])
         }else{
             setCartItems([...cartItems, item])
+            setCountCart(countCart + item.quantity)
         }
     }
 
-    const deleteItemToCart = (product)=>{
-        const exist = cartItems.find(item=>{ product.id === item.id})
-
-        if (exist.quantity === 1) {
-            setCartItems(cartItems.filter(item => item.id !== product.id))
-        }else{
-            setCartItems(item=>{
-                if (item.id === product.id) {
-                    return {...exist, quantity: exist.quantity -1}
-                }else{
-                    return item
-                }
-            })
-        }
+    const deleteItemToCart = (idProduct)=>{
+        cartItems.map(item=>{
+            if (item.id === idProduct) {
+                let priceReduce = item.sale_price * item.quantity
+                setPriceTotal(priceTotal - priceReduce)
+                setCountCart(countCart - item.quantity)
+            }
+        })
+        setCartItems(cartItems.filter(item => item.id !== idProduct))
+        localStorage.setItem("cartProducts", JSON.stringify(cartItems));
     }
 
 
 
     return (
-        <CartContext.Provider value={{priceTotal, cartItems, addItemToCart, deleteItemToCart}}>
+        <CartContext.Provider value={{countCart, priceTotal, cartItems, addItemToCart, deleteItemToCart}}>
             {children}
         </CartContext.Provider>
     )

@@ -7,13 +7,15 @@ import Router from "next/router";
 import Image from 'next/image'
 import {isAuthenticate} from '../../../../lib/auth'
 import { CartPoppup } from '../../../common';
-import { useState } from 'react';
-import { getQuantity } from '../../../../lib/cart';
+import { useState, useContext } from 'react';
+import CartContext from '../../../../context/cartContext';
 
 
 
 const NavDesktop = ({logo, home,cart, quantity, user}) => {
     const [cartPoppup, setCartPoppup] = useState(false)
+    const {countCart} = useContext(CartContext)
+
 
     const displayCart = ()=>{
         if (cartPoppup) {
@@ -65,8 +67,8 @@ const NavDesktop = ({logo, home,cart, quantity, user}) => {
                                 <div onClick={()=> displayCart()}>
                                     <div className={`${styles.navDesktop_nav_li}`} title='Carrito'>
                                         {
-                                            getQuantity() > 0 &&(
-                                                <span className={styles.cart_marker}>{getQuantity()}</span>
+                                            countCart > 0 &&(
+                                                <span className={styles.cart_marker}>{countCart}</span>
                                             )
                                         }
                                         <i className="fas fa-shopping-cart"></i>
