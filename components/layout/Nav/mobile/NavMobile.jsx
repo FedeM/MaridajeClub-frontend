@@ -8,6 +8,7 @@ import { isAuthenticate } from '../../../../lib/auth';
 import Router from "next/router";
 import Image from 'next/image'
 import { CartPoppup } from '../../../common';
+import { getQuantity } from '../../../../lib/cart';
 
 
 const NavMobile = ({logo, home, quantity, user}) => {
@@ -49,8 +50,8 @@ const NavMobile = ({logo, home, quantity, user}) => {
                 <div className={styles.navMobile_bar_content}>
                     <div className={styles.cart_icon} onClick={()=> setCartPoppup(true)}>
                         {
-                            quantity > 0 &&(
-                                <span className={styles.cart_marker}>{quantity}</span>
+                            getQuantity() > 0 &&(
+                                <span className={styles.cart_marker}>{getQuantity()}</span>
                             )
                         }
                         <Image src="/assets/img/icon/cart.png" alt="icono carrito" layout='fill' objectFit='contain'/>
@@ -80,15 +81,6 @@ const NavMobile = ({logo, home, quantity, user}) => {
                                                     Perfil
                                                 </a>
                                             </Link>
-                                            {/* {
-                                                user.role === 0 &&(
-                                                    <Link href={'/admin'} onClick={()=> displayMenu()}>
-                                                        <a className={`${styles.navMobile_nav_li}`}>
-                                                            Administración
-                                                        </a>
-                                                    </Link>
-                                                )
-                                            } */}
                                         </>
                                     ):(
                                         <Link href={'/session'} onClick={()=> displayMenu()}>

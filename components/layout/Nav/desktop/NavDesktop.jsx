@@ -8,6 +8,7 @@ import Image from 'next/image'
 import {isAuthenticate} from '../../../../lib/auth'
 import { CartPoppup } from '../../../common';
 import { useState } from 'react';
+import { getQuantity } from '../../../../lib/cart';
 
 
 
@@ -64,8 +65,8 @@ const NavDesktop = ({logo, home,cart, quantity, user}) => {
                                 <div onClick={()=> displayCart()}>
                                     <div className={`${styles.navDesktop_nav_li}`} title='Carrito'>
                                         {
-                                            quantity > 0 &&(
-                                                <span className={styles.cart_marker}>{quantity}</span>
+                                            getQuantity() > 0 &&(
+                                                <span className={styles.cart_marker}>{getQuantity()}</span>
                                             )
                                         }
                                         <i className="fas fa-shopping-cart"></i>
@@ -84,8 +85,8 @@ const NavDesktop = ({logo, home,cart, quantity, user}) => {
                                 <div onClick={()=> displayCart()}>
                                     <div className={`${styles.navDesktop_nav_li}`} title='Carrito'>
                                         {
-                                            quantity > 0 &&(
-                                                <span className={styles.cart_marker}>{quantity}</span>
+                                            getQuantity() > 0 &&(
+                                                <span className={styles.cart_marker}>{getQuantity()}</span>
                                             )
                                         }
                                         <i className="fas fa-shopping-cart"></i>

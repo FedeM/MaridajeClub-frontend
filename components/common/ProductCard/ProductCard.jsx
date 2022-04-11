@@ -1,8 +1,8 @@
 import styles from './ProductCard.module.css';
 import Image from 'next/image'
 import Router from 'next/router';
-import { useEffect } from 'react';
-import { addProduct} from '../../../lib/cart';
+import { useContext, useEffect } from 'react';
+import CartContext from '../../../context/cartContext';
 
 const isServer = typeof window === 'undefined'
 const WOW = !isServer ? require('wow.js') : null
@@ -11,6 +11,7 @@ const WOW = !isServer ? require('wow.js') : null
 const ProductCard = ({product, cart = true}) => {
 
     const {id, name, description, sale_price, feature_img} = product;
+    const {addItemToCart} = useContext(CartContext)
 
     const openDescription =(e)=>{
         e.target.parentNode.classList.add(`${styles.description_hidden}`)
@@ -43,7 +44,7 @@ const ProductCard = ({product, cart = true}) => {
                             <div className={styles.button} onClick={()=> Router.push(`/shopping/${id}`)}>
                                 <span>Ver más</span>
                             </div>
-                            <div className={styles.button} onClick={()=> addProduct(product)}>
+                            <div className={styles.button} onClick={()=> addItemToCart(product)}>
                                 <i className="fas fa-cart-arrow-down"></i>
                             </div>
                         </div>

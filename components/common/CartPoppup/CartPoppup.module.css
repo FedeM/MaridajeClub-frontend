@@ -41,6 +41,8 @@
 .product{
     display: flex;
     padding: 5px 0;
+    align-items: center;
+    justify-content: space-between;
     border-bottom: 1px solid var(--global-gray3);
 }
 
@@ -54,6 +56,10 @@
 
 .productInfo{
     margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
 }
 
 .quantityContainer{
@@ -68,6 +74,11 @@
 }
 .arrow{
     cursor: pointer;
+}
+
+.trash{
+    cursor: pointer;
+    color: var(--global-error);
 }
 
 .totalPrice h5{
