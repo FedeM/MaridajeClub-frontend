@@ -1,5 +1,4 @@
 import style from './CartPoppup.module.css'
-import CloseButton from '../CloseButton/CloseButton';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp, faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -35,6 +34,10 @@ const CartPoppup = ({close}) => {
                         </div>
                         <span>$300</span>
                     </div>
+                </div>
+                <div className={style.totalPrice}>
+                    <h5>Total</h5>
+                    <span>$300</span>
                 </div>
                 <ActionButtons
                     style={{marginTop: "15px"}}

@@ -14,6 +14,14 @@ import { useState } from 'react';
 const NavDesktop = ({logo, home,cart, quantity, user}) => {
     const [cartPoppup, setCartPoppup] = useState(false)
 
+    const displayCart = ()=>{
+        if (cartPoppup) {
+            setCartPoppup(false)
+        }else{
+            setCartPoppup(true)
+        }
+    }
+
     return (
         <div className={styles.navDesktop_container}>
             <div className={styles.navDesktop_logo_container} onClick={()=> Router.push('/')}>
@@ -53,7 +61,7 @@ const NavDesktop = ({logo, home,cart, quantity, user}) => {
                                         </Link>
                                     )
                                 }
-                                <div onClick={()=> setCartPoppup(true)}>
+                                <div onClick={()=> displayCart()}>
                                     <div className={`${styles.navDesktop_nav_li}`} title='Carrito'>
                                         {
                                             quantity > 0 &&(
@@ -73,16 +81,16 @@ const NavDesktop = ({logo, home,cart, quantity, user}) => {
                                         <i className="fas fa-home"></i>
                                     </a>
                                 </Link>
-                                <Link href={'/cart'}>
-                                    <a className={`${styles.navDesktop_nav_li}`} title='Carrito'>
+                                <div onClick={()=> displayCart()}>
+                                    <div className={`${styles.navDesktop_nav_li}`} title='Carrito'>
                                         {
                                             quantity > 0 &&(
                                                 <span className={styles.cart_marker}>{quantity}</span>
                                             )
                                         }
                                         <i className="fas fa-shopping-cart"></i>
-                                    </a>
-                                </Link>
+                                    </div>
+                                </div>
                             </>
                         )
                     }

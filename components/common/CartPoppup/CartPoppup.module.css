@@ -69,3 +69,12 @@
 .arrow{
     cursor: pointer;
 }
+
+.totalPrice h5{
+    font-size: 1rem;
+    margin-top: 5px;
+}
+.totalPrice span{
+    font-size: 1.3rem;
+    font-weight: 700;
+}

@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Script from 'next/script'
 
 class MyDocument extends Document {
     render() {
@@ -20,6 +21,7 @@ class MyDocument extends Document {
                 <Main />
                 <NextScript />
                 
+                <Script src='../lib/cart.js' strategy='beforeInteractive'/>
                 <script src="https://kit.fontawesome.com/af9ea1f796.js" crossorigin="anonymous"></script>
                 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
                 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

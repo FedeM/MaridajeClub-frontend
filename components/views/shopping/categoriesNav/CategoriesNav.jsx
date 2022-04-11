@@ -23,7 +23,7 @@ const CategoriesNav = ({setFilterBy, filterBy, categories}) => {
                 </div>
                 {
                     categories.map((e,i)=>(
-                        <div key={i} className={style.item} onClick={()=> setFilterBy({...filterBy, category: e.id, name: "Todo"})}>
+                        <div key={i} className={style.item} onClick={()=> setFilterBy({...filterBy, category: e.id, name: e.name})}>
                             <Image src={e.image} width={'70%'} height={50} objectFit='contain' alt="Categoría icono"  draggable="false"/>
                             <p>{e.name}</p>
                         </div>
