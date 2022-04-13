@@ -2,12 +2,13 @@ import style from './Article.module.css'
 import Image from 'next/image'
 import { useState } from 'react';
 
-const Article = ({id, img, name, price, quantity, width, updateQuantity, removeProduct}) => {
+const Article = ({item, width, updateItem, deleteItemToCart}) => {
+    const {id, feature_img, name, quantity, price} = item
 
     return (
         <div className={style.article_content} style={{width:`${width}%`}}>
             <div className={style.article_img}>
-                <Image src={img} layout='fill' objectFit='cover' priority alt={name}/>
+                <Image src={feature_img} layout='fill' objectFit='cover' priority alt={name}/>
             </div>
             <div className={style.article_info}>
                 <div className={style.article_name}>
@@ -16,14 +17,14 @@ const Article = ({id, img, name, price, quantity, width, updateQuantity, removeP
                 <div className={style.article_quantity}>
                     <div>{quantity}</div>
                     <div className={style.counters}>
-                        <i className="fas fa-chevron-circle-up" onClick={()=> updateQuantity(id, true)}></i>
-                        <i className="fas fa-chevron-circle-down" onClick={()=> updateQuantity(id, false)}></i>
+                        <i className="fas fa-chevron-circle-up" onClick={()=> updateItem("AUMENTAR", item)}></i>
+                        <i className="fas fa-chevron-circle-down" onClick={()=> updateItem("REDUCIR",item)}></i>
                     </div>
                 </div>
                 <div className={style.article_price}>
                     <span>${price}</span>
                 </div>
-                <div className={style.trash_article} onClick={()=> removeProduct(id)}>
+                <div className={style.trash_article} onClick={()=> deleteItemToCart(id)}>
                     <i className="fas fa-trash"></i>
                 </div>
             </div>

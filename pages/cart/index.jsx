@@ -1,5 +1,5 @@
 import Router from 'next/router';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Layout } from '../../components/layout'
 import { ListArticles, Checkout } from '../../components/views';
 
@@ -7,10 +7,12 @@ import { user } from '../../lib/user';
 
 import style from '../../styles/pages/Cart.module.css'
 import Image from 'next/image'
+import CartContext from '../../context/cartContext';
 
 
 const Index = () => {
-    const [cart, setCart] = useState(user.cart)
+    const {cartItems, countCart, priceTotal, deleteItemToCart, updateItem} = useContext(CartContext)
+    console.log(countCart)
 
     return (
         <Layout
@@ -21,12 +23,14 @@ const Index = () => {
             <article className={style.article}>
                 <section className={style.cart_section}>
                 {
-                    cart.length > 0 ?(
+                    countCart > 0 ?(
                         <>
                             <div className={style.side}>
                                 <ListArticles
-                                    cart={cart}
-                                    setCart={setCart}
+                                    cartItems={cartItems}
+                                    priceTotal={priceTotal}
+                                    deleteItemToCart={deleteItemToCart}
+                                    updateItem={updateItem}
                                 />
                             </div>
                             <div className={style.side}>

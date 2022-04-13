@@ -5,53 +5,13 @@ import { useEffect, useState } from 'react';
 import { isMobile } from 'react-device-detect';
 import { Article } from '../../../common';
 
-const ListArticles = ({cart, setCart}) => {
+const ListArticles = ({cartItems, priceTotal, deleteItemToCart, updateItem}) => {
     const [mounted, setMounted] = useState(false)
-    const [priceTotal, setPriceTotal] = useState()
-
-    const updateQuantity = (id, type)=>{
-        const newCart = cart.map(product =>{
-            if (product.id === id) {
-                if (type) {
-                    return {
-                        ...product,
-                        quantity: product.quantity +1
-                    }
-                }else{
-                    if (product.quantity > 1) {
-                        return {
-                            ...product,
-                            quantity: product.quantity -1
-                        }
-                    }
-                }
-            }
-            return product
-        })
-
-        setCart(newCart)
-    }
-
-    const removeProduct = (id)=>{
-        const newCart = cart.filter(product => product.id !== id);
-        setCart(newCart);
-    }
-
-    const updatePrice = ()=>{
-        let price = 0;
-        cart.map(product=>{
-            price += product.price * product.quantity
-        })
-
-        return price;
-    }
 
     useEffect(()=>{
-        setPriceTotal(updatePrice())
         setMounted(true)
-
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [cart, mounted])
+    }, [cartItems, mounted])
 
     return mounted && (
         <div className={style.articles_desktop_container}>
@@ -63,17 +23,13 @@ const ListArticles = ({cart, setCart}) => {
             </div>
             <div className={style.articles_container}>
             {
-                cart.map((e,i)=>(
+                cartItems.map((e,i)=>(
                     <Article
                         key={i}
-                        id={e.id}
+                        item={e}
                         width={isMobile ? (95):(90) }
-                        img={e.img}
-                        name={e.name}
-                        price={e.price}
-                        quantity={e.quantity}
-                        updateQuantity={updateQuantity}
-                        removeProduct={removeProduct}
+                        updateItem={updateItem}
+                        deleteItemToCart={deleteItemToCart}
                     />
                 ))
             }

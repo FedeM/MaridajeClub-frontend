@@ -1,13 +1,12 @@
 import { NavBar, Footer } from "../";
 import Head from "next/head";
 import style from './Layout.module.css'
-import { CartContextProvider } from "../../../context/cartContext";
 
 
 const Layout = ({children, title, description, home, cart, nav, footer}) => { 
     
     return (
-        <CartContextProvider>
+        <>
             <Head>
                 <title>{title}</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -33,7 +32,7 @@ const Layout = ({children, title, description, home, cart, nav, footer}) => {
                     <Footer/>
                 )
             }
-        </CartContextProvider>
+        </>
     );
 };
 
