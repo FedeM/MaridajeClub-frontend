@@ -88,10 +88,42 @@ export function CartContextProvider({children}) {
         localStorage.setItem("cartProducts", JSON.stringify(cartItems));
     }
 
+    const updateItem = (action, item)=>{
 
+
+        if (action === "AUMENTAR") {
+            const pro = cartItems.map(product=>{
+                if (product.id === item.id) {
+                    product.quantity+= 1
+                    setPriceTotal(priceTotal + product.sale_price)
+                    setCountCart(countCart + 1)
+                    return product
+                }else{
+                    return product
+                }
+            })
+            setCartItems([...pro])
+        }else if(action === "REDUCIR"){
+            if (item.quantity > 1) {
+                const pro = cartItems.map(product=>{
+                    if (product.id === item.id) {
+                        product.quantity-= 1
+                        setPriceTotal(priceTotal - product.sale_price)
+                        setCountCart(countCart - 1)
+                        return product
+                    }else{
+                        return product
+                    }
+                })
+                setCartItems([...pro])
+            }else{
+                deleteItemToCart(item.id)
+            }
+        }
+    }
 
     return (
-        <CartContext.Provider value={{countCart, priceTotal, cartItems, addItemToCart, deleteItemToCart}}>
+        <CartContext.Provider value={{countCart, priceTotal, cartItems, addItemToCart, deleteItemToCart, updateItem}}>
             {children}
         </CartContext.Provider>
     )

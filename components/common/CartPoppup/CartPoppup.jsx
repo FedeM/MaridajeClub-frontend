@@ -11,7 +11,7 @@ import CloseButton from '../CloseButton/CloseButton';
 
 
 const CartPoppup = ({close}) => {
-    const {cartItems, priceTotal, deleteItemToCart} = useContext(CartContext)
+    const {cartItems, priceTotal, deleteItemToCart, updateItem} = useContext(CartContext)
 
 
     return (
@@ -38,8 +38,16 @@ const CartPoppup = ({close}) => {
                                         <div className={style.quantityContainer}>
                                             <span>{e.quantity}</span>
                                             <div className={style.quantityArrows}>
-                                                <FontAwesomeIcon icon={faChevronUp} className={style.arrow}/>
-                                                <FontAwesomeIcon icon={faChevronDown} className={style.arrow}/>
+                                                <FontAwesomeIcon 
+                                                    icon={faChevronUp} 
+                                                    className={style.arrow}
+                                                    onClick={()=> updateItem("AUMENTAR", e)}
+                                                />
+                                                <FontAwesomeIcon 
+                                                    icon={faChevronDown} 
+                                                    className={style.arrow}
+                                                    onClick={()=> updateItem("REDUCIR", e)}
+                                                />
                                             </div>
                                         </div>
                                         <span>${e.sale_price}</span>

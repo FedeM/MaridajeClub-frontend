@@ -87,8 +87,8 @@ const NavDesktop = ({logo, home,cart, quantity, user}) => {
                                 <div onClick={()=> displayCart()}>
                                     <div className={`${styles.navDesktop_nav_li}`} title='Carrito'>
                                         {
-                                            getQuantity() > 0 &&(
-                                                <span className={styles.cart_marker}>{getQuantity()}</span>
+                                            countCart > 0 &&(
+                                                <span className={styles.cart_marker}>{countCart}</span>
                                             )
                                         }
                                         <i className="fas fa-shopping-cart"></i>
