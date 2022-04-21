@@ -21,7 +21,6 @@ export function CartContextProvider({children}) {
                     //El precio total es igual al valor de precio total + precio del producto multiplicadp por la cantidad
                     _price = _price + item.sale_price * item.quantity
                 })
-                console.log(_price)
                 return _price
             }else{
                 return 0.00
@@ -46,7 +45,6 @@ export function CartContextProvider({children}) {
 
     useEffect(()=>{
         localStorage.setItem('cartProducts', JSON.stringify(cartItems))
-        console.log(cartItems)
     }, [cartItems])
 
     const addItemToCart = (item)=>{

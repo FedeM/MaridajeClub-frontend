@@ -10,7 +10,6 @@ const EventDesktop = ({submitPost, posts, handleChange, close, event}) => {
     })
     const [paused, setPaused] = useState(false)
     const [products, setProducts] = useState([])
-    console.log(event.eventId)
 
     useEffect(()=>{
         Promise.all([

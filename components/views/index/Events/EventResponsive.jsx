@@ -9,7 +9,6 @@ const EventResponsive = ({submitPost, posts, handleChange, close, event}) => {
     const [openShop, setOpenShop] = useState(false)
     const [paused, setPaused] = useState(false)
     const [products, setProducts] = useState([])
-    console.log(event.eventId)
 
     useEffect(()=>{
         Promise.all([

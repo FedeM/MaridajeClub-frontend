@@ -1,7 +1,4 @@
 import styles from './NavMobile.module.css'
-import {
-    Link as LinkScroll
-} from 'react-scroll'
 import { useContext, useState } from 'react';
 import Link from 'next/link'
 import { isAuthenticate } from '../../../../lib/auth';
@@ -9,9 +6,12 @@ import Router from "next/router";
 import Image from 'next/image'
 import { CartPoppup } from '../../../common';
 import CartContext from '../../../../context/cartContext';
+import { useRouter } from 'next/router';
 
 
 const NavMobile = ({logo, home, quantity, user}) => {
+    const {pathname} = useRouter()
+
     const [openMenu, setOpenMenu] = useState(false);
     const [cartPoppup, setCartPoppup] = useState(false)
     const {countCart} = useContext(CartContext)
@@ -68,43 +68,35 @@ const NavMobile = ({logo, home, quantity, user}) => {
                 (
                 <nav className={ `${styles.navMobile_nav} animate__animated animate__slideInDown animate__faster`} id="navMobile_nav">
                     <ul>
-                    {
-                        home ? 
-                        (
-                            <>
-                                <LinkScroll className={`${styles.navMobile_nav_li} ${styles.activeMobileLink}`} activeClass="activeMobileLink"  to="home"  spy={true} onClick={()=> displayMenu()}>Inicio</LinkScroll>
-                                <LinkScroll className={`${styles.navMobile_nav_li}`} activeClass="activeMobileLink"  to="about"  spy={true} onClick={()=> displayMenu()}>Nostros</LinkScroll>
-                                <LinkScroll className={`${styles.navMobile_nav_li}`} activeClass="activeMobileLink"  to="commerce"  spy={true} onClick={()=> displayMenu()}>Comprar</LinkScroll>
-                                {
-                                    isAuthenticate() ? (
-                                        <>
-                                            <Link href={'/profile/home'} onClick={()=> displayMenu()}>
-                                                <a className={`${styles.navMobile_nav_li}`}>
-                                                    Perfil
-                                                </a>
-                                            </Link>
-                                        </>
-                                    ):(
-                                        <Link href={'/session'} onClick={()=> displayMenu()}>
-                                            <a className={`${styles.navMobile_nav_li}`}>
-                                                Ingresar
+                        <>
+                            <Link href={'/'} onClick={()=> displayMenu()}>
+                                <a className={`${styles.navMobile_nav_li} ${pathname === "/" &&(styles.activeClass)}`}>
+                                    Inicio
+                                </a>
+                            </Link>
+                            <Link href={'/shopping'} onClick={()=> displayMenu()}>
+                                <a className={`${styles.navMobile_nav_li } ${pathname.includes("/shopping") &&(styles.activeClass)}`}>
+                                    Comprar
+                                </a>
+                            </Link>
+                            {
+                                isAuthenticate() ? (
+                                    <>
+                                        <Link href={'/profile/home'} onClick={()=> displayMenu()}>
+                                            <a className={`${styles.navMobile_nav_li} ${pathname.includes("/profile") &&(styles.activeClass)}`}>
+                                                Perfil
                                             </a>
                                         </Link>
-                                    )
-                                }
-                            </>
-                        )
-                        :
-                        (
-                            <>
-                                <Link  onClick={()=> displayMenu()} href={'/'}>
-                                    <a className={`${styles.navMobile_nav_li}`}>
-                                        Inicio
-                                    </a>
-                                </Link>
-                            </>
-                        )
-                    }
+                                    </>
+                                ):(
+                                    <Link href={'/session'} onClick={()=> displayMenu()}>
+                                        <a className={`${styles.navMobile_nav_li} ${pathname === "/session" &&(styles.activeClass)}`}>
+                                            Ingresar
+                                        </a>
+                                    </Link>
+                                )
+                            }
+                        </>
                     </ul>
                 </nav>
                 ):("")

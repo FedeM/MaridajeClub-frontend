@@ -1,10 +1,12 @@
 import style from './ShopEventRes.module.css'
 import Image from 'next/image'
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import CartContext from '../../../../../../context/cartContext';
 
 
 const ShopEventResponsive = ({close, products}) => {
     const [classContainer, setClassContainer] = useState('animate__slideInUp')
+    const {addItemToCart} = useContext(CartContext)
 
     const hiddenTab = ()=>{
         setClassContainer('animate__slideOutDown')
@@ -30,7 +32,7 @@ const ShopEventResponsive = ({close, products}) => {
                         <div className={style.card_title}>
                             <h3>{e.name}</h3>
                         </div>
-                        <div className={style.add_cart} title='Agregar al carrito'>
+                        <div className={style.add_cart} title='Agregar al carrito' onClick={()=> addItemToCart(e)}>
                             <i className="fas fa-cart-arrow-down"></i>
                         </div>
                     </div>

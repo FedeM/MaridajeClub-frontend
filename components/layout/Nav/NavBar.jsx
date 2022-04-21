@@ -19,8 +19,7 @@ const NavBar = ({home, cart}) => {
                 <NavDesktop 
                     logo={logo} 
                     home={home} 
-                    cart={cart} 
-                    quantity={user.cart.length} 
+                    cart={cart}
                     user={user}
                 />
             </BrowserView>
@@ -28,8 +27,7 @@ const NavBar = ({home, cart}) => {
                 <NavMobile 
                     logo={logo} 
                     home={home} 
-                    cart={cart} 
-                    quantity={user.cart.length} 
+                    cart={cart}
                     user={user}
                 />
             </MobileView>

@@ -140,6 +140,7 @@
     --animation-duration: 0.2s;
 }
 
-.activeMobileLink{
-
+.activeClass{
+    border-left: 2px solid var(--global-tertiary-color);
+    border-right: 2px solid var(--global-tertiary-color);
 }
