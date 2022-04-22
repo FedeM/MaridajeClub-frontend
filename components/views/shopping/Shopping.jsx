@@ -35,7 +35,7 @@ const Shopping = ({products, categories}) => {
                 <FilterResponsive/>
                 <ProductGalery
                     title={filterBy.name} 
-                    home
+                    activeTitle
                     products={productsFilter}
                     justifyContent="center"
                 />

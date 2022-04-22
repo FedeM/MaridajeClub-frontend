@@ -43,6 +43,7 @@ export function CartContextProvider({children}) {
             }
         }
     })
+    const [showAlert, setShowAlert] = useState(false)
 
     useEffect(()=>{
         localStorage.setItem('cartProducts', JSON.stringify(cartItems))
@@ -142,7 +143,7 @@ export function CartContextProvider({children}) {
     }
 
     return (
-        <CartContext.Provider value={{countCart, priceTotal, cartItems, addItemToCart, deleteItemToCart, updateItem}}>
+        <CartContext.Provider value={{countCart, priceTotal, cartItems, addItemToCart, deleteItemToCart, updateItem, setShowAlert, showAlert}}>
             {children}
         </CartContext.Provider>
     )

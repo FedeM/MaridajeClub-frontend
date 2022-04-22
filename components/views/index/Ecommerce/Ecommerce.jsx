@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { ProductGalery } from '../../../common';
 
 
-const Ecommerce = ({id, home, allProducts}) => {
+const Ecommerce = ({id, home, activeTitle,allProducts}) => {
 
 
     return (
@@ -21,6 +21,7 @@ const Ecommerce = ({id, home, allProducts}) => {
             <div className={styles.ecommerce_container}>
                 <ProductGalery
                     home={home}
+                    activeTitle
                     title="Más vendidos"
                     products={allProducts}
                     justifyContent="center"

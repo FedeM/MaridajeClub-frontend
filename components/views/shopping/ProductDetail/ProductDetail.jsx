@@ -7,7 +7,7 @@ import Router from 'next/router';
 
 
 const ProductDetail = ({product}) => {
-    const {addItemToCart} = useContext(CartContext)
+    const {addItemToCart, setShowAlert} = useContext(CartContext)
 
     return (
         <>
@@ -39,6 +39,7 @@ const ProductDetail = ({product}) => {
                             <div className={style.add_button} onClick={()=> {
                                     addItemToCart(product)
                                     Router.push('/shopping')
+                                    setShowAlert(true)
                                 }}
                             >
                                 <span>
