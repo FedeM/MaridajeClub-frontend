@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import style from './ProductDetail.module.css'
 import Image from 'next/image'
 import { isDesktop, isMobile} from 'react-device-detect';
+import CartContext from '../../../../context/cartContext';
+import Router from 'next/router';
 
 
 const ProductDetail = ({product}) => {
-    const [quantity, setQuantity] = useState(1)
+    const {addItemToCart} = useContext(CartContext)
+
     return (
         <>
             <div className={style.productDetail_container}>                
@@ -33,23 +36,14 @@ const ProductDetail = ({product}) => {
                                 <p>{product.description}</p>
                             </div>
                             <div className={style.price}>${product.sale_price}</div>
-                            <div className={style.addToCart}>
-                                <div className={style.quantity}>
-                                    <div>{quantity}</div>
-                                    <div className={style.counters}>
-                                        <i className="fas fa-chevron-circle-up" onClick={()=> setQuantity(quantity +1)}></i>
-                                        <i className="fas fa-chevron-circle-down" onClick={()=> {
-                                            quantity > 1 ?(
-                                                setQuantity(quantity -1)
-                                            ):(quantity)
-                                        }}></i>
-                                    </div>
-                                </div>
-                                <div className={style.add_button}>
-                                    <span>
-                                        Añadir al carrito <i className="fas fa-cart-arrow-down"></i>
-                                    </span>
-                                </div>
+                            <div className={style.add_button} onClick={()=> {
+                                    addItemToCart(product)
+                                    Router.push('/shopping')
+                                }}
+                            >
+                                <span>
+                                    Añadir al carrito <i className="fas fa-cart-arrow-down"></i>
+                                </span>
                             </div>
                         </div>
                     </section>

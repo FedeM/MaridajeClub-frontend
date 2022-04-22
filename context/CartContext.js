@@ -1,8 +1,9 @@
 import react, { useEffect, useState } from 'react'
+import toast from 'react-hot-toast';
+import { faFaceFrown, faFaceGrinBeam } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const CartContext = react.createContext({
-
-})
+const CartContext = react.createContext({})
 
 export function CartContextProvider({children}) {
     const [cartItems, setCartItems] = useState(()=>{
@@ -72,6 +73,16 @@ export function CartContextProvider({children}) {
             setCartItems([...cartItems, item])
             setCountCart(countCart + item.quantity)
         }
+        toast('Producto añadido al carrito!',
+            {
+                icon: <FontAwesomeIcon icon={faFaceGrinBeam} className='iconSuccess'/>,
+                style: {
+                borderRadius: '10px',
+                background: '#333',
+                color: '#fff',
+                },
+            }
+        );
     }
 
     const deleteItemToCart = (idProduct)=>{
@@ -84,6 +95,16 @@ export function CartContextProvider({children}) {
         })
         setCartItems(cartItems.filter(item => item.id !== idProduct))
         localStorage.setItem("cartProducts", JSON.stringify(cartItems));
+        toast('Producto eliminado del carrito!',
+            {
+                icon: <FontAwesomeIcon icon={faFaceFrown} className='iconError'/>,
+                style: {
+                borderRadius: '10px',
+                background: '#333',
+                color: '#fff',
+                },
+            }
+        );
     }
 
     const updateItem = (action, item)=>{

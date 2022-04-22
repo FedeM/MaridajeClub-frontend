@@ -148,3 +148,7 @@
     width: 150px;
     height: 150px;
 }
+
+.check{
+    color: var(--global-succesfully);
+}

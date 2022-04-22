@@ -44,7 +44,7 @@ const ProductCard = ({product, cart = true}) => {
                             <div className={styles.button} onClick={()=> Router.push(`/shopping/${id}`)}>
                                 <span>Ver más</span>
                             </div>
-                            <div className={styles.button} onClick={()=> addItemToCart(product)}>
+                            <div className={styles.button} onClick={()=> {addItemToCart(product)}}>
                                 <i className="fas fa-cart-arrow-down"></i>
                             </div>
                         </div>

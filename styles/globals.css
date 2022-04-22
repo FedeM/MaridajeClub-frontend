@@ -93,3 +93,10 @@ a {
   display: none;
 }
 
+.iconSuccess{
+  color: var(--global-succesfully);
+}
+.iconError{
+  color: var(--global-error);
+}
+
