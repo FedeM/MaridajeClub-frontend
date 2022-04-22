@@ -32,16 +32,26 @@ body > div{
   grid-template-columns: 100%;
 }
 
-a {
-  color: #04c3e9;
-  color: var(--global-tertiary-color);
-  display: inline-block;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+a {
+  color: #04c3e9;
+  color: var(--global-tertiary-color);
+  display: inline-block;
+  text-decoration: none;
+}
+
+a:hover{
+  color: var(--dark-primary-text_color);
+}
+
+
+p, h5{
+  margin: 0;
 }
 
 :root{

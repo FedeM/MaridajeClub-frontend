@@ -1,6 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import Script from 'next/script'
 
+
 class MyDocument extends Document {
     render() {
         return (
@@ -14,6 +15,12 @@ class MyDocument extends Document {
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" crossOrigin="true"/>
                 <link rel="manifest" href="/manifest.json" />
                 <link rel="apple-touch-icon" href="/icon-500x500.png" />
+                <link
+                    rel="stylesheet"
+                    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+                    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+                    crossorigin="anonymous"
+                />
                 <meta name='theme-color' content='#1a1a1a'/>
 
             </Head>

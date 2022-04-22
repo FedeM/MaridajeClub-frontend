@@ -4,6 +4,7 @@ import Router from 'next/router';
 import { useContext, useEffect } from 'react';
 import CartContext from '../../../context/cartContext';
 
+
 const isServer = typeof window === 'undefined'
 const WOW = !isServer ? require('wow.js') : null
 
