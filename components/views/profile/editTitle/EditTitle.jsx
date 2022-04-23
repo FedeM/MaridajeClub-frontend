@@ -36,7 +36,11 @@ const EditTitle = ({close, title, editTitle}) => {
                                     <Field name="title" type="text" placeholder="Escribe aquí..." className={style.input}/>
                                     <ErrorMessage name='title' component={()=>(<ErrorInput error={errors.title}/>)}/>
                                     <div className={style.btnContiner}>
-                                        <ActionButtons close={close} textAction="Actualizar"/>
+                                        <ActionButtons 
+                                            close={close} 
+                                            textAction="Actualizar"
+                                            textClose="Cerrar"
+                                        />
                                     </div>
                                 </Form>
                             )
