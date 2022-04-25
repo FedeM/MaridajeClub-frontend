@@ -7,7 +7,7 @@ import { user } from '../../lib/user';
 
 import style from '../../styles/pages/Cart.module.css'
 import Image from 'next/image'
-import CartContext from '../../context/cartContext';
+import CartContext from '../../context/CartContext';
 
 
 const Index = () => {
