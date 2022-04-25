@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import style from './ProductDetail.module.css'
 import Image from 'next/image'
 import { isDesktop, isMobile} from 'react-device-detect';
-import CartContext from '../../../../context/cartContext';
+import CartContext from '../../../../context/CartContext';
 import Router from 'next/router';
 
 
