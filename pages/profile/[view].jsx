@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Layout } from '../../components/layout'
 import { MyShop, Orders, PersonalData, ProfileHome, Purchase, Sidebar } from '../../components/views';
 
@@ -7,9 +7,12 @@ import style from '../../styles/pages/Profile.module.css'
 
 import { useRouter } from 'next/router';
 import { user } from '../../lib/user';
+import AuthContext from '../../context/AuthContext';
 
 
 const Index = () => {
+    const {role} = useContext(AuthContext)
+
     const [mounted, setMounted] = useState(false)
     const router = useRouter()
     const { view } = router.query
@@ -35,9 +38,9 @@ const Index = () => {
                         <PersonalData/>
                     ): view === "purchase" ?(
                         <Purchase/>
-                    ): view === "shop" && user.role === 1 ?(
+                    ): view === "shop" && role === 2 ?(
                         <MyShop/>
-                    ): view === "orders" && user.role === 1 ?(
+                    ): view === "orders" && role === 2 ?(
                         <Orders/>
                     ):('')
                 }

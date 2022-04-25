@@ -4,9 +4,12 @@ import Link from "next/link";
 import { signout } from "../../../../lib/auth";
 
 import { useRouter } from 'next/router';
-import { user } from "../../../../lib/user";
+import { useContext } from "react";
+import AuthContext from "../../../../context/AuthContext";
 
 const Sidebar = ()=> {
+  const {role} = useContext(AuthContext)
+
   const router = useRouter()
   const { view } = router.query
 
@@ -43,7 +46,7 @@ const Sidebar = ()=> {
           </ul>
         </div>
           {
-            user.role === 1 &&(
+            role === 2 &&(
               <div className={style.sidebarMenu}>
                 <h3 className={style.sidebarTitle}>Vendedor</h3>
                 <ul className={style.sidebarList}>

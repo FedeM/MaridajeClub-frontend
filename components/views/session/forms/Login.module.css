@@ -169,10 +169,10 @@
 }
 
 .social_button:nth-child(1){
-    color: #D34A40;
+    color: #D34A40 !important;
 }
 .social_button:nth-child(2){
-    color: #5773F2;
+    color: #5773F2 !important;
 }
 
 .social_button i{

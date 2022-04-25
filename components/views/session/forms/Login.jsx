@@ -35,14 +35,14 @@ const Login = ({setLogin}) => {
         const {name, password} = values
         setLoader(true)
         try {
-            signIn({
+            await signIn({
                 name,
                 password
             })
             setError(false)
         } catch (error) {
-            setLoader(false)
             setError(error)
+            setLoader(false)
         }
     }
 
@@ -105,6 +105,7 @@ const Login = ({setLogin}) => {
                             error &&(
                                 <div className={styles.error}>
                                     {error}
+                                    {console.log("Error: " + error)}
                                 </div>
                             )
                         }

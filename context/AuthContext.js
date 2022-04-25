@@ -10,7 +10,7 @@ export function AuthContextProvider({children}) {
     const [photo, setUserPhoto] = useState(isAuthenticate().photo)
     const [phone, setUserPhone] = useState(isAuthenticate().phone)
     const [role, setUserRole] = useState(isAuthenticate().role_id)
-    const [address, setUserAddress] = useState(isAuthenticate().address)
+    const [address, setUserAddress] = useState(isAuthenticate().address > 0 ? isAuthenticate().address : "Vacío")
 
 
 
