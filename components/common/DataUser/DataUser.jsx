@@ -2,8 +2,7 @@ import style from './DataUser.module.css'
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { user } from '../../../lib/user';
-const DataUser = () => {
+const DataUser = ({user}) => {
     return (
         <div className={style.dataUserContainer}>
             <div className={style.dataUserHeader}>
@@ -32,7 +31,11 @@ const DataUser = () => {
                 </div>
                 <div className={style.data}>
                     <ion-icon name="bulb"></ion-icon>
-                    <span>Comprador</span>
+                    <span>{
+                        user.role === 1 ?('Comprador'):
+                        user.role === 2 ?('Vendedor'):
+                        ('Administrador')
+                    }</span>
                 </div>
             </div>
         </div>

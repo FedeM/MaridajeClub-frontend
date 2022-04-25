@@ -1,13 +1,16 @@
 import { Toaster } from 'react-hot-toast'
+import { AuthContextProvider } from '../context/AuthContext'
 import { CartContextProvider } from '../context/cartContext'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <CartContextProvider>
-      <Toaster/>
-      <Component {...pageProps} />
-    </CartContextProvider>
+    <AuthContextProvider>
+      <CartContextProvider>
+        <Toaster/>
+        <Component {...pageProps} />
+      </CartContextProvider>
+    </AuthContextProvider>
   )
 }
 

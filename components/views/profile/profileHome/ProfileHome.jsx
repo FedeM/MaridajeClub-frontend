@@ -1,7 +1,10 @@
+import { useContext } from 'react';
+import AuthContext from '../../../../context/AuthContext';
 import { DataUser, FeaturedInfo } from '../../../common';
 import style from './ProfileHome.module.css'
 
 const ProfileHome = () => {
+    const {name, email, photo, phone, role, address} = useContext(AuthContext)
     return (
         <div className={style.profileHomeContainer}>
             <FeaturedInfo 
@@ -23,7 +26,7 @@ const ProfileHome = () => {
                     },
                 ]}
             />
-            <DataUser/>
+            <DataUser user={{name, email, photo, phone, role, address}}/>
         </div>
     );
 };
