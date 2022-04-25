@@ -1,7 +1,7 @@
 import style from './ShopEventRes.module.css'
 import Image from 'next/image'
 import { useContext, useState } from 'react';
-import CartContext from '../../../../../../context/cartContext';
+import CartContext from '../../../../../../context/CartContext';
 
 
 const ShopEventResponsive = ({close, products}) => {
