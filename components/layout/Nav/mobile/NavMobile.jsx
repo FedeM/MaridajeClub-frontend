@@ -5,7 +5,7 @@ import { isAuthenticate } from '../../../../lib/auth';
 import Router from "next/router";
 import Image from 'next/image'
 import { CartPoppup } from '../../../common';
-import CartContext from '../../../../context/cartContext';
+import CartContext from '../../../../context/CartContext';
 import { useRouter } from 'next/router';
 
 
