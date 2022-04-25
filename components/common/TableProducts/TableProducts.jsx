@@ -137,8 +137,9 @@ const TableProducts = ({add, products, deleteProduct, edit}) => {
                 Añadir
             </div>
         </div>
-        <div style={{ height: 400, width: '100%' }}>
+        <div style={{ height: 400, width: '100%'}}>
             <DataGrid
+                style={{color: "#fff"}}
                 rows={products}
                 columns={columns}
                 pageSize={5}

@@ -131,13 +131,16 @@ const Orders = () => {
         <div className={style.container}>
             <Toaster/>
             <h2 className={style.title}>Pedidos</h2>
-            <DataGrid
-                rows={orders}
-                columns={columns}
-                pageSize={10}
-                rowsPerPageOptions={[5]}
-                // checkboxSelection
-            />
+            <div style={{ height: 400, width: '100%'}}>
+                <DataGrid
+                    style={{color: "#fff"}}
+                    rows={orders}
+                    columns={columns}
+                    pageSize={10}
+                    rowsPerPageOptions={[5]}
+                    // checkboxSelection
+                />
+            </div>
         </div>
     );
 };
