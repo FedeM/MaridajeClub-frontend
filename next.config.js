@@ -20,7 +20,8 @@ module.exports = withPWA({
       "http2.mlstatic.com",
       "www.avenuedesvins.fr",
       "www.terrumvinoteca.com",
-      "images.shopdutyfree.com"
+      "images.shopdutyfree.com",
+      "upload.wikimedia.org"
     ],
   },
   pwa: {

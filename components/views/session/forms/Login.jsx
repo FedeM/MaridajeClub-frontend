@@ -19,25 +19,26 @@ const Login = ({setLogin}) => {
 
     //Variables iniciales
     const initialValues = {
-        username: "",
+        name: "",
         password: ""
     }
 
     //Esquema de validación
     const emptyInputMsg = "Por favor rellena el campo"
     const validationSchema = Yup.object().shape({
-        username: Yup.string().required(emptyInputMsg).trim(),
+        name: Yup.string().required(emptyInputMsg).trim(),
         password: Yup.string().required(emptyInputMsg).trim(),
     })
 
     //Enviar datos al backend
     const onSubmit = async (values)=> {
+        const {name, password} = values
         setLoader(true)
         try {
-            await signIn({
-                username: values.username, 
-                password: values.password
-            }, ()=> authenticate({name: values.name, email: values.email}, ()=> window.location.href = "/"))
+            signIn({
+                name,
+                password
+            })
             setError(false)
         } catch (error) {
             setLoader(false)
@@ -45,9 +46,9 @@ const Login = ({setLogin}) => {
         }
     }
 
-    const signInWithSocialMedia = (email = "enzo135246@gmail.com", username, password, photo = false)=>{
+    const signInWithSocialMedia = (email = "enzo135246@gmail.com", name, password, photo = false)=>{
         //Enviar al backend
-        authenticate({email, username, password, photo}, ()=>{
+        authenticate({email, name, password, photo}, ()=>{
             window.location.href = "/"
         })
     }
@@ -109,9 +110,9 @@ const Login = ({setLogin}) => {
                         }
                         <div className={styles.fields_container}>
                             <div className={styles.fields}>
-                                <label htmlFor="username">Nombre/email</label>
-                                <Field name="username" type="text" id='username' placeholder='Nombre de usuario'/>
-                                <ErrorMessage name='username' component={()=>(<ErrorInput error={errors.username}/>)}/>
+                                <label htmlFor="name">Nombre/email</label>
+                                <Field name="name" type="text" id='name' placeholder='Nombre de usuario'/>
+                                <ErrorMessage name='name' component={()=>(<ErrorInput error={errors.name}/>)}/>
                             </div>
                             <div className={styles.fields}>
                                 <label htmlFor="password">Contraseña</label>
