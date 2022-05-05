@@ -2,7 +2,7 @@ import styles from './ProductCard.module.css';
 import Image from 'next/image'
 import Router from 'next/router';
 import { useContext, useEffect } from 'react';
-import CartContext from '../../../context/cartContext';
+import CartContext from '../../../context/CartContext';
 
 
 const isServer = typeof window === 'undefined'

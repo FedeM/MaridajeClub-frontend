@@ -11,11 +11,33 @@ import { ErrorInput } from '../../../common';
 import { authenticate, signIn } from '../../../../lib/auth';
 
 import { Loader } from '../../../common';
+import { FormControl, IconButton, Input, InputAdornment, InputLabel, TextField } from '@mui/material';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 
 const Login = ({setLogin}) => {
     const [loader, setLoader] = useState(false)
     const [error, setError] = useState(false)
+
+    const [values, setValues] = React.useState({
+        amount: '',
+        password: '',
+        weight: '',
+        weightRange: '',
+        showPassword: false,
+    });
+
+    const handleClickShowPassword = () => {
+        setValues({
+            ...values,
+            showPassword: !values.showPassword,
+        });
+    };
+    
+    const handleMouseDownPassword = (event) => {
+        event.preventDefault();
+    };
 
     //Variables iniciales
     const initialValues = {
@@ -112,14 +134,33 @@ const Login = ({setLogin}) => {
                         <div className={styles.fields_container}>
                             <div className={styles.fields}>
                                 <label htmlFor="name">Nombre/email</label>
-                                <Field name="name" type="text" id='name' placeholder='Nombre de usuario'/>
+                                {/* VER */}
+                                <TextField id="standard-basic" label="Standard" variant="standard" />
+                                {/* VER */}
                                 <ErrorMessage name='name' component={()=>(<ErrorInput error={errors.name}/>)}/>
                             </div>
-                            <div className={styles.fields}>
-                                <label htmlFor="password">Contraseña</label>
-                                <Field name="password" type="password" id='password' placeholder='*********'/>
-                                <ErrorMessage name='password' component={()=>(<ErrorInput error={errors.password}/>)}/>
-                            </div>
+                            {/* VER */}
+                            <FormControl sx={{ m: 1, width: '25ch' }} variant="standard">
+                                <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
+                                <Input
+                                    id="standard-adornment-password"
+                                    type={values.showPassword ? 'text' : 'password'}
+                                    value={values.password}
+                                    onChange={handleChange('password')}
+                                    endAdornment={
+                                    <InputAdornment position="end">
+                                        <IconButton
+                                        aria-label="toggle password visibility"
+                                        onClick={handleClickShowPassword}
+                                        onMouseDown={handleMouseDownPassword}
+                                        >
+                                        {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                                        </IconButton>
+                                    </InputAdornment>
+                                    }
+                                />
+                            </FormControl>
+                            {/* VER */}
                         </div>
                         <div className={styles.forget_password}>
                             <a href="">Olvidaste tu contraseña?</a>

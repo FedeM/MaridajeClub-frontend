@@ -8,7 +8,7 @@ import Image from 'next/image'
 import {isAuthenticate} from '../../../../lib/auth'
 import {CartPoppup } from '../../../common';
 import { useState, useContext } from 'react';
-import CartContext from '../../../../context/cartContext';
+import CartContext from '../../../../context/CartContext';
 
 import { useRouter } from 'next/router';
 
