@@ -17,18 +17,12 @@ const NavBar = ({home, cart}) => {
         <>
             <BrowserView>
                 <NavDesktop 
-                    logo={logo} 
-                    home={home} 
-                    cart={cart}
-                    user={user}
+                    logo={logo}
                 />
             </BrowserView>
             <MobileView>
                 <NavMobile 
-                    logo={logo} 
-                    home={home} 
-                    cart={cart}
-                    user={user}
+                    logo={logo}
                 />
             </MobileView>
         </>

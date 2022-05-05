@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { BrowserView, MobileView} from 'react-device-detect';
+import {useRouter} from 'next/router'
 
 import { ProductGalery } from "../../common";
 import CategoriesNav from "./categoriesNav/CategoriesNav";
@@ -10,43 +11,33 @@ import styles from './Ecommerce.module.css'
 
 const Shopping = ({products, categories}) => {
     const [mounted, setMounted] = useState(false)
-    const [filterBy, setFilterBy] = useState({
-        category: false,
-        name : "Todo"
-    })
+    const {query} = useRouter()
 
-    const [productsFilter, setProductsFilter] = useState(products)
 
     useEffect(()=>{
         setMounted(true)
-        if(filterBy.category !== false){
-            setProductsFilter(products.filter(product => product.category_id === filterBy.category))
-        }else{
-            setProductsFilter(products)
-        }
-
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [mounted, filterBy])
+    }, [mounted])
 
     return mounted && (
         <section className={styles.section_ecommerce}>
-            <CategoriesNav setFilterBy={setFilterBy} filterBy={filterBy} categories={categories}/>
+            <CategoriesNav categories={categories}/>
             <MobileView>
                 <FilterResponsive/>
                 <ProductGalery
-                    title={filterBy.name} 
+                    title="Todo"
                     activeTitle
-                    products={productsFilter}
+                    products={products}
                     justifyContent="center"
                 />
             </MobileView>
             <BrowserView>
                 <div className={styles.browserView_container}>
                     <FilterDesktop 
-                        name={filterBy.name}
+                        name="Todo"
                     />
                     <ProductGalery
-                        products={productsFilter}
+                        products={products}
                         justifyContent="flex-start"
                     />
                 </div>

@@ -4,6 +4,7 @@ import {Shopping} from '../../components/views';
 
 import { getAllCategories, getAllProducts } from '../../lib/service/products';
 
+import {useRouter} from 'next/router'
 
 const Index = ({allProducts, categories}) => {
     
@@ -16,7 +17,7 @@ const Index = ({allProducts, categories}) => {
             footer
             cart
         >
-        <article style={{paddingTop:`15vh`}}>
+        <article>
             <Shopping
                 products={allProducts}
                 categories={categories}
@@ -28,12 +29,17 @@ const Index = ({allProducts, categories}) => {
 
 export default Index;
 
-export async function getServerSideProps (){
+export async function getServerSideProps ({params}){
     let allProducts;
     let categories;
 
+    console.log(params)
+
     try {
-        allProducts = await getAllProducts()
+        allProducts = await getAllProducts({
+            _page: 1,
+            _limit: 50
+        })
         categories = await getAllCategories()
     } catch (error) {
         return{

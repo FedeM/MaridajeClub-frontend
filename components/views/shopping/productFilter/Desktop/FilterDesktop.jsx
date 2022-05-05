@@ -2,10 +2,6 @@ import style from './Filter.module.css'
 import Image from 'next/image'
 
 const FilterDesktop = ({name}) => {
-    //Función para aplicar los filtros
-    const applyFilter =(e)=>{
-        
-    }
 
     return (
         <div className={style.filter}>
@@ -15,12 +11,12 @@ const FilterDesktop = ({name}) => {
                     <h4>{name}</h4>
                 </div>
                 <div className={style.filter_container}>
-                    <div className={style.filter_search}>
+                    <form className={style.filter_search}>
                         <input type="search" placeholder='Buscar Bebida, bodega, tipo'/>
                         <div className={style.img}>
                             <Image className='non-select' draggable="false" src="/assets/img/icon/loupe.png" alt="Botón buscar, search button" width={"18"} height={"18"}/>
                         </div>
-                    </div>
+                    </form>
                     {/* <div className={style.filter_select}>
                         <select name="filter" id="" onChange={(e)=> applyFilter(e)}>
                             <option value="0">Más vendidos</option>

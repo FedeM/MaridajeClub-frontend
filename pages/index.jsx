@@ -9,6 +9,8 @@ import { LoadingTab } from '../components/common' //Pantalla de carga
 import { getAllProducts } from '../lib/service/products'
 import { getAllEvents } from '../lib/service/events'
 
+import { isMobile } from 'react-device-detect'
+
 
 export default function Index({allProducts, allEvents}) {
 
@@ -19,6 +21,7 @@ export default function Index({allProducts, allEvents}) {
     eventUrl: "",
     eventIsLive: false
   })
+
 
   useEffect(()=>{
     setMounted(true)
@@ -67,12 +70,15 @@ export default function Index({allProducts, allEvents}) {
 }
 
 
-export async function getServerSideProps (){
+export async function getStaticProps(context){
   let allProducts
   let allEvents
 
   try {
-    allProducts = await getAllProducts()
+    allProducts = await getAllProducts({
+      _page: 1,
+      _limit: 12
+    })
     allEvents = await getAllEvents()
 
   } catch (error) {
@@ -85,6 +91,7 @@ export async function getServerSideProps (){
     props: {
       allProducts,
       allEvents
-    }
+    },
+    revalidate: 60
   }
 }

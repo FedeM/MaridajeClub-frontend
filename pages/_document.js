@@ -18,6 +18,7 @@ class MyDocument extends Document {
                     rel="stylesheet"
                     href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
                     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+                    crossorigin="anonymous"
                 />
                 <meta name='theme-color' content='#1a1a1a'/>
 
@@ -25,8 +26,8 @@ class MyDocument extends Document {
             <body>
                 <Main />
                 <NextScript />
-
-                <script src="https://kit.fontawesome.com/af9ea1f796.js"></script>
+                
+                <script src="https://kit.fontawesome.com/af9ea1f796.js" crossorigin="anonymous"></script>
                 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
                 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
             </body>

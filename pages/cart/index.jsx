@@ -1,9 +1,7 @@
 import Router from 'next/router';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Layout } from '../../components/layout'
 import { ListArticles, Checkout } from '../../components/views';
-
-import { user } from '../../lib/user'; 
 
 import style from '../../styles/pages/Cart.module.css'
 import Image from 'next/image'

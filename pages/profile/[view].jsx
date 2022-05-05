@@ -21,6 +21,7 @@ const Index = () => {
         setMounted(true)
     }, [mounted])
 
+
     return isAuthenticate() && mounted &&(
         <Layout
             title={'Profile'}

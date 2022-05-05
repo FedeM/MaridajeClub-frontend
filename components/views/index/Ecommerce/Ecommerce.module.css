@@ -32,10 +32,22 @@
 }
 
 .ecommerce_container{
+    width: 100%;
+    margin: auto;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
+.viewMoreBtn{
+    /* display: none; */
+    width: 100%;
+    background-color: var(--global-tertiary-color);
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    color: var(--global-gray5);
+}
 
 /* ............................... */
 

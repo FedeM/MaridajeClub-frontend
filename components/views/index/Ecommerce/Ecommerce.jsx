@@ -1,6 +1,7 @@
 import styles from './Ecommerce.module.css'
 import Link from 'next/link'
 import { ProductGalery } from '../../../common';
+import { style } from '@mui/system';
 
 
 const Ecommerce = ({id, home, activeTitle,allProducts}) => {
@@ -26,6 +27,9 @@ const Ecommerce = ({id, home, activeTitle,allProducts}) => {
                     products={allProducts}
                     justifyContent="center"
                 />
+                <Link href="/shopping">
+                    <a  className={styles.viewMoreBtn}>Ver más</a>
+                </Link>
             </div>
         </section>
     );

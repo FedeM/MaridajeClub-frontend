@@ -23,7 +23,7 @@ const Index = ({success, product, error}) => {
             description={"Descripción"}
             footer
         >
-            <article style={{marginTop: "15vh"}}>
+            <article>
             {
                 success &&(
                     <ProductDetail product={product}/>
