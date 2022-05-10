@@ -3,9 +3,7 @@ import { BrowserView, MobileView} from 'react-device-detect';
 import NavDesktop from "./desktop/NavDesktop";
 import NavMobile from "./mobile/NavMobile";
 
-import {user} from '../../../lib/user'
-
-const NavBar = ({home, cart}) => {
+const NavBar = () => {
     const [mounted, setMounted] = useState(false)
     const logo= '/logo/logo_blanco.png'
 

@@ -19,7 +19,7 @@
     overflow: hidden;
 }
 
-.featuredItem::before{
+.disable::before{
     content: 'No disponible';
     position: absolute;
     top: 0;
