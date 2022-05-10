@@ -6,31 +6,40 @@ import GoogleLogin from 'react-google-login';
 import { Loader } from '../../../common';
 
 
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { ErrorInput } from '../../../common';
 import { useState } from 'react';
 import { authenticate, signUp } from '../../../../lib/auth';
+import { Alert, FormHelperText, IconButton, Input, InputAdornment, InputLabel, TextField, FormControl, Box, useMediaQuery  } from '@mui/material';
+import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 const Register = ({setLogin}) => {
+    //Verificamos el min-width
+    const matches = useMediaQuery('(min-width:800px)');
+
     const [compareValues, setCompareValues] = useState({
         email: "",
         password: ""
     })
     const [loader, setLoader] = useState(false)
     const [error, setError] = useState(false)
+    const [values, setValues] = useState({
+        showPassword: false,
+    });
 
     let expEmail = new RegExp("^"+ compareValues.email + "$");
     let expPassword = new RegExp("^"+ compareValues.password + "$")
 
-    //Valores Iniciales
-    const initialValues = {
-        name: "",
-        email: "",
-        _email: "",
-        password: "",
-        _password: ""
-    }
+    const handleClickShowPassword = () => {
+        setValues({
+            ...values,
+            showPassword: !values.showPassword,
+        });
+    };
+    
+    const handleMouseDownPassword = (event) => {
+        event.preventDefault();
+    };
 
     //Esquema de validación
     const emptyInputMsg = "Por favor rellena el campo"
@@ -41,6 +50,16 @@ const Register = ({setLogin}) => {
         password: Yup.string().required(emptyInputMsg).matches(/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/, "La contraseña debe tener, al menos, lo siguiente:Entre 8 y 16 dígitos, 1 letra mayúscula, 1 letra minúscula, 1 número").trim(),
         _password: Yup.string().required(emptyInputMsg).matches(expPassword, "Las contraseñas tienen que coincidir").trim()
     })
+
+    //Valores Iniciales
+    const initialValues = {
+        name: "",
+        email: "",
+        _email: "",
+        password: "",
+        _password: ""
+    }
+
 
     //Enviar datos al backend
     const onSubmit = async (values)=> {
@@ -63,6 +82,12 @@ const Register = ({setLogin}) => {
         }
     }
 
+    //Variables iniciales
+    const formik = useFormik({
+        initialValues,
+        validationSchema,
+        onSubmit
+    });
 
 
     const registerWithSocialMedia = async(email, name, password, photo)=>{
@@ -94,136 +119,179 @@ const Register = ({setLogin}) => {
     }
 
     return (
-        <>
-        <Formik
-            onSubmit={onSubmit}
-            validationSchema={validationSchema}
-            initialValues={initialValues}
-        >
+        <form onSubmit={formik.handleSubmit} className={styles.form}>
+            <div className={styles.title}>
+                <h4>Crear cuenta</h4>
+            </div>
+            <div className={styles.social_media_register}>
+                <GoogleLogin
+                    clientId="562820573281-vcod58jbo8ianekgcf8fufrdqqqsq4l9.apps.googleusercontent.com"
+                    buttonText="Login"
+                    render={renderProps=>(
+                        <div onClick={renderProps.onClick} className={styles.social_button}><i  aria-hidden className="fab fa-google"></i> <span>Registrarse con Google</span></div>
+                    )}
+                    onSuccess={responseGoogle}
+                    onFailure={responseGoogle}
+                    cookiePolicy={'single_host_origin'}
+                />
+                <FacebookLogin
+                    appId="2261506954147846"
+                    fields="name,email,picture"
+                    callback={responseFacebook} 
+                    autoLoad={false}
+                    render={renderProps=>(
+                        <div onClick={renderProps.onClick} className={styles.social_button}><i  aria-hidden className="fab fa-facebook-f"></i> <span>Registrarse con Facebook</span></div>
+                    )}
+                />
+            </div>
+            <div className={styles.form_div}>
+                <div></div>
+                <p>Or</p>
+                <div></div>
+            </div>
             {
-                ({errors, setFieldValue})=>(
-                    <Form className={styles.form}>
-                        <div className={styles.title}>
-                            <h4>Crear cuenta</h4>
-                        </div>
-                        <div className={styles.social_media_register}>
-                            <GoogleLogin
-                                clientId="562820573281-vcod58jbo8ianekgcf8fufrdqqqsq4l9.apps.googleusercontent.com"
-                                buttonText="Login"
-                                render={renderProps=>(
-                                    <div onClick={renderProps.onClick} className={styles.social_button}><i  aria-hidden className="fab fa-google"></i> <span>Registrarse con Google</span></div>
-                                )}
-                                onSuccess={responseGoogle}
-                                onFailure={responseGoogle}
-                                cookiePolicy={'single_host_origin'}
-                            />
-                            <FacebookLogin
-                                appId="2261506954147846"
-                                fields="name,email,picture"
-                                callback={responseFacebook} 
-                                autoLoad={false}
-                                render={renderProps=>(
-                                    <div onClick={renderProps.onClick} className={styles.social_button}><i  aria-hidden className="fab fa-facebook-f"></i> <span>Registrarse con Facebook</span></div>
-                                )}
-                            />
-                        </div>
-                        <div className={styles.form_div}>
-                            <div></div>
-                            <p>Or</p>
-                            <div></div>
-                        </div>
-                        {
-                            error &&(
-                                <div className={styles.error}>
-                                    {error}
-                                </div>
-                            )
-                        }
-                        <div className={styles.fields_container}>
-                            <div className={styles.fields}>
-                                <label htmlFor="name">Nombre de usuario</label>
-                                <div className={styles.input_container}>
-                                    <Field name="name" type="text" id='name' placeholder='Nombre de usuario'/>
-                                    <div className={styles.input_help}>
-                                        <i className="far fa-question-circle"></i>
-                                        <p>El nombre de usuario solo debe contener: letras (minusculas/mayúsculas sin acentos); números; carácteres especiales (solo . _ -)</p>
-                                    </div>
-                                </div>
-                                <ErrorMessage name='name' component={()=>(<ErrorInput error={errors.name}/>)}/>
-                            </div>
-                            <div className={styles.field_confirm}>
-                                <div className={styles.fields}>
-                                    <label htmlFor="email">Correo electrónico</label>
-                                    <Field 
-                                        name="email" 
-                                        type="text" 
-                                        id='email' 
-                                        placeholder='user@gmail.com'
-                                        value={undefined}
-                                        onChange={(e)=>{
-                                            setCompareValues({...compareValues, email: e.target.value})
-                                            setFieldValue('email', e.target.value)
-                                        }}
-                                    />
-                                    <ErrorMessage name='email' component={()=>(<ErrorInput error={errors.email}/>)}/>
-                                </div>
-                                <div className={styles.fields}>
-                                    <label htmlFor="_email">Confirmar correo electrónico</label>
-                                    <Field name="_email" type="text" id='_email' placeholder='user@gmail.com'/>
-                                    <ErrorMessage name='_email' component={()=>(<ErrorInput error={errors._email}/>)}/>
-                                </div>
-                            </div>
-                            <div className={styles.field_confirm}>
-                                <div className={styles.fields}>
-                                    <label htmlFor="password">Contraseña</label>
-                                    <div className={styles.input_container}>
-                                        <Field 
-                                            name="password" 
-                                            type="password" 
-                                            id='password' 
-                                            placeholder='*******'
-                                            value={undefined}
-                                            onChange={(e)=>{
-                                            setCompareValues({...compareValues, password: e.target.value})
-                                            setFieldValue('password', e.target.value)
-                                        }}
-                                        />
-                                        <div className={styles.input_help}>
-                                            <i className="far fa-question-circle"></i>
-                                            <p>La contraseña debe tener, al menos, lo siguiente:Entre 8 y 16 dígitos, 1 letra mayúscula, 1 letra minúscula, 1 número</p>
-                                        </div>
-                                    </div>
-                                    <ErrorMessage name='password' component={()=>(<ErrorInput error={errors.password}/>)}/>
-                                </div>
-                                <div className={styles.fields}>
-                                    <label htmlFor="_password">Confirmar contraseña</label>
-                                    <Field name="_password" type="password" id='_password' placeholder='*******'/>
-                                    <ErrorMessage name='_password' component={()=>(<ErrorInput error={errors._password}/>)}/>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={styles.button_container}>
-                            <button type='submit'>
-                                {
-                                    loader ?(
-                                        <Loader size={"1.3rem"} style={{position: "relative"}}/>
-                                    ):(
-                                        "Registrarse"
-                                    )
-                                }
-                            
-                            </button>
-                        </div>
-                        <div className={styles.register} onClick={()=> setLogin(true)}>
-                            Ya tengo una cuenta
-                        </div>
-                        
-                    </Form>
+                error &&(
+                    <Alert sx={{mb: 2}}severity="error">{error}</Alert>
                 )
             }
-        </Formik>
-        </>
-    );
+            <div className={styles.fields_container}>
+                <TextField 
+                    id="name" 
+                    label="Nombre de usuario" 
+                    variant="standard" 
+                    sx={{width: '100%' }}
+                    value={formik.values.name}
+                    name="name"
+                    onChange={formik.handleChange}
+                    error={formik.touched.name && Boolean(formik.errors.name)}
+                    helperText={formik.touched.name && formik.errors.name}
+                />
+                <Box
+                    sx={{
+                        display: matches ? 'flex': 'block',
+                        justifyContent: 'space-between'
+                    }}
+                >
+                    <TextField 
+                        id="email" 
+                        label="Email" 
+                        variant="standard" 
+                        sx={{
+                            width: matches ? '49%': '100%' 
+                        }}
+                        value={formik.values.email}
+                        name="email"
+                        onChange={(e)=>{
+                            setCompareValues({...compareValues, email: e.target.value})
+                            formik.setFieldValue('email', e.target.value)
+                        }}
+                        error={formik.touched.email && Boolean(formik.errors.email)}
+                        helperText={formik.touched.email && formik.errors.email}
+                    />
+                    <TextField 
+                        id="_email" 
+                        label="Verificar email" 
+                        variant="standard" 
+                        sx={{
+                            width: matches ? '49%': '100%' 
+                        }}
+                        value={formik.values._email}
+                        name="_email"
+                        onChange={formik.handleChange}
+                        error={formik.touched._email && Boolean(formik.errors._email)}
+                        helperText={formik.touched._email && formik.errors._email}
+                    />
+                </Box>
+                <Box
+                    sx={{
+                        display: matches ? 'flex': 'block',
+                        justifyContent: 'space-between'
+                    }}
+                >
+
+                    <FormControl 
+                        sx={{
+                            width: matches ? '49%': '100%' 
+                        }}
+                        variant="standard" 
+                        error={formik.touched.password && Boolean(formik.errors.password)}
+                    >
+                        <InputLabel htmlFor="standard-adornment-password">Nueva contraseña</InputLabel>
+                        <Input
+                            id="standard-adornment-password" 
+                            type={values.showPassword ? 'text' : 'password'}
+                            value={formik.values.password}
+                            name="password"
+                            onChange={(e)=>{
+                                setCompareValues({...compareValues, password: e.target.value})
+                                formik.setFieldValue('password', e.target.value)
+                            }}
+                            endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton
+                                aria-label="toggle password visibility"
+                                onClick={handleClickShowPassword}
+                                onMouseDown={handleMouseDownPassword}
+                                >
+                                {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                                </IconButton>
+                            </InputAdornment>
+                            }
+                        />
+                        <FormHelperText >
+                            {formik.touched.password && formik.errors.password}
+                        </FormHelperText>
+                    </FormControl>
+                    <FormControl 
+                        sx={{
+                            width: matches ? '49%': '100%' 
+                        }}
+                        variant="standard" 
+                        error={formik.touched._password && Boolean(formik.errors._password)}
+                    >
+                        <InputLabel htmlFor="standard-adornment-password">Verificar contraseña</InputLabel>
+                        <Input
+                            id="_password" 
+                            type={values.showPassword ? 'text' : 'password'}
+                            value={formik.values._password}
+                            name="_password"
+                            onChange={formik.handleChange}
+                            endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton
+                                aria-label="toggle password visibility"
+                                onClick={handleClickShowPassword}
+                                onMouseDown={handleMouseDownPassword}
+                                >
+                                {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                                </IconButton>
+                            </InputAdornment>
+                            }
+                        />
+                        <FormHelperText >
+                            {formik.touched._password && formik.errors._password}
+                        </FormHelperText>
+                    </FormControl>
+                </Box>
+            </div>
+            <div className={styles.button_container}>
+                <button type='submit'>
+                    {
+                        loader ?(
+                            <Loader size={"1.3rem"} style={{position: "relative"}}/>
+                        ):(
+                            "Registrarse"
+                        )
+                    }
+                
+                </button>
+            </div>
+            <div className={styles.register} onClick={()=> setLogin(true)}>
+                Ya tengo una cuenta
+            </div>
+            
+        </form>
+    )
 };
 
 export default Register;

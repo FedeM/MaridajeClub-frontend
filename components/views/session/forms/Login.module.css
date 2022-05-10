@@ -1,13 +1,14 @@
+/*  */
 .form{
     margin-top: 15px;
 }
-
+/*  */
 .title{
     text-align: center;
     font-size: 1.5rem;
     margin-bottom: 15px;
 }
-
+/*  */
 .form_div{
     width: 100%;
     display: flex;
@@ -15,75 +16,11 @@
     justify-content: space-around;
     margin: 10px 0;
 }
-
+/*  */
 .form_div div{
     width: 45%;
     height: 1px;
     background-color: var(--global-tertiary-color);
-}
-
-.fields_container input{
-    width: 100%;
-    padding: 5px 0;
-    background-color: transparent;
-    outline: none;
-    border: none;
-    border-bottom: 1px solid var(--global-gray2);
-    transition: .5s;
-    color: var(--global-primary-text_color);
-}
-
-.fields_container input:focus{
-    border-bottom: 1px solid var(--global-gray);
-}
-
-.fields_container .errorInput{
-    border-bottom: 1px solid var(--global-secondary-color);
-}
-.fields_container .errorInput:focus{
-    border-bottom: 1px solid var(--global-secondary-color);
-}
-
-.fields{
-    margin-bottom: 10px;
-}
-
-.input_container{
-    display: flex;
-    align-items: center;
-}
-
-.input_help{
-    width: 1rem;
-    height: 1rem;
-    position: relative;
-    margin-left: 10px;
-}
-
-.input_help i:hover ~ p{
-    display: block;
-}
-
-.input_help p{
-    display: none;
-    position: absolute;
-    bottom: 100%;
-    right: 100%;
-    width: min-content;
-    background-color: #fff;
-    color: var(--global-primary-color);
-    padding: 10px;
-    width: 300px;
-}
-
-.error{
-    padding: 10px;
-    box-sizing: border-box;
-    border: 2px solid var(--global-secondary-color);
-    border-radius: 5px;
-    margin-bottom: 15px;
-    background-color: rgb(218, 118, 118);
-    transition: .5s;
 }
 
 .forget_password a{
@@ -179,23 +116,11 @@
     margin-right: 10px;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 800px) {
     .title{
         text-align: center;
         font-size: 2rem;
         margin-bottom: 15px;
-    }
-    
-    .field_confirm{
-        display: flex;
-    }
-
-    .field_confirm .fields:nth-child(1){
-        margin-right: 15px;
-    }
-
-    .field_confirm .fields{
-        width: 50%;
     }
 
     .social_media_register{

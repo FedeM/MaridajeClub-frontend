@@ -4,14 +4,13 @@ import { useState } from 'react';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 import GoogleLogin from 'react-google-login';
 
-import { ErrorMessage, Field, Form, Formik, useFormik } from 'formik';
+import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { ErrorInput } from '../../../common';
 
 import { authenticate, signIn } from '../../../../lib/auth';
 
 import { Loader } from '../../../common';
-import { FormControl, FormHelperText, IconButton, Input, InputAdornment, InputLabel, TextField } from '@mui/material';
+import { Alert, FormControl, FormHelperText, IconButton, Input, InputAdornment, InputLabel, TextField } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
@@ -21,10 +20,6 @@ const Login = ({setLogin}) => {
     const [error, setError] = useState(false)
 
     const [values, setValues] = useState({
-        amount: '',
-        password: '',
-        weight: '',
-        weightRange: '',
         showPassword: false,
     });
 
@@ -61,14 +56,16 @@ const Login = ({setLogin}) => {
             setLoader(false)
         }
     }
+
+    const initialValues= {
+        name: '',
+        password: '',
+    }
     
     //Variables iniciales
     const formik = useFormik({
-        initialValues: {
-            name: '',
-            password: '',
-        },
-        validationSchema: validationSchema,
+        initialValues,
+        validationSchema,
         onSubmit
     });
     
@@ -122,53 +119,45 @@ const Login = ({setLogin}) => {
             </div>
             {
                 error &&(
-                    <div className={styles.error}>
-                        {error}
-                        {console.log("Error: " + error)}
-                    </div>
+                    <Alert sx={{mb: 2}}severity="error">{error}</Alert>
                 )
             }
-            <div className={styles.fields_container}>
-                <div className={styles.fields}>
-                    <TextField 
-                        id="name" 
-                        label="Nombre/email" 
-                        variant="standard" 
-                        sx={{width: '100%' }}
-                        value={formik.values.name}
-                        name="name"
-                        onChange={formik.handleChange}
-                        error={formik.touched.name && Boolean(formik.errors.name)}
-                        helperText={formik.touched.name && formik.errors.name}
-                    />
-                </div>
-                {/* VER */}
-                <FormControl sx={{width: '100%' }} variant="standard" error={formik.touched.password && Boolean(formik.errors.password)}>
-                    <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
-                    <Input
-                        id="password" 
-                        type={values.showPassword ? 'text' : 'password'}
-                        value={formik.values.password}
-                        name="password"
-                        onChange={formik.handleChange}
-                        endAdornment={
-                        <InputAdornment position="end">
-                            <IconButton
-                            aria-label="toggle password visibility"
-                            onClick={handleClickShowPassword}
-                            onMouseDown={handleMouseDownPassword}
-                            >
-                            {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                            </IconButton>
-                        </InputAdornment>
-                        }
-                    />
-                    <FormHelperText >
-                        {formik.touched.password && formik.errors.password}
-                    </FormHelperText>
-                </FormControl>
-                {/* VER */}
-            </div>
+            <TextField 
+                id="name" 
+                label="Nombre/email" 
+                variant="standard" 
+                sx={{width: '100%' }}
+                value={formik.values.name}
+                name="name"
+                onChange={formik.handleChange}
+                error={formik.touched.name && Boolean(formik.errors.name)}
+                helperText={formik.touched.name && formik.errors.name}
+            />
+            <FormControl sx={{width: '100%' }} variant="standard" error={formik.touched.password && Boolean(formik.errors.password)}>
+                <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
+                <Input
+                    id="password" 
+                    type={values.showPassword ? 'text' : 'password'}
+                    value={formik.values.password}
+                    name="password"
+                    onChange={formik.handleChange}
+                    endAdornment={
+                    <InputAdornment position="end">
+                        <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                        >
+                        {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                    </InputAdornment>
+                    }
+                />
+                <FormHelperText >
+                    {formik.touched.password && formik.errors.password}
+                </FormHelperText>
+            </FormControl>
+            {/* VER */}
             <div className={styles.forget_password}>
                 <a href="">Olvidaste tu contraseña?</a>
             </div>
