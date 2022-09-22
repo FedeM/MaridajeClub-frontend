@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { isDesktop} from 'react-device-detect';
 import Router from 'next/router';
 import style from './ProductAgregateSection.module.css'
-import CartContext from '../../../context/cartContext';
+import CartContext from '../../../context/CartContext';
 
 
 const ProductAgregateSection = ({product}) => {

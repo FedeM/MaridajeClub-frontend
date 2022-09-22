@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import { Alert } from 'react-bootstrap';
 import {ProductCard} from '../';
-import CartContext from '../../../context/cartContext';
+import CartContext from '../../../context/CartContext';
 import styles from './ProductGalery.module.css'
 import Router from 'next/router';
 

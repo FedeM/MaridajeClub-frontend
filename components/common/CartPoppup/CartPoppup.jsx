@@ -6,7 +6,7 @@ import Image from 'next/image';
 import ActionButtons from '../ActionButtons/ActionButtons';
 import Router from 'next/router';
 import { useContext } from 'react';
-import CartContext from '../../../context/cartContext';
+import CartContext from '../../../context/CartContext';
 import CloseButton from '../CloseButton/CloseButton';
 
 
