@@ -2,9 +2,9 @@
   "name": "frontend",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3031",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 3031",
+    "start": "next start",
     "lint": "next lint",
     "export": "next export",
     "deploy": "npm run build && npm run export",
