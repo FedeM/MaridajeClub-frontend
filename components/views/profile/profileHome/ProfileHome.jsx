@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import AuthContext from '../../../../context/AuthContext';
-import CartContext from '../../../../context/CartContext';
+import CartContext from '../../../../context/cartContext';
 import { DataUser, FeaturedInfo } from '../../../common';
 import style from './ProfileHome.module.css'
 

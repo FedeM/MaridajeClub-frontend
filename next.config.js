@@ -1,4 +1,8 @@
-const withPWA = require('next-pwa')
+const withPWA = require('next-pwa')({
+  dest: "public",
+  register: true,
+  skipWaiting: true
+})
 
 module.exports = withPWA({
   reactStrictMode: true,
@@ -7,7 +11,7 @@ module.exports = withPWA({
       'd1csarkz8obe9u.cloudfront.net',
       'lh3.googleusercontent.com', 
       'platform-lookaside.fbsbx.com',
-      "https://picsum.photos" , 
+      "picsum.photos" , 
       "https://i.pinimg.com", 
       "https://previews.123rf.com",
       "previews.123rf.com", 
@@ -22,11 +26,6 @@ module.exports = withPWA({
       "www.terrumvinoteca.com",
       "images.shopdutyfree.com",
       "upload.wikimedia.org"
-    ],
-  },
-  pwa: {
-    dest: "public",
-    register: true,
-    skipWaiting: true
+    ]
   }
 }); 

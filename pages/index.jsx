@@ -80,6 +80,7 @@ export async function getStaticProps(context){
       _limit: 12
     })
     allEvents = await getAllEvents()
+    allEvents = allEvents.data
 
   } catch (error) {
     return{

@@ -41,9 +41,10 @@ export async function getServerSideProps ({params}){
             _limit: 50
         })
         categories = await getAllCategories()
+        categories = categories.data
     } catch (error) {
         return{
-            notFound: true
+            notFound: false
         };
     }
 

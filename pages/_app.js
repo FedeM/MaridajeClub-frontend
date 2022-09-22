@@ -1,6 +1,6 @@
 import { Toaster } from 'react-hot-toast'
 import { AuthContextProvider } from '../context/AuthContext'
-import { CartContextProvider } from '../context/CartContext'
+import { CartContextProvider } from '../context/cartContext'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import '../styles/globals.css'
 

@@ -69,14 +69,16 @@ const Register = ({setLogin}) => {
                 name: values.name,
                 email: values.email,
                 password: values.password,
-                photo: "",
-                phone: "",
-                address: "",
-                role_id: 1
+                c_password: values._password,
+                // photo: "",
+                // phone: "",
+                // address: "",
+                // role_id: 1
             }, ()=>{
                 authenticate({name: values.name, email: values.email}, ()=> window.location.href = "/")
             })
         } catch (err) {
+            console.log(err);
             setLoader(false)
             setError(err)
         }

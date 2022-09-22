@@ -1,6 +1,6 @@
 import style from './ShopEvent.module.css'
 import Image from 'next/image'
-import CartContext from '../../../../../../context/CartContext';
+import CartContext from '../../../../../../context/cartContext';
 import { useContext } from 'react';
 
 const ShopEventDesktop = ({open, setOpen, products}) => {
