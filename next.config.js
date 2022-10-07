@@ -27,5 +27,6 @@ module.exports = withPWA({
       "images.shopdutyfree.com",
       "upload.wikimedia.org"
     ]
-  }
+  },
+  swcMinify: false
 }); 

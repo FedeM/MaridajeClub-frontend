@@ -37,17 +37,17 @@ const Login = ({setLogin}) => {
     //Esquema de validación
     const emptyInputMsg = "Por favor rellena el campo"
     const validationSchema = Yup.object().shape({
-        name: Yup.string().required(emptyInputMsg).trim(),
+        email: Yup.string().required(emptyInputMsg).trim(),
         password: Yup.string().required(emptyInputMsg).trim(),
     })
 
     //Enviar datos al backend
     const onSubmit = async (values)=> {
-        const {name, password} = values
+        const {email, password} = values
         setLoader(true)
         try {
             await signIn({
-                name,
+                email,
                 password
             })
             setError(false)
@@ -58,7 +58,7 @@ const Login = ({setLogin}) => {
     }
 
     const initialValues= {
-        name: '',
+        email: '',
         password: '',
     }
     
@@ -92,7 +92,7 @@ const Login = ({setLogin}) => {
             <div className={styles.title}>
                 <h4>Iniciar Sesión</h4>
             </div>
-            <div className={styles.social_media_register}>
+            {/* <div className={styles.social_media_register}>
                 <GoogleLogin
                     clientId="562820573281-vcod58jbo8ianekgcf8fufrdqqqsq4l9.apps.googleusercontent.com"
                     buttonText="Login"
@@ -116,22 +116,22 @@ const Login = ({setLogin}) => {
                 <div></div>
                 <p>Or</p>
                 <div></div>
-            </div>
+            </div> */}
             {
                 error &&(
                     <Alert sx={{mb: 2}}severity="error">{error}</Alert>
                 )
             }
             <TextField 
-                id="name" 
-                label="Nombre/email" 
+                id="email" 
+                label="Email" 
                 variant="standard" 
                 sx={{width: '100%' }}
-                value={formik.values.name}
-                name="name"
+                value={formik.values.email}
+                name="email"
                 onChange={formik.handleChange}
-                error={formik.touched.name && Boolean(formik.errors.name)}
-                helperText={formik.touched.name && formik.errors.name}
+                error={formik.touched.email && Boolean(formik.errors.email)}
+                helperText={formik.touched.email && formik.errors.email}
             />
             <FormControl sx={{width: '100%' }} variant="standard" error={formik.touched.password && Boolean(formik.errors.password)}>
                 <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>

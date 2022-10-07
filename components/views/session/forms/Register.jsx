@@ -9,7 +9,7 @@ import { Loader } from '../../../common';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useState } from 'react';
-import { authenticate, signUp } from '../../../../lib/auth';
+import { signIn, signUp } from '../../../../lib/auth';
 import { Alert, FormHelperText, IconButton, Input, InputAdornment, InputLabel, TextField, FormControl, Box, useMediaQuery  } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 
@@ -75,7 +75,7 @@ const Register = ({setLogin}) => {
                 // address: "",
                 // role_id: 1
             }, ()=>{
-                authenticate({name: values.name, email: values.email}, ()=> window.location.href = "/")
+                signIn({email: values.email, password: values.password}, ()=> window.location.href = "/")
             })
         } catch (err) {
             console.log(err);
@@ -104,7 +104,7 @@ const Register = ({setLogin}) => {
                 role_id: 1
             }, ()=>{
                 console.log("registrado")
-                authenticate({name, email, photo}, ()=> window.location.href = "/")
+                signIn({name, email, photo}, ()=> window.location.href = "/")
             })
         } catch (err) {
             setError(err)
@@ -125,7 +125,7 @@ const Register = ({setLogin}) => {
             <div className={styles.title}>
                 <h4>Crear cuenta</h4>
             </div>
-            <div className={styles.social_media_register}>
+            {/* <div className={styles.social_media_register}>
                 <GoogleLogin
                     clientId="562820573281-vcod58jbo8ianekgcf8fufrdqqqsq4l9.apps.googleusercontent.com"
                     buttonText="Login"
@@ -150,7 +150,7 @@ const Register = ({setLogin}) => {
                 <div></div>
                 <p>Or</p>
                 <div></div>
-            </div>
+            </div> */}
             {
                 error &&(
                     <Alert sx={{mb: 2}}severity="error">{error}</Alert>
